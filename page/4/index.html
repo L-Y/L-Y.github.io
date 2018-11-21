@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>ly.blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="ly.blog">
+<meta property="og:url" content="http://www.wbug.cn/page/4/index.html">
+<meta property="og:site_name" content="ly.blog">
+<meta property="og:locale" content="zh_cn">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ly.blog">
+  
+    <link rel="alternative" href="/atom.xml" title="ly.blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" >
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?0033f42513f7e78a38b592d6b899c2a0";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">ly.blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">问渠哪得清如许 为有源头活水来</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/composer">Composer</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://www.wbug.cn"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-comp-com_depends_" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/13/comp-com_depends_/" class="article-date">
+  <time datetime="2016-07-13T12:10:55.000Z" itemprop="datePublished">2016-07-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/13/comp-com_depends_/">php 之 composer 的命令二</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##依赖性检测 depends</p>
+<p>说明：<br>depends 命令可以查出已安装在你项目中的某个包，是否正在被其它的包所依赖，并列出他们<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">composer depends  psr/<span class="built_in">log</span></span><br><span class="line"></span><br><span class="line">参数 如下</span><br><span class="line"></span><br><span class="line">depends [-r|--recursive] [-t|--tree] [--] &lt;package&gt; [&lt;constraint&gt;]</span><br></pre></td></tr></table></figure></p>
+<p>##有效性检测 validate</p>
+<p>说明:<br>在提交 composer.json 文件，和创建 tag 前，你应该始终运行 validate 命令。它将检测你的 composer.json 文件是否是有效的<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">php composer.phar validate</span><br><span class="line"></span><br><span class="line">参数：</span><br><span class="line"></span><br><span class="line">--no-check-all: Composer 是否进行完整的校验。</span><br></pre></td></tr></table></figure></p>
+<p>##依赖包状态检测 status<br>说明：<br>如果你经常修改依赖包里的代码，并且它们是从 source（自定义源）进行安装的，那么 status 命令允许你进行检查，如果你有任何本地的更改它将会给予提示。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">composer status</span><br><span class="line">composer status -v</span><br><span class="line">composer status -vv</span><br><span class="line">composer status -vvv</span><br></pre></td></tr></table></figure></p>
+<p>##自我更新composer  self-update or selfupdate<br>说明：<br>将 Composer 自身升级到最新版本，只需要运行 self-update 命令。它将替换你的 composer.phar 文件到最新版本<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">composer self-update</span><br><span class="line">&lt;!-- 更新到特定的版本 --&gt;</span><br><span class="line"></span><br><span class="line">comoser self-update 1.0.0-alpha7</span><br><span class="line"></span><br><span class="line">参数：</span><br><span class="line">--rollback (-r): 回滚到你已经安装的最后一个版本。</span><br><span class="line">--clean-backups: 在更新过程中删除旧的备份，这使得更新过后的当前版本是唯一可用的备份。</span><br></pre></td></tr></table></figure></p>
+<p>##更改配置 config<br>说明：<br>config 命令允许你编辑 Composer 的一些基本设置，无论是本地的 composer.json 或者全局的 config.json 文件。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">composer config --list</span><br><span class="line"></span><br><span class="line">composer config secure-http <span class="literal">false</span></span><br><span class="line"></span><br><span class="line">composer config github-domains [github.com,github.cn]</span><br><span class="line"></span><br><span class="line">&lt;!-- 修改包来源 --&gt;</span><br><span class="line">comoser config repositories.foo vcs http://github.com/foo/bar</span><br><span class="line"></span><br><span class="line">参数：</span><br><span class="line">--global (-g): </span><br><span class="line">&lt;!-- 操作位于 <span class="variable">$COMPOSER_HOME</span>/config.json 的全局配置文件。如果不指定该参数，此命令将影响当前项目的 composer.json 文件，或 --file 参数所指向的文件。 --&gt;</span><br><span class="line">--editor (-e): </span><br><span class="line">&lt;!-- 使用文本编辑器打开 composer.json 文件。默认情况下始终是打开当前项目的文件。当存在 --global 参数时，将会打开全局 composer.json 文件。 --&gt;</span><br><span class="line">--<span class="built_in">unset</span>: </span><br><span class="line">&lt;!-- 移除由 setting-key 指定名称的配置选项。 --&gt;</span><br><span class="line">--list (-l): </span><br><span class="line">&lt;!-- 显示当前配置选项的列表。当存在 --global 参数时，将会显示全局配置选项的列表。 --&gt;</span><br><span class="line">--file=<span class="string">"..."</span> (-f): </span><br><span class="line">&lt;!-- 在一个指定的文件上操作，而不是 composer.json。注意：不能与 --global 参数一起使用。 --&gt;</span><br></pre></td></tr></table></figure></p>
+<p>##创建项目 create-project</p>
+<p>说明：<br>你可以使用 Composer 从现有的包中创建一个新的项目。这相当于执行了一个 git clone 或 svn checkout 命令后将这个包的依赖安装到它自己的 vendor 目录。</p>
+<p>此命令有几个常见的用途：</p>
+<p>你可以快速的部署你的应用。<br>你可以检出任何资源包，并开发它的补丁。<br>多人开发项目，可以用它来加快应用的初始化。<br>要创建基于 Composer 的新项目，你可以使用 “create-project” 命令。传递一个包名，它会为你创建项目的目录。你也可以在第三个参数中指定版本号，否则将获取最新的版本。</p>
+<p>如果该目录目前不存在，则会在安装过程中自动创建。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">composer create-project lavarel/laravel path 2.2.*</span><br><span class="line">composer create-project --prefer-dist laravel/laravel blog</span><br><span class="line"></span><br><span class="line">参数：</span><br><span class="line">--repository-url: 提供一个自定义的储存库来搜索包，这将被用来代替 packagist.org。可以是一个指向 composer 资源库的 HTTP URL，或者是指向某个 packages.json 文件的本地路径。</span><br><span class="line">--stability (-s): 资源包的最低稳定版本，默认为 stable。</span><br><span class="line">--prefer-source: 当有可用的包时，从 <span class="built_in">source</span> 安装。</span><br><span class="line">--prefer-dist: 当有可用的包时，从 dist 安装。</span><br><span class="line">--dev: 安装 require-dev 字段中列出的包。</span><br><span class="line">--no-install: 禁止安装包的依赖。</span><br><span class="line">--no-plugins: 禁用 plugins。</span><br><span class="line">--no-scripts: 禁止在根资源包中定义的脚本执行。</span><br><span class="line">--no-progress: 移除进度信息，这可以避免一些不处理换行的终端或脚本出现混乱的显示。</span><br><span class="line">--keep-vcs: 创建时跳过缺失的 VCS 。如果你在非交互模式下运行创建命令，这将是非常有用的。</span><br></pre></td></tr></table></figure>
+<p>##打印自动加载 dump-autoload<br>说明：<br>某些情况下你需要更新 autoloader，例如在你的包中加入了一个新的类。你可以使用 dump-autoload 来完成，而不必执行 install 或 update 命令。<br>此外，它可以打印一个优化过的，符合 PSR-0/4 规范的类的索引，这也是出于对性能的可考虑。在大型的应用中会有许多类文件，而 autoloader 会占用每个请求的很大一部分时间，使用 classmaps 或许在开发时不太方便，但它在保证性能的前提下，仍然可以获得 PSR-0/4 规范带来的便利。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">composer dump-autoload</span><br><span class="line">参数：</span><br><span class="line">--optimize (-o): 转换 PSR-0/4 autoloading 到 classmap 获得更快的载入速度。这特别适用于生产环境，但可能需要一些时间来运行，因此它目前不是默认设置。</span><br><span class="line">--no-dev: 禁用 <span class="built_in">autoload</span>-dev 规则。</span><br></pre></td></tr></table></figure>
+<p>#查看许可协议 licenses<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">composer licenses</span><br><span class="line">composer licenses --format=json</span><br><span class="line">composer license --format=json --no-dev</span><br></pre></td></tr></table></figure></p>
+<p>#执行脚本 run-script<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">composer run-script  testscript</span><br><span class="line">&lt;!-- 说明 关于脚本请看后面的文章 --&gt;</span><br></pre></td></tr></table></figure></p>
+<p>#诊断 diagnose<br>说明：<br>如果你觉得发现了一个 bug 或是程序行为变得怪异，你可能需要运行 diagnose 命令，来帮助你检测一些常见的问题<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer diagnose</span><br></pre></td></tr></table></figure></p>
+<p>#归档 archive<br>说明：<br>此命令用来对指定包的指定版本进行 zip/tar 归档。它也可以用来归档你的整个项目，不包括 excluded/ignored（排除/忽略）的文件。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">composer archive vendor/package 2.0.21 --format=zip</span><br><span class="line">参数：</span><br><span class="line">--format (-f): 指定归档格式：tar 或 zip（默认为 tar）。</span><br><span class="line">--dir: 指定归档存放的目录（默认为当前目录）。</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.wbug.cn/2016/07/13/comp-com_depends_/" data-id="cjoqrzba70008hsuvir53m0wi" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+ 
+  
+    <article id="post-comp-repos" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/13/comp-repos/" class="article-date">
+  <time datetime="2016-07-13T11:42:01.000Z" itemprop="datePublished">2016-07-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/13/comp-repos/">php 之 composer 库/资源包</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##创建一个包</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	&lt;!-- 声明 供应商名/及项目名称   --&gt;</span><br><span class="line">	<span class="string">"name"</span>: <span class="string">"google/testName"</span>, </span><br><span class="line">	&lt;!-- 添加一个 require 到项目中 相当与创建一个依赖于其他库的包 --&gt;</span><br><span class="line">	<span class="string">"require"</span>: &#123;</span><br><span class="line">		<span class="string">"mogolog/mogolog"</span>: <span class="string">"2.0.*"</span>,</span><br><span class="line">		<span class="string">"symfony/http-kernel"</span>: 2.8.*|3.0.*,</span><br><span class="line">		<span class="string">"phpunit/phpunit"</span>: ~4.1</span><br><span class="line">		<span class="string">"php"</span>: &gt;=5.5.9</span><br><span class="line">		<span class="string">"ext-mbstring"</span>: *</span><br><span class="line">		<span class="string">"ext-openssl"</span>: *</span><br><span class="line">	&#125;,</span><br><span class="line">	&lt;!-- 声明这个包的地址 也就是google/testName所发布的地址 --&gt;</span><br><span class="line">    <span class="string">"repositories"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">"type"</span>: <span class="string">"vcs"</span>,</span><br><span class="line">            <span class="string">"url"</span>: <span class="string">"https://github.com/google/testname"</span></span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">	&lt;!-- 声明版本号 --&gt;</span><br><span class="line">	<span class="string">"version"</span>: <span class="string">"1.0.0"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>##标签的解释</p>
+<p>对于每一个看起来像版本号的标签，都会相应的创建一个包的版本。它应该符合 ‘X.Y.Z’ 或者 ‘vX.Y.Z’ 的形式，-patch、-alpha、-beta 或 -RC 这些后缀是可选的。在后缀之后也可以再跟上一个数字。</p>
+<p>下面是有效的标签名称的几个例子：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1.0.0</span><br><span class="line">v1.0.0</span><br><span class="line">1.10.5-RC1</span><br><span class="line">v4.4.4beta2</span><br><span class="line">v2.0.0-alpha</span><br><span class="line">v2.0.4-p1</span><br></pre></td></tr></table></figure></p>
+<p>注意： 即使你的标签带有前缀 v， 由于在需要 require 一个版本的约束时是不允许这种前缀的， 因此 v 将被省略（例如标签 V1.0.0 将创建 1.0.0 版本）</p>
+<p>##分支</p>
+<p>对于每一个分支，都会相应的创建一个包的开发版本。如果分支名看起来像一个版本号，那么将创建一个如同 {分支名}-dev 的包版本号。例如一个分支 2.0 将产生一个 2.0.x-dev 包版本（加入了 .x 是出于技术的原因，以确保它被识别为一个分支，而 2.0.x 的分支名称也是允许的，它同样会被转换为 2.0.x-dev）。如果分支名看起来不像一个版本号，它将会创建 dev-{分支名} 形式的版本号。例如 master 将产生一个 dev-master 的版本号。</p>
+<p>下面是版本分支名称的一些示例：</p>
+<p>1.x<br>1.0 (equals 1.0.x)<br>1.1.x</p>
+<p>##锁文件</p>
+<p>如果你愿意，可以在你的项目中提交 composer.lock 文件。他将帮助你的团队始终针对同一个依赖版本进行测试。任何时候，这个锁文件都只对于你的项目产生影响。</p>
+<p>如果你不想提交锁文件，并且你正在使用 Git，那么请将它添加到 .gitignore 文件中。</p>
+<p>##发布到 VCS（线上版本控制系统）</p>
+<p>一旦你有一个包含 composer.json 文件的库存储在线上版本控制系统（例如：Git），你的库就可以被 Composer 所安装。在这个例子中，我们将 acme/hello-world 库发布在 GitHub 上的 github.com/username/hello-world 中。</p>
+<p>现在测试这个 agoogle/testName 包，我们在本地创建一个新的项目。我们将它命名为 acme/blog。此博客将依赖 google/testName，而后者又依赖 monolog/monolog。我们可以在某处创建一个新的 blog 文件夹来完成它，并且需要包含 composer.json 文件：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"name"</span>: <span class="string">"myapp/blog"</span>,</span><br><span class="line">    <span class="string">"require"</span>: &#123;</span><br><span class="line">        <span class="string">"google/testName"</span>: <span class="string">"dev-master"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在这个例子中 name 不是必须的，因为我们并不想将它发布为一个库。在这里为 composer.json 文件添加描述。</p>
+<p>现在我们需要告诉我们的应用，在哪里可以找到 hello-world 的依赖。为此我们需要在 composer.json 中添加 repositories 来源申明：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"name"</span>: <span class="string">"acme/blog"</span>,</span><br><span class="line">    <span class="string">"repositories"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">"type"</span>: <span class="string">"vcs"</span>,</span><br><span class="line">            <span class="string">"url"</span>: <span class="string">"https://github.com/google/testName"</span></span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    <span class="string">"require"</span>: &#123;</span><br><span class="line">        <span class="string">"google/testName"</span>: <span class="string">"dev-master"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>更多关于包的来源是如何工作的，以及还有什么其他的类型可供选择，请查看资源库。</p>
+<p>这就是全部了。你现在可以使用 Composer 的 install 命令来安装你的依赖包了！</p>
+<p>小结： 任何含有 composer.json 的 GIT、SVN、HG 存储库，都可以通过 require 字段指定“包来源”和“声明依赖”来添加到你的项目中。</p>
+<p>##发布到 packagist</p>
+<p>好的，你现在可以发布你的包了，但你不会希望你的用户每次都这样繁琐的指定包的来源。</p>
+<p>你可能注意到了另一件事，我们并没有指定 monolog/monolog 的来源。它是怎么工作的？答案是 packagist。</p>
+<p>Packagist 是 Composer 主要的一个包信息存储库，它默认是启用的。任何在 packagist 上发布的包都可以直接被 Composer 使用。就像 monolog 它被 发布在 packagist 上，我们可以直接使用它，而不必指定任何额外的来源信息。</p>
+<p>如果我们想与世界分享我们的 testName，我们最好将它发布到 packagist 上。这样做是很容易的。</p>
+<p>你只需要点击那个大大的 “Submit Package” 按钮并注册。接着提交你库的来源地址，此时 packagist 就开始了抓取。一旦完成，你的包将可以提供给任何人使用。</p>
+<p>ok.完</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.wbug.cn/2016/07/13/comp-repos/" data-id="cjoqrzbbn000xhsuvb0o9sysy" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+ 
+  
+    <article id="post-comp_syntax" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/12/comp_syntax/" class="article-date">
+  <time datetime="2016-07-12T12:11:29.000Z" itemprop="datePublished">2016-07-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/php/">php</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/12/comp_syntax/">php 之 composer 的用法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##composer.json：项目安装</p>
+<p>要开始在你的项目中使用 Composer，你只需要一个 composer.json 文件。该文件包含了项目的依赖和其它的一些元数据。</p>
+<p>##关于 require Key</p>
+<p>组成部分：</p>
+<p>1.包名称： monolog/monolog<br>2.包版本：1.0.*<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"require"</span>: &#123;</span><br><span class="line">        <span class="string">"monolog/monolog"</span>: <span class="string">"1.0.*"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>##包名称</p>
+<p>组成部分：</p>
+<p>1.供应商名称: monolog<br>2.项目名称： monolog</p>
+<p>如：meizu/mei 2  google/android</p>
+<p>##包版本</p>
+<p>确切的版本号：1.0.2 —你可以指定包的确切版本。</p>
+<p>范围：&gt;=1.0 &gt;=1.0,&lt;2.0 &gt;=1.0,&lt;1.1|&gt;=1.2 —-有效的运算符：&gt;、&gt;=、&lt;、&lt;=、!=。<br>你可以定义多个范围，用逗号隔开，这将被视为一个逻辑AND处理。一个管道符号|将作为逻辑OR处理。<br>AND 的优先级高于 OR。    </p>
+<p>通配符：1.0.<em>—你可以使用通配符</em>来指定一种模式。1.0.*与&gt;=1.0,&lt;1.1是等效的。</p>
+<p>赋值运算符：~1.2— ~1.2相当于&gt;=1.2,&lt;2.0</p>
+<h2 id="波浪符运算符"><a href="#波浪符运算符" class="headerlink" title="~波浪符运算符"></a>~波浪符运算符</h2><p>~ 最好用例子来解释： ~1.2 相当于 &gt;=1.2,&lt;2.0，而 ~1.2.3 相当于 &gt;=1.2.3,&lt;1.3。正如你所看到的这对于遵循 语义化版本号 的项目最有用。一个常见的用法是标记你所依赖的最低版本，像 ~1.2 （允许1.2以上的任何版本，但不包括2.0）。由于理论上直到2.0应该都没有向后兼容性问题，所以效果很好。你还会看到它的另一种用法，使用 ~ 指定最低版本，但允许版本号的最后一位数字上升。</p>
+<p>注意： 虽然 2.0-beta.1 严格地说是早于 2.0，但是，根据版本约束条件， 例如 ~1.2 却不会安装这个版本。就像前面所讲的 ~1.2 只意味着 .2 部分可以改变，但是 1. 部分是固定的。</p>
+<h2 id="composer-lock-锁文件-使用install-会自动生成"><a href="#composer-lock-锁文件-使用install-会自动生成" class="headerlink" title="composer.lock - 锁文件 使用install 会自动生成"></a>composer.lock - 锁文件 使用install 会自动生成</h2><p>在安装依赖后，Composer 将把安装时确切的版本号列表写入 composer.lock 文件。这将锁定改项目的特定版本。</p>
+<p>请提交你应用程序的 composer.lock （包括 composer.json）到你的版本库中</p>
+<p>这是非常重要的，因为 install 命令将会检查锁文件是否存在，如果存在，它将下载指定的版本（忽略 composer.json 文件中的定义）。</p>
+<p>这意味着，任何人建立项目都将下载与指定版本完全相同的依赖。你的持续集成服务器、生产环境、你团队中的其他开发人员、每件事、每个人都使用相同的依赖，从而减轻潜在的错误对部署的影响。即使你独自开发项目，在六个月内重新安装项目时，你也可以放心的继续工作，即使从那时起你的依赖已经发布了许多新的版本。</p>
+<p>如果不存在 composer.lock 文件，Composer 将读取 composer.json 并创建锁文件。</p>
+<p>这意味着如果你的依赖更新了新的版本，你将不会获得任何更新。此时要更新你的依赖版本请使用 update 命令。这将获取最新匹配的版本（根据你的 composer.json 文件）并将新版本更新进锁文件。</p>
+<p>如果只想安装或更新一个依赖，你可以白名单它们<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer update monolog/monolog [...]</span><br></pre></td></tr></table></figure></p>
+<p>##Packagist</p>
+<p>packagist 是 Composer 的主要资源库。 一个 Composer 的库基本上是一个包的源：记录了可以得到包的地方。Packagist 的目标是成为大家使用库资源的中央存储平台。这意味着你可以 require 那里的任何包。</p>
+<p>当你访问 packagist 网站 (packagist.org)，你可以浏览和搜索资源包。</p>
+<p>任何支持 Composer 的开源项目应该发布自己的包在 packagist 上。虽然并不一定要发布在 packagist 上来使用 Composer，但它使我们的编程生活更加轻松。</p>
+<p>##自动加载</p>
+<p>对于库的自动加载信息，Composer 生成了一个 vendor/autoload.php 文件。你可以简单的引入这个文件，你会得到一个免费的自动加载支持。</p>
+<p>require ‘vendor/autoload.php’;<br>这使得你可以很容易的使用第三方代码。例如：如果你的项目依赖 monolog，你就可以像这样开始使用这个类库，并且他们将被自动加载。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$log</span> = new Monolog\Logger(<span class="string">'name'</span>);</span><br><span class="line"><span class="variable">$log</span>-&gt;pushHandler(new Monolog\Handler\StreamHandler(<span class="string">'app.log'</span>, Monolog\Logger::WARNING));</span><br><span class="line"></span><br><span class="line"><span class="variable">$log</span>-&gt;addWarning(<span class="string">'Foo'</span>);</span><br></pre></td></tr></table></figure></p>
+<p>你可以在 composer.json 的 autoload 字段中增加自己的 autoloader。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"autoload"</span>: &#123;</span><br><span class="line">        <span class="string">"psr-4"</span>: &#123;<span class="string">"Acme\\"</span>: <span class="string">"src/"</span>&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Composer 将注册一个 PSR-4 autoloader 到 Acme 命名空间。</p>
+<p>你可以定义一个从命名空间到目录的映射。此时 src 会在你项目的根目录，与 vendor 文件夹同级。例如 src/Foo.php 文件应该包含 Acme\Foo 类。</p>
+<p>添加 autoload 字段后，你应该再次运行 install 命令来生成 vendor/autoload.php 文件。</p>
+<p>引用这个文件也将返回 autoloader 的实例，你可以将包含调用的返回值存储在变量中，并添加更多的命名空间。这对于在一个测试套件中自动加载类文件是非常有用的，例如。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$loader</span> = require <span class="string">'vendor/autoload.php'</span>;</span><br><span class="line"><span class="variable">$loader</span>-&gt;add(<span class="string">'Acme\\Test\\'</span>, __DIR__);</span><br></pre></td></tr></table></figure></p>
+<p>除了 PSR-4 自动加载，classmap 也是支持的。这允许类被自动加载，即使不符合 PSR-0 规范。详细请查看 自动加载-参考。</p>
+<p>注意： Composer 提供了自己的 autoloader。如果你不想使用它，你可以仅仅引入 vendor/composer/autoload_*.php 文件，它返回一个关联数组，你可以通过这个关联数组配置自己的 autoloader。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.wbug.cn/2016/07/12/comp_syntax/" data-id="cjoqrzbbj000shsuv6sx6j90y" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+ 
+  
+    <article id="post-app" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/10/app/" class="article-date">
+  <time datetime="2016-07-10T13:39:26.000Z" itemprop="datePublished">2016-07-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/default/">default</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/10/app/">关于应用层一些协议的问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#关于一些协议的解释</p>
+<p>HTTP —  全拼 HyperText Transport Protocol   超文本传输协议</p>
+<p>FTP  —  全拼 File  Transfer Protocol          文件传输协议</p>
+<p>DNS     —  全拼 Domain Name System And Domain Name Service Protocol 域名系统协议</p>
+<p>SMTP —  全拼 Simple Mail Transefer Protocol 简单邮件传输协议 发送邮件</p>
+<p>POP3 —  全拼 Post Office Protocol 3 邮局协议  收取邮件</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.wbug.cn/2016/07/10/app/" data-id="cjoqrzba10003hsuvgrs1rbj2" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OSI七层网络模型/">OSI七层网络模型</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+ 
+  
+    <article id="post-emmet" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/07/emmet/" class="article-date">
+  <time datetime="2016-07-07T12:41:04.000Z" itemprop="datePublished">2016-07-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/07/emmet/">Sublime Text3 之 emmet</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>HTML 的生成 按tab键或 ctrl+e</p>
+<h2 id="生成HTML文档结构"><a href="#生成HTML文档结构" class="headerlink" title="生成HTML文档结构"></a>生成HTML文档结构</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 1.命令：html:5 or ! --&gt;</span><br><span class="line">&lt;!-- 效果如下： 开始 --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">	&lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 结束 --&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 2.命令：html:xt  --&gt;</span><br><span class="line">&lt;!-- 生成html4过渡型 --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!DOCTYPE html PUBLIC <span class="string">"-//W3C//DTD XHTML 1.0 Transitional//EN"</span> <span class="string">"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"</span>&gt;</span><br><span class="line">&lt;html xmlns=<span class="string">"http://www.w3.org/1999/xhtml"</span> xml:lang=<span class="string">"en"</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta http-equiv=<span class="string">"Content-Type"</span> content=<span class="string">"text/html;charset=UTF-8"</span>&gt;</span><br><span class="line">	&lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 结束 --&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 3.命令：html:4s  or heml:xs --&gt;</span><br><span class="line">&lt;!-- 生成html4严格型 --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!DOCTYPE html PUBLIC <span class="string">"-//W3C//DTD XHTML 1.0 Strict//EN"</span> <span class="string">"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"</span>&gt;</span><br><span class="line">&lt;html xmlns=<span class="string">"http://www.w3.org/1999/xhtml"</span> xml:lang=<span class="string">"en"</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta http-equiv=<span class="string">"Content-Type"</span> content=<span class="string">"text/html;charset=UTF-8"</span> /&gt;</span><br><span class="line">	&lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 结束 --&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 4.命令 div p h1 span em input  直接tab 即可 --&gt;</span><br><span class="line">&lt;!-- 生成html 常规标签 --&gt;</span><br><span class="line"></span><br><span class="line">&lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;p&gt;&lt;/p&gt;</span><br><span class="line">&lt;h1&gt;&lt;/h1&gt;</span><br><span class="line">&lt;input <span class="built_in">type</span>=<span class="string">"text"</span> /&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 结束 --&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 5.生成带有 id 、class 的 HTML 标签: <span class="comment">#为 id，. 为 class --&gt;</span></span><br><span class="line">&lt;!-- 开始  如：div<span class="comment">#header.header --&gt;</span></span><br><span class="line"></span><br><span class="line">&lt;div id=<span class="string">"header"</span> class=<span class="string">"header"</span>&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 结束 --&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 6.生成后代：&gt; --&gt;</span><br><span class="line">&lt;!-- 开始  如：div<span class="comment">#header&gt;span.header --&gt;</span></span><br><span class="line"></span><br><span class="line">&lt;div id=<span class="string">"header"</span>&gt;&lt;span class=<span class="string">"header"</span>&gt;&lt;/span&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 结束 --&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 7.生成兄弟元素: + --&gt;</span><br><span class="line">&lt;!-- 开始  如：div<span class="comment">#header+div.siblings --&gt;</span></span><br><span class="line"></span><br><span class="line">&lt;div id=<span class="string">"header"</span>&gt;&lt;/div&gt;</span><br><span class="line">&lt;div class=<span class="string">"siblings"</span>&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 结束 --&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 8.生成上级元素： ^ --&gt;</span><br><span class="line">&lt;!-- 开始 如：div<span class="comment">#prev^div#next div#prev&gt;span&gt;a^^div#next --&gt;</span></span><br><span class="line"></span><br><span class="line">&lt;div id=<span class="string">"prev"</span>&gt;&lt;/div&gt;</span><br><span class="line">&lt;div id=<span class="string">"next"</span>&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;div id=<span class="string">"prev"</span>&gt;&lt;span&gt;&lt;a href=<span class="string">""</span>&gt;&lt;/a&gt;&lt;/span&gt;&lt;/div&gt;</span><br><span class="line">&lt;div id=<span class="string">"next"</span>&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 结束 --&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 9.重复生成多个 * --&gt;</span><br><span class="line">&lt;!-- 开始 如： ul&gt;li.list*5 --&gt;</span><br><span class="line"></span><br><span class="line">&lt;ul&gt;</span><br><span class="line">	&lt;li class=<span class="string">"list"</span>&gt;&lt;/li&gt;</span><br><span class="line">	&lt;li class=<span class="string">"list"</span>&gt;&lt;/li&gt;</span><br><span class="line">	&lt;li class=<span class="string">"list"</span>&gt;&lt;/li&gt;</span><br><span class="line">	&lt;li class=<span class="string">"list"</span>&gt;&lt;/li&gt;</span><br><span class="line">	&lt;li class=<span class="string">"list"</span>&gt;&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 结束 --&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 10.生成分组 () --&gt;</span><br><span class="line">&lt;!-- 开始 如： ul&gt;(li.list&gt;a)*5 --&gt;</span><br><span class="line"></span><br><span class="line">&lt;ul&gt;</span><br><span class="line">	&lt;li class=<span class="string">"list"</span>&gt;&lt;a href=<span class="string">""</span>&gt;&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">	&lt;li class=<span class="string">"list"</span>&gt;&lt;a href=<span class="string">""</span>&gt;&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">	&lt;li class=<span class="string">"list"</span>&gt;&lt;a href=<span class="string">""</span>&gt;&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">	&lt;li class=<span class="string">"list"</span>&gt;&lt;a href=<span class="string">""</span>&gt;&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">	&lt;li class=<span class="string">"list"</span>&gt;&lt;a href=<span class="string">""</span>&gt;&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 比较一下  ul&gt;li.list&gt;a*5 --&gt;</span><br><span class="line"></span><br><span class="line">&lt;ul&gt;</span><br><span class="line">	&lt;li class=<span class="string">"list"</span>&gt;</span><br><span class="line">		&lt;a href=<span class="string">""</span>&gt;&lt;/a&gt;</span><br><span class="line">		&lt;a href=<span class="string">""</span>&gt;&lt;/a&gt;</span><br><span class="line">		&lt;a href=<span class="string">""</span>&gt;&lt;/a&gt;</span><br><span class="line">		&lt;a href=<span class="string">""</span>&gt;&lt;/a&gt;</span><br><span class="line">		&lt;a href=<span class="string">""</span>&gt;&lt;/a&gt;</span><br><span class="line">	&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 结束 --&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 11.生成自定义属性 [] --&gt;</span><br><span class="line">&lt;!-- 开始 如： img[http://www.baidu.com][alt=baidu] --&gt;</span><br><span class="line"></span><br><span class="line">&lt;img src=<span class="string">"http://www.baidu.com"</span> alt=<span class="string">"baidu"</span> /&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 结束 --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 12.生成递增 $ --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 开始 如： ul&gt;li.list$*5 --&gt;</span><br><span class="line"></span><br><span class="line">&lt;ul&gt;</span><br><span class="line">	&lt;li class=<span class="string">"list1"</span>&gt;&lt;/li&gt;</span><br><span class="line">	&lt;li class=<span class="string">"list2"</span>&gt;&lt;/li&gt;</span><br><span class="line">	&lt;li class=<span class="string">"list3"</span>&gt;&lt;/li&gt;</span><br><span class="line">	&lt;li class=<span class="string">"list4"</span>&gt;&lt;/li&gt;</span><br><span class="line">	&lt;li class=<span class="string">"list5"</span>&gt;&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 结束 --&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 13.特定顺序递增 @N --&gt;</span><br><span class="line">&lt;!-- 开始 如： ul&gt;li.list<span class="variable">$@100</span>*5 --&gt;</span><br><span class="line"></span><br><span class="line">&lt;ul&gt;</span><br><span class="line">	&lt;li class=<span class="string">"list100"</span>&gt;&lt;/li&gt;</span><br><span class="line">	&lt;li class=<span class="string">"list101"</span>&gt;&lt;/li&gt;</span><br><span class="line">	&lt;li class=<span class="string">"list102"</span>&gt;&lt;/li&gt;</span><br><span class="line">	&lt;li class=<span class="string">"list103"</span>&gt;&lt;/li&gt;</span><br><span class="line">	&lt;li class=<span class="string">"list104"</span>&gt;&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 结束 --&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 14.多位递增 $$$$ --&gt;</span><br><span class="line">&lt;!-- 开始 如： ul&gt;li.list$$$$*5 --&gt;</span><br><span class="line"></span><br><span class="line">&lt;ul&gt;</span><br><span class="line">	&lt;li class=<span class="string">"list0001"</span>&gt;&lt;/li&gt;</span><br><span class="line">	&lt;li class=<span class="string">"list0002"</span>&gt;&lt;/li&gt;</span><br><span class="line">	&lt;li class=<span class="string">"list0003"</span>&gt;&lt;/li&gt;</span><br><span class="line">	&lt;li class=<span class="string">"list0004"</span>&gt;&lt;/li&gt;</span><br><span class="line">	&lt;li class=<span class="string">"list0005"</span>&gt;&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 结束 --&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 15.递减 @- --&gt;</span><br><span class="line">&lt;!-- 开始 如： ul&gt;li.list<span class="variable">$@</span>-*5 --&gt;</span><br><span class="line"></span><br><span class="line">&lt;ul&gt;</span><br><span class="line">	&lt;li class=<span class="string">"list5"</span>&gt;&lt;/li&gt;</span><br><span class="line">	&lt;li class=<span class="string">"list4"</span>&gt;&lt;/li&gt;</span><br><span class="line">	&lt;li class=<span class="string">"list3"</span>&gt;&lt;/li&gt;</span><br><span class="line">	&lt;li class=<span class="string">"list2"</span>&gt;&lt;/li&gt;</span><br><span class="line">	&lt;li class=<span class="string">"list1"</span>&gt;&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 结束 --&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 15.特定递减 @-N --&gt;</span><br><span class="line">&lt;!-- 开始 如： ul&gt;li.list<span class="variable">$@</span>-100*5 --&gt;</span><br><span class="line"></span><br><span class="line">&lt;ul&gt;</span><br><span class="line">	&lt;li class=<span class="string">"list104"</span>&gt;&lt;/li&gt;</span><br><span class="line">	&lt;li class=<span class="string">"list103"</span>&gt;&lt;/li&gt;</span><br><span class="line">	&lt;li class=<span class="string">"list102"</span>&gt;&lt;/li&gt;</span><br><span class="line">	&lt;li class=<span class="string">"list101"</span>&gt;&lt;/li&gt;</span><br><span class="line">	&lt;li class=<span class="string">"list100"</span>&gt;&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 结束 --&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 16.申城文本 &#123;&#125; --&gt;</span><br><span class="line">&lt;!-- 开始 如： p&#123;这里生成文本&#125; --&gt;</span><br><span class="line"></span><br><span class="line">&lt;p&gt;这里生成文本&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 结束 --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 16.缺省元素  --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 开始 如： .header+.content --&gt;</span><br><span class="line"></span><br><span class="line">&lt;div class=<span class="string">"header"</span>&gt;&lt;/div&gt;</span><br><span class="line">&lt;div class=<span class="string">"content"</span>&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 结束 --&gt;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.wbug.cn/2016/07/07/emmet/" data-id="cjoqrzbbp0010hsuvj2dktir0" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sublime/">sublime</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+ 
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
+    </nav>
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/code/">code</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/default/">default</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/google/">google</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/news/">news</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/svn/">svn</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/电影/">电影</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/OSI七层网络模型/">OSI七层网络模型</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bug/">bug</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/">ssh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime/">sublime</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/OSI七层网络模型/" style="font-size: 10px;">OSI七层网络模型</a> <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/php/" style="font-size: 20px;">php</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/sublime/" style="font-size: 10px;">sublime</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/11/21/httpCode_cn/">http状态码一览</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/httpCode/">http状态码一览</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/phpCurlError/">php使用curl时报错解决方法</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/19/hexo-deploy-failed/">hexo deploy failed</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/17/debian-9-4-stretch-install/">debian 9.4(stretch) install</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    <iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=2&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=2440411005&verifier=70a007d1&dpc=1"></iframe>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 ly<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+    <span id="busuanzi_container_site_pv">
+    你是本站第<span id="busuanzi_value_site_nv"></span>位访客
+	本站访客数<span id="busuanzi_value_site_uv"></span>人次
+</span>
+  </div>
+</footer>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/composer" class="mobile-nav-link">Composer</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script>
+host3 = window.location.href;
+chinadomai3 = "http://www.wbug.cn/";  #修改为你的百度推送对应的域名
+if (host3.indexOf(chinadomain3)!=-1)  {
+  (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+      }
+      else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+  })();
+}
+
+</script>
+  </div>
+<a href="https://github.com/L-Y/L-Y.github.io"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
+</body>
+</html>

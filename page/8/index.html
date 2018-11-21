@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>ly.blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="ly.blog">
+<meta property="og:url" content="http://www.wbug.cn/page/8/index.html">
+<meta property="og:site_name" content="ly.blog">
+<meta property="og:locale" content="zh_cn">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ly.blog">
+  
+    <link rel="alternative" href="/atom.xml" title="ly.blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" >
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?0033f42513f7e78a38b592d6b899c2a0";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">ly.blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">问渠哪得清如许 为有源头活水来</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/composer">Composer</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://www.wbug.cn"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-git" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/03/23/git/" class="article-date">
+  <time datetime="2015-03-23T06:03:48.000Z" itemprop="datePublished">2015-03-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/git/">git</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/03/23/git/">git 命令</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="git-配置相关命令"><a href="#git-配置相关命令" class="headerlink" title="git 配置相关命令"></a>git 配置相关命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git init                                                  <span class="comment"># 初始化本地git仓库（创建新仓库）</span></span><br><span class="line">git config --global user.name <span class="string">"xxx"</span>                       <span class="comment"># 配置用户名</span></span><br><span class="line">git config --global user.email <span class="string">"xxx@xxx.com"</span>              <span class="comment"># 配置邮件</span></span><br><span class="line">git config --global color.ui <span class="literal">true</span>                         <span class="comment"># git status等命令自动着色</span></span><br><span class="line">git config --global color.status auto</span><br><span class="line">git config --global color.diff auto</span><br><span class="line">git config --global color.branch auto</span><br><span class="line">git config --global color.interactive auto</span><br></pre></td></tr></table></figure>
+<h2 id="git-克隆、增加、提交到、推送等相关命令"><a href="#git-克隆、增加、提交到、推送等相关命令" class="headerlink" title="git 克隆、增加、提交到、推送等相关命令"></a>git 克隆、增加、提交到、推送等相关命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git+ssh://git@192.168.53.168/VT.git             <span class="comment"># clone远程仓库</span></span><br><span class="line">git pull origin master                                    <span class="comment"># 获取远程分支master并merge到当前分支</span></span><br><span class="line">git status                                                <span class="comment"># 查看当前版本状态（是否修改）</span></span><br><span class="line">git add xyz                                               <span class="comment"># 添加xyz文件至index</span></span><br><span class="line">git add .                                                 <span class="comment"># 增加当前子目录下所有更改过的文件至index</span></span><br><span class="line">git commit -m <span class="string">'xxx'</span>                                       <span class="comment"># 提交</span></span><br><span class="line">git commit --amend -m <span class="string">'xxx'</span>                               <span class="comment"># 合并上一次提交（用于反复修改）</span></span><br><span class="line">git commit -am <span class="string">'xxx'</span>                                      <span class="comment"># 将add和commit合为一步</span></span><br><span class="line">git push origin master                                    <span class="comment"># 将当前分支push到远程master分支</span></span><br><span class="line">git push origin :hotfixes/BJVEP933                        <span class="comment"># 删除远程仓库的hotfixes/BJVEP933分支</span></span><br><span class="line">git push --tags                                           <span class="comment"># 把所有tag推送到远程仓库</span></span><br></pre></td></tr></table></figure>
+<h2 id="git-删除、标签、查看日志相关命令"><a href="#git-删除、标签、查看日志相关命令" class="headerlink" title="git 删除、标签、查看日志相关命令"></a>git 删除、标签、查看日志相关命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">git rm xxx                                                <span class="comment"># 删除index中的文件</span></span><br><span class="line">git rm -r *                                               <span class="comment"># 递归删除</span></span><br><span class="line">git mv README README2                                     <span class="comment"># 重命名文件README为README2</span></span><br><span class="line">git <span class="built_in">log</span>                                                   <span class="comment"># 显示提交日志</span></span><br><span class="line">git <span class="built_in">log</span> -1                                                <span class="comment"># 显示1行日志 -n为n行</span></span><br><span class="line">git <span class="built_in">log</span> -5</span><br><span class="line">git <span class="built_in">log</span> --<span class="built_in">stat</span>                                            <span class="comment"># 显示提交日志及相关变动文件</span></span><br><span class="line">git <span class="built_in">log</span> -p -m</span><br><span class="line">git <span class="built_in">log</span> --pretty=format:<span class="string">'%h %s'</span> --graph                   <span class="comment"># 图示提交日志</span></span><br><span class="line">git show dfb02e6e4f2f7b573337763e5c0013802e392818         <span class="comment"># 显示某个提交的详细内容</span></span><br><span class="line">git show dfb02                                            <span class="comment"># 可只用commitid的前几位</span></span><br><span class="line">git show HEAD                                             <span class="comment"># 显示HEAD提交日志</span></span><br><span class="line">git show HEAD^                                            <span class="comment"># 显示HEAD的父（上一个版本）的提交日志 ^^为上两个版本 ^5为上5个版本</span></span><br><span class="line">git tag                                                   <span class="comment"># 显示已存在的tag</span></span><br><span class="line">git tag -a v2.0 -m <span class="string">'xxx'</span>                                  <span class="comment"># 增加v2.0的tag</span></span><br><span class="line">git show v2.0                                             <span class="comment"># 显示v2.0的日志及详细内容</span></span><br><span class="line">git <span class="built_in">log</span> v2.0                                              <span class="comment"># 显示v2.0的日志</span></span><br><span class="line">git ls-files                                              <span class="comment"># 列出git index包含的文件</span></span><br><span class="line">git show-branch                                           <span class="comment"># 图示当前分支历史</span></span><br><span class="line">git show-branch --all                                     <span class="comment"># 图示所有分支历史</span></span><br><span class="line">git whatchanged                                           <span class="comment"># 显示提交历史对应的文件修改</span></span><br><span class="line">git reflog                                                <span class="comment"># 显示所有提交，包括孤立节点</span></span><br><span class="line">git show HEAD@&#123;5&#125;</span><br><span class="line">git show master@&#123;yesterday&#125;                               <span class="comment"># 显示master分支昨天的状态</span></span><br><span class="line">git show HEAD~3</span><br><span class="line">git show -s --pretty=raw 2be7fcb476</span><br></pre></td></tr></table></figure>
+<h2 id="git-比较文件、创建分支、检出、合并相关命令"><a href="#git-比较文件、创建分支、检出、合并相关命令" class="headerlink" title="git 比较文件、创建分支、检出、合并相关命令"></a>git 比较文件、创建分支、检出、合并相关命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">git diff                                                  <span class="comment"># 显示所有未添加至index的变更</span></span><br><span class="line">git diff --cached                                         <span class="comment"># 显示所有已添加index但还未commit的变更</span></span><br><span class="line">git diff HEAD^                                            <span class="comment"># 比较与上一个版本的差异</span></span><br><span class="line">git diff HEAD -- ./lib                                    <span class="comment"># 比较与HEAD版本lib目录的差异</span></span><br><span class="line">git diff origin/master..master                            <span class="comment"># 比较远程分支master上有本地分支master上没有的</span></span><br><span class="line">git diff origin/master..master --<span class="built_in">stat</span>                     <span class="comment"># 只显示差异的文件，不显示具体内容</span></span><br><span class="line">git remote add origin git+ssh://git@192.168.53.168/VT.git <span class="comment"># 增加远程定义（用于push/pull/fetch）</span></span><br><span class="line">git branch                                                <span class="comment"># 显示本地分支</span></span><br><span class="line">git branch --contains 50089                               <span class="comment"># 显示包含提交50089的分支</span></span><br><span class="line">git branch -a                                             <span class="comment"># 显示所有分支</span></span><br><span class="line">git branch -r                                             <span class="comment"># 显示所有原创分支</span></span><br><span class="line">git branch --merged                                       <span class="comment"># 显示所有已合并到当前分支的分支</span></span><br><span class="line">git branch --no-merged                                    <span class="comment"># 显示所有未合并到当前分支的分支</span></span><br><span class="line">git branch -m master master_copy                          <span class="comment"># 本地分支改名</span></span><br><span class="line">git checkout -b master_copy                               <span class="comment"># 从当前分支创建新分支master_copy并检出</span></span><br><span class="line">git checkout -b master master_copy                        <span class="comment"># 上面的完整版</span></span><br><span class="line">git checkout features/performance                         <span class="comment"># 检出已存在的features/performance分支</span></span><br><span class="line">git checkout --track hotfixes/BJVEP933                    <span class="comment"># 检出远程分支hotfixes/BJVEP933并创建本地跟踪分支</span></span><br><span class="line">git checkout v2.0                                         <span class="comment"># 检出版本v2.0</span></span><br><span class="line">git checkout -b devel origin/develop                      <span class="comment"># 从远程分支develop创建新本地分支devel并检出</span></span><br><span class="line">git checkout -- README                                    <span class="comment"># 检出head版本的README文件（可用于修改错误回退）</span></span><br><span class="line">git merge origin/master                                   <span class="comment"># 合并远程master分支至当前分支</span></span><br><span class="line">git cherry-pick ff44785404a8e                             <span class="comment"># 合并提交ff44785404a8e的修改</span></span><br><span class="line">git fetch                                                 <span class="comment"># 获取所有远程分支（不更新本地分支，另需merge）</span></span><br><span class="line">git fetch --prune                                         <span class="comment"># 获取所有原创分支并清除服务器上已删掉的分支</span></span><br><span class="line">git reset --hard HEAD                                     <span class="comment"># 将当前版本重置为HEAD（通常用于merge失败回退）</span></span><br><span class="line">git rebase</span><br><span class="line">git branch -d hotfixes/BJVEP933                           <span class="comment"># 删除分支hotfixes/BJVEP933（本分支修改已合并到其他分支）</span></span><br><span class="line">git branch -D hotfixes/BJVEP933                           <span class="comment"># 强制删除分支hotfixes/BJVEP933</span></span><br><span class="line">git revert dfb02e6e4f2f7b573337763e5c0013802e392818       <span class="comment"># 撤销提交dfb02e6e4f2f7b573337763e5c0013802e392818</span></span><br><span class="line">git ls-tree HEAD                                          <span class="comment"># 内部命令：显示某个git对象</span></span><br><span class="line">git rev-parse v2.0                                        <span class="comment"># 内部命令：显示某个ref对于的SHA1 HASH</span></span><br></pre></td></tr></table></figure>
+<h2 id="git暂存等相关命令"><a href="#git暂存等相关命令" class="headerlink" title="git暂存等相关命令"></a>git暂存等相关命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git stash                                                 <span class="comment"># 暂存当前修改，将所有至为HEAD状态</span></span><br><span class="line">git stash list                                            <span class="comment"># 查看所有暂存</span></span><br><span class="line">git stash show -p stash@&#123;0&#125;                               <span class="comment"># 参考第一次暂存</span></span><br><span class="line">git stash apply stash@&#123;0&#125;                                 <span class="comment"># 应用第一次暂存</span></span><br><span class="line">git grep <span class="string">"delete from"</span>                                    <span class="comment"># 文件中搜索文本“delete from”</span></span><br><span class="line">git grep -e <span class="string">'#define'</span> --and -e SORT_DIRENT</span><br><span class="line">git gc</span><br><span class="line">git fsck</span><br></pre></td></tr></table></figure>
+<p>参考地址<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">http://rogerdudler.github.io/git-guide/index.zh.html</span><br><span class="line"></span><br><span class="line">https://github.com/progit/progit/tree/master/zh</span><br><span class="line"></span><br><span class="line">https://github.com/blynn/gitmagic/tree/master/zh_cn</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.wbug.cn/2015/03/23/git/" data-id="cjoqrzbbt0016hsuvdaryt0q4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+ 
+  
+    <article id="post-writephp" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/03/21/writephp/" class="article-date">
+  <time datetime="2015-03-21T09:00:44.000Z" itemprop="datePublished">2015-03-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/code/">code</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/03/21/writephp/">php 输出类</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>php 输出类 代码片段</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">class output&#123;</span><br><span class="line">	public <span class="keyword">function</span> alertmsg(<span class="variable">$msg</span>)&#123;</span><br><span class="line">		<span class="built_in">echo</span> <span class="string">"&lt;script type='text/javascript'&gt;"</span>;</span><br><span class="line">		<span class="built_in">echo</span> <span class="string">"alert(\"<span class="variable">$msg</span>\");"</span>;</span><br><span class="line">		<span class="built_in">echo</span> <span class="string">"&lt;\/script&gt;"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	public <span class="keyword">function</span> locationmsg(<span class="variable">$msg</span>,<span class="variable">$goto</span>)&#123;</span><br><span class="line">		<span class="built_in">echo</span> <span class="string">"&lt;script type='text/javascript'&gt;"</span>;</span><br><span class="line">		<span class="built_in">echo</span> <span class="string">"alert(\"<span class="variable">$msg</span>\")"</span>;</span><br><span class="line">		<span class="keyword">if</span>(<span class="variable">$goto</span>)&#123;</span><br><span class="line">			<span class="built_in">echo</span> <span class="string">"location=\"<span class="variable">$goto</span>\";"</span>;</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			<span class="built_in">echo</span> <span class="string">"history.go(-1);"</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">echo</span> <span class="string">"&lt;\/script&gt;"</span>;	</span><br><span class="line">	&#125;</span><br><span class="line">	public <span class="keyword">function</span> httpequivmsg(<span class="variable">$im</span>,<span class="variable">$goto</span>)&#123;</span><br><span class="line">		<span class="built_in">echo</span> <span class="string">"&lt;meta http-equiv=\'Refresh\' content="</span>.<span class="variable">$im</span>.<span class="string">";URL="</span>.<span class="variable">$goto</span>.<span class="string">"&gt;"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.wbug.cn/2015/03/21/writephp/" data-id="cjoqrzbdd0035hsuvxeod9bps" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+ 
+  
+    <article id="post-zend" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/03/21/zend/" class="article-date">
+  <time datetime="2015-03-21T06:53:19.000Z" itemprop="datePublished">2015-03-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/default/">default</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/03/21/zend/">解决zend 只能试用30天</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##<br>下载 <a href="http://downloads.zend.com/studio-eclipse/12.0.0/ZendStudio-12.0.0-win32.win32.x86.msi" target="_blank" rel="noopener">http://downloads.zend.com/studio-eclipse/12.0.0/ZendStudio-12.0.0-win32.win32.x86.msi</a><br>1、进入下述路径：c/users/用户名，如果你的用户名是biggerlaugh，那就是在下述目录：C:\Users\biggerlaugh</p>
+<p>2、删除一个文件和两个目录：.zs（文件是隐藏的）, .ZendStudio（目录）、.zend（目录）</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.wbug.cn/2015/03/21/zend/" data-id="cjoqrzbdf0039hsuvfdywmel1" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+ 
+  
+    <article id="post-xdebug" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/03/21/xdebug/" class="article-date">
+  <time datetime="2015-03-21T06:45:44.000Z" itemprop="datePublished">2015-03-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/code/">code</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/03/21/xdebug/">php 之 xdebug</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="PHP配置调试工具XDebug"><a href="#PHP配置调试工具XDebug" class="headerlink" title="PHP配置调试工具XDebug"></a>PHP配置调试工具XDebug</h2><h3 id="1-去xdebug的官方网站那http-www-xdebug-org-上下载与php版本对应的xdebug，我的是window系统，下载的-dll文件。"><a href="#1-去xdebug的官方网站那http-www-xdebug-org-上下载与php版本对应的xdebug，我的是window系统，下载的-dll文件。" class="headerlink" title="1. 去xdebug的官方网站那http://www.xdebug.org 上下载与php版本对应的xdebug，我的是window系统，下载的.dll文件。"></a>1. 去xdebug的官方网站那<a href="http://www.xdebug.org" target="_blank" rel="noopener">http://www.xdebug.org</a> 上下载与php版本对应的xdebug，我的是window系统，下载的.dll文件。</h3><h3 id="2-把php-xdebug-dll放入php文件夹的ext里面（php的扩展文件都放在此处，统一一下而已）"><a href="#2-把php-xdebug-dll放入php文件夹的ext里面（php的扩展文件都放在此处，统一一下而已）" class="headerlink" title="2. 把php_xdebug.dll放入php文件夹的ext里面（php的扩展文件都放在此处，统一一下而已）"></a>2. 把php_xdebug.dll放入php文件夹的ext里面（php的扩展文件都放在此处，统一一下而已）</h3><h3 id="3-打开php配置文件php-ini-在最后添加以下代码把xdebug-dll加载到php环境中"><a href="#3-打开php配置文件php-ini-在最后添加以下代码把xdebug-dll加载到php环境中" class="headerlink" title="3. 打开php配置文件php.ini,在最后添加以下代码把xdebug.dll加载到php环境中"></a>3. 打开php配置文件php.ini,在最后添加以下代码把xdebug.dll加载到php环境中</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[Xdebug]</span><br><span class="line">zend_extension_ts=<span class="string">"D:/php/ext/php_xdebug.dll"</span>   //这里是绝对路径</span><br><span class="line">xdebug.auto_trace=On</span><br><span class="line">xdebug.collect_params=On</span><br><span class="line">xdebug.collect_return=On</span><br><span class="line">xdebug.trace_output_dir=<span class="string">"c:/php5/debuginfo"</span></span><br><span class="line">xdebug.profiler_enable=On</span><br><span class="line">xdebug.profiler_output_dir=<span class="string">"c:/php5/debuginfo"</span></span><br></pre></td></tr></table></figure>
+<p>备注：如果PHPINFO中还是没有XDebug的信息，把上面配置文件中的<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zend_extension_ts=<span class="string">"D:/php/ext/php_xdebug.dll"</span></span><br></pre></td></tr></table></figure></p>
+<p>改为<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zend_extension=<span class="string">"D:/php/ext/php_xdebug.dll"</span></span><br></pre></td></tr></table></figure></p>
+<p>这里点很重要，这个问题让我郁闷了很久，结果就是这样解决的，具体也不知道是为什么，网上说PHP5.3以后才是通过zend_extension这种方式加载，不管他了，搞定才是王道</p>
+<p>以下是参数解释：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zend_extension_ts=<span class="string">"c:/webserver/php5/ext/php_xdebug.dll"</span></span><br></pre></td></tr></table></figure></p>
+<p>加载xdebug模块。这里不能用extension=php_xdebug.dll的方式加载，必须要以zend的方式加载，否则安装上后，phpinfo是显示不出xdebug这个项的。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xdebug.auto_trace=on;</span><br></pre></td></tr></table></figure></p>
+<p>自动打开“监测函数调用过程”的功模。该功能可以在你指定的目录中将函数调用的监测信息以文件的形式输出。此配置项的默认值为off。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xdebug.collect_params=on;</span><br></pre></td></tr></table></figure></p>
+<p>打开收集“函数参数”的功能。将函数调用的参数值列入函数过程调用的监测信息中。此配置项的默认值为off。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xdebug.collect_return=on</span><br></pre></td></tr></table></figure></p>
+<p>打开收集“函数返回值”的功能。将函数的返回值列入函数过程调用的监测信息中。此配置项的默认值为off。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xdebug.trace_output_dir=”c:Tempxdebug”</span><br></pre></td></tr></table></figure></p>
+<p>设定函数调用监测信息的输出文件的路径。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xdebug.profiler_enable=on</span><br></pre></td></tr></table></figure></p>
+<p>打开效能监测器。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xdebug.profiler_output_dir=”c:Tempxdebug”;</span><br></pre></td></tr></table></figure></p>
+<p>设定效能监测信息输出文件的路径</p>
+<p>注意：php5.3安装xdebug的时候，有些地方和php5.2安装有所区别，php5.3使用zend_extension</p>
+<p>以下是PHP5.3的配置信息：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">[Xdebug]</span><br><span class="line">zend_extension=D:/Program Files/wamp/bin/php/php5.3.3/ext/php_xdebug-2.1.2-5.3-vc6.dll</span><br><span class="line">;是否开启自动跟踪</span><br><span class="line">xdebug.auto_trace = On</span><br><span class="line">;是否开启异常跟踪</span><br><span class="line">xdebug.show_exception_trace = On</span><br><span class="line">;是否开启远程调试自动启动</span><br><span class="line">xdebug.remote_autostart = On</span><br><span class="line">;是否开启远程调试</span><br><span class="line">xdebug.remote_enable = On</span><br><span class="line">;允许调试的客户端IP</span><br><span class="line">xdebug.remote_host=192.168.1.227</span><br><span class="line">;远程调试的端口（默认9000）</span><br><span class="line">xdebug.remote_port=9000</span><br><span class="line">;调试插件dbgp</span><br><span class="line">xdebug.remote_handler=dbgp</span><br><span class="line">;是否收集变量</span><br><span class="line">xdebug.collect_vars = On</span><br><span class="line">;是否收集返回值</span><br><span class="line">xdebug.collect_return = On</span><br><span class="line">;是否收集参数</span><br><span class="line">xdebug.collect_params = On</span><br><span class="line">;跟踪输出路径</span><br><span class="line">xdebug.trace_output_dir=<span class="string">"D:/Program Files/wamp/bin/php/debuginfo"</span></span><br><span class="line">;是否开启调试内容</span><br><span class="line">xdebug.profiler_enable=On</span><br><span class="line">;调试输出路径</span><br><span class="line">xdebug.profiler_output_dir=<span class="string">"D:/Program Files/wamp/bin/php/debuginfo"</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="4-重启apache，安装完成"><a href="#4-重启apache，安装完成" class="headerlink" title="4. 重启apache，安装完成"></a>4. 重启apache，安装完成</h3><p>可以通过查看phpinfo信息确定xdebug是否集成到了php环境中，出现如下内容，代表xdebug可以在php中使用了</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.wbug.cn/2015/03/21/xdebug/" data-id="cjoqrzbdb0033hsuvlc05y6h1" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+ 
+  
+    <article id="post-svn" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/03/21/svn/" class="article-date">
+  <time datetime="2015-03-21T06:35:19.000Z" itemprop="datePublished">2015-03-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/svn/">svn</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/03/21/svn/">SVN 命令集</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>从<a href="http://subversion.tigris.org获取subversion" target="_blank" rel="noopener">http://subversion.tigris.org获取subversion</a> for windows的版本，安装之后就有了svn.exe这个基于命令行的客户端工具。当然服务器端的程序也有了，这里就不关心如何配置SVN服务了。安装程序把svn.exe的路径加入了path环境变量,我们已经可以在命令行中直接输入svn就可以使用了。</p>
+<p>如果你不知道命令怎么用svn命令,可通过如下方式查询：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">svn <span class="built_in">help</span></span><br></pre></td></tr></table></figure></p>
+<p>知道了子命令，但是不知道子命令的用法，还可以查询：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">svn <span class="built_in">help</span> ci</span><br></pre></td></tr></table></figure></p>
+<p>开发人员常用命令</p>
+<p>导入项目<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">svn import http://svn.chinasvn.com:82/pthread --message <span class="string">"Start project"</span></span><br></pre></td></tr></table></figure></p>
+<p>导出项目<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">svn checkout http://svn.chinasvn.com:82/pthread</span><br></pre></td></tr></table></figure></p>
+<p>采用 export 的方式来导出一份“干净”的项目<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">svn <span class="built_in">export</span> http://svn.chinasvn.com:82/pthread pthread</span><br></pre></td></tr></table></figure></p>
+<p>为失败的事务清场<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">svn cleanup</span><br></pre></td></tr></table></figure></p>
+<p>在本地进行代码修改，检查修改状态<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">svn status -v</span><br><span class="line">svn diff</span><br></pre></td></tr></table></figure></p>
+<p>更新(update)服务器数据到本地<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">svn update directory</span><br><span class="line">svn update file</span><br></pre></td></tr></table></figure></p>
+<p>增加(add)本地数据到服务器<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">svn add file.c</span><br><span class="line">svn add dir</span><br></pre></td></tr></table></figure></p>
+<p>对文件进行改名和删除<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">svn mv b.c bb.c</span><br><span class="line">svn rm d.c</span><br></pre></td></tr></table></figure></p>
+<p>提交(commit)本地文档到服务器<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">svn commit</span><br><span class="line">svn ci</span><br><span class="line">svn ci -m <span class="string">"commit"</span></span><br></pre></td></tr></table></figure></p>
+<p>查看日志<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">svn <span class="built_in">log</span> directory</span><br><span class="line">svn <span class="built_in">log</span> file</span><br></pre></td></tr></table></figure></p>
+<p>相关的一些东西：<br>1、在本地文件中，每个目录下都有一个.svn文件夹(属性为隐藏)，保存了相关的信息。<br>2、注册环境变量SVN_EDITOR为”E:\Program Files\Vim\vim71\gvim.exe”，结果在svn ci的时候，出现错误:</p>
+<p>‘E:\Program’ 不是内部或外部命令，也不是可运行的程序<br>或批处理文件。<br>svn: 提交失败(细节如下):<br>svn: system(‘E:\Program Files\Vim\vim71\gvim.exe svn-commit.tmp’) 返回 1</p>
+<p>把SVN_EDITOR改为”gvim.exe”，并且在path中添加路径”E:\Program Files\Vim\vim71\”,这样就可以在提交的时候用vim编写注释了。</p>
+<p>附:<br>提供免费SVN服务的网站:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">http://www.svnhost.cn/(推荐)</span><br><span class="line">http://www.chinasvn.com</span><br><span class="line">http://www.javaforge.com</span><br><span class="line">http://unfuddle.com</span><br><span class="line">http://svn.coollittlethings.com/index.php(针对开源免费，针对私人项目收费)</span><br></pre></td></tr></table></figure></p>
+<p>一、在linux下<br>删除这些目录是很简单的，命令如下<br>find . -type d -name “.svn”|xargs rm -rf<br>或者<br>find . -type d -iname “.svn” -exec rm -rf {} \;<br>全部搞定。<br>二、在windows下用以下法子：<br>1、在项目平级的目录，执行dos命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xcopy project_dir project_dir_1 /s /i</span><br></pre></td></tr></table></figure></p>
+<p>2、或者在项目根目录执行以下dos命令<br>for /r . %%a in (.) do @if exist “%%a.svn” rd /s /q “%%a.svn”<br>其实第二种方法可以用来干很多事的，比如把代码中的.svn替换为任意其他文件名并在硬盘根目录下执行，就可以从硬盘上删除所有的这个文件啦。<br>3、加注册表<br>Jon Galloway提供了一段注册表代码，可以将”Delete SVN Folders”命名增加到资源管理器的右键上，这样，鼠标点两下就能把选中目录下的所有.svn目录干掉了。Works just great!<br>代码为：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Windows Registry Editor Version 5.00  </span><br><span class="line">[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Folder\shell\DeleteSVN] </span><br><span class="line">@=<span class="string">"Delete SVN Folders"</span> </span><br><span class="line">[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Folder\shell\DeleteSVN\<span class="built_in">command</span>] </span><br><span class="line">@=<span class="string">"cmd.exe /c \"TITLE Removing SVN Folders in %1 &amp;&amp; COLOR 9A &amp;&amp; FOR /r \"%1\" %%f IN (.svn) DO RD /s /q \"%%f\" \""</span></span><br></pre></td></tr></table></figure></p>
+<p>将这段代码保存为一个.reg文件，双击确认导入注册表即可。<br>4、bat方式<br>    在SVN目录发生不可预知的错误需要重建或其他情况下需要把所有SVN信息清除时，可以用本站制作的维护小工具，把下面内容复制保存成扩展名 为.bat文件的批处理文件，使用时直接将要清除SVN信息的文件夹拖动到新建的bat文件上面，即可出现操作界面，按Y执行清除所有子目录下SVN信息 操作:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="keyword">if</span> <span class="string">"%1"</span>==<span class="string">""</span> (</span><br><span class="line"> goto error</span><br><span class="line">) <span class="keyword">else</span> (</span><br><span class="line"> goto action %1</span><br><span class="line">)</span><br><span class="line">:error</span><br><span class="line"><span class="built_in">echo</span>.</span><br><span class="line"><span class="built_in">echo</span> 必须输入要操作的文件夹路径参数，或拖动文件夹到此命令文件上。</span><br><span class="line"><span class="built_in">echo</span>.</span><br><span class="line">pause</span><br><span class="line">goto end</span><br><span class="line">:action %1</span><br><span class="line"><span class="built_in">echo</span> --------------------------------------------------------------------------</span><br><span class="line"><span class="built_in">echo</span> 本次操作将删除 [%1] 文件夹下所有的svn标记，请慎重操作！</span><br><span class="line"><span class="built_in">echo</span>     Y 清理文件夹</span><br><span class="line"><span class="built_in">echo</span>     N 退出</span><br><span class="line"><span class="built_in">echo</span> ---------------------------------------------------------------------------</span><br><span class="line">choice /c YN /m 请选择菜单(按ctrl+c或N退出)：</span><br><span class="line"><span class="keyword">if</span> %errorlevel% equ 2 goto end</span><br><span class="line"><span class="built_in">echo</span> 正在清理文件夹：%1</span><br><span class="line"><span class="built_in">echo</span> 请稍候...</span><br><span class="line"><span class="keyword">for</span> /r %1 %%a <span class="keyword">in</span> (.) <span class="keyword">do</span> @<span class="keyword">if</span> exist <span class="string">"%%a\.svn"</span> rd /s /q <span class="string">"%%a\.svn"</span></span><br><span class="line"><span class="built_in">echo</span> 清理完毕!</span><br><span class="line"><span class="built_in">echo</span> 按任意键退出...</span><br><span class="line">pause&gt;<span class="built_in">echo</span>.</span><br><span class="line">:end</span><br><span class="line"><span class="built_in">exit</span></span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.wbug.cn/2015/03/21/svn/" data-id="cjoqrzbd8002yhsuvs71njumt" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+ 
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/7/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/9/">Next &raquo;</a>
+    </nav>
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/code/">code</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/default/">default</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/google/">google</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/news/">news</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/svn/">svn</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/电影/">电影</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/OSI七层网络模型/">OSI七层网络模型</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bug/">bug</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/">ssh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime/">sublime</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/OSI七层网络模型/" style="font-size: 10px;">OSI七层网络模型</a> <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/php/" style="font-size: 20px;">php</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/sublime/" style="font-size: 10px;">sublime</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/11/21/httpCode_cn/">http状态码一览</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/httpCode/">http状态码一览</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/phpCurlError/">php使用curl时报错解决方法</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/19/hexo-deploy-failed/">hexo deploy failed</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/17/debian-9-4-stretch-install/">debian 9.4(stretch) install</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    <iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=2&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=2440411005&verifier=70a007d1&dpc=1"></iframe>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 ly<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+    <span id="busuanzi_container_site_pv">
+    你是本站第<span id="busuanzi_value_site_nv"></span>位访客
+	本站访客数<span id="busuanzi_value_site_uv"></span>人次
+</span>
+  </div>
+</footer>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/composer" class="mobile-nav-link">Composer</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script>
+host3 = window.location.href;
+chinadomai3 = "http://www.wbug.cn/";  #修改为你的百度推送对应的域名
+if (host3.indexOf(chinadomain3)!=-1)  {
+  (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+      }
+      else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+  })();
+}
+
+</script>
+  </div>
+<a href="https://github.com/L-Y/L-Y.github.io"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
+</body>
+</html>

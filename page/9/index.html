@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>ly.blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="ly.blog">
+<meta property="og:url" content="http://www.wbug.cn/page/9/index.html">
+<meta property="og:site_name" content="ly.blog">
+<meta property="og:locale" content="zh_cn">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ly.blog">
+  
+    <link rel="alternative" href="/atom.xml" title="ly.blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" >
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?0033f42513f7e78a38b592d6b899c2a0";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">ly.blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">问渠哪得清如许 为有源头活水来</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/composer">Composer</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://www.wbug.cn"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-meta" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/03/21/meta/" class="article-date">
+  <time datetime="2015-03-21T06:28:41.000Z" itemprop="datePublished">2015-03-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/code/">code</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/03/21/meta/">html的meta标签</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">meta</span><br><span class="line">	|</span><br><span class="line">	|</span><br><span class="line">	name</span><br><span class="line">	|</span><br><span class="line">	|----------------</span><br><span class="line">					|----keywords</span><br><span class="line">					|----description</span><br><span class="line">					|----application/name</span><br><span class="line">					|----author</span><br><span class="line">					|----generator</span><br><span class="line">	|---------------|</span><br><span class="line">	http-equiv</span><br><span class="line">	|</span><br><span class="line">	|----------------</span><br><span class="line">					|----content-type</span><br><span class="line">					|----refresh</span><br><span class="line">					|----default-style</span><br><span class="line">					|----content-language</span><br><span class="line">					|----<span class="built_in">set</span>-cookie</span><br><span class="line">	content</span><br><span class="line">	|</span><br><span class="line">	|----------------</span><br><span class="line">					|</span><br><span class="line">					|</span><br><span class="line">					|</span><br><span class="line">	charset</span><br><span class="line">```	</span><br><span class="line">/**</span><br><span class="line"> * IE兼容模式</span><br><span class="line"> * @http-equiv 属性</span><br><span class="line"> */</span><br><span class="line">``` bash</span><br><span class="line">&lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"IE=8"</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>用法 分三种</p>
+<h2 id="1-网站描述-优化-name与content组合"><a href="#1-网站描述-优化-name与content组合" class="headerlink" title="1.网站描述 优化== name与content组合"></a>1.网站描述 优化== name与content组合</h2><pre><code>example:
+</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=<span class="string">"keywords"</span> content=<span class="string">"...."</span>&gt;</span><br><span class="line">&lt;meta name=<span class="string">"description"</span> content=<span class="string">"...."</span>&gt;</span><br><span class="line">&lt;meta name=<span class="string">"author"</span> content=<span class="string">"...."</span>&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="2-http指令"><a href="#2-http指令" class="headerlink" title="2.http指令"></a>2.http指令</h2><pre><code>example:
+</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta http-equiv=<span class="string">"Content-Type"</span> content=<span class="string">"text/json"</span>&gt;</span><br><span class="line">&lt;meta http-equiv=<span class="string">"refresh"</span> content=<span class="string">"3"</span>&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="3-字符集"><a href="#3-字符集" class="headerlink" title="3.字符集"></a>3.字符集</h2><pre><code>example:
+</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta charset=<span class="string">"utf8"</span>&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="html5写法"><a href="#html5写法" class="headerlink" title="html5写法"></a>html5写法</h2><pre><code>example:
+</code></pre><pre><code class="bash">&lt;meta http-equiv=<span class="string">"Content-Type"</span> content=<span class="string">"text/html;charset=utf8"</span>&gt;
+header(<span class="string">'Content-Type:text/html;charset=utf-8'</span>)
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.wbug.cn/2015/03/21/meta/" data-id="cjoqrzbca001rhsuvuk90sde1" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+ 
+  
+    <article id="post-log" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/03/21/log/" class="article-date">
+  <time datetime="2015-03-21T06:09:42.000Z" itemprop="datePublished">2015-03-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/code/">code</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/03/21/log/">mysql 查询</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="查询当天数据"><a href="#查询当天数据" class="headerlink" title="查询当天数据"></a>查询当天数据</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from tab <span class="built_in">where</span> FROM_UNIXTIME(fabutime, <span class="string">'%Y%m%d'</span>) = 20121217;</span><br></pre></td></tr></table></figure>
+<h2 id="mysql-TO-DAYS-date-函数"><a href="#mysql-TO-DAYS-date-函数" class="headerlink" title="mysql TO_DAYS(date) 函数"></a>mysql TO_DAYS(date) 函数</h2><h3 id="TO-DAYS-date"><a href="#TO-DAYS-date" class="headerlink" title="TO_DAYS(date)"></a>TO_DAYS(date)</h3><p>给定一个日期date, 返回一个天数 (从年份0开始的天数 )。<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT TO_DAYS(950501);</span><br><span class="line"> </span><br><span class="line">-&gt; 728779</span><br></pre></td></tr></table></figure></p>
+<p>mysql查询今天、昨天、7天、近30天、本月、上一月 数据<br>今天<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">select * from 表名 <span class="built_in">where</span> to_days(时间字段名) = to_days(now());</span><br><span class="line">``` </span><br><span class="line">昨天</span><br><span class="line">``` bash</span><br><span class="line">SELECT * FROM 表名 WHERE TO_DAYS( NOW( ) ) - TO_DAYS( 时间字段名) &lt;= 1</span><br></pre></td></tr></table></figure></p>
+<p>7天<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM 表名 <span class="built_in">where</span> DATE_SUB(CURDATE(), INTERVAL 7 DAY) &lt;= date(时间字段名)</span><br></pre></td></tr></table></figure></p>
+<p>近30天<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM 表名 <span class="built_in">where</span> DATE_SUB(CURDATE(), INTERVAL 30 DAY) &lt;= date(时间字段名)</span><br></pre></td></tr></table></figure></p>
+<p>本月<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM 表名 WHERE DATE_FORMAT( 时间字段名, <span class="string">'%Y%m'</span> ) = DATE_FORMAT( CURDATE( ) , <span class="string">'%Y%m'</span> )</span><br></pre></td></tr></table></figure></p>
+<p>上一月<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM 表名 WHERE PERIOD_DIFF( date_format( now( ) , <span class="string">'%Y%m'</span> ) , date_format( 时间字段名, <span class="string">'%Y%m'</span> ) ) =1</span><br></pre></td></tr></table></figure></p>
+<p>#查询本季度数据<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from `ht_invoice_information` <span class="built_in">where</span> QUARTER(create_date)=QUARTER(now());</span><br></pre></td></tr></table></figure></p>
+<p>#查询上季度数据<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from `ht_invoice_information` <span class="built_in">where</span> QUARTER(create_date)=QUARTER(DATE_SUB(now(),interval 1 QUARTER));</span><br></pre></td></tr></table></figure></p>
+<p>#查询本年数据<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from `ht_invoice_information` <span class="built_in">where</span> YEAR(create_date)=YEAR(NOW());</span><br></pre></td></tr></table></figure></p>
+<p>#查询上年数据<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from `ht_invoice_information` <span class="built_in">where</span> year(create_date)=year(date_sub(now(),interval 1 year));</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.wbug.cn/2015/03/21/log/" data-id="cjoqrzbc6001lhsuvnlr1laa4" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+ 
+  
+    <article id="post-search" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/03/21/search/" class="article-date">
+  <time datetime="2015-03-21T03:46:48.000Z" itemprop="datePublished">2015-03-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/hexo/">hexo</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/03/21/search/">hexo 之 搜索</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>如果你需要修改头部，直接修改hexo\themes\modernist\layout_partial\header.ejs，比如头上加个搜索框：<br><code>`</code> bash</p>
+<p><div></div></p>
+<p><form class="search" action="//google.com/search" method="get" accept-charset="utf-8"><br> <input type="search" name="q" id="search" autocomplete="off" autocorrect="off" autocapitalize="off" maxlength="20" placeholder="Search"><br> <input type="hidden" name="q" value="site:<%- config.url.replace(/^https?:\/\//, '') %>"><br></form><br><br><code>`</code> bash<br>将如上代码加入即可，您需要修改css以便这个搜索框比较美观。</p>
+<p>再如，你要修改页脚版权信息，直接编辑hexo\themes\modernist\layout_partial\footer.ejs。同理，你需要修改css，直接去修改对应位置的styl文件。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.wbug.cn/2015/03/21/search/" data-id="cjoqrzbco002ahsuvlmg603gc" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+ 
+  
+    <article id="post-sshKey" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/01/29/sshKey/" class="article-date">
+  <time datetime="2015-01-29T03:18:00.000Z" itemprop="datePublished">2015-01-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+<div class="article-gallery">
+  <div class="article-gallery-photos">
+    
+      <a class="article-gallery-img fancybox" href="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg" rel="gallery_cjoqrzbd0002nhsuvc1mf410k">
+        <img src="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg" itemprop="image">
+      </a>
+    
+  </div>
+</div>
+
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/01/29/sshKey/">hexo之SSH kEY 二</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a>GitHub</h2><p>首先注册一个『GitHub』帐号，已有的默认默认请忽略<br>建立与你用户名对应的仓库，仓库名必须为『your_user_name.github.com』<br>添加SSH公钥到『Account settings -&gt; SSH Keys -&gt; Add SSH Key』</p>
+<h2 id="添加SSH-Key。"><a href="#添加SSH-Key。" class="headerlink" title="添加SSH-Key。"></a>添加SSH-Key。</h2><h3 id="首先设置你的用户名密码："><a href="#首先设置你的用户名密码：" class="headerlink" title="首先设置你的用户名密码："></a>首先设置你的用户名密码：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email <span class="string">"bu.ru@qq.com"</span></span><br><span class="line">git config --global user.name <span class="string">"bruce-sha"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="生成密钥："><a href="#生成密钥：" class="headerlink" title="生成密钥："></a>生成密钥：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"bu.ru@qq.com"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="输入文件路径："><a href="#输入文件路径：" class="headerlink" title="输入文件路径："></a>输入文件路径：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">H:\hexo\blog&gt;ssh-keygen -t rsa -C <span class="string">"bu.ru@qq.com"</span></span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (//.ssh/id_rsa): H:\git\myssh\ssh</span><br><span class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase):</span><br><span class="line">Enter same passphrase again:</span><br><span class="line">Your identification has been saved <span class="keyword">in</span> H:\git\myssh\ssh.</span><br><span class="line">Your public key has been saved <span class="keyword">in</span> H:\git\myssh\ssh.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line">b0:0c:2e:67:33:ab:c1:50:10:40:0a:ba:c1:80:59:22 bu.ru@qq.com</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="最后可以验证一下："><a href="#最后可以验证一下：" class="headerlink" title="最后可以验证一下："></a>最后可以验证一下：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.wbug.cn/2015/01/29/sshKey/" data-id="cjoqrzbd0002nhsuvc1mf410k" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ssh/">ssh</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+ 
+  
+    <article id="post-bugname" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/12/15/bugname/" class="article-date">
+  <time datetime="2014-12-15T11:11:26.000Z" itemprop="datePublished">2014-12-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/default/">default</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/12/15/bugname/">Windows7安装OpenSSH</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Windows7安装OpenSSH      </p>
+<p>下载地址:<br><a href="http://sourceforge.net/projects/sshwindows/files/OpenSSH" target="_blank" rel="noopener">http://sourceforge.net/projects/sshwindows/files/OpenSSH</a> for Windows - Release/3.8p1-1 20040709 Build/setupssh381-20040709.zip/download</p>
+<ol>
+<li><p>默认安装</p>
+</li>
+<li><p>补上cygintl-2.dll和cygwin1.dll<br>下载：<a href="http://samanthahalfon.net/resources/cygwin_includes.zip" target="_blank" rel="noopener">http://samanthahalfon.net/resources/cygwin_includes.zip</a><br>将它们复制到c:\Program Files (x86)\OpenSSH\bin目录下，如果提示覆盖，则覆盖之，不然进行下面操作，会提示<br>不能启动opensshd服务<br>OpenSSH Error 1067:The process terminated unexpectedly  系统出错,进程意外终止</p>
+</li>
+<li><p>开始安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="string">"c:\Program Files (x86)\OpenSSH\bin"</span></span><br><span class="line">mkgroup -l &gt;&gt; ..\etc\group                                   <span class="comment"># 生成一个group</span></span><br><span class="line">mkpasswd -l [-u &lt;username&gt;] &gt;&gt; ..\etc\passwd</span><br><span class="line">比如：</span><br><span class="line">mkpasswd -l -u mxio &gt;&gt; ..\etc\passwd                         <span class="comment"># 这样就生成用户名mxio的passwd文件，</span></span><br><span class="line">                                                             <span class="comment"># 它调用的是系统用户名和密码</span></span><br><span class="line"> </span><br><span class="line"><span class="built_in">cd</span> ..\..\etc                                                  给权限</span><br><span class="line">..\bin\chown mxio *</span><br><span class="line">..\bin\chmod 600 *</span><br><span class="line">``` </span><br><span class="line">4. 启动opensshd服务                                           不出问题会提示启动成功</span><br><span class="line">``` bash</span><br><span class="line">net start opensshd</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>测试连接</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh mxio@localhost</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>使用hexo写博客的一个问题就是源文件都是在本地的，如果换了电脑需要更新博客时就会比较麻烦。正好快要放假回家了，这个问题急需解决。<br>以前的解决办法是将博客拷到U盘里，但是同步又比较麻烦。使用云盘时每次又提示.git文件不能上传。目前，觉得比较靠谱的办法就是用github来管理了。<br>hexo如果用git文件托管的话，一般在.deploy文件夹下会有个.git文件夹。现在我们在根目录下也弄个.git文件夹就可以了，并且两者可以很和谐地相处。<br>Step by Step<br>在github下建立一个新的repository ，名叫blog（与hexo文件夹名一样即可）。<br>在本地进入blog文件夹，用命令git init创建仓库。<br>设置远程仓库地址，并更新<br>1<br>2<br>git remote add origin <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:wuchong/blog.git<br>git pull origin<br>修改.gitignore文件（如果没有，请创建），在里面加入public/和.deploy/，因为这两个文件夹是每次generate和deploy都会更新，对我们没用，因此忽略这两个文件的更新。tips:此处最好不要用windows自带记事本打开，因为默认的回车符不一样，会导致无法生效，可以使用sublime或notepad。<br>使用命令git add .，将所有文件提交到缓存区。<br>使用命令git commit -m “add all files” ，将这些文件提交到本地仓库。<br>使用命令git push origin master，将本地仓库的改动推送到github仓库。<br>现在在任何一台电脑，只需要git clone <address>，就可以将hexo的源文件复制到本地了。之后，当写博客后，只需要git add .再git commit -m再git push即可提交到远程仓库。当远程仓库有更新时，使用git pull或者git fetch就可以同步代码到本地了。</address></p>
+<p> 如果输入$ git remote add origin <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:djqiang（github帐号名）/gitdemo（项目名）.git<br>    提示出错信息：fatal: remote origin already exists.<br>    解决办法如下：<br>    1、先输入$ git remote rm origin<br>    2、再输入$ git remote add origin <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:djqiang/gitdemo.git 就不会报错了！<br>    3、如果输入$ git remote rm origin 还是报错的话，error: Could not remove config section ‘remote.origin’. 我们需要修改gitconfig文件的内容<br>    4、找到你的github的安装路径，我的是C:\Users\ASUS\AppData\Local\GitHub\PortableGit_ca477551eeb4aea0e4ae9fcd3358bd96720bb5c8\etc<br>    5、找到一个名为gitconfig的文件，打开它把里面的[remote “origin”]那一行删掉就好了！</p>
+<pre><code>如果输入$ ssh -T git@github.com
+出现错误提示：Permission denied (publickey).因为新生成的key不能加入ssh就会导致连接不上github。
+解决办法如下：
+1、先输入$ ssh-agent，再输入$ ssh-add ~/.ssh/id_key，这样就可以了。
+2、如果还是不行的话，输入ssh-add ~/.ssh/id_key 命令后出现报错Could not open a connection to your authentication agent.解决方法是key用Git Gui的ssh工具生成，这样生成的时候key就直接保存在ssh中了，不需要再ssh-add命令加入了，其它的user，token等配置都用命令行来做。
+3、最好检查一下在你复制id_rsa.pub文件的内容时有没有产生多余的空格或空行，有些编辑器会帮你添加这些的。
+
+
+如果输入$ git push origin master
+提示出错信息：error:failed to push som refs to .......
+解决办法如下：
+1、先输入$ git pull origin master //先把远程服务器github上面的文件拉下来
+2、再输入$ git push origin master
+3、如果出现报错 fatal: Couldn&apos;t find remote ref master或者fatal: &apos;origin&apos; does not appear to be a git repository以及fatal: Could not read from remote repository.
+4、则需要重新输入$ git remote add origingit@github.com:djqiang/gitdemo.git
+
+
+使用git在本地创建一个项目的过程
+$ makdir ~/hello-world    //创建一个项目hello-world
+$ cd ~/hello-world       //打开这个项目
+$ git init             //初始化 
+$ touch README
+$ git add README        //更新README文件
+$ git commit -m &apos;first commit&apos;     //提交更新，并注释信息“first commit”
+$ git remote add origin git@github.com:defnngj/hello-world.git     //连接远程github项目  
+$ git push -u origin master     //将本地项目更新到github项目上去
+
+
+gitconfig配置文件
+     Git有一个工具被称为git config，它允许你获得和设置配置变量；这些变量可以控制Git的外观和操作的各个方面。这些变量可以被存储在三个不同的位置： 
+     1./etc/gitconfig 文件：包含了适用于系统所有用户和所有库的值。如果你传递参数选项’--system’ 给 git config，它将明确的读和写这个文件。 
+     2.~/.gitconfig 文件 ：具体到你的用户。你可以通过传递--global 选项使Git 读或写这个特定的文件。
+     3.位于git目录的config文件 (也就是 .git/config) ：无论你当前在用的库是什么，特定指向该单一的库。每个级别重写前一个级别的值。因此，在.git/config中的值覆盖了在/etc/gitconfig中的同一个值。
+    在Windows系统中，Git在$HOME目录中查找.gitconfig文件（对大多数人来说，位于C:\Documents and Settings\$USER下）。它也会查找/etc/gitconfig，尽管它是相对于Msys 根目录的。这可能是你在Windows中运行安装程序时决定安装Git的任何地方。
+
+    配置相关信息：
+    2.1　当你安装Git后首先要做的事情是设置你的用户名称和e-mail地址。这是非常重要的，因为每次Git提交都会使用该信息。它被永远的嵌入到了你的提交中：
+</code></pre><p>　　$ git config –global user.name “John Doe”<br>　　$ git config –global user.email <a href="mailto:johndoe@example.com" target="_blank" rel="noopener">johndoe@example.com</a></p>
+<pre><code>2.2    你的编辑器(Your Editor)
+</code></pre><p>　　现在，你的标识已经设置，你可以配置你的缺省文本编辑器，Git在需要你输入一些消息时会使用该文本编辑器。缺省情况下，Git使用你的系统的缺省编辑器，这通常可能是vi 或者 vim。如果你想使用一个不同的文本编辑器，例如Emacs，你可以做如下操作：<br>　　$ git config –global core.editor emacs</p>
+<pre><code>2.3 检查你的设置(Checking Your Settings)
+</code></pre><p>　　如果你想检查你的设置，你可以使用 git config –list 命令来列出Git可以在该处找到的所有的设置:<br>　　$ git config –list<br>      你也可以查看Git认为的一个特定的关键字目前的值，使用如下命令 git config {key}:<br>　　$ git config user.name</p>
+<pre><code>2.4 获取帮助(Getting help)
+</code></pre><p>　　如果当你在使用Git时需要帮助，有三种方法可以获得任何git命令的手册页(manpage)帮助信息:<br>　　$ git help <verb><br>　　$ git <verb> –help<br>　　$ man git-<verb><br>　　例如，你可以运行如下命令获取对config命令的手册页帮助:<br>　　$ git help config</verb></verb></verb></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.wbug.cn/2014/12/15/bugname/" data-id="cjoqrzbbg000phsuvl208lxhb" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bug/">bug</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+ 
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/8/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span>
+    </nav>
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/code/">code</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/default/">default</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/google/">google</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/news/">news</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/svn/">svn</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/电影/">电影</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/OSI七层网络模型/">OSI七层网络模型</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bug/">bug</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/">ssh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime/">sublime</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/OSI七层网络模型/" style="font-size: 10px;">OSI七层网络模型</a> <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/php/" style="font-size: 20px;">php</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/sublime/" style="font-size: 10px;">sublime</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/11/21/httpCode_cn/">http状态码一览</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/httpCode/">http状态码一览</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/phpCurlError/">php使用curl时报错解决方法</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/19/hexo-deploy-failed/">hexo deploy failed</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/17/debian-9-4-stretch-install/">debian 9.4(stretch) install</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    <iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=2&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=2440411005&verifier=70a007d1&dpc=1"></iframe>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 ly<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+    <span id="busuanzi_container_site_pv">
+    你是本站第<span id="busuanzi_value_site_nv"></span>位访客
+	本站访客数<span id="busuanzi_value_site_uv"></span>人次
+</span>
+  </div>
+</footer>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/composer" class="mobile-nav-link">Composer</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script>
+host3 = window.location.href;
+chinadomai3 = "http://www.wbug.cn/";  #修改为你的百度推送对应的域名
+if (host3.indexOf(chinadomain3)!=-1)  {
+  (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+      }
+      else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+  })();
+}
+
+</script>
+  </div>
+<a href="https://github.com/L-Y/L-Y.github.io"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
+</body>
+</html>

@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>git命令 及遇到的问题 | ly.blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="CRLF – Carriage-Return Line-Feed 回车换行 就是回车(CR, ASCII 13, \r) 换行(LF, ASCII 10, \n)。这两个ACSII字符不会在屏幕有任何输出，但在Windows中广泛使用来标识一行的结束。而在Linux/UNIX系统中只有换行符。也就是说在windows中的换行符为 CRLF， 而在linux下的换行符为：LF使用git来生成一个ra">
+<meta name="keywords" content="git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git命令 及遇到的问题">
+<meta property="og:url" content="http://www.wbug.cn/2015/06/25/test/index.html">
+<meta property="og:site_name" content="ly.blog">
+<meta property="og:description" content="CRLF – Carriage-Return Line-Feed 回车换行 就是回车(CR, ASCII 13, \r) 换行(LF, ASCII 10, \n)。这两个ACSII字符不会在屏幕有任何输出，但在Windows中广泛使用来标识一行的结束。而在Linux/UNIX系统中只有换行符。也就是说在windows中的换行符为 CRLF， 而在linux下的换行符为：LF使用git来生成一个ra">
+<meta property="og:locale" content="zh_cn">
+<meta property="og:updated_time" content="2018-11-21T04:00:03.340Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git命令 及遇到的问题">
+<meta name="twitter:description" content="CRLF – Carriage-Return Line-Feed 回车换行 就是回车(CR, ASCII 13, \r) 换行(LF, ASCII 10, \n)。这两个ACSII字符不会在屏幕有任何输出，但在Windows中广泛使用来标识一行的结束。而在Linux/UNIX系统中只有换行符。也就是说在windows中的换行符为 CRLF， 而在linux下的换行符为：LF使用git来生成一个ra">
+  
+    <link rel="alternative" href="/atom.xml" title="ly.blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" >
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?0033f42513f7e78a38b592d6b899c2a0";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">ly.blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">问渠哪得清如许 为有源头活水来</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/composer">Composer</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://www.wbug.cn"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-test" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/06/25/test/" class="article-date">
+  <time datetime="2015-06-25T05:43:56.000Z" itemprop="datePublished">2015-06-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      git命令 及遇到的问题
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>CRLF – Carriage-Return Line-Feed 回车换行</p>
+<p>就是回车(CR, ASCII 13, \r) 换行(LF, ASCII 10, \n)。<br>这两个ACSII字符不会在屏幕有任何输出，但在Windows中广泛使用来标识一行的结束。而在Linux/UNIX系统中只有换行符。<br>也就是说在windows中的换行符为 CRLF， 而在linux下的换行符为：LF<br>使用git来生成一个rails工程后，文件中的换行符为LF， 当执行git add .时，系统提示：LF 将被转换成 CRLF</p>
+<p>解决方法：</p>
+<p>删除刚刚生成的.git文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rm -rf .git  </span><br><span class="line">git config --gobal core.autocrlf <span class="literal">false</span></span><br></pre></td></tr></table></figure></p>
+<p>这样系统就不会去进行换行符的转换了<br>最后重新执行</p>
+<ol>
+<li><p>Git 更新代码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git://github.com/yourproject/projectname.git</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Git 更新分支 查看服务器上的所有分支</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch –r</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>查看当前有效分支：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure></p>
+<ol start="3">
+<li>git 错误处理</li>
+</ol>
+<p>3.1.    fatal: Not a git repository (or any of the parent directories): .git 是由于 git 没有进入到目录中</p>
+<p>3.2.    The file will have its original line endings in your workingdirectory.由于文件夹远程不存在，但是不影响提交</p>
+<ol start="4">
+<li>打标签 (tag)<br>4.1.    查看当前标签状态</li>
+</ol>
+<p>git tag</p>
+<p>4.2.    创建标签<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag -a ice-1.0 0d0fc38441  -m <span class="string">"ice hhvm 1.0"</span></span><br></pre></td></tr></table></figure></p>
+<p>解释：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-a ice  ： -a 是创建  ice 是名称</span><br><span class="line"></span><br><span class="line">0d0fc38441  这个是你 commit 的 ID</span><br></pre></td></tr></table></figure></p>
+<p>可以通过 git log 获取：</p>
+<p>也可以通过网页中的 commit  获取</p>
+<p>如果不加 commit 的标示，那么就是最后的，如果加了，可以在中间打上版本的标签，这个很好<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-m “ ice hhvm 1.0 ”: 是描述</span><br></pre></td></tr></table></figure></p>
+<p>4.3.    分享提交标签到远程服务器上<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br><span class="line"></span><br><span class="line">git push origin --tags</span><br></pre></td></tr></table></figure></p>
+<p>注：</p>
+<p>–tags  前面是 2 个横杠 (-)</p>
+<p>如果这里错误了会如下错误：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">error: src refspec –tags does not match any.</span><br><span class="line"></span><br><span class="line">error: failed to push some refs to<span class="string">'https://github.com/huzhiguang/hiphop_extension.git'</span></span><br></pre></td></tr></table></figure></p>
+<p>正确后会提示：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Username <span class="keyword">for</span> <span class="string">'https://github.com'</span>: XXXXXXXX</span><br><span class="line"></span><br><span class="line">Password <span class="keyword">for</span> <span class="string">'https://XXXXXXXXXX@github.com'</span>:</span><br><span class="line"></span><br><span class="line">Counting objects: 1, <span class="keyword">done</span>.</span><br><span class="line"></span><br><span class="line">Writing objects: 100% (1/1), 166 bytes| 0 bytes/s, <span class="keyword">done</span>.</span><br><span class="line"></span><br><span class="line">Total 1 (delta 0), reused 0 (delta 0)</span><br><span class="line"></span><br><span class="line">To https://github.com/huzhiguang/hiphop_extension.git</span><br><span class="line"></span><br><span class="line"> * [new tag]          ice-1.0  -&gt;  ice-1.0</span><br><span class="line"></span><br><span class="line">然后你去你的 git 上查看就会有新的了的 tag 版本了</span><br><span class="line"></span><br><span class="line">注：</span><br><span class="line"></span><br><span class="line">--tags   参数表示提交所有   tag   至服务器端，普通的   git push origin master   操作不会推送标签到服务器端。</span><br></pre></td></tr></table></figure></p>
+<p>4.4.   删除本地标签命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag -d  ice-1.0</span><br></pre></td></tr></table></figure></p>
+<p>执行后运行 git tag 可以查看是否已经删除了</p>
+<p>4.5.   删除远程标签命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin :refs/tags/  ice-1.0</span><br></pre></td></tr></table></figure></p>
+<ol start="5">
+<li>git 操作</li>
+</ol>
+<p>5.1.    创建 git 仓库</p>
+<p>创建新文件夹，打开，然后执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure></p>
+<p>以创建新的  git  仓库。</p>
+<p>5.2.    检出仓库</p>
+<p>执行如下命令以创建一个本地仓库的克隆版本：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> /path/to/repository</span><br></pre></td></tr></table></figure></p>
+<p>如果是远端服务器上的仓库，你的命令会是这个样子：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> username@host:/path/to/repository</span><br></pre></td></tr></table></figure></p>
+<p>例子：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span>  https://github.com/huzhiguang/hiphop_extension.git</span><br></pre></td></tr></table></figure></p>
+<p>这里需要用 https 的，否则你提交等操作无法进行</p>
+<p>5.3.    工作原理</p>
+<p>你的本地仓库由  git  维护的三棵“树”组成。第一个是你的 工作目录，它持有实际文件；第二个是 缓存区（ Index ），它像个缓存区域，临时保存你的改动；最后是  HEAD ，指向你最近一次提交后的结果。</p>
+<p>5.4.    添加、提交与推送</p>
+<p>5.4.1.    添加到缓存区</p>
+<p>你可以计划改动（把它们添加到缓存区），使用如下命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add &lt;filename&gt;</span><br><span class="line"></span><br><span class="line">git add *</span><br></pre></td></tr></table></figure></p>
+<p>这是  git  基本工作流程的第一步；使用如下命令以实际提交改动：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m <span class="string">" 代码提交信息 "</span></span><br></pre></td></tr></table></figure></p>
+<p>现在，你的改动已经提交到了  HEAD ，但是还没到你的远端仓库。</p>
+<p>例子：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add a.php</span><br><span class="line"></span><br><span class="line">git commit –m “<span class="built_in">test</span> a.php”</span><br></pre></td></tr></table></figure></p>
+<p>这时只是把代码提交到了本地缓存</p>
+<p>5.4.2.    推送改动</p>
+<p>你的改动现在已经在本地仓库的  HEAD  中了。执行如下命令以将这些改动提交到远端仓库：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure></p>
+<p>可以把  master  换成你想要推送的任何分支。</p>
+<p>如果你还没有克隆现有仓库，并欲将你的仓库连接到某个远程服务器，你可以使用如下命令添加：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin &lt;server&gt;</span><br></pre></td></tr></table></figure></p>
+<p>如此你就能够将你的改动推送到所添加的服务器上去了。</p>
+<p>在你当前的分支下：</p>
+<p>git branch  查看，可以通过 gitcheckout ice 切换（如果你有多个的话，默认是 master ）</p>
+<p>例子：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure></p>
+<p>推送到 master 上<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin ice 推送到 ice  分支上</span><br></pre></td></tr></table></figure></p>
+<p>这时你去你的 git 上查看，就可以看到已经上传到远程服务器的内容了</p>
+<p>5.5.    分支</p>
+<p>创建一个叫做“ feature_x ”的分支，并切换过去：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b feature_x</span><br></pre></td></tr></table></figure></p>
+<p>切换回主分支：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br></pre></td></tr></table></figure></p>
+<p>再把新建的分支删掉：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d feature_x</span><br></pre></td></tr></table></figure></p>
+<p>除非你将分支推送到远端仓库，不然该分支就是 不为他人所见的：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin &lt;branch&gt;</span><br></pre></td></tr></table></figure></p>
+<p>例：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout –b ice ( 没有的时候可以用  ­–b 创建 )</span><br></pre></td></tr></table></figure></p>
+<p>如果存在 branch ，那么直接切换即可，如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br></pre></td></tr></table></figure></p>
+<p>推送到远程仓库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure></p>
+<p>5.6.    更新与合并</p>
+<p>要更新你的本地仓库至最新改动，执行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull</span><br></pre></td></tr></table></figure></p>
+<p>以在你的工作目录中 获取（ fetch ） 并 合并（ merge ） 远端的改动。</p>
+<p>要合并其他分支到你的当前分支（例如  master ），执行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge &lt;branch&gt;</span><br></pre></td></tr></table></figure></p>
+<p>两种情况下， git  都会尝试去自动合并改动。不幸的是，自动合并并非次次都能成功，并可能导致 冲突（ conflicts ）。 这时候就需要你修改这些文件来人肉合并这些 冲突（ conflicts ） 了。改完之后，你需要执行如下命令以将它们标记为合并成功：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add &lt;filename&gt;</span><br></pre></td></tr></table></figure></p>
+<p>在合并改动之前，也可以使用如下命令查看：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff &lt;source_branch&gt;&lt;target_branch&gt;</span><br></pre></td></tr></table></figure></p>
+<p>例：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git pull  从远程获取最新改动</span><br><span class="line"></span><br><span class="line">git merge ice</span><br></pre></td></tr></table></figure></p>
+<p>比如当前的 branch  是 master ，那么就是将 ice  这个分支的内容合并到 master 中，但是可能会发生冲突</p>
+<p>5.7.    标签</p>
+<p>在软件发布时创建标签，是被推荐的。这是个旧有概念，在  SVN  中也有。可以执行如下命令以创建一个叫做  1.0.0  的标签：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag 1.0.0 1b2e1d63ff</span><br></pre></td></tr></table></figure></p>
+<p>1b2e1d63ff  是你想要标记的提交  ID  的前  10  位字符。使用如下命令获取提交  ID ：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span></span><br></pre></td></tr></table></figure></p>
+<p>你也可以用该提交  ID  的少一些的前几位，只要它是唯一的。</p>
+<p>5.8.    替换本地改动</p>
+<p>假如你做错事（自然，这是不可能的），你可以使用如下命令替换掉本地改动：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -- &lt;filename&gt;</span><br></pre></td></tr></table></figure></p>
+<p>此命令会使用  HEAD  中的最新内容替换掉你的工作目录中的文件。已添加到缓存区的改动，以及新文件，都不受影响。</p>
+<p>假如你想要丢弃你所有的本地改动与提交，可以到服务器上获取最新的版本并将你本地主分支指向到它：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git fetch origin</span><br></pre></td></tr></table></figure></p>
+<p>5.9.    删除一个 repository</p>
+<p>点击 setting</p>
+<p>然后点击：</p>
+<p>Click Delete this repository in the Danger Zone™area</p>
+<p>5.10.      分配合作用户</p>
+<p>首先点击 setting</p>
+<p>然后点击 collaborators</p>
+<p>然后输入合作者的账号，搜索出后，点击 Add 即可</p>
+<p>5.11.      创建一个新的 repositories</p>
+<p>选择 repositories</p>
+<p>然后点击 New</p>
+<p>然后点击 create reposltory</p>
+<p>5.12.      删除文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm php/ice/Ice.php.bak</span><br></pre></td></tr></table></figure></p>
+<p>注： rm 后面需要跟上具体的路径<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit –m “delte Ice.php.bak”</span><br></pre></td></tr></table></figure></p>
+<p>更新远程分支：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin ice</span><br></pre></td></tr></table></figure></p>
+<p>然后上传后，更新同步本地：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull</span><br></pre></td></tr></table></figure></p>
+<p>5.13.      公司访问 git 访问不了</p>
+<p>配置 host</p>
+<p>184.50.87.50 a248.e.akamai.net </p>
+<p>5.14.      Git 操作 pullrequest</p>
+<p>首先需要 fork 你想要进行合作的项目：</p>
+<p>比如我 fork 的是 hiphop 那么就点击这里：</p>
+<p>然后再你自己的 git 中就会 fork 出一个项目出来</p>
+<p>然后你可以修改你的项目，然后点击 new pull request</p>
+<p>然后点击 click to create a pull requeset for this comparsion</p>
+<p>然后点击标题，添加内容</p>
+<p>点击 send pull request</p>
+<p>5.15.      git fork  同步原服务</p>
+<p>（1）        首先 fork 服务</p>
+<p>去已经有的项目中进行 fork 一个项目，然后也可以进行 pullrequeset, 这个操作参见 5.14</p>
+<p>（2）        遇到问题</p>
+<p>当原来的版本服务修改时，我们 fork 的服务就不好进行贡献代码，那么我们需要进行与远程的服务进行同步，那么下面就是同步的过程</p>
+<p>（3）        克隆自己已经 fork 的服务到本地<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/huzhiguang/hiphop-php.git</span><br></pre></td></tr></table></figure></p>
+<p>（4）        添加一个远程服务<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add upstream  https://github.com/facebook/hiphop-php.git</span><br></pre></td></tr></table></figure></p>
+<p>格式：</p>
+<p>git remote add  远程仓库名称 远程仓库地址</p>
+<p>（5）        抓取远程服务信息<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git fetch upstream</span><br></pre></td></tr></table></figure></p>
+<p>格式：</p>
+<p>git fetch  远程仓库名称</p>
+<p>（6）        合并远程仓库信息到本地仓库中</p>
+<p>git merge upstream/master</p>
+<p>合并的过程中会遇到错误：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&lt;&lt;&lt;&lt;&lt;&lt;&lt;HEAD</span><br><span class="line"></span><br><span class="line">// 自己的代码</span><br><span class="line"></span><br><span class="line">   /*</span><br><span class="line"></span><br><span class="line">      author:huzhiguang</span><br><span class="line"></span><br><span class="line">        date:2013/7/31</span><br><span class="line"></span><br><span class="line">        <span class="keyword">function</span>:string_md5function don<span class="string">'t free and have memery leak</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">   */</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">  //md5 = MD5(string_md5(s, sz, false,out_len));</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">   char * string_md5_char=string_md5(s, sz,false, out_len);</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">   md5 = MD5(string_md5_char);</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">   free(string_md5_char);</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">=======</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">// 远程服务代码</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">  char * md5str = string_md5(s, sz, false,out_len);</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">  md5 = MD5(md5str);</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">  free(md5str);</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&gt;&gt;&gt;&gt;&gt;&gt;&gt; upstream/master</span></span><br></pre></td></tr></table></figure>
+<p>这里提示了冲突内容，我们将冲突的内容删除后，然后保存文件；</p>
+<p>（7）        合并代码成功后，我们进行添加和提交代码</p>
+<p>git add *</p>
+<p>git commit –m “sync code”</p>
+<p>git push origin master</p>
+<p>（8）同步完成后，查看远程服务中的提交会有最新的同步后的结果</p>
+<p>（9）在 pull request 中如果有由于冲突的文件造成的行等小差异解决后然后提交即可</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.wbug.cn/2015/06/25/test/" data-id="cjoqrzbda0030hsuv0h37ph2h" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/06/25/hexo文件托管/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hexo本地文件托管到GitHub
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/06/23/source/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">关于hexo同步的问题</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+ 
+  <section id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-test" data-title="git命令 及遇到的问题" data-url="http://www.wbug.cn/2015/06/25/test/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'11c'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+  </section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/code/">code</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/default/">default</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/google/">google</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/news/">news</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/svn/">svn</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/电影/">电影</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/OSI七层网络模型/">OSI七层网络模型</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bug/">bug</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/">ssh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime/">sublime</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/OSI七层网络模型/" style="font-size: 10px;">OSI七层网络模型</a> <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/php/" style="font-size: 20px;">php</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/sublime/" style="font-size: 10px;">sublime</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/11/21/httpCode_cn/">http状态码一览</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/httpCode/">http状态码一览</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/21/phpCurlError/">php使用curl时报错解决方法</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/19/hexo-deploy-failed/">hexo deploy failed</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/17/debian-9-4-stretch-install/">debian 9.4(stretch) install</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    <iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=2&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=2440411005&verifier=70a007d1&dpc=1"></iframe>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 ly<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+    <span id="busuanzi_container_site_pv">
+    你是本站第<span id="busuanzi_value_site_nv"></span>位访客
+	本站访客数<span id="busuanzi_value_site_uv"></span>人次
+</span>
+  </div>
+</footer>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/composer" class="mobile-nav-link">Composer</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script>
+host3 = window.location.href;
+chinadomai3 = "http://www.wbug.cn/";  #修改为你的百度推送对应的域名
+if (host3.indexOf(chinadomain3)!=-1)  {
+  (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+      }
+      else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+  })();
+}
+
+</script>
+  </div>
+<a href="https://github.com/L-Y/L-Y.github.io"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
+</body>
+</html>
