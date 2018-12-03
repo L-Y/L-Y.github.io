@@ -76,6 +76,67 @@ var _hmt = _hmt || [];
       <div class="outer">
         <section id="main">
   
+    <article id="post-svn" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/03/21/svn/" class="article-date">
+  <time datetime="2015-03-21T06:35:19.000Z" itemprop="datePublished">2015-03-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/svn/">svn</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/03/21/svn/">SVN 命令集</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>从<a href="http://subversion.tigris.org获取subversion" target="_blank" rel="noopener">http://subversion.tigris.org获取subversion</a> for windows的版本，安装之后就有了svn.exe这个基于命令行的客户端工具。当然服务器端的程序也有了，这里就不关心如何配置SVN服务了。安装程序把svn.exe的路径加入了path环境变量,我们已经可以在命令行中直接输入svn就可以使用了。</p>
+<p>如果你不知道命令怎么用svn命令,可通过如下方式查询：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">svn <span class="built_in">help</span></span><br></pre></td></tr></table></figure></p>
+<p>知道了子命令，但是不知道子命令的用法，还可以查询：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">svn <span class="built_in">help</span> ci</span><br></pre></td></tr></table></figure></p>
+<p>开发人员常用命令</p>
+<p>导入项目<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">svn import http://svn.chinasvn.com:82/pthread --message <span class="string">"Start project"</span></span><br></pre></td></tr></table></figure></p>
+<p>导出项目<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">svn checkout http://svn.chinasvn.com:82/pthread</span><br></pre></td></tr></table></figure></p>
+<p>采用 export 的方式来导出一份“干净”的项目<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">svn <span class="built_in">export</span> http://svn.chinasvn.com:82/pthread pthread</span><br></pre></td></tr></table></figure></p>
+<p>为失败的事务清场<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">svn cleanup</span><br></pre></td></tr></table></figure></p>
+<p>在本地进行代码修改，检查修改状态<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">svn status -v</span><br><span class="line">svn diff</span><br></pre></td></tr></table></figure></p>
+<p>更新(update)服务器数据到本地<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">svn update directory</span><br><span class="line">svn update file</span><br></pre></td></tr></table></figure></p>
+<p>增加(add)本地数据到服务器<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">svn add file.c</span><br><span class="line">svn add dir</span><br></pre></td></tr></table></figure></p>
+<p>对文件进行改名和删除<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">svn mv b.c bb.c</span><br><span class="line">svn rm d.c</span><br></pre></td></tr></table></figure></p>
+<p>提交(commit)本地文档到服务器<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">svn commit</span><br><span class="line">svn ci</span><br><span class="line">svn ci -m <span class="string">"commit"</span></span><br></pre></td></tr></table></figure></p>
+<p>查看日志<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">svn <span class="built_in">log</span> directory</span><br><span class="line">svn <span class="built_in">log</span> file</span><br></pre></td></tr></table></figure></p>
+<p>相关的一些东西：<br>1、在本地文件中，每个目录下都有一个.svn文件夹(属性为隐藏)，保存了相关的信息。<br>2、注册环境变量SVN_EDITOR为”E:\Program Files\Vim\vim71\gvim.exe”，结果在svn ci的时候，出现错误:</p>
+<p>‘E:\Program’ 不是内部或外部命令，也不是可运行的程序<br>或批处理文件。<br>svn: 提交失败(细节如下):<br>svn: system(‘E:\Program Files\Vim\vim71\gvim.exe svn-commit.tmp’) 返回 1</p>
+<p>把SVN_EDITOR改为”gvim.exe”，并且在path中添加路径”E:\Program Files\Vim\vim71\”,这样就可以在提交的时候用vim编写注释了。</p>
+<p>附:<br>提供免费SVN服务的网站:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">http://www.svnhost.cn/(推荐)</span><br><span class="line">http://www.chinasvn.com</span><br><span class="line">http://www.javaforge.com</span><br><span class="line">http://unfuddle.com</span><br><span class="line">http://svn.coollittlethings.com/index.php(针对开源免费，针对私人项目收费)</span><br></pre></td></tr></table></figure></p>
+<p>一、在linux下<br>删除这些目录是很简单的，命令如下<br>find . -type d -name “.svn”|xargs rm -rf<br>或者<br>find . -type d -iname “.svn” -exec rm -rf {} \;<br>全部搞定。<br>二、在windows下用以下法子：<br>1、在项目平级的目录，执行dos命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xcopy project_dir project_dir_1 /s /i</span><br></pre></td></tr></table></figure></p>
+<p>2、或者在项目根目录执行以下dos命令<br>for /r . %%a in (.) do @if exist “%%a.svn” rd /s /q “%%a.svn”<br>其实第二种方法可以用来干很多事的，比如把代码中的.svn替换为任意其他文件名并在硬盘根目录下执行，就可以从硬盘上删除所有的这个文件啦。<br>3、加注册表<br>Jon Galloway提供了一段注册表代码，可以将”Delete SVN Folders”命名增加到资源管理器的右键上，这样，鼠标点两下就能把选中目录下的所有.svn目录干掉了。Works just great!<br>代码为：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Windows Registry Editor Version 5.00  </span><br><span class="line">[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Folder\shell\DeleteSVN] </span><br><span class="line">@=<span class="string">"Delete SVN Folders"</span> </span><br><span class="line">[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Folder\shell\DeleteSVN\<span class="built_in">command</span>] </span><br><span class="line">@=<span class="string">"cmd.exe /c \"TITLE Removing SVN Folders in %1 &amp;&amp; COLOR 9A &amp;&amp; FOR /r \"%1\" %%f IN (.svn) DO RD /s /q \"%%f\" \""</span></span><br></pre></td></tr></table></figure></p>
+<p>将这段代码保存为一个.reg文件，双击确认导入注册表即可。<br>4、bat方式<br>    在SVN目录发生不可预知的错误需要重建或其他情况下需要把所有SVN信息清除时，可以用本站制作的维护小工具，把下面内容复制保存成扩展名 为.bat文件的批处理文件，使用时直接将要清除SVN信息的文件夹拖动到新建的bat文件上面，即可出现操作界面，按Y执行清除所有子目录下SVN信息 操作:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="keyword">if</span> <span class="string">"%1"</span>==<span class="string">""</span> (</span><br><span class="line"> goto error</span><br><span class="line">) <span class="keyword">else</span> (</span><br><span class="line"> goto action %1</span><br><span class="line">)</span><br><span class="line">:error</span><br><span class="line"><span class="built_in">echo</span>.</span><br><span class="line"><span class="built_in">echo</span> 必须输入要操作的文件夹路径参数，或拖动文件夹到此命令文件上。</span><br><span class="line"><span class="built_in">echo</span>.</span><br><span class="line">pause</span><br><span class="line">goto end</span><br><span class="line">:action %1</span><br><span class="line"><span class="built_in">echo</span> --------------------------------------------------------------------------</span><br><span class="line"><span class="built_in">echo</span> 本次操作将删除 [%1] 文件夹下所有的svn标记，请慎重操作！</span><br><span class="line"><span class="built_in">echo</span>     Y 清理文件夹</span><br><span class="line"><span class="built_in">echo</span>     N 退出</span><br><span class="line"><span class="built_in">echo</span> ---------------------------------------------------------------------------</span><br><span class="line">choice /c YN /m 请选择菜单(按ctrl+c或N退出)：</span><br><span class="line"><span class="keyword">if</span> %errorlevel% equ 2 goto end</span><br><span class="line"><span class="built_in">echo</span> 正在清理文件夹：%1</span><br><span class="line"><span class="built_in">echo</span> 请稍候...</span><br><span class="line"><span class="keyword">for</span> /r %1 %%a <span class="keyword">in</span> (.) <span class="keyword">do</span> @<span class="keyword">if</span> exist <span class="string">"%%a\.svn"</span> rd /s /q <span class="string">"%%a\.svn"</span></span><br><span class="line"><span class="built_in">echo</span> 清理完毕!</span><br><span class="line"><span class="built_in">echo</span> 按任意键退出...</span><br><span class="line">pause&gt;<span class="built_in">echo</span>.</span><br><span class="line">:end</span><br><span class="line"><span class="built_in">exit</span></span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.wbug.cn/2015/03/21/svn/" data-id="cjp82krom00376kuv5lv7qfl4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+ 
+  
     <article id="post-meta" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/03/21/meta/" class="article-date">
@@ -118,7 +179,7 @@ header(<span class="string">'Content-Type:text/html;charset=utf-8'</span>)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2015/03/21/meta/" data-id="cjoqrzbca001rhsuvuk90sde1" class="article-share-link">Share</a>
+      <a data-url="http://www.wbug.cn/2015/03/21/meta/" data-id="cjp82krnj001n6kuvf9sgqh70" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li></ul>
@@ -171,7 +232,7 @@ header(<span class="string">'Content-Type:text/html;charset=utf-8'</span>)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2015/03/21/log/" data-id="cjoqrzbc6001lhsuvnlr1laa4" class="article-share-link">Share</a>
+      <a data-url="http://www.wbug.cn/2015/03/21/log/" data-id="cjp82krnt00216kuvqj76jbqq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li></ul>
@@ -217,7 +278,7 @@ header(<span class="string">'Content-Type:text/html;charset=utf-8'</span>)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2015/03/21/search/" data-id="cjoqrzbco002ahsuvlmg603gc" class="article-share-link">Share</a>
+      <a data-url="http://www.wbug.cn/2015/03/21/search/" data-id="cjp82kroa002p6kuvnmgqqz7d" class="article-share-link">Share</a>
       
       
     </footer>
@@ -239,7 +300,7 @@ header(<span class="string">'Content-Type:text/html;charset=utf-8'</span>)
 <div class="article-gallery">
   <div class="article-gallery-photos">
     
-      <a class="article-gallery-img fancybox" href="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg" rel="gallery_cjoqrzbd0002nhsuvc1mf410k">
+      <a class="article-gallery-img fancybox" href="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg" rel="gallery_cjp82kroe002u6kuvknmr6gi4">
         <img src="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg" itemprop="image">
       </a>
     
@@ -272,7 +333,7 @@ header(<span class="string">'Content-Type:text/html;charset=utf-8'</span>)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2015/01/29/sshKey/" data-id="cjoqrzbd0002nhsuvc1mf410k" class="article-share-link">Share</a>
+      <a data-url="http://www.wbug.cn/2015/01/29/sshKey/" data-id="cjp82kroe002u6kuvknmr6gi4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ssh/">ssh</a></li></ul>
@@ -284,111 +345,9 @@ header(<span class="string">'Content-Type:text/html;charset=utf-8'</span>)
 
  
   
-    <article id="post-bugname" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/12/15/bugname/" class="article-date">
-  <time datetime="2014-12-15T11:11:26.000Z" itemprop="datePublished">2014-12-15</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/default/">default</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/12/15/bugname/">Windows7安装OpenSSH</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Windows7安装OpenSSH      </p>
-<p>下载地址:<br><a href="http://sourceforge.net/projects/sshwindows/files/OpenSSH" target="_blank" rel="noopener">http://sourceforge.net/projects/sshwindows/files/OpenSSH</a> for Windows - Release/3.8p1-1 20040709 Build/setupssh381-20040709.zip/download</p>
-<ol>
-<li><p>默认安装</p>
-</li>
-<li><p>补上cygintl-2.dll和cygwin1.dll<br>下载：<a href="http://samanthahalfon.net/resources/cygwin_includes.zip" target="_blank" rel="noopener">http://samanthahalfon.net/resources/cygwin_includes.zip</a><br>将它们复制到c:\Program Files (x86)\OpenSSH\bin目录下，如果提示覆盖，则覆盖之，不然进行下面操作，会提示<br>不能启动opensshd服务<br>OpenSSH Error 1067:The process terminated unexpectedly  系统出错,进程意外终止</p>
-</li>
-<li><p>开始安装</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="string">"c:\Program Files (x86)\OpenSSH\bin"</span></span><br><span class="line">mkgroup -l &gt;&gt; ..\etc\group                                   <span class="comment"># 生成一个group</span></span><br><span class="line">mkpasswd -l [-u &lt;username&gt;] &gt;&gt; ..\etc\passwd</span><br><span class="line">比如：</span><br><span class="line">mkpasswd -l -u mxio &gt;&gt; ..\etc\passwd                         <span class="comment"># 这样就生成用户名mxio的passwd文件，</span></span><br><span class="line">                                                             <span class="comment"># 它调用的是系统用户名和密码</span></span><br><span class="line"> </span><br><span class="line"><span class="built_in">cd</span> ..\..\etc                                                  给权限</span><br><span class="line">..\bin\chown mxio *</span><br><span class="line">..\bin\chmod 600 *</span><br><span class="line">``` </span><br><span class="line">4. 启动opensshd服务                                           不出问题会提示启动成功</span><br><span class="line">``` bash</span><br><span class="line">net start opensshd</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>测试连接</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh mxio@localhost</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>使用hexo写博客的一个问题就是源文件都是在本地的，如果换了电脑需要更新博客时就会比较麻烦。正好快要放假回家了，这个问题急需解决。<br>以前的解决办法是将博客拷到U盘里，但是同步又比较麻烦。使用云盘时每次又提示.git文件不能上传。目前，觉得比较靠谱的办法就是用github来管理了。<br>hexo如果用git文件托管的话，一般在.deploy文件夹下会有个.git文件夹。现在我们在根目录下也弄个.git文件夹就可以了，并且两者可以很和谐地相处。<br>Step by Step<br>在github下建立一个新的repository ，名叫blog（与hexo文件夹名一样即可）。<br>在本地进入blog文件夹，用命令git init创建仓库。<br>设置远程仓库地址，并更新<br>1<br>2<br>git remote add origin <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:wuchong/blog.git<br>git pull origin<br>修改.gitignore文件（如果没有，请创建），在里面加入public/和.deploy/，因为这两个文件夹是每次generate和deploy都会更新，对我们没用，因此忽略这两个文件的更新。tips:此处最好不要用windows自带记事本打开，因为默认的回车符不一样，会导致无法生效，可以使用sublime或notepad。<br>使用命令git add .，将所有文件提交到缓存区。<br>使用命令git commit -m “add all files” ，将这些文件提交到本地仓库。<br>使用命令git push origin master，将本地仓库的改动推送到github仓库。<br>现在在任何一台电脑，只需要git clone <address>，就可以将hexo的源文件复制到本地了。之后，当写博客后，只需要git add .再git commit -m再git push即可提交到远程仓库。当远程仓库有更新时，使用git pull或者git fetch就可以同步代码到本地了。</address></p>
-<p> 如果输入$ git remote add origin <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:djqiang（github帐号名）/gitdemo（项目名）.git<br>    提示出错信息：fatal: remote origin already exists.<br>    解决办法如下：<br>    1、先输入$ git remote rm origin<br>    2、再输入$ git remote add origin <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:djqiang/gitdemo.git 就不会报错了！<br>    3、如果输入$ git remote rm origin 还是报错的话，error: Could not remove config section ‘remote.origin’. 我们需要修改gitconfig文件的内容<br>    4、找到你的github的安装路径，我的是C:\Users\ASUS\AppData\Local\GitHub\PortableGit_ca477551eeb4aea0e4ae9fcd3358bd96720bb5c8\etc<br>    5、找到一个名为gitconfig的文件，打开它把里面的[remote “origin”]那一行删掉就好了！</p>
-<pre><code>如果输入$ ssh -T git@github.com
-出现错误提示：Permission denied (publickey).因为新生成的key不能加入ssh就会导致连接不上github。
-解决办法如下：
-1、先输入$ ssh-agent，再输入$ ssh-add ~/.ssh/id_key，这样就可以了。
-2、如果还是不行的话，输入ssh-add ~/.ssh/id_key 命令后出现报错Could not open a connection to your authentication agent.解决方法是key用Git Gui的ssh工具生成，这样生成的时候key就直接保存在ssh中了，不需要再ssh-add命令加入了，其它的user，token等配置都用命令行来做。
-3、最好检查一下在你复制id_rsa.pub文件的内容时有没有产生多余的空格或空行，有些编辑器会帮你添加这些的。
-
-
-如果输入$ git push origin master
-提示出错信息：error:failed to push som refs to .......
-解决办法如下：
-1、先输入$ git pull origin master //先把远程服务器github上面的文件拉下来
-2、再输入$ git push origin master
-3、如果出现报错 fatal: Couldn&apos;t find remote ref master或者fatal: &apos;origin&apos; does not appear to be a git repository以及fatal: Could not read from remote repository.
-4、则需要重新输入$ git remote add origingit@github.com:djqiang/gitdemo.git
-
-
-使用git在本地创建一个项目的过程
-$ makdir ~/hello-world    //创建一个项目hello-world
-$ cd ~/hello-world       //打开这个项目
-$ git init             //初始化 
-$ touch README
-$ git add README        //更新README文件
-$ git commit -m &apos;first commit&apos;     //提交更新，并注释信息“first commit”
-$ git remote add origin git@github.com:defnngj/hello-world.git     //连接远程github项目  
-$ git push -u origin master     //将本地项目更新到github项目上去
-
-
-gitconfig配置文件
-     Git有一个工具被称为git config，它允许你获得和设置配置变量；这些变量可以控制Git的外观和操作的各个方面。这些变量可以被存储在三个不同的位置： 
-     1./etc/gitconfig 文件：包含了适用于系统所有用户和所有库的值。如果你传递参数选项’--system’ 给 git config，它将明确的读和写这个文件。 
-     2.~/.gitconfig 文件 ：具体到你的用户。你可以通过传递--global 选项使Git 读或写这个特定的文件。
-     3.位于git目录的config文件 (也就是 .git/config) ：无论你当前在用的库是什么，特定指向该单一的库。每个级别重写前一个级别的值。因此，在.git/config中的值覆盖了在/etc/gitconfig中的同一个值。
-    在Windows系统中，Git在$HOME目录中查找.gitconfig文件（对大多数人来说，位于C:\Documents and Settings\$USER下）。它也会查找/etc/gitconfig，尽管它是相对于Msys 根目录的。这可能是你在Windows中运行安装程序时决定安装Git的任何地方。
-
-    配置相关信息：
-    2.1　当你安装Git后首先要做的事情是设置你的用户名称和e-mail地址。这是非常重要的，因为每次Git提交都会使用该信息。它被永远的嵌入到了你的提交中：
-</code></pre><p>　　$ git config –global user.name “John Doe”<br>　　$ git config –global user.email <a href="mailto:johndoe@example.com" target="_blank" rel="noopener">johndoe@example.com</a></p>
-<pre><code>2.2    你的编辑器(Your Editor)
-</code></pre><p>　　现在，你的标识已经设置，你可以配置你的缺省文本编辑器，Git在需要你输入一些消息时会使用该文本编辑器。缺省情况下，Git使用你的系统的缺省编辑器，这通常可能是vi 或者 vim。如果你想使用一个不同的文本编辑器，例如Emacs，你可以做如下操作：<br>　　$ git config –global core.editor emacs</p>
-<pre><code>2.3 检查你的设置(Checking Your Settings)
-</code></pre><p>　　如果你想检查你的设置，你可以使用 git config –list 命令来列出Git可以在该处找到的所有的设置:<br>　　$ git config –list<br>      你也可以查看Git认为的一个特定的关键字目前的值，使用如下命令 git config {key}:<br>　　$ git config user.name</p>
-<pre><code>2.4 获取帮助(Getting help)
-</code></pre><p>　　如果当你在使用Git时需要帮助，有三种方法可以获得任何git命令的手册页(manpage)帮助信息:<br>　　$ git help <verb><br>　　$ git <verb> –help<br>　　$ man git-<verb><br>　　例如，你可以运行如下命令获取对config命令的手册页帮助:<br>　　$ git help config</verb></verb></verb></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2014/12/15/bugname/" data-id="cjoqrzbbg000phsuvl208lxhb" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bug/">bug</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
- 
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/8/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span>
+      <a class="extend prev" rel="prev" href="/page/8/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/10/">Next &raquo;</a>
     </nav>
   
 </section>
@@ -399,7 +358,7 @@ gitconfig配置文件
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/code/">code</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/default/">default</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/google/">google</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/news/">news</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/svn/">svn</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/电影/">电影</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/code/">code</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/default/">default</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/google/">google</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/news/">news</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/svn/">svn</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/电影/">电影</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -408,7 +367,7 @@ gitconfig配置文件
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/OSI七层网络模型/">OSI七层网络模型</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bug/">bug</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/">ssh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime/">sublime</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/OSI七层网络模型/">OSI七层网络模型</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bug/">bug</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/">ssh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime/">sublime</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -417,7 +376,7 @@ gitconfig配置文件
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/OSI七层网络模型/" style="font-size: 10px;">OSI七层网络模型</a> <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/php/" style="font-size: 20px;">php</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/sublime/" style="font-size: 10px;">sublime</a>
+      <a href="/tags/OSI七层网络模型/" style="font-size: 10px;">OSI七层网络模型</a> <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 16.67px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/mysql/" style="font-size: 13.33px;">mysql</a> <a href="/tags/php/" style="font-size: 20px;">php</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/sublime/" style="font-size: 10px;">sublime</a>
     </div>
   </div>
 
@@ -426,7 +385,7 @@ gitconfig配置文件
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -436,6 +395,10 @@ gitconfig配置文件
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/12/03/mysql-master-slave/">mysql主从复制实现</a>
+          </li>
         
           <li>
             <a href="/2018/11/21/httpCode_cn/">http状态码一览</a>
@@ -451,10 +414,6 @@ gitconfig配置文件
         
           <li>
             <a href="/2018/05/19/hexo-deploy-failed/">hexo deploy failed</a>
-          </li>
-        
-          <li>
-            <a href="/2018/05/17/debian-9-4-stretch-install/">debian 9.4(stretch) install</a>
           </li>
         
       </ul>

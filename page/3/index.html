@@ -76,6 +76,50 @@ var _hmt = _hmt || [];
       <div class="outer">
         <section id="main">
   
+    <article id="post-regexprion" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/07/regexprion/" class="article-date">
+  <time datetime="2016-08-06T17:50:26.000Z" itemprop="datePublished">2016-08-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/07/regexprion/">使用正则表达式批量替换冲突</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在使用git 时出现 文件大面积冲突 为避免麻烦 使用正则表达式进行批量替换</p>
+<h2 id="总代码如下"><a href="#总代码如下" class="headerlink" title="总代码如下"></a>总代码如下</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">(&lt;&lt;&lt;&lt;&lt;*\sHEAD([\n]*)|====*\s(.[\n]*)(.*[\n])+.*(4ec633df87926745360d68b4aad6e5dd06c17400))</span><br></pre></td></tr></table></figure>
+<p>#拆分1 只匹配头部 也就是 &lt;&lt;&lt;&lt; HEAD 部分</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;&lt;&lt;&lt;&lt;*\sHEAD([\n]*)</span><br></pre></td></tr></table></figure>
+<h2 id="拆分2-匹配尾部"><a href="#拆分2-匹配尾部" class="headerlink" title="拆分2 匹配尾部"></a>拆分2 匹配尾部</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">====*\s(.[\n]*)(.*[\n])+.*(4ec633df87926745360d68b4aad6e5dd06c17400)</span><br><span class="line"></span><br><span class="line">高亮部分为你的 版本号 根据自己的情况定</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>此为高亮部分 <code>4ec633df87926745360d68b4aad6e5dd06c17400</code> 可替换为你想要的任意类型</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.wbug.cn/2016/08/07/regexprion/" data-id="cjp82kro1002c6kuvzwbm63an" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+ 
+  
     <article id="post-supportarticle" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/08/06/supportarticle/" class="article-date">
@@ -117,110 +161,9 @@ var _hmt = _hmt || [];
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2016/08/06/supportarticle/" data-id="cjoqrzbd6002uhsuvmuxxak2i" class="article-share-link">Share</a>
+      <a data-url="http://www.wbug.cn/2016/08/06/supportarticle/" data-id="cjp82kroj00336kuv2fbr71ce" class="article-share-link">Share</a>
       
       
-    </footer>
-  </div>
-  
-</article>
-
- 
-  
-    <article id="post-comp-architecture" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/07/17/comp-architecture/" class="article-date">
-  <time datetime="2016-07-17T11:01:42.000Z" itemprop="datePublished">2016-07-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/17/comp-architecture/">php 之 composer 的JSON包的规范一</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="JSON-shema"><a href="#JSON-shema" class="headerlink" title="JSON shema"></a>JSON shema</h2><p>可以看这里 <a href="https://github.com/composer/composer/blob/master/res/composer-schema.json" target="_blank" rel="noopener">composer.json</a></p>
-<h2 id="ROOT-包"><a href="#ROOT-包" class="headerlink" title="ROOT 包"></a>ROOT 包</h2><p>“root 包”是指由 <code>composer.json</code> 定义的在你项目根目录的包。这是 <code>composer.json</code>定义你项目所需的主要条件。（简单的说，你自己的项目就是一个 root 包）</p>
-<ul>
-<li>[x]  注意： 一个资源包是不是“root 包”，取决于它的上下文。 例：如果你的项目依赖 monolog 库，那么你的项目就是“root 包”。 但是，如果你从 GitHub 上克隆了 monolog 为它修复 bug， 那么此时 monolog 就是“root 包”。</li>
-</ul>
-<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><hr>
-<h3 id="包名-name"><a href="#包名-name" class="headerlink" title="包名 name"></a>包名 name</h3><p>包的名称，它包括供应商名称和项目名称，使用 <code>/</code>分隔。<br>例：</p>
-<ul>
-<li>monolog/monolog</li>
-<li>prs/log</li>
-</ul>
-<h3 id="描述-description"><a href="#描述-description" class="headerlink" title="描述 description"></a>描述 description</h3><p>对于包的描述信息</p>
-<h3 id="版本-version"><a href="#版本-version" class="headerlink" title="版本 version"></a>版本 version</h3><p>非必需，建议忽略 规范 符合 <code>&#39;x.y.z&#39;</code> or <code>vx.y.z</code> 后缀可加 <code>-dev</code> <code>-alpha</code> <code>-patch</code> <code>-beta</code> <code>-RC</code> 并且可附带数字<br>例:</p>
-<ul>
-<li>1.0.1</li>
-<li>3.0.1-beta1</li>
-<li>3.0.2-dev</li>
-<li>2.0.1-alpha3</li>
-<li>[x]  注意： Packagist 使用 VCS 仓库， 因此 version 定义的版本号必须是真实准确的。 自己手动指定的 version，最终有可能在某个时候因为人为错误造成问题。</li>
-</ul>
-<h3 id="类型-type"><a href="#类型-type" class="headerlink" title="类型 type"></a>类型 type</h3><p>composer 支持的类型如下：</p>
-<ul>
-<li>library: 这是默认类型，它会简单的将文件复制到 vendor 目录。</li>
-<li>project: 这表示当前包是一个项目，而不是一个库。例：框架应用程序 Symfony standard edition，内容管理系统 SilverStripe installer 或者完全成熟的分布式应用程序。使用 IDE 创建一个新的工作区时，这可以为其提供项目列表的初始化。</li>
-<li>metapackage: 当一个空的包，包含依赖并且需要触发依赖的安装，这将不会对系统写入额外的文件。因此这种安装类型并不需要一个 dist 或 source。</li>
-<li>composer-plugin: 一个安装类型为 composer-plugin 的包，它有一个自定义安装类型，可以为其它包提供一个 installler。</li>
-</ul>
-<p><a href="https://github.com/5-say/composer-doc-cn/blob/master/cn-introduction/articles/custom-installers.md" target="_blank" rel="noopener">自定义案例</a></p>
-<h3 id="关键词-keywords"><a href="#关键词-keywords" class="headerlink" title="关键词 keywords"></a>关键词 keywords</h3><p>包含相关的关键词的数组。这些可用于搜索和过滤。<br>例:</p>
-<ul>
-<li>logging</li>
-<li>events</li>
-<li>database</li>
-<li>templating</li>
-</ul>
-<h3 id="项目主页-homepage"><a href="#项目主页-homepage" class="headerlink" title="项目主页 homepage"></a>项目主页 homepage</h3><p>该项目的地址： 如 <a href="http://127.0.0.1/" target="_blank" rel="noopener">http://127.0.0.1/</a></p>
-<h3 id="版本发布时间-time"><a href="#版本发布时间-time" class="headerlink" title="版本发布时间 time"></a>版本发布时间 time</h3><p>必须符合 <code>YYYY-MM-DD</code> 或 <code>YYYY-MM-DD HH:MM:SS</code> 格式</p>
-<h3 id="许可协议-license"><a href="#许可协议-license" class="headerlink" title="许可协议 license"></a>许可协议 license</h3><p>包的许可协议，它可以是一个字符串或者字符串数组。<br>例:</p>
-<ul>
-<li>LGPL-2.1</li>
-<li>JSON</li>
-<li>Apache-2.0</li>
-<li>zlib</li>
-<li>WXwindos</li>
-<li>PHP-3.0.1</li>
-<li>MIT<br>参见 <a href="http://spdx.org/licenses/" target="_blank" rel="noopener">许可协议</a><br>CODE：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"license"</span>: <span class="string">"MIT"</span></span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"license"</span>: [</span><br><span class="line">       <span class="string">"PHP-3.0.1"</span>,</span><br><span class="line">       <span class="string">"PHP-3.0.3"</span></span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"license"</span>: <span class="string">"(PHP-3.0.1 or PHP-3.0.3)"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="作者-author"><a href="#作者-author" class="headerlink" title="作者 author"></a>作者 author</h3><p>包的作者，是一个数组<br>属性如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"authors"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">"name"</span>: <span class="string">"yang l"</span>,</span><br><span class="line">            <span class="string">"email"</span>: <span class="string">"youremail@gmail.com"</span>,</span><br><span class="line">            <span class="string">"homepage"</span>: <span class="string">"http://www.yourdomain.com"</span>,</span><br><span class="line">            <span class="string">"role"</span>: <span class="string">"Developer"</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">        	// 此处可增加额外的作者 格式同上</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="支持-support"><a href="#支持-support" class="headerlink" title="支持  support"></a>支持  support</h3><p>包的作者，是一个数组<br>属性如下：</p>
-<ul>
-<li>email: 项目支持 email 地址。</li>
-<li>issues: 跟踪问题的 URL 地址。</li>
-<li>forum: 论坛地址。</li>
-<li>wiki: Wiki 地址。</li>
-<li>irc: IRC 聊天频道地址，类似于 irc://server/channel。</li>
-<li>source: 网址浏览或下载源<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"support"</span>: &#123;</span><br><span class="line">        <span class="string">"email"</span>: <span class="string">"support@example.org"</span>,</span><br><span class="line">        <span class="string">"irc"</span>: <span class="string">"irc://irc.freenode.org/composer"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="Package-links-包名到版本的映射"><a href="#Package-links-包名到版本的映射" class="headerlink" title="Package links 包名到版本的映射"></a>Package links 包名到版本的映射</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"require"</span>: &#123;</span><br><span class="line">        <span class="string">"monolog/monolog"</span>: <span class="string">"1.0.*"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>例：如果你想允许依赖一个不稳定的包，你可以在一个包的版本约束后使用它，或者是一个空的版本约束内使用它。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"require"</span>: &#123;</span><br><span class="line">        <span class="string">"monolog/monolog"</span>: <span class="string">"1.0.*@beta"</span>,</span><br><span class="line">        <span class="string">"acme/foo"</span>: <span class="string">"@dev"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>如果你的依赖之一，有对另一个不稳定包的依赖，你最好在 require 中显示的定义它，并带上足够详细的稳定性标识。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"require"</span>: &#123;</span><br><span class="line">        <span class="string">"doctrine/doctrine-fixtures-bundle"</span>: <span class="string">"dev-master"</span>,</span><br><span class="line">        <span class="string">"doctrine/data-fixtures"</span>: <span class="string">"@dev"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>require 和 require-dev 还支持对 dev（开发）对dev 版本的明确引用 以确保它们被锁定到一个给定的状态，即使你运行了更新命令。你只需要明确一个开发版本号，并带上诸如 #<ref> 的标识<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"require"</span>: &#123;</span><br><span class="line">        <span class="string">"monolog/monolog"</span>: <span class="string">"dev-master#2eb0c0978d290a1c45346a1955188929cb4e5db7"</span>,</span><br><span class="line">        <span class="string">"acme/foo"</span>: <span class="string">"1.0.x-dev#abc123"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></ref></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2016/07/17/comp-architecture/" data-id="cjoqrzba50006hsuvsylmczp6" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
-
     </footer>
   </div>
   
@@ -319,7 +262,7 @@ var _hmt = _hmt || [];
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2016/07/17/comp-architecture_2/" data-id="cjoqrzba9000bhsuvizsx07wi" class="article-share-link">Share</a>
+      <a data-url="http://www.wbug.cn/2016/07/17/comp-architecture_2/" data-id="cjp82krlp00026kuvv7wowgdx" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
@@ -331,10 +274,10 @@ var _hmt = _hmt || [];
 
  
   
-    <article id="post-comp-com_env_" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-comp-architecture" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/07/13/comp-com_env_/" class="article-date">
-  <time datetime="2016-07-13T12:10:55.000Z" itemprop="datePublished">2016-07-13</time>
+    <a href="/2016/07/17/comp-architecture/" class="article-date">
+  <time datetime="2016-07-17T11:01:42.000Z" itemprop="datePublished">2016-07-17</time>
 </a>
     
   </div>
@@ -345,7 +288,7 @@ var _hmt = _hmt || [];
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/13/comp-com_env_/">php 之 composer 的命令三</a>
+      <a class="article-title" href="/2016/07/17/comp-architecture/">php 之 composer 的JSON包的规范一</a>
     </h1>
   
 
@@ -353,12 +296,74 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##环境变量<br>说明：<br>你可以设置一些环境变量来覆盖默认的配置。建议尽可能的在 composer.json 的 config 字段中设置这些值，而不是通过命令行设置环境变量。值得注意的是环境变量中的值，将始终优先于 composer.json 中所指定的值。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line">1.COMPOSER</span><br><span class="line"></span><br><span class="line">&lt;!-- 环境变量 COMPOSER 可以为 composer.json 文件指定其它的文件名。如 --&gt;</span><br><span class="line"></span><br><span class="line">COMPOSER=composer-other.json composer install</span><br><span class="line"></span><br><span class="line">2.COMPOSER_ROOT_VERSION</span><br><span class="line"></span><br><span class="line">&lt;!-- 通过设置这个环境变量，你可以指定 root 包的版本，如果程序不能从 VCS 上猜测出版本号，并且未在 composer.json 文件中申明。 --&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">3.COMPOSER_VENDOR_DIR</span><br><span class="line"></span><br><span class="line">&lt;!-- 通过设置这个环境变量，你可以指定 composer 将依赖安装在 vendor 以外的其它目录中。 --&gt;</span><br><span class="line"></span><br><span class="line">4.COMPOSER_BIN_DIR</span><br><span class="line"></span><br><span class="line">&lt;!-- 通过设置这个环境变量，你可以指定 bin（Vendor Binaries）目录到 vendor/bin 以外的其它目录。 --&gt;</span><br><span class="line"></span><br><span class="line">5.http_proxy or HTTP_PROXY</span><br><span class="line"></span><br><span class="line">&lt;!-- 如果你是通过 HTTP 代理来使用 Composer，你可以使用 http_proxy 或 HTTP_PROXY 环境变量。只要简单的将它设置为代理服务器的 URL。许多操作系统已经为你的服务设置了此变量。</span><br><span class="line"></span><br><span class="line">建议使用 http_proxy（小写）或者两者都进行定义。因为某些工具，像 git 或 curl 将使用 http_proxy 小写的版本。另外，你还可以使用 git config --global http.proxy &lt;proxy url&gt; 来单独设置 git 的代理。 --&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">6.no_proxy</span><br><span class="line"></span><br><span class="line">&lt;!-- 如果你是使用代理服务器，并且想要对某些域名禁用代理，就可以使用 no_proxy 环境变量。只需要输入一个逗号相隔的域名 排除 列表。</span><br><span class="line"></span><br><span class="line">此环境变量接受域名、IP 以及 CIDR地址块。你可以将它限制到一个端口（例如：:80）。你还可以把它设置为 * 来忽略所有的 HTTP 代理请求。 --&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">7.HTTP_PROXY_REQUEST_FULLURI</span><br><span class="line"></span><br><span class="line">&lt;!-- 如果你使用了 HTTP 代理，但它不支持 request_fulluri 标签，那么你应该设置这个环境变量为 <span class="literal">false</span> 或 0 ，来防止 composer 从 request_fulluri 读取配置。 --&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">8.HTTPS_PROXY_REQUEST_FULLURI</span><br><span class="line"></span><br><span class="line">&lt;!-- 如果你使用了 HTTPS 代理，但它不支持 request_fulluri 标签，那么你应该设置这个环境变量为 <span class="literal">false</span> 或 0 ，来防止 composer 从 request_fulluri 读取配置。 --&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">9.COMPOSER_HOME</span><br><span class="line"></span><br><span class="line">&lt;!-- COMPOSER_HOME 环境变量允许你改变 Composer 的主目录。这是一个隐藏的、所有项目共享的全局目录（对本机的所有用户都可用）。</span><br><span class="line"></span><br><span class="line">它在各个系统上的默认值分别为：</span><br><span class="line"></span><br><span class="line">*nix /home/&lt;user&gt;/.composer。</span><br><span class="line">OSX /Users/&lt;user&gt;/.composer。</span><br><span class="line">Windows C:\Users\&lt;user&gt;\AppData\Roaming\Composer。 --&gt;</span><br><span class="line"></span><br><span class="line">10.COMPOSER_HOME/config.json</span><br><span class="line"></span><br><span class="line">&lt;!-- 你可以在 COMPOSER_HOME 目录中放置一个 config.json 文件。在你执行 install 和 update 命令时，Composer 会将它与你项目中的 composer.json 文件进行合并。</span><br><span class="line"></span><br><span class="line">该文件允许你为用户的项目设置 配置信息 和 资源库。</span><br><span class="line"></span><br><span class="line">若 全局 和 项目 存在相同配置项，那么项目中的 composer.json 文件拥有更高的优先级。</span><br><span class="line"> --&gt;</span><br><span class="line"></span><br><span class="line">11.COMPOSER_CACHE_DIR</span><br><span class="line"></span><br><span class="line">&lt;!-- COMPOSER_CACHE_DIR 环境变量允许你设置 Composer 的缓存目录，这也可以通过 cache-dir 进行配置。</span><br><span class="line"></span><br><span class="line">它在各个系统上的默认值分别为：</span><br><span class="line"></span><br><span class="line">*nix and OSX <span class="variable">$COMPOSER_HOME</span>/cache。</span><br><span class="line">Windows C:\Users\&lt;user&gt;\AppData\Local\Composer 或 %LOCALAPPDATA%/Composer。</span><br><span class="line"></span><br><span class="line">COMPOSER_PROCESS_TIMEOUT</span><br><span class="line"></span><br><span class="line">这个环境变量控制着 Composer 执行命令的等待时间（例如：git 命令）。默认值为300秒（5分钟）。 --&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">12.COMPOSER_DISCARD_CHANGES</span><br><span class="line"></span><br><span class="line">&lt;!-- 这个环境变量控制着 discard-changes config option。 --&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">13.COMPOSER_NO_INTERACTION</span><br><span class="line"></span><br><span class="line">&lt;!-- 如果设置为1，这个环境变量将使 Composer 在执行每一个命令时都放弃交互，相当于对所有命令都使用了 --no-interaction。可以在搭建 虚拟机/持续集成服务器 时这样设置。 --&gt;</span><br></pre></td></tr></table></figure></p>
+        <h2 id="JSON-shema"><a href="#JSON-shema" class="headerlink" title="JSON shema"></a>JSON shema</h2><p>可以看这里 <a href="https://github.com/composer/composer/blob/master/res/composer-schema.json" target="_blank" rel="noopener">composer.json</a></p>
+<h2 id="ROOT-包"><a href="#ROOT-包" class="headerlink" title="ROOT 包"></a>ROOT 包</h2><p>“root 包”是指由 <code>composer.json</code> 定义的在你项目根目录的包。这是 <code>composer.json</code>定义你项目所需的主要条件。（简单的说，你自己的项目就是一个 root 包）</p>
+<ul>
+<li>[x]  注意： 一个资源包是不是“root 包”，取决于它的上下文。 例：如果你的项目依赖 monolog 库，那么你的项目就是“root 包”。 但是，如果你从 GitHub 上克隆了 monolog 为它修复 bug， 那么此时 monolog 就是“root 包”。</li>
+</ul>
+<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><hr>
+<h3 id="包名-name"><a href="#包名-name" class="headerlink" title="包名 name"></a>包名 name</h3><p>包的名称，它包括供应商名称和项目名称，使用 <code>/</code>分隔。<br>例：</p>
+<ul>
+<li>monolog/monolog</li>
+<li>prs/log</li>
+</ul>
+<h3 id="描述-description"><a href="#描述-description" class="headerlink" title="描述 description"></a>描述 description</h3><p>对于包的描述信息</p>
+<h3 id="版本-version"><a href="#版本-version" class="headerlink" title="版本 version"></a>版本 version</h3><p>非必需，建议忽略 规范 符合 <code>&#39;x.y.z&#39;</code> or <code>vx.y.z</code> 后缀可加 <code>-dev</code> <code>-alpha</code> <code>-patch</code> <code>-beta</code> <code>-RC</code> 并且可附带数字<br>例:</p>
+<ul>
+<li>1.0.1</li>
+<li>3.0.1-beta1</li>
+<li>3.0.2-dev</li>
+<li>2.0.1-alpha3</li>
+<li>[x]  注意： Packagist 使用 VCS 仓库， 因此 version 定义的版本号必须是真实准确的。 自己手动指定的 version，最终有可能在某个时候因为人为错误造成问题。</li>
+</ul>
+<h3 id="类型-type"><a href="#类型-type" class="headerlink" title="类型 type"></a>类型 type</h3><p>composer 支持的类型如下：</p>
+<ul>
+<li>library: 这是默认类型，它会简单的将文件复制到 vendor 目录。</li>
+<li>project: 这表示当前包是一个项目，而不是一个库。例：框架应用程序 Symfony standard edition，内容管理系统 SilverStripe installer 或者完全成熟的分布式应用程序。使用 IDE 创建一个新的工作区时，这可以为其提供项目列表的初始化。</li>
+<li>metapackage: 当一个空的包，包含依赖并且需要触发依赖的安装，这将不会对系统写入额外的文件。因此这种安装类型并不需要一个 dist 或 source。</li>
+<li>composer-plugin: 一个安装类型为 composer-plugin 的包，它有一个自定义安装类型，可以为其它包提供一个 installler。</li>
+</ul>
+<p><a href="https://github.com/5-say/composer-doc-cn/blob/master/cn-introduction/articles/custom-installers.md" target="_blank" rel="noopener">自定义案例</a></p>
+<h3 id="关键词-keywords"><a href="#关键词-keywords" class="headerlink" title="关键词 keywords"></a>关键词 keywords</h3><p>包含相关的关键词的数组。这些可用于搜索和过滤。<br>例:</p>
+<ul>
+<li>logging</li>
+<li>events</li>
+<li>database</li>
+<li>templating</li>
+</ul>
+<h3 id="项目主页-homepage"><a href="#项目主页-homepage" class="headerlink" title="项目主页 homepage"></a>项目主页 homepage</h3><p>该项目的地址： 如 <a href="http://127.0.0.1/" target="_blank" rel="noopener">http://127.0.0.1/</a></p>
+<h3 id="版本发布时间-time"><a href="#版本发布时间-time" class="headerlink" title="版本发布时间 time"></a>版本发布时间 time</h3><p>必须符合 <code>YYYY-MM-DD</code> 或 <code>YYYY-MM-DD HH:MM:SS</code> 格式</p>
+<h3 id="许可协议-license"><a href="#许可协议-license" class="headerlink" title="许可协议 license"></a>许可协议 license</h3><p>包的许可协议，它可以是一个字符串或者字符串数组。<br>例:</p>
+<ul>
+<li>LGPL-2.1</li>
+<li>JSON</li>
+<li>Apache-2.0</li>
+<li>zlib</li>
+<li>WXwindos</li>
+<li>PHP-3.0.1</li>
+<li>MIT<br>参见 <a href="http://spdx.org/licenses/" target="_blank" rel="noopener">许可协议</a><br>CODE：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"license"</span>: <span class="string">"MIT"</span></span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"license"</span>: [</span><br><span class="line">       <span class="string">"PHP-3.0.1"</span>,</span><br><span class="line">       <span class="string">"PHP-3.0.3"</span></span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"license"</span>: <span class="string">"(PHP-3.0.1 or PHP-3.0.3)"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="作者-author"><a href="#作者-author" class="headerlink" title="作者 author"></a>作者 author</h3><p>包的作者，是一个数组<br>属性如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"authors"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">"name"</span>: <span class="string">"yang l"</span>,</span><br><span class="line">            <span class="string">"email"</span>: <span class="string">"youremail@gmail.com"</span>,</span><br><span class="line">            <span class="string">"homepage"</span>: <span class="string">"http://www.yourdomain.com"</span>,</span><br><span class="line">            <span class="string">"role"</span>: <span class="string">"Developer"</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">        	// 此处可增加额外的作者 格式同上</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="支持-support"><a href="#支持-support" class="headerlink" title="支持  support"></a>支持  support</h3><p>包的作者，是一个数组<br>属性如下：</p>
+<ul>
+<li>email: 项目支持 email 地址。</li>
+<li>issues: 跟踪问题的 URL 地址。</li>
+<li>forum: 论坛地址。</li>
+<li>wiki: Wiki 地址。</li>
+<li>irc: IRC 聊天频道地址，类似于 irc://server/channel。</li>
+<li>source: 网址浏览或下载源<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"support"</span>: &#123;</span><br><span class="line">        <span class="string">"email"</span>: <span class="string">"support@example.org"</span>,</span><br><span class="line">        <span class="string">"irc"</span>: <span class="string">"irc://irc.freenode.org/composer"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="Package-links-包名到版本的映射"><a href="#Package-links-包名到版本的映射" class="headerlink" title="Package links 包名到版本的映射"></a>Package links 包名到版本的映射</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"require"</span>: &#123;</span><br><span class="line">        <span class="string">"monolog/monolog"</span>: <span class="string">"1.0.*"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>例：如果你想允许依赖一个不稳定的包，你可以在一个包的版本约束后使用它，或者是一个空的版本约束内使用它。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"require"</span>: &#123;</span><br><span class="line">        <span class="string">"monolog/monolog"</span>: <span class="string">"1.0.*@beta"</span>,</span><br><span class="line">        <span class="string">"acme/foo"</span>: <span class="string">"@dev"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>如果你的依赖之一，有对另一个不稳定包的依赖，你最好在 require 中显示的定义它，并带上足够详细的稳定性标识。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"require"</span>: &#123;</span><br><span class="line">        <span class="string">"doctrine/doctrine-fixtures-bundle"</span>: <span class="string">"dev-master"</span>,</span><br><span class="line">        <span class="string">"doctrine/data-fixtures"</span>: <span class="string">"@dev"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>require 和 require-dev 还支持对 dev（开发）对dev 版本的明确引用 以确保它们被锁定到一个给定的状态，即使你运行了更新命令。你只需要明确一个开发版本号，并带上诸如 #<ref> 的标识<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"require"</span>: &#123;</span><br><span class="line">        <span class="string">"monolog/monolog"</span>: <span class="string">"dev-master#2eb0c0978d290a1c45346a1955188929cb4e5db7"</span>,</span><br><span class="line">        <span class="string">"acme/foo"</span>: <span class="string">"1.0.x-dev#abc123"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></ref></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2016/07/13/comp-com_env_/" data-id="cjoqrzbbc000mhsuv9w2djlkn" class="article-share-link">Share</a>
+      <a data-url="http://www.wbug.cn/2016/07/17/comp-architecture/" data-id="cjp82krmi000f6kuvdt6k5qxm" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
@@ -370,9 +375,9 @@ var _hmt = _hmt || [];
 
  
   
-    <article id="post-comp-command" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-comp-com_depends_" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/07/13/comp-command/" class="article-date">
+    <a href="/2016/07/13/comp-com_depends_/" class="article-date">
   <time datetime="2016-07-13T12:10:55.000Z" itemprop="datePublished">2016-07-13</time>
 </a>
     
@@ -384,7 +389,7 @@ var _hmt = _hmt || [];
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/13/comp-command/">php 之 composer 的命令一</a>
+      <a class="article-title" href="/2016/07/13/comp-com_depends_/">php 之 composer 的命令二</a>
     </h1>
   
 
@@ -392,23 +397,30 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##前言 帮助无疑是最好的教程</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 此命令将列出所有可操作的命令 --&gt;</span><br><span class="line"></span><br><span class="line">composer list</span><br><span class="line"></span><br><span class="line">&lt;!-- 如想查看list用法 可使用 --&gt;</span><br><span class="line"></span><br><span class="line">composer list -h  or composer list --<span class="built_in">help</span></span><br><span class="line"></span><br><span class="line">&lt;!-- 又如 --&gt;</span><br><span class="line">composer init -h</span><br><span class="line"></span><br><span class="line">comoser search -h</span><br></pre></td></tr></table></figure>
-<p>#全局参数 可与任意命令使用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">--verbose (-v): 增加反馈信息的详细度。</span><br><span class="line">	&lt;!-- 1.)-v 表示正常输出。 --&gt;</span><br><span class="line">	composer -v</span><br><span class="line">	&lt;!-- 2.)-vv 表示更详细的输出。 --&gt;</span><br><span class="line">	comoser -vv</span><br><span class="line">	&lt;!-- 3.)-vvv 则是为了 debug。 --&gt;</span><br><span class="line">	composer -vvv</span><br><span class="line">&lt;!-- --<span class="built_in">help</span> (-h): 显示帮助信息。 --&gt;</span><br><span class="line"></span><br><span class="line">composer -h</span><br><span class="line"></span><br><span class="line">--quiet (-q): 禁止输出任何信息。</span><br><span class="line"></span><br><span class="line">--no-interaction (-n): 不要询问任何交互问题。</span><br><span class="line"></span><br><span class="line">--working-dir (-d): </span><br><span class="line"></span><br><span class="line">如果指定的话，使用给定的目录作为工作目录。</span><br><span class="line"></span><br><span class="line">&lt;!-- --profile: 显示时间和内存使用信息。 --&gt;</span><br><span class="line"></span><br><span class="line">composer --profile</span><br><span class="line"></span><br><span class="line">--ansi: 强制 ANSI 输出。</span><br><span class="line"></span><br><span class="line">--no-ansi: 关闭 ANSI 输出。</span><br><span class="line"></span><br><span class="line">--version (-V): 显示当前应用程序的版本信息。</span><br></pre></td></tr></table></figure></p>
-<p>##初始化 init</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">composer init</span><br><span class="line">package: </span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"name"</span>: <span class="string">"test/testname"</span>,</span><br><span class="line">    <span class="string">"description"</span>: <span class="string">"This is a test!"</span>,</span><br><span class="line">    <span class="string">"type"</span>: <span class="string">"test/test"</span>,</span><br><span class="line">    <span class="string">"license"</span>: <span class="string">"test"</span>,</span><br><span class="line">    <span class="string">"minimum-stability"</span>: <span class="string">"beta"</span>,</span><br><span class="line">    <span class="string">"require"</span>: &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;!-- 参数 --&gt;</span><br><span class="line">--name: 包的名称。</span><br><span class="line">--description: 包的描述。</span><br><span class="line">--author: 包的作者。</span><br><span class="line">--homepage: 包的主页。</span><br><span class="line">--require: 需要依赖的其它包，必须要有一个版本约束。并且应该遵循 foo/bar:1.0.0 这样的格式。</span><br><span class="line">--require-dev: 开发版的依赖包，内容格式与 --require 相同。</span><br><span class="line">--stability (-s): minimum-stability 字段的值。</span><br><span class="line">&lt;!-- 完成的命令如下 --&gt;</span><br><span class="line"></span><br><span class="line">composer init --name <span class="built_in">test</span>/testname --description <span class="string">"This is a test"</span> --<span class="built_in">type</span> <span class="string">"test/test"</span> --license <span class="string">"test"</span> --stability <span class="string">"dev"</span> --require <span class="string">""</span> --author ly</span><br></pre></td></tr></table></figure>
-<p>##安装 install</p>
-<p>说明：<br>install 命令从当前目录读取 composer.json 文件，处理了依赖关系，并把其安装到 vendor 目录下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">composer install</span><br><span class="line">&lt;!-- 参数 --&gt;</span><br><span class="line">--prefer-source: 下载包的方式有两种： <span class="built_in">source</span> 和 dist。对于稳定版本 composer 将默认使用 dist 方式。而 <span class="built_in">source</span> 表示版本控制源 。如果 --prefer-source 是被启用的，composer 将从 <span class="built_in">source</span> 安装（如果有的话）。如果想要使用一个 bugfix 到你的项目，这是非常有用的。并且可以直接从本地的版本库直接获取依赖关系。</span><br><span class="line">--prefer-dist: 与 --prefer-source 相反，composer 将尽可能的从 dist 获取，这将大幅度的加快在 build servers 上的安装。这也是一个回避 git 问题的途径，如果你不清楚如何正确的设置。</span><br><span class="line">--dry-run: 如果你只是想演示而并非实际安装一个包，你可以运行 --dry-run 命令，它将模拟安装并显示将会发生什么。</span><br><span class="line">--dev: 安装 require-dev 字段中列出的包（这是一个默认值）。</span><br><span class="line">--no-dev:跳过 require-dev 字段中列出的包。</span><br><span class="line">--no-scripts:跳过 composer.json 文件中定义的脚本。</span><br><span class="line">--no-plugins: 关闭 plugins。</span><br><span class="line">--no-progress: 移除进度信息，这可以避免一些不处理换行的终端或脚本出现混乱的显示。</span><br><span class="line">--optimize-autoloader (-o): 转换 PSR-0/4 autoloading 到 classmap 可以获得更快的加载支持。特别是在生产环境下建议这么做，但由于运行需要一些时间，因此并没有作为默认值。</span><br><span class="line"></span><br><span class="line">Tips：</span><br><span class="line">如果当前目录下存在 composer.lock 文件，它会从此文件读取依赖版本，而不是根据 composer.json 文件去获取依赖。这确保了该库的每个使用者都能得到相同的依赖版本。</span><br><span class="line"></span><br><span class="line">如果没有 composer.lock 文件，composer 将在处理完依赖关系后创建它。</span><br></pre></td></tr></table></figure></p>
-<h2 id="update"><a href="#update" class="headerlink" title="update"></a>update</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">为了获取依赖的最新版本，并且升级 composer.lock 文件，你应该使用 update 命令。</span><br><span class="line"></span><br><span class="line">composer update</span><br><span class="line">&lt;!-- 这将解决项目的所有依赖，并将确切的版本号写入 composer.lock。 --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 如果你只是想更新几个包，你可以像这样分别列出它们： --&gt;</span><br><span class="line"></span><br><span class="line">php composer.phar update vendor/package vendor/package2</span><br><span class="line">&lt;!-- 你还可以使用通配符进行批量更新： --&gt;</span><br><span class="line"></span><br><span class="line">php composer.phar update vendor/*</span><br><span class="line">&lt;!--  --&gt;</span><br><span class="line"></span><br><span class="line">update-参数</span><br><span class="line"></span><br><span class="line">与安装的 参数相同 另外如下：</span><br><span class="line">```bash</span><br><span class="line"> </span><br><span class="line">--with-dependencies </span><br><span class="line"></span><br><span class="line">&lt;!-- 同时更新白名单内包的依赖关系，这将进行递归更新。 --&gt;</span><br><span class="line">```bash</span><br><span class="line"></span><br><span class="line"><span class="comment">##申明依赖 require</span></span><br><span class="line"></span><br><span class="line">说明：</span><br><span class="line">require 命令增加新的依赖包到当前目录的 composer.json 文件中</span><br><span class="line">```bash</span><br><span class="line">composer require</span><br><span class="line">&lt;!-- 如果你不希望通过交互来指定依赖包，你可以在这条令中直接指明依赖包。 --&gt;</span><br><span class="line"></span><br><span class="line">composer require vendor/package:2.* vendor/package2:dev-master</span><br><span class="line"></span><br><span class="line">参数 ：</span><br><span class="line">--prefer-source: 当有可用的包时，从 <span class="built_in">source</span> 安装。</span><br><span class="line">--prefer-dist: 当有可用的包时，从 dist 安装。</span><br><span class="line">--dev: 安装 require-dev 字段中列出的包。</span><br><span class="line">--no-update: 禁用依赖关系的自动更新。</span><br><span class="line">--no-progress: 移除进度信息，这可以避免一些不处理换行的终端或脚本出现混乱的显示。</span><br><span class="line">--update-with-dependencies 一并更新新装包的依赖。</span><br></pre></td></tr></table></figure>
-<p>##全局执行 global<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">composer global require fabpot/php-cs-fixer:dev-master</span><br><span class="line">&lt;!-- 如要更新 使用--&gt;</span><br><span class="line"></span><br><span class="line">composer global update</span><br></pre></td></tr></table></figure></p>
-<p>##搜索命令 search<br>说明：<br>search 命令允许你为当前项目搜索依赖包，通常它只搜索 packagist.org 上的包，你可以简单的输入你的搜索条件。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">composer search lavarel</span><br><span class="line"></span><br><span class="line">参数：</span><br><span class="line">--only-name (-N): 仅针对指定的名称搜索（完全匹配）。</span><br></pre></td></tr></table></figure></p>
-<p>##展示命令 show</p>
-<p>说明：<br>列出所有可用的软件包<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">composer show </span><br><span class="line">composer show monolog/monolog</span><br><span class="line">php composer.phar show monolog/monolog 1.2.1</span><br><span class="line">参数：</span><br><span class="line">--installed (-i): 列出已安装的依赖包。</span><br><span class="line"></span><br><span class="line">--platform (-p): 仅列出平台软件包（PHP 与它的扩展）。</span><br><span class="line"></span><br><span class="line">--self (-s): 仅列出当前项目信息。</span><br></pre></td></tr></table></figure></p>
+        <p>##依赖性检测 depends</p>
+<p>说明：<br>depends 命令可以查出已安装在你项目中的某个包，是否正在被其它的包所依赖，并列出他们<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">composer depends  psr/<span class="built_in">log</span></span><br><span class="line"></span><br><span class="line">参数 如下</span><br><span class="line"></span><br><span class="line">depends [-r|--recursive] [-t|--tree] [--] &lt;package&gt; [&lt;constraint&gt;]</span><br></pre></td></tr></table></figure></p>
+<p>##有效性检测 validate</p>
+<p>说明:<br>在提交 composer.json 文件，和创建 tag 前，你应该始终运行 validate 命令。它将检测你的 composer.json 文件是否是有效的<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">php composer.phar validate</span><br><span class="line"></span><br><span class="line">参数：</span><br><span class="line"></span><br><span class="line">--no-check-all: Composer 是否进行完整的校验。</span><br></pre></td></tr></table></figure></p>
+<p>##依赖包状态检测 status<br>说明：<br>如果你经常修改依赖包里的代码，并且它们是从 source（自定义源）进行安装的，那么 status 命令允许你进行检查，如果你有任何本地的更改它将会给予提示。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">composer status</span><br><span class="line">composer status -v</span><br><span class="line">composer status -vv</span><br><span class="line">composer status -vvv</span><br></pre></td></tr></table></figure></p>
+<p>##自我更新composer  self-update or selfupdate<br>说明：<br>将 Composer 自身升级到最新版本，只需要运行 self-update 命令。它将替换你的 composer.phar 文件到最新版本<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">composer self-update</span><br><span class="line">&lt;!-- 更新到特定的版本 --&gt;</span><br><span class="line"></span><br><span class="line">comoser self-update 1.0.0-alpha7</span><br><span class="line"></span><br><span class="line">参数：</span><br><span class="line">--rollback (-r): 回滚到你已经安装的最后一个版本。</span><br><span class="line">--clean-backups: 在更新过程中删除旧的备份，这使得更新过后的当前版本是唯一可用的备份。</span><br></pre></td></tr></table></figure></p>
+<p>##更改配置 config<br>说明：<br>config 命令允许你编辑 Composer 的一些基本设置，无论是本地的 composer.json 或者全局的 config.json 文件。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">composer config --list</span><br><span class="line"></span><br><span class="line">composer config secure-http <span class="literal">false</span></span><br><span class="line"></span><br><span class="line">composer config github-domains [github.com,github.cn]</span><br><span class="line"></span><br><span class="line">&lt;!-- 修改包来源 --&gt;</span><br><span class="line">comoser config repositories.foo vcs http://github.com/foo/bar</span><br><span class="line"></span><br><span class="line">参数：</span><br><span class="line">--global (-g): </span><br><span class="line">&lt;!-- 操作位于 <span class="variable">$COMPOSER_HOME</span>/config.json 的全局配置文件。如果不指定该参数，此命令将影响当前项目的 composer.json 文件，或 --file 参数所指向的文件。 --&gt;</span><br><span class="line">--editor (-e): </span><br><span class="line">&lt;!-- 使用文本编辑器打开 composer.json 文件。默认情况下始终是打开当前项目的文件。当存在 --global 参数时，将会打开全局 composer.json 文件。 --&gt;</span><br><span class="line">--<span class="built_in">unset</span>: </span><br><span class="line">&lt;!-- 移除由 setting-key 指定名称的配置选项。 --&gt;</span><br><span class="line">--list (-l): </span><br><span class="line">&lt;!-- 显示当前配置选项的列表。当存在 --global 参数时，将会显示全局配置选项的列表。 --&gt;</span><br><span class="line">--file=<span class="string">"..."</span> (-f): </span><br><span class="line">&lt;!-- 在一个指定的文件上操作，而不是 composer.json。注意：不能与 --global 参数一起使用。 --&gt;</span><br></pre></td></tr></table></figure></p>
+<p>##创建项目 create-project</p>
+<p>说明：<br>你可以使用 Composer 从现有的包中创建一个新的项目。这相当于执行了一个 git clone 或 svn checkout 命令后将这个包的依赖安装到它自己的 vendor 目录。</p>
+<p>此命令有几个常见的用途：</p>
+<p>你可以快速的部署你的应用。<br>你可以检出任何资源包，并开发它的补丁。<br>多人开发项目，可以用它来加快应用的初始化。<br>要创建基于 Composer 的新项目，你可以使用 “create-project” 命令。传递一个包名，它会为你创建项目的目录。你也可以在第三个参数中指定版本号，否则将获取最新的版本。</p>
+<p>如果该目录目前不存在，则会在安装过程中自动创建。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">composer create-project lavarel/laravel path 2.2.*</span><br><span class="line">composer create-project --prefer-dist laravel/laravel blog</span><br><span class="line"></span><br><span class="line">参数：</span><br><span class="line">--repository-url: 提供一个自定义的储存库来搜索包，这将被用来代替 packagist.org。可以是一个指向 composer 资源库的 HTTP URL，或者是指向某个 packages.json 文件的本地路径。</span><br><span class="line">--stability (-s): 资源包的最低稳定版本，默认为 stable。</span><br><span class="line">--prefer-source: 当有可用的包时，从 <span class="built_in">source</span> 安装。</span><br><span class="line">--prefer-dist: 当有可用的包时，从 dist 安装。</span><br><span class="line">--dev: 安装 require-dev 字段中列出的包。</span><br><span class="line">--no-install: 禁止安装包的依赖。</span><br><span class="line">--no-plugins: 禁用 plugins。</span><br><span class="line">--no-scripts: 禁止在根资源包中定义的脚本执行。</span><br><span class="line">--no-progress: 移除进度信息，这可以避免一些不处理换行的终端或脚本出现混乱的显示。</span><br><span class="line">--keep-vcs: 创建时跳过缺失的 VCS 。如果你在非交互模式下运行创建命令，这将是非常有用的。</span><br></pre></td></tr></table></figure>
+<p>##打印自动加载 dump-autoload<br>说明：<br>某些情况下你需要更新 autoloader，例如在你的包中加入了一个新的类。你可以使用 dump-autoload 来完成，而不必执行 install 或 update 命令。<br>此外，它可以打印一个优化过的，符合 PSR-0/4 规范的类的索引，这也是出于对性能的可考虑。在大型的应用中会有许多类文件，而 autoloader 会占用每个请求的很大一部分时间，使用 classmaps 或许在开发时不太方便，但它在保证性能的前提下，仍然可以获得 PSR-0/4 规范带来的便利。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">composer dump-autoload</span><br><span class="line">参数：</span><br><span class="line">--optimize (-o): 转换 PSR-0/4 autoloading 到 classmap 获得更快的载入速度。这特别适用于生产环境，但可能需要一些时间来运行，因此它目前不是默认设置。</span><br><span class="line">--no-dev: 禁用 <span class="built_in">autoload</span>-dev 规则。</span><br></pre></td></tr></table></figure>
+<p>#查看许可协议 licenses<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">composer licenses</span><br><span class="line">composer licenses --format=json</span><br><span class="line">composer license --format=json --no-dev</span><br></pre></td></tr></table></figure></p>
+<p>#执行脚本 run-script<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">composer run-script  testscript</span><br><span class="line">&lt;!-- 说明 关于脚本请看后面的文章 --&gt;</span><br></pre></td></tr></table></figure></p>
+<p>#诊断 diagnose<br>说明：<br>如果你觉得发现了一个 bug 或是程序行为变得怪异，你可能需要运行 diagnose 命令，来帮助你检测一些常见的问题<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer diagnose</span><br></pre></td></tr></table></figure></p>
+<p>#归档 archive<br>说明：<br>此命令用来对指定包的指定版本进行 zip/tar 归档。它也可以用来归档你的整个项目，不包括 excluded/ignored（排除/忽略）的文件。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">composer archive vendor/package 2.0.21 --format=zip</span><br><span class="line">参数：</span><br><span class="line">--format (-f): 指定归档格式：tar 或 zip（默认为 tar）。</span><br><span class="line">--dir: 指定归档存放的目录（默认为当前目录）。</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2016/07/13/comp-command/" data-id="cjoqrzbb7000khsuvrxa8lz29" class="article-share-link">Share</a>
+      <a data-url="http://www.wbug.cn/2016/07/13/comp-com_depends_/" data-id="cjp82krn0000x6kuvexksr5pd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
@@ -422,7 +434,7 @@ var _hmt = _hmt || [];
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
     </nav>
   
 </section>
@@ -433,7 +445,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/code/">code</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/default/">default</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/google/">google</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/news/">news</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/svn/">svn</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/电影/">电影</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/code/">code</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/default/">default</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/google/">google</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/news/">news</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/svn/">svn</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/电影/">电影</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -442,7 +454,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/OSI七层网络模型/">OSI七层网络模型</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bug/">bug</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/">ssh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime/">sublime</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/OSI七层网络模型/">OSI七层网络模型</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bug/">bug</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/">ssh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime/">sublime</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -451,7 +463,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/OSI七层网络模型/" style="font-size: 10px;">OSI七层网络模型</a> <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/php/" style="font-size: 20px;">php</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/sublime/" style="font-size: 10px;">sublime</a>
+      <a href="/tags/OSI七层网络模型/" style="font-size: 10px;">OSI七层网络模型</a> <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 16.67px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/mysql/" style="font-size: 13.33px;">mysql</a> <a href="/tags/php/" style="font-size: 20px;">php</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/sublime/" style="font-size: 10px;">sublime</a>
     </div>
   </div>
 
@@ -460,7 +472,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -470,6 +482,10 @@ var _hmt = _hmt || [];
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/12/03/mysql-master-slave/">mysql主从复制实现</a>
+          </li>
         
           <li>
             <a href="/2018/11/21/httpCode_cn/">http状态码一览</a>
@@ -485,10 +501,6 @@ var _hmt = _hmt || [];
         
           <li>
             <a href="/2018/05/19/hexo-deploy-failed/">hexo deploy failed</a>
-          </li>
-        
-          <li>
-            <a href="/2018/05/17/debian-9-4-stretch-install/">debian 9.4(stretch) install</a>
           </li>
         
       </ul>

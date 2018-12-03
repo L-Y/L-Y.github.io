@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://www.wbug.cn/2018/12/03/mysql-master-slave/</loc>
+    <lastmod>2018-12-03T09:01:40.638Z</lastmod>
+    <data>
+        <display>
+        <title>mysql主从复制实现</title>
+        <pubTime>2018-12-03T07:43:22.000Z</pubTime>
+        
+        <tag>mysql</tag>
+         
+         
+           
+             
+              <breadCrumb title="mysql" url="http://www.wbug.cn/categories/mysql/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.wbug.cn/2018/11/21/httpCode_cn/</loc>
     <lastmod>2018-11-21T06:19:25.959Z</lastmod>
     <data>
@@ -78,7 +98,6 @@
     
     
     
-    
   <url>
     <loc>http://www.wbug.cn/2015/03/21/zend/</loc>
     <lastmod>2018-11-21T04:00:03.342Z</lastmod>
@@ -97,13 +116,14 @@
     </url>
 
     
+    
   <url>
-    <loc>http://www.wbug.cn/2015/03/21/xdebug/</loc>
+    <loc>http://www.wbug.cn/2015/03/21/writephp/</loc>
     <lastmod>2018-11-21T04:00:03.341Z</lastmod>
     <data>
         <display>
-        <title>php 之 xdebug</title>
-        <pubTime>2015-03-21T06:45:44.000Z</pubTime>
+        <title>php 输出类</title>
+        <pubTime>2015-03-21T09:00:44.000Z</pubTime>
         
         <tag>php</tag>
          
@@ -118,12 +138,12 @@
 
     
   <url>
-    <loc>http://www.wbug.cn/2015/03/21/writephp/</loc>
+    <loc>http://www.wbug.cn/2015/03/21/xdebug/</loc>
     <lastmod>2018-11-21T04:00:03.341Z</lastmod>
     <data>
         <display>
-        <title>php 输出类</title>
-        <pubTime>2015-03-21T09:00:44.000Z</pubTime>
+        <title>php 之 xdebug</title>
+        <pubTime>2015-03-21T06:45:44.000Z</pubTime>
         
         <tag>php</tag>
          
@@ -222,23 +242,6 @@
 
     
   <url>
-    <loc>http://www.wbug.cn/2015/01/29/sshKey/</loc>
-    <lastmod>2018-11-21T04:00:03.337Z</lastmod>
-    <data>
-        <display>
-        <title>hexo之SSH kEY 二</title>
-        <pubTime>2015-01-29T03:18:00.000Z</pubTime>
-        
-        <tag>ssh</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://www.wbug.cn/2015/05/12/smallstory/</loc>
     <lastmod>2018-11-21T04:00:03.337Z</lastmod>
     <data>
@@ -271,6 +274,23 @@
              
               <breadCrumb title="hexo" url="http://www.wbug.cn/categories/hexo/"/>
           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.wbug.cn/2015/01/29/sshKey/</loc>
+    <lastmod>2018-11-21T04:00:03.337Z</lastmod>
+    <data>
+        <display>
+        <title>hexo之SSH kEY 二</title>
+        <pubTime>2015-01-29T03:18:00.000Z</pubTime>
+        
+        <tag>ssh</tag>
+         
+         
+           
         </display>
     </data>
     </url>
@@ -364,12 +384,12 @@
 
     
   <url>
-    <loc>http://www.wbug.cn/2017/11/09/phpQues/</loc>
+    <loc>http://www.wbug.cn/2017/11/09/phpQues2/</loc>
     <lastmod>2018-11-21T04:00:03.333Z</lastmod>
     <data>
         <display>
-        <title>php线程安全与非线程安全问题</title>
-        <pubTime>2017-11-09T14:39:46.000Z</pubTime>
+        <title>什么是CGI、FastCGI、PHP-CGI、PHP-FPM、Spawn-FCGI？</title>
+        <pubTime>2017-11-09T14:52:24.000Z</pubTime>
         
          
            
@@ -382,12 +402,12 @@
 
     
   <url>
-    <loc>http://www.wbug.cn/2017/11/09/phpQues2/</loc>
+    <loc>http://www.wbug.cn/2017/11/09/phpQues/</loc>
     <lastmod>2018-11-21T04:00:03.333Z</lastmod>
     <data>
         <display>
-        <title>什么是CGI、FastCGI、PHP-CGI、PHP-FPM、Spawn-FCGI？</title>
-        <pubTime>2017-11-09T14:52:24.000Z</pubTime>
+        <title>php线程安全与非线程安全问题</title>
+        <pubTime>2017-11-09T14:39:46.000Z</pubTime>
         
          
            
@@ -511,6 +531,23 @@
 
     
   <url>
+    <loc>http://www.wbug.cn/2017/11/09/hexoerror/</loc>
+    <lastmod>2018-11-21T04:00:03.329Z</lastmod>
+    <data>
+        <display>
+        <title>安装hexo时提示错误，使用npm安装速度慢</title>
+        <pubTime>2017-11-09T13:43:27.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.wbug.cn/2017/11/09/giterror/</loc>
     <lastmod>2018-11-21T04:00:03.329Z</lastmod>
     <data>
@@ -536,23 +573,6 @@
         <title>hexo deploy failed</title>
         <pubTime>2018-05-18T16:09:45.000Z</pubTime>
         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.wbug.cn/2017/11/09/hexoerror/</loc>
-    <lastmod>2018-11-21T04:00:03.329Z</lastmod>
-    <data>
-        <display>
-        <title>安装hexo时提示错误，使用npm安装速度慢</title>
-        <pubTime>2017-11-09T13:43:27.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
          
            
         </display>
@@ -667,12 +687,12 @@
 
     
   <url>
-    <loc>http://www.wbug.cn/2016/07/17/comp-architecture_2/</loc>
+    <loc>http://www.wbug.cn/2016/07/13/comp-com_depends_/</loc>
     <lastmod>2018-11-21T04:00:03.324Z</lastmod>
     <data>
         <display>
-        <title>php 之 composer 的JSON包的规范二</title>
-        <pubTime>2016-07-17T11:01:42.000Z</pubTime>
+        <title>php 之 composer 的命令二</title>
+        <pubTime>2016-07-13T12:10:55.000Z</pubTime>
         
         <tag>php</tag>
          
@@ -684,12 +704,12 @@
 
     
   <url>
-    <loc>http://www.wbug.cn/2016/07/13/comp-com_depends_/</loc>
+    <loc>http://www.wbug.cn/2016/07/17/comp-architecture_2/</loc>
     <lastmod>2018-11-21T04:00:03.324Z</lastmod>
     <data>
         <display>
-        <title>php 之 composer 的命令二</title>
-        <pubTime>2016-07-13T12:10:55.000Z</pubTime>
+        <title>php 之 composer 的JSON包的规范二</title>
+        <pubTime>2016-07-17T11:01:42.000Z</pubTime>
         
         <tag>php</tag>
          
