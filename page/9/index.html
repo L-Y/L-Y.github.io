@@ -76,6 +76,63 @@ var _hmt = _hmt || [];
       <div class="outer">
         <section id="main">
   
+    <article id="post-xdebug" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/03/21/xdebug/" class="article-date">
+  <time datetime="2015-03-21T06:45:44.000Z" itemprop="datePublished">2015-03-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/code/">code</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/03/21/xdebug/">php 之 xdebug</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="PHP配置调试工具XDebug"><a href="#PHP配置调试工具XDebug" class="headerlink" title="PHP配置调试工具XDebug"></a>PHP配置调试工具XDebug</h2><h3 id="1-去xdebug的官方网站那http-www-xdebug-org-上下载与php版本对应的xdebug，我的是window系统，下载的-dll文件。"><a href="#1-去xdebug的官方网站那http-www-xdebug-org-上下载与php版本对应的xdebug，我的是window系统，下载的-dll文件。" class="headerlink" title="1. 去xdebug的官方网站那http://www.xdebug.org 上下载与php版本对应的xdebug，我的是window系统，下载的.dll文件。"></a>1. 去xdebug的官方网站那<a href="http://www.xdebug.org" target="_blank" rel="noopener">http://www.xdebug.org</a> 上下载与php版本对应的xdebug，我的是window系统，下载的.dll文件。</h3><h3 id="2-把php-xdebug-dll放入php文件夹的ext里面（php的扩展文件都放在此处，统一一下而已）"><a href="#2-把php-xdebug-dll放入php文件夹的ext里面（php的扩展文件都放在此处，统一一下而已）" class="headerlink" title="2. 把php_xdebug.dll放入php文件夹的ext里面（php的扩展文件都放在此处，统一一下而已）"></a>2. 把php_xdebug.dll放入php文件夹的ext里面（php的扩展文件都放在此处，统一一下而已）</h3><h3 id="3-打开php配置文件php-ini-在最后添加以下代码把xdebug-dll加载到php环境中"><a href="#3-打开php配置文件php-ini-在最后添加以下代码把xdebug-dll加载到php环境中" class="headerlink" title="3. 打开php配置文件php.ini,在最后添加以下代码把xdebug.dll加载到php环境中"></a>3. 打开php配置文件php.ini,在最后添加以下代码把xdebug.dll加载到php环境中</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[Xdebug]</span><br><span class="line">zend_extension_ts=<span class="string">"D:/php/ext/php_xdebug.dll"</span>   //这里是绝对路径</span><br><span class="line">xdebug.auto_trace=On</span><br><span class="line">xdebug.collect_params=On</span><br><span class="line">xdebug.collect_return=On</span><br><span class="line">xdebug.trace_output_dir=<span class="string">"c:/php5/debuginfo"</span></span><br><span class="line">xdebug.profiler_enable=On</span><br><span class="line">xdebug.profiler_output_dir=<span class="string">"c:/php5/debuginfo"</span></span><br></pre></td></tr></table></figure>
+<p>备注：如果PHPINFO中还是没有XDebug的信息，把上面配置文件中的<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zend_extension_ts=<span class="string">"D:/php/ext/php_xdebug.dll"</span></span><br></pre></td></tr></table></figure></p>
+<p>改为<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zend_extension=<span class="string">"D:/php/ext/php_xdebug.dll"</span></span><br></pre></td></tr></table></figure></p>
+<p>这里点很重要，这个问题让我郁闷了很久，结果就是这样解决的，具体也不知道是为什么，网上说PHP5.3以后才是通过zend_extension这种方式加载，不管他了，搞定才是王道</p>
+<p>以下是参数解释：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zend_extension_ts=<span class="string">"c:/webserver/php5/ext/php_xdebug.dll"</span></span><br></pre></td></tr></table></figure></p>
+<p>加载xdebug模块。这里不能用extension=php_xdebug.dll的方式加载，必须要以zend的方式加载，否则安装上后，phpinfo是显示不出xdebug这个项的。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xdebug.auto_trace=on;</span><br></pre></td></tr></table></figure></p>
+<p>自动打开“监测函数调用过程”的功模。该功能可以在你指定的目录中将函数调用的监测信息以文件的形式输出。此配置项的默认值为off。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xdebug.collect_params=on;</span><br></pre></td></tr></table></figure></p>
+<p>打开收集“函数参数”的功能。将函数调用的参数值列入函数过程调用的监测信息中。此配置项的默认值为off。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xdebug.collect_return=on</span><br></pre></td></tr></table></figure></p>
+<p>打开收集“函数返回值”的功能。将函数的返回值列入函数过程调用的监测信息中。此配置项的默认值为off。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xdebug.trace_output_dir=”c:Tempxdebug”</span><br></pre></td></tr></table></figure></p>
+<p>设定函数调用监测信息的输出文件的路径。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xdebug.profiler_enable=on</span><br></pre></td></tr></table></figure></p>
+<p>打开效能监测器。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xdebug.profiler_output_dir=”c:Tempxdebug”;</span><br></pre></td></tr></table></figure></p>
+<p>设定效能监测信息输出文件的路径</p>
+<p>注意：php5.3安装xdebug的时候，有些地方和php5.2安装有所区别，php5.3使用zend_extension</p>
+<p>以下是PHP5.3的配置信息：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">[Xdebug]</span><br><span class="line">zend_extension=D:/Program Files/wamp/bin/php/php5.3.3/ext/php_xdebug-2.1.2-5.3-vc6.dll</span><br><span class="line">;是否开启自动跟踪</span><br><span class="line">xdebug.auto_trace = On</span><br><span class="line">;是否开启异常跟踪</span><br><span class="line">xdebug.show_exception_trace = On</span><br><span class="line">;是否开启远程调试自动启动</span><br><span class="line">xdebug.remote_autostart = On</span><br><span class="line">;是否开启远程调试</span><br><span class="line">xdebug.remote_enable = On</span><br><span class="line">;允许调试的客户端IP</span><br><span class="line">xdebug.remote_host=192.168.1.227</span><br><span class="line">;远程调试的端口（默认9000）</span><br><span class="line">xdebug.remote_port=9000</span><br><span class="line">;调试插件dbgp</span><br><span class="line">xdebug.remote_handler=dbgp</span><br><span class="line">;是否收集变量</span><br><span class="line">xdebug.collect_vars = On</span><br><span class="line">;是否收集返回值</span><br><span class="line">xdebug.collect_return = On</span><br><span class="line">;是否收集参数</span><br><span class="line">xdebug.collect_params = On</span><br><span class="line">;跟踪输出路径</span><br><span class="line">xdebug.trace_output_dir=<span class="string">"D:/Program Files/wamp/bin/php/debuginfo"</span></span><br><span class="line">;是否开启调试内容</span><br><span class="line">xdebug.profiler_enable=On</span><br><span class="line">;调试输出路径</span><br><span class="line">xdebug.profiler_output_dir=<span class="string">"D:/Program Files/wamp/bin/php/debuginfo"</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="4-重启apache，安装完成"><a href="#4-重启apache，安装完成" class="headerlink" title="4. 重启apache，安装完成"></a>4. 重启apache，安装完成</h3><p>可以通过查看phpinfo信息确定xdebug是否集成到了php环境中，出现如下内容，代表xdebug可以在php中使用了</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.wbug.cn/2015/03/21/xdebug/" data-id="cjp9hwprt003fxwuvrhmvrfae" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+ 
+  
     <article id="post-svn" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/03/21/svn/" class="article-date">
@@ -127,7 +184,7 @@ var _hmt = _hmt || [];
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2015/03/21/svn/" data-id="cjp83ajix002zfkuvuy4wpo8e" class="article-share-link">Share</a>
+      <a data-url="http://www.wbug.cn/2015/03/21/svn/" data-id="cjp9hwprq003axwuvuqyavjm4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -179,7 +236,7 @@ header(<span class="string">'Content-Type:text/html;charset=utf-8'</span>)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2015/03/21/meta/" data-id="cjp83aji4001mfkuvfpupcmer" class="article-share-link">Share</a>
+      <a data-url="http://www.wbug.cn/2015/03/21/meta/" data-id="cjp9hwpqq001sxwuvfljk9o13" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li></ul>
@@ -232,7 +289,7 @@ header(<span class="string">'Content-Type:text/html;charset=utf-8'</span>)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2015/03/21/log/" data-id="cjp83aji3001lfkuvneo8ammu" class="article-share-link">Share</a>
+      <a data-url="http://www.wbug.cn/2015/03/21/log/" data-id="cjp9hwpqp001rxwuvjbv0hryl" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li></ul>
@@ -278,66 +335,9 @@ header(<span class="string">'Content-Type:text/html;charset=utf-8'</span>)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2015/03/21/search/" data-id="cjp83ajio002ifkuvfutua3n0" class="article-share-link">Share</a>
+      <a data-url="http://www.wbug.cn/2015/03/21/search/" data-id="cjp9hwpr8002kxwuvw7iufkqk" class="article-share-link">Share</a>
       
       
-    </footer>
-  </div>
-  
-</article>
-
- 
-  
-    <article id="post-sshKey" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/01/29/sshKey/" class="article-date">
-  <time datetime="2015-01-29T03:18:00.000Z" itemprop="datePublished">2015-01-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-<div class="article-gallery">
-  <div class="article-gallery-photos">
-    
-      <a class="article-gallery-img fancybox" href="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg" rel="gallery_cjp83ajir002nfkuvgr0s1k2w">
-        <img src="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg" itemprop="image">
-      </a>
-    
-  </div>
-</div>
-
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/01/29/sshKey/">hexo之SSH kEY 二</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a>GitHub</h2><p>首先注册一个『GitHub』帐号，已有的默认默认请忽略<br>建立与你用户名对应的仓库，仓库名必须为『your_user_name.github.com』<br>添加SSH公钥到『Account settings -&gt; SSH Keys -&gt; Add SSH Key』</p>
-<h2 id="添加SSH-Key。"><a href="#添加SSH-Key。" class="headerlink" title="添加SSH-Key。"></a>添加SSH-Key。</h2><h3 id="首先设置你的用户名密码："><a href="#首先设置你的用户名密码：" class="headerlink" title="首先设置你的用户名密码："></a>首先设置你的用户名密码：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email <span class="string">"bu.ru@qq.com"</span></span><br><span class="line">git config --global user.name <span class="string">"bruce-sha"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="生成密钥："><a href="#生成密钥：" class="headerlink" title="生成密钥："></a>生成密钥：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"bu.ru@qq.com"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="输入文件路径："><a href="#输入文件路径：" class="headerlink" title="输入文件路径："></a>输入文件路径：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">H:\hexo\blog&gt;ssh-keygen -t rsa -C <span class="string">"bu.ru@qq.com"</span></span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (//.ssh/id_rsa): H:\git\myssh\ssh</span><br><span class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase):</span><br><span class="line">Enter same passphrase again:</span><br><span class="line">Your identification has been saved <span class="keyword">in</span> H:\git\myssh\ssh.</span><br><span class="line">Your public key has been saved <span class="keyword">in</span> H:\git\myssh\ssh.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line">b0:0c:2e:67:33:ab:c1:50:10:40:0a:ba:c1:80:59:22 bu.ru@qq.com</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="最后可以验证一下："><a href="#最后可以验证一下：" class="headerlink" title="最后可以验证一下："></a>最后可以验证一下：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2015/01/29/sshKey/" data-id="cjp83ajir002nfkuvgr0s1k2w" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ssh/">ssh</a></li></ul>
-
     </footer>
   </div>
   
@@ -358,7 +358,7 @@ header(<span class="string">'Content-Type:text/html;charset=utf-8'</span>)
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/code/">code</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/default/">default</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/google/">google</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/news/">news</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/svn/">svn</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/电影/">电影</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/code/">code</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/default/">default</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/google/">google</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/news/">news</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/svn/">svn</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/电影/">电影</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -367,7 +367,7 @@ header(<span class="string">'Content-Type:text/html;charset=utf-8'</span>)
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/OSI七层网络模型/">OSI七层网络模型</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bug/">bug</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/">ssh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime/">sublime</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/OSI七层网络模型/">OSI七层网络模型</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bug/">bug</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/">ssh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime/">sublime</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -385,7 +385,7 @@ header(<span class="string">'Content-Type:text/html;charset=utf-8'</span>)
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -395,6 +395,10 @@ header(<span class="string">'Content-Type:text/html;charset=utf-8'</span>)
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/12/04/mysql-select-size/">mysql容量查询</a>
+          </li>
         
           <li>
             <a href="/2018/12/03/mysql-master-slave/">mysql主从复制实现</a>
@@ -410,10 +414,6 @@ header(<span class="string">'Content-Type:text/html;charset=utf-8'</span>)
         
           <li>
             <a href="/2018/11/21/phpCurlError/">php使用curl时报错解决方法</a>
-          </li>
-        
-          <li>
-            <a href="/2018/05/19/hexo-deploy-failed/">hexo deploy failed</a>
           </li>
         
       </ul>
