@@ -121,7 +121,7 @@ var _hmt = _hmt || [];
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2015/03/21/xdebug/" data-id="cjvn7sbel003kjcuv8n2077z1" class="article-share-link">Share</a>
+      <a data-url="http://www.wbug.cn/2015/03/21/xdebug/" data-id="cjvvwhkke003nnouv9ab4noni" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
@@ -184,7 +184,7 @@ var _hmt = _hmt || [];
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2015/03/21/svn/" data-id="cjvn7sbee003fjcuv9x2kps44" class="article-share-link">Share</a>
+      <a data-url="http://www.wbug.cn/2015/03/21/svn/" data-id="cjvvwhkk5003enouvmy7artcs" class="article-share-link">Share</a>
       
       
     </footer>
@@ -236,7 +236,7 @@ header(<span class="string">'Content-Type:text/html;charset=utf-8'</span>)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2015/03/21/meta/" data-id="cjvn7sbd5001rjcuvjkpodo3a" class="article-share-link">Share</a>
+      <a data-url="http://www.wbug.cn/2015/03/21/meta/" data-id="cjvvwhkil001tnouvc0ebvzob" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li></ul>
@@ -285,11 +285,11 @@ header(<span class="string">'Content-Type:text/html;charset=utf-8'</span>)
 <p>#查询上季度数据<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from `ht_invoice_information` <span class="built_in">where</span> QUARTER(create_date)=QUARTER(DATE_SUB(now(),interval 1 QUARTER));</span><br></pre></td></tr></table></figure></p>
 <p>#查询本年数据<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from `ht_invoice_information` <span class="built_in">where</span> YEAR(create_date)=YEAR(NOW());</span><br></pre></td></tr></table></figure></p>
 <p>#查询上年数据<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from `ht_invoice_information` <span class="built_in">where</span> year(create_date)=year(date_sub(now(),interval 1 year));</span><br></pre></td></tr></table></figure></p>
-
+<h1 id="更新某个字段中存在某字符串"><a href="#更新某个字段中存在某字符串" class="headerlink" title="更新某个字段中存在某字符串"></a>更新某个字段中存在某字符串</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UPDATE `web` SET `header_img`=REPLACE(`url`, &apos;httpss&apos;, &apos;https&apos;)  WHERE id IN (SELECT aid FROM (SELECT id AS aid  FROM `web` WHERE LOCATE(&apos;httpss://&apos;,`url`)&gt;0 ) AS a );</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2015/03/21/log/" data-id="cjvn7sbd4001pjcuvp10duarb" class="article-share-link">Share</a>
+      <a data-url="http://www.wbug.cn/2015/03/21/log/" data-id="cjvvwhki9001dnouvb6mohhvh" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li></ul>
@@ -335,7 +335,7 @@ header(<span class="string">'Content-Type:text/html;charset=utf-8'</span>)
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2015/03/21/search/" data-id="cjvn7sbds002mjcuvqieebfmi" class="article-share-link">Share</a>
+      <a data-url="http://www.wbug.cn/2015/03/21/search/" data-id="cjvvwhkj5002lnouvsnjm8ozt" class="article-share-link">Share</a>
       
       
     </footer>
