@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.wbug.cn/2020/06/03/php-ext/</loc>
+    
+    <lastmod>2020-06-03T09:41:41.424Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.wbug.cn/2015/03/21/log/</loc>
     
     <lastmod>2019-05-20T04:59:09.151Z</lastmod>
@@ -114,14 +121,14 @@
   </url>
   
   <url>
-    <loc>http://www.wbug.cn/2015/06/25/test/</loc>
+    <loc>http://www.wbug.cn/2015/03/21/svn/</loc>
     
     <lastmod>2018-11-21T04:00:03.340Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.wbug.cn/2015/03/21/svn/</loc>
+    <loc>http://www.wbug.cn/2015/06/25/test/</loc>
     
     <lastmod>2018-11-21T04:00:03.340Z</lastmod>
     
@@ -149,14 +156,14 @@
   </url>
   
   <url>
-    <loc>http://www.wbug.cn/2015/01/29/sshKey/</loc>
+    <loc>http://www.wbug.cn/2015/06/23/source/</loc>
     
     <lastmod>2018-11-21T04:00:03.337Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.wbug.cn/2015/06/23/source/</loc>
+    <loc>http://www.wbug.cn/2015/01/29/sshKey/</loc>
     
     <lastmod>2018-11-21T04:00:03.337Z</lastmod>
     
@@ -170,13 +177,6 @@
   </url>
   
   <url>
-    <loc>http://www.wbug.cn/2015/03/21/search/</loc>
-    
-    <lastmod>2018-11-21T04:00:03.336Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.wbug.cn/2016/08/07/regexprion/</loc>
     
     <lastmod>2018-11-21T04:00:03.336Z</lastmod>
@@ -184,14 +184,21 @@
   </url>
   
   <url>
-    <loc>http://www.wbug.cn/2016/07/01/reg/</loc>
+    <loc>http://www.wbug.cn/2015/03/21/search/</loc>
+    
+    <lastmod>2018-11-21T04:00:03.336Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wbug.cn/2015/03/27/pywin32/</loc>
     
     <lastmod>2018-11-21T04:00:03.335Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.wbug.cn/2015/03/27/pywin32/</loc>
+    <loc>http://www.wbug.cn/2016/07/01/reg/</loc>
     
     <lastmod>2018-11-21T04:00:03.335Z</lastmod>
     
@@ -205,14 +212,14 @@
   </url>
   
   <url>
-    <loc>http://www.wbug.cn/2017/11/09/phpQues2/</loc>
+    <loc>http://www.wbug.cn/2017/11/09/phpQues/</loc>
     
     <lastmod>2018-11-21T04:00:03.333Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.wbug.cn/2017/11/09/phpQues/</loc>
+    <loc>http://www.wbug.cn/2017/11/09/phpQues2/</loc>
     
     <lastmod>2018-11-21T04:00:03.333Z</lastmod>
     
@@ -233,14 +240,14 @@
   </url>
   
   <url>
-    <loc>http://www.wbug.cn/2015/04/30/kepu/</loc>
+    <loc>http://www.wbug.cn/2015/03/21/meta/</loc>
     
     <lastmod>2018-11-21T04:00:03.331Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.wbug.cn/2015/03/21/meta/</loc>
+    <loc>http://www.wbug.cn/2015/04/30/kepu/</loc>
     
     <lastmod>2018-11-21T04:00:03.331Z</lastmod>
     
@@ -303,14 +310,14 @@
   </url>
   
   <url>
-    <loc>http://www.wbug.cn/2016/07/13/comp-command/</loc>
+    <loc>http://www.wbug.cn/2016/07/13/comp-com_env_/</loc>
     
     <lastmod>2018-11-21T04:00:03.325Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.wbug.cn/2016/07/13/comp-com_env_/</loc>
+    <loc>http://www.wbug.cn/2016/07/13/comp-command/</loc>
     
     <lastmod>2018-11-21T04:00:03.325Z</lastmod>
     

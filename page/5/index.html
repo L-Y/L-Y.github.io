@@ -76,6 +76,56 @@ var _hmt = _hmt || [];
       <div class="outer">
         <section id="main">
   
+    <article id="post-comp-command" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/13/comp-command/" class="article-date">
+  <time datetime="2016-07-13T12:10:55.000Z" itemprop="datePublished">2016-07-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/13/comp-command/">php 之 composer 的命令一</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##前言 帮助无疑是最好的教程</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 此命令将列出所有可操作的命令 --&gt;</span><br><span class="line"></span><br><span class="line">composer list</span><br><span class="line"></span><br><span class="line">&lt;!-- 如想查看list用法 可使用 --&gt;</span><br><span class="line"></span><br><span class="line">composer list -h  or composer list --<span class="built_in">help</span></span><br><span class="line"></span><br><span class="line">&lt;!-- 又如 --&gt;</span><br><span class="line">composer init -h</span><br><span class="line"></span><br><span class="line">comoser search -h</span><br></pre></td></tr></table></figure>
+<p>#全局参数 可与任意命令使用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">--verbose (-v): 增加反馈信息的详细度。</span><br><span class="line">	&lt;!-- 1.)-v 表示正常输出。 --&gt;</span><br><span class="line">	composer -v</span><br><span class="line">	&lt;!-- 2.)-vv 表示更详细的输出。 --&gt;</span><br><span class="line">	comoser -vv</span><br><span class="line">	&lt;!-- 3.)-vvv 则是为了 debug。 --&gt;</span><br><span class="line">	composer -vvv</span><br><span class="line">&lt;!-- --<span class="built_in">help</span> (-h): 显示帮助信息。 --&gt;</span><br><span class="line"></span><br><span class="line">composer -h</span><br><span class="line"></span><br><span class="line">--quiet (-q): 禁止输出任何信息。</span><br><span class="line"></span><br><span class="line">--no-interaction (-n): 不要询问任何交互问题。</span><br><span class="line"></span><br><span class="line">--working-dir (-d): </span><br><span class="line"></span><br><span class="line">如果指定的话，使用给定的目录作为工作目录。</span><br><span class="line"></span><br><span class="line">&lt;!-- --profile: 显示时间和内存使用信息。 --&gt;</span><br><span class="line"></span><br><span class="line">composer --profile</span><br><span class="line"></span><br><span class="line">--ansi: 强制 ANSI 输出。</span><br><span class="line"></span><br><span class="line">--no-ansi: 关闭 ANSI 输出。</span><br><span class="line"></span><br><span class="line">--version (-V): 显示当前应用程序的版本信息。</span><br></pre></td></tr></table></figure></p>
+<p>##初始化 init</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">composer init</span><br><span class="line">package: </span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"name"</span>: <span class="string">"test/testname"</span>,</span><br><span class="line">    <span class="string">"description"</span>: <span class="string">"This is a test!"</span>,</span><br><span class="line">    <span class="string">"type"</span>: <span class="string">"test/test"</span>,</span><br><span class="line">    <span class="string">"license"</span>: <span class="string">"test"</span>,</span><br><span class="line">    <span class="string">"minimum-stability"</span>: <span class="string">"beta"</span>,</span><br><span class="line">    <span class="string">"require"</span>: &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;!-- 参数 --&gt;</span><br><span class="line">--name: 包的名称。</span><br><span class="line">--description: 包的描述。</span><br><span class="line">--author: 包的作者。</span><br><span class="line">--homepage: 包的主页。</span><br><span class="line">--require: 需要依赖的其它包，必须要有一个版本约束。并且应该遵循 foo/bar:1.0.0 这样的格式。</span><br><span class="line">--require-dev: 开发版的依赖包，内容格式与 --require 相同。</span><br><span class="line">--stability (-s): minimum-stability 字段的值。</span><br><span class="line">&lt;!-- 完成的命令如下 --&gt;</span><br><span class="line"></span><br><span class="line">composer init --name <span class="built_in">test</span>/testname --description <span class="string">"This is a test"</span> --<span class="built_in">type</span> <span class="string">"test/test"</span> --license <span class="string">"test"</span> --stability <span class="string">"dev"</span> --require <span class="string">""</span> --author ly</span><br></pre></td></tr></table></figure>
+<p>##安装 install</p>
+<p>说明：<br>install 命令从当前目录读取 composer.json 文件，处理了依赖关系，并把其安装到 vendor 目录下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">composer install</span><br><span class="line">&lt;!-- 参数 --&gt;</span><br><span class="line">--prefer-source: 下载包的方式有两种： <span class="built_in">source</span> 和 dist。对于稳定版本 composer 将默认使用 dist 方式。而 <span class="built_in">source</span> 表示版本控制源 。如果 --prefer-source 是被启用的，composer 将从 <span class="built_in">source</span> 安装（如果有的话）。如果想要使用一个 bugfix 到你的项目，这是非常有用的。并且可以直接从本地的版本库直接获取依赖关系。</span><br><span class="line">--prefer-dist: 与 --prefer-source 相反，composer 将尽可能的从 dist 获取，这将大幅度的加快在 build servers 上的安装。这也是一个回避 git 问题的途径，如果你不清楚如何正确的设置。</span><br><span class="line">--dry-run: 如果你只是想演示而并非实际安装一个包，你可以运行 --dry-run 命令，它将模拟安装并显示将会发生什么。</span><br><span class="line">--dev: 安装 require-dev 字段中列出的包（这是一个默认值）。</span><br><span class="line">--no-dev:跳过 require-dev 字段中列出的包。</span><br><span class="line">--no-scripts:跳过 composer.json 文件中定义的脚本。</span><br><span class="line">--no-plugins: 关闭 plugins。</span><br><span class="line">--no-progress: 移除进度信息，这可以避免一些不处理换行的终端或脚本出现混乱的显示。</span><br><span class="line">--optimize-autoloader (-o): 转换 PSR-0/4 autoloading 到 classmap 可以获得更快的加载支持。特别是在生产环境下建议这么做，但由于运行需要一些时间，因此并没有作为默认值。</span><br><span class="line"></span><br><span class="line">Tips：</span><br><span class="line">如果当前目录下存在 composer.lock 文件，它会从此文件读取依赖版本，而不是根据 composer.json 文件去获取依赖。这确保了该库的每个使用者都能得到相同的依赖版本。</span><br><span class="line"></span><br><span class="line">如果没有 composer.lock 文件，composer 将在处理完依赖关系后创建它。</span><br></pre></td></tr></table></figure></p>
+<h2 id="update"><a href="#update" class="headerlink" title="update"></a>update</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">为了获取依赖的最新版本，并且升级 composer.lock 文件，你应该使用 update 命令。</span><br><span class="line"></span><br><span class="line">composer update</span><br><span class="line">&lt;!-- 这将解决项目的所有依赖，并将确切的版本号写入 composer.lock。 --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 如果你只是想更新几个包，你可以像这样分别列出它们： --&gt;</span><br><span class="line"></span><br><span class="line">php composer.phar update vendor/package vendor/package2</span><br><span class="line">&lt;!-- 你还可以使用通配符进行批量更新： --&gt;</span><br><span class="line"></span><br><span class="line">php composer.phar update vendor/*</span><br><span class="line">&lt;!--  --&gt;</span><br><span class="line"></span><br><span class="line">update-参数</span><br><span class="line"></span><br><span class="line">与安装的 参数相同 另外如下：</span><br><span class="line">```bash</span><br><span class="line"> </span><br><span class="line">--with-dependencies </span><br><span class="line"></span><br><span class="line">&lt;!-- 同时更新白名单内包的依赖关系，这将进行递归更新。 --&gt;</span><br><span class="line">```bash</span><br><span class="line"></span><br><span class="line"><span class="comment">##申明依赖 require</span></span><br><span class="line"></span><br><span class="line">说明：</span><br><span class="line">require 命令增加新的依赖包到当前目录的 composer.json 文件中</span><br><span class="line">```bash</span><br><span class="line">composer require</span><br><span class="line">&lt;!-- 如果你不希望通过交互来指定依赖包，你可以在这条令中直接指明依赖包。 --&gt;</span><br><span class="line"></span><br><span class="line">composer require vendor/package:2.* vendor/package2:dev-master</span><br><span class="line"></span><br><span class="line">参数 ：</span><br><span class="line">--prefer-source: 当有可用的包时，从 <span class="built_in">source</span> 安装。</span><br><span class="line">--prefer-dist: 当有可用的包时，从 dist 安装。</span><br><span class="line">--dev: 安装 require-dev 字段中列出的包。</span><br><span class="line">--no-update: 禁用依赖关系的自动更新。</span><br><span class="line">--no-progress: 移除进度信息，这可以避免一些不处理换行的终端或脚本出现混乱的显示。</span><br><span class="line">--update-with-dependencies 一并更新新装包的依赖。</span><br></pre></td></tr></table></figure>
+<p>##全局执行 global<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">composer global require fabpot/php-cs-fixer:dev-master</span><br><span class="line">&lt;!-- 如要更新 使用--&gt;</span><br><span class="line"></span><br><span class="line">composer global update</span><br></pre></td></tr></table></figure></p>
+<p>##搜索命令 search<br>说明：<br>search 命令允许你为当前项目搜索依赖包，通常它只搜索 packagist.org 上的包，你可以简单的输入你的搜索条件。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">composer search lavarel</span><br><span class="line"></span><br><span class="line">参数：</span><br><span class="line">--only-name (-N): 仅针对指定的名称搜索（完全匹配）。</span><br></pre></td></tr></table></figure></p>
+<p>##展示命令 show</p>
+<p>说明：<br>列出所有可用的软件包<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">composer show </span><br><span class="line">composer show monolog/monolog</span><br><span class="line">php composer.phar show monolog/monolog 1.2.1</span><br><span class="line">参数：</span><br><span class="line">--installed (-i): 列出已安装的依赖包。</span><br><span class="line"></span><br><span class="line">--platform (-p): 仅列出平台软件包（PHP 与它的扩展）。</span><br><span class="line"></span><br><span class="line">--self (-s): 仅列出当前项目信息。</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.wbug.cn/2016/07/13/comp-command/" data-id="ckaz5y37i000pve11jgred6ea" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+ 
+  
     <article id="post-comp-repos" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/07/13/comp-repos/" class="article-date">
@@ -130,7 +180,7 @@ var _hmt = _hmt || [];
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2016/07/13/comp-repos/" data-id="cjvvwhkhq000nnouvrz4r6z5o" class="article-share-link">Share</a>
+      <a data-url="http://www.wbug.cn/2016/07/13/comp-repos/" data-id="ckaz5y37k000sve11mis9hae7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
@@ -209,7 +259,7 @@ var _hmt = _hmt || [];
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2016/07/12/comp_syntax/" data-id="cjvvwhkhs000qnouvdofrvd04" class="article-share-link">Share</a>
+      <a data-url="http://www.wbug.cn/2016/07/12/comp_syntax/" data-id="ckaz5y37m000vve11bb8nuwag" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
@@ -264,7 +314,7 @@ var _hmt = _hmt || [];
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2016/07/07/emmet/" data-id="cjvvwhkhv000tnouvmdfofkq6" class="article-share-link">Share</a>
+      <a data-url="http://www.wbug.cn/2016/07/07/emmet/" data-id="ckaz5y37p000zve116bhomvn5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sublime/">sublime</a></li></ul>
@@ -307,68 +357,7 @@ var _hmt = _hmt || [];
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2016/07/01/reg/" data-id="cjvvwhkj0002gnouv6iujcqze" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
- 
-  
-    <article id="post-mysql-trigger" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/12/11/mysql-trigger/" class="article-date">
-  <time datetime="2015-12-11T14:05:31.000Z" itemprop="datePublished">2015-12-11</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/mysql/">mysql</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/11/mysql-trigger/">mysql 触发器</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/images/1.png" alt="实例1"><br><img src="/images/2.png" alt="实例2"><br><img src="/images/3.png" alt="实例3"><br><img src="/images/4.png" alt="实例4"><br><img src="/images/5.png" alt="实例5"></p>
-<p>说明：<br>    所需要触发的SQL语句都要以‘；’结束。end后面也需要有分界符，但不能再是’；’。所以创建触发器之前需要先修改分界符</p>
-<pre><code>delimiter 分界符 上文以 $ 为例子
-
-对于insert，插入一行后出现了一个新行用new表示，在触发器中可以通过new.列名来引用插入行各个字段的值
-
-对于delete，删除一行后之前的那行不见了，用old表示，在触发器中可以通过old.列名来引用被删除行各个字段的值
-
-对于update，修改一行后旧的一样用old表示，新的一行用new表示，在触发器中可以通过new.列名来引用修改后行各个字段的值，old.列名来引用修改前各个字段的值。
-
-触发器after和before的区别：
-
-    after是先完成增删改再触发
-
-    before是在增删改之前将以判断 如 ：库存100 需要购买120 这时 就需要判断 只能购买100 不然库存就会变为 -20;例如:
-</code></pre><figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">	create trigger tg5 before insert <span class="keyword">on</span> dingdan <span class="keyword">for</span> <span class="keyword">each</span> row </span><br><span class="line">	begin</span><br><span class="line">	<span class="keyword">declare</span> tmp int ; <span class="meta">#保存库存</span></span><br><span class="line">	<span class="keyword">select</span> num <span class="keyword">into</span> tmp <span class="keyword">from</span> shop <span class="keyword">where</span> id=<span class="keyword">new</span>.id;</span><br><span class="line">	<span class="keyword">if</span> <span class="keyword">new</span>.much&gt;tmp <span class="meta">#比较购买量 如果大于库存 则=粗存</span></span><br><span class="line">	<span class="keyword">then</span> <span class="keyword">set</span> <span class="keyword">new</span>.much=tmp;</span><br><span class="line">	<span class="keyword">end</span> <span class="keyword">if</span>;</span><br><span class="line">	update shop <span class="keyword">set</span> num=num-tmp <span class="keyword">where</span> id=<span class="keyword">new</span>.id;</span><br><span class="line">	<span class="keyword">end</span>$</span><br><span class="line">```bash</span><br><span class="line">	更新多件商品 如下:</span><br></pre></td></tr></table></figure>
-<pre><code>create trigger more after insert on dingdan for each row
-begin
-update shop set num=num-new.much where id=new.id
-end$
-</code></pre><p><code>`</code>bash</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2015/12/11/mysql-trigger/" data-id="cjvvwhkii001rnouvjftnz980" class="article-share-link">Share</a>
+      <a data-url="http://www.wbug.cn/2016/07/01/reg/" data-id="ckaz5y390002jve11gwy54v17" class="article-share-link">Share</a>
       
       
     </footer>
@@ -391,7 +380,7 @@ end$
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/code/">code</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/default/">default</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/google/">google</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/news/">news</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/svn/">svn</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/电影/">电影</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/code/">code</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/default/">default</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/google/">google</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/news/">news</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/svn/">svn</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/电影/">电影</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -400,7 +389,7 @@ end$
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bug/">bug</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/laravel/">laravel</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/">ssh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime/">sublime</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/备份文件、mysql/">备份文件、mysql</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bug/">bug</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/laravel/">laravel</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/">ssh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime/">sublime</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/备份文件、mysql/">备份文件、mysql</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -418,7 +407,7 @@ end$
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -428,6 +417,10 @@ end$
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2020/06/03/php-ext/">编写php扩展</a>
+          </li>
         
           <li>
             <a href="/2019/05/14/book/">mysql 大数据查询分页</a>
@@ -445,10 +438,6 @@ end$
             <a href="/2018/12/03/mysql-master-slave/">mysql主从复制实现</a>
           </li>
         
-          <li>
-            <a href="/2018/11/21/httpCode_cn/">http状态码一览</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -464,7 +453,7 @@ end$
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2019 ly<br>
+      &copy; 2020 ly<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
     <span id="busuanzi_container_site_pv">

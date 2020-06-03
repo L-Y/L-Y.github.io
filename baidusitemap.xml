@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://www.wbug.cn/2020/06/03/php-ext/</loc>
+    <lastmod>2020-06-03T09:41:41.424Z</lastmod>
+    <data>
+        <display>
+        <title>编写php扩展</title>
+        <pubTime>2020-06-03T09:17:53.000Z</pubTime>
+        
+        <tag>php</tag>
+         
+         
+           
+             
+              <breadCrumb title="php" url="http://www.wbug.cn/categories/php/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.wbug.cn/2015/03/21/log/</loc>
     <lastmod>2019-05-20T04:59:09.151Z</lastmod>
     <data>
@@ -235,23 +255,6 @@
 
     
   <url>
-    <loc>http://www.wbug.cn/2015/06/25/test/</loc>
-    <lastmod>2018-11-21T04:00:03.340Z</lastmod>
-    <data>
-        <display>
-        <title>git命令 及遇到的问题</title>
-        <pubTime>2015-06-25T05:43:56.000Z</pubTime>
-        
-        <tag>git</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://www.wbug.cn/2015/03/21/svn/</loc>
     <lastmod>2018-11-21T04:00:03.340Z</lastmod>
     <data>
@@ -264,6 +267,23 @@
              
               <breadCrumb title="svn" url="http://www.wbug.cn/categories/svn/"/>
           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.wbug.cn/2015/06/25/test/</loc>
+    <lastmod>2018-11-21T04:00:03.340Z</lastmod>
+    <data>
+        <display>
+        <title>git命令 及遇到的问题</title>
+        <pubTime>2015-06-25T05:43:56.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+         
+           
         </display>
     </data>
     </url>
@@ -319,23 +339,6 @@
 
     
   <url>
-    <loc>http://www.wbug.cn/2015/01/29/sshKey/</loc>
-    <lastmod>2018-11-21T04:00:03.337Z</lastmod>
-    <data>
-        <display>
-        <title>hexo之SSH kEY 二</title>
-        <pubTime>2015-01-29T03:18:00.000Z</pubTime>
-        
-        <tag>ssh</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://www.wbug.cn/2015/06/23/source/</loc>
     <lastmod>2018-11-21T04:00:03.337Z</lastmod>
     <data>
@@ -350,6 +353,23 @@
              
               <breadCrumb title="hexo" url="http://www.wbug.cn/categories/hexo/"/>
           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.wbug.cn/2015/01/29/sshKey/</loc>
+    <lastmod>2018-11-21T04:00:03.337Z</lastmod>
+    <data>
+        <display>
+        <title>hexo之SSH kEY 二</title>
+        <pubTime>2015-01-29T03:18:00.000Z</pubTime>
+        
+        <tag>ssh</tag>
+         
+         
+           
         </display>
     </data>
     </url>
@@ -374,6 +394,21 @@
 
     
   <url>
+    <loc>http://www.wbug.cn/2016/08/07/regexprion/</loc>
+    <lastmod>2018-11-21T04:00:03.336Z</lastmod>
+    <data>
+        <display>
+        <title>使用正则表达式批量替换冲突</title>
+        <pubTime>2016-08-06T17:50:26.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.wbug.cn/2015/03/21/search/</loc>
     <lastmod>2018-11-21T04:00:03.336Z</lastmod>
     <data>
@@ -392,27 +427,12 @@
 
     
   <url>
-    <loc>http://www.wbug.cn/2016/08/07/regexprion/</loc>
-    <lastmod>2018-11-21T04:00:03.336Z</lastmod>
-    <data>
-        <display>
-        <title>使用正则表达式批量替换冲突</title>
-        <pubTime>2016-08-06T17:50:26.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.wbug.cn/2016/07/01/reg/</loc>
+    <loc>http://www.wbug.cn/2015/03/27/pywin32/</loc>
     <lastmod>2018-11-21T04:00:03.335Z</lastmod>
     <data>
         <display>
-        <title>windows之注册表</title>
-        <pubTime>2016-06-30T22:57:31.000Z</pubTime>
+        <title>Python之Pywin32</title>
+        <pubTime>2015-03-27T06:32:44.000Z</pubTime>
         
          
            
@@ -425,12 +445,12 @@
 
     
   <url>
-    <loc>http://www.wbug.cn/2015/03/27/pywin32/</loc>
+    <loc>http://www.wbug.cn/2016/07/01/reg/</loc>
     <lastmod>2018-11-21T04:00:03.335Z</lastmod>
     <data>
         <display>
-        <title>Python之Pywin32</title>
-        <pubTime>2015-03-27T06:32:44.000Z</pubTime>
+        <title>windows之注册表</title>
+        <pubTime>2016-06-30T22:57:31.000Z</pubTime>
         
          
            
@@ -461,12 +481,12 @@
 
     
   <url>
-    <loc>http://www.wbug.cn/2017/11/09/phpQues2/</loc>
+    <loc>http://www.wbug.cn/2017/11/09/phpQues/</loc>
     <lastmod>2018-11-21T04:00:03.333Z</lastmod>
     <data>
         <display>
-        <title>什么是CGI、FastCGI、PHP-CGI、PHP-FPM、Spawn-FCGI？</title>
-        <pubTime>2017-11-09T14:52:24.000Z</pubTime>
+        <title>php线程安全与非线程安全问题</title>
+        <pubTime>2017-11-09T14:39:46.000Z</pubTime>
         
          
            
@@ -479,12 +499,12 @@
 
     
   <url>
-    <loc>http://www.wbug.cn/2017/11/09/phpQues/</loc>
+    <loc>http://www.wbug.cn/2017/11/09/phpQues2/</loc>
     <lastmod>2018-11-21T04:00:03.333Z</lastmod>
     <data>
         <display>
-        <title>php线程安全与非线程安全问题</title>
-        <pubTime>2017-11-09T14:39:46.000Z</pubTime>
+        <title>什么是CGI、FastCGI、PHP-CGI、PHP-FPM、Spawn-FCGI？</title>
+        <pubTime>2017-11-09T14:52:24.000Z</pubTime>
         
          
            
@@ -533,24 +553,6 @@
 
     
   <url>
-    <loc>http://www.wbug.cn/2015/04/30/kepu/</loc>
-    <lastmod>2018-11-21T04:00:03.331Z</lastmod>
-    <data>
-        <display>
-        <title>美国人教你这样用Google，你真的会变特工！！！</title>
-        <pubTime>2015-04-30T02:04:44.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="google" url="http://www.wbug.cn/categories/google/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://www.wbug.cn/2015/03/21/meta/</loc>
     <lastmod>2018-11-21T04:00:03.331Z</lastmod>
     <data>
@@ -564,6 +566,24 @@
            
              
               <breadCrumb title="code" url="http://www.wbug.cn/categories/code/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.wbug.cn/2015/04/30/kepu/</loc>
+    <lastmod>2018-11-21T04:00:03.331Z</lastmod>
+    <data>
+        <display>
+        <title>美国人教你这样用Google，你真的会变特工！！！</title>
+        <pubTime>2015-04-30T02:04:44.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="google" url="http://www.wbug.cn/categories/google/"/>
           
         </display>
     </data>
@@ -710,11 +730,11 @@
 
     
   <url>
-    <loc>http://www.wbug.cn/2016/07/13/comp-command/</loc>
+    <loc>http://www.wbug.cn/2016/07/13/comp-com_env_/</loc>
     <lastmod>2018-11-21T04:00:03.325Z</lastmod>
     <data>
         <display>
-        <title>php 之 composer 的命令一</title>
+        <title>php 之 composer 的命令三</title>
         <pubTime>2016-07-13T12:10:55.000Z</pubTime>
         
         <tag>php</tag>
@@ -727,11 +747,11 @@
 
     
   <url>
-    <loc>http://www.wbug.cn/2016/07/13/comp-com_env_/</loc>
+    <loc>http://www.wbug.cn/2016/07/13/comp-command/</loc>
     <lastmod>2018-11-21T04:00:03.325Z</lastmod>
     <data>
         <display>
-        <title>php 之 composer 的命令三</title>
+        <title>php 之 composer 的命令一</title>
         <pubTime>2016-07-13T12:10:55.000Z</pubTime>
         
         <tag>php</tag>
