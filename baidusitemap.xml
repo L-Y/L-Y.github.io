@@ -4,6 +4,46 @@
 
     
   <url>
+    <loc>http://www.wbug.cn/2020/06/05/docker-compose/</loc>
+    <lastmod>2020-06-08T03:35:42.279Z</lastmod>
+    <data>
+        <display>
+        <title>docker-compose</title>
+        <pubTime>2020-06-05T04:02:06.000Z</pubTime>
+        
+        <tag>docker-compose</tag>
+         
+         
+           
+             
+              <breadCrumb title="docker" url="http://www.wbug.cn/categories/docker/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.wbug.cn/2020/06/05/docker/</loc>
+    <lastmod>2020-06-05T04:02:31.634Z</lastmod>
+    <data>
+        <display>
+        <title>docker常用命令</title>
+        <pubTime>2020-06-05T02:43:16.000Z</pubTime>
+        
+        <tag>docker</tag>
+         
+         
+           
+             
+              <breadCrumb title="docker" url="http://www.wbug.cn/categories/docker/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.wbug.cn/2020/06/03/php-ext/</loc>
     <lastmod>2020-06-03T10:05:16.235Z</lastmod>
     <data>
@@ -305,12 +345,12 @@
 
     
   <url>
-    <loc>http://www.wbug.cn/2015/06/25/sshkey-0/</loc>
+    <loc>http://www.wbug.cn/2015/06/25/sshbash/</loc>
     <lastmod>2018-11-21T04:00:03.338Z</lastmod>
     <data>
         <display>
-        <title>hexo之SSH KEY</title>
-        <pubTime>2015-06-25T15:37:53.000Z</pubTime>
+        <title>多个github账号发布hexo</title>
+        <pubTime>2015-06-25T15:45:41.000Z</pubTime>
         
         <tag>hexo</tag>
          
@@ -322,12 +362,12 @@
 
     
   <url>
-    <loc>http://www.wbug.cn/2015/06/25/sshbash/</loc>
+    <loc>http://www.wbug.cn/2015/06/25/sshkey-0/</loc>
     <lastmod>2018-11-21T04:00:03.338Z</lastmod>
     <data>
         <display>
-        <title>多个github账号发布hexo</title>
-        <pubTime>2015-06-25T15:45:41.000Z</pubTime>
+        <title>hexo之SSH KEY</title>
+        <pubTime>2015-06-25T15:37:53.000Z</pubTime>
         
         <tag>hexo</tag>
          
@@ -764,12 +804,12 @@
 
     
   <url>
-    <loc>http://www.wbug.cn/2016/07/13/comp-com_depends_/</loc>
+    <loc>http://www.wbug.cn/2016/07/17/comp-architecture_2/</loc>
     <lastmod>2018-11-21T04:00:03.324Z</lastmod>
     <data>
         <display>
-        <title>php 之 composer 的命令二</title>
-        <pubTime>2016-07-13T12:10:55.000Z</pubTime>
+        <title>php 之 composer 的JSON包的规范二</title>
+        <pubTime>2016-07-17T11:01:42.000Z</pubTime>
         
         <tag>php</tag>
          
@@ -781,12 +821,12 @@
 
     
   <url>
-    <loc>http://www.wbug.cn/2016/07/17/comp-architecture_2/</loc>
+    <loc>http://www.wbug.cn/2016/07/13/comp-com_depends_/</loc>
     <lastmod>2018-11-21T04:00:03.324Z</lastmod>
     <data>
         <display>
-        <title>php 之 composer 的JSON包的规范二</title>
-        <pubTime>2016-07-17T11:01:42.000Z</pubTime>
+        <title>php 之 composer 的命令二</title>
+        <pubTime>2016-07-13T12:10:55.000Z</pubTime>
         
         <tag>php</tag>
          

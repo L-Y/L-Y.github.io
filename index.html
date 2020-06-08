@@ -76,6 +76,136 @@ var _hmt = _hmt || [];
       <div class="outer">
         <section id="main">
   
+    <article id="post-docker-compose" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/06/05/docker-compose/" class="article-date">
+  <time datetime="2020-06-05T04:02:06.000Z" itemprop="datePublished">2020-06-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/docker/">docker</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/05/docker-compose/">docker-compose</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#docker-compose文件示例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br></pre></td><td class="code"><pre><span class="line">#compose 版本 有 1，2，3 三个版本</span><br><span class="line">version: &quot;3&quot;</span><br><span class="line">#服务器信息</span><br><span class="line">services:</span><br><span class="line">  #web服务器</span><br><span class="line">  web:</span><br><span class="line">  	#镜像信息 本地有用本地，没有的话从远程获取</span><br><span class="line">    image: dockercloud/hello-world</span><br><span class="line">    #容器名称</span><br><span class="line">    container_name: hello-world</span><br><span class="line">    #主机名称</span><br><span class="line">    hostname: hello-world.com</span><br><span class="line">    #本机端口映射到容器端口,YAML将会解析xx:yy这种数字格式为60进制，建议采用字符串格式</span><br><span class="line">    ports:</span><br><span class="line">      -&quot;8080:8080&quot;</span><br><span class="line">      -&quot;127.0.0.1:9000:8080&quot;</span><br><span class="line">    #向hosts文件中添加域名解析记录</span><br><span class="line">    extra_hosts:</span><br><span class="line">      -&quot;www.test.com:162.185.32.65&quot;</span><br><span class="line">    #挂载一个目录或已存在的数据卷容器，格式： [HOST:CONTAINER] or  [HOST:CONTAINER:ro](只读) </span><br><span class="line">    volumes:</span><br><span class="line">      -./web/data_dir:/demo/data_dir</span><br><span class="line">      -./web/logs:/demo/logs</span><br><span class="line">    #不使用宿主目录而使用自定义驱动</span><br><span class="line">    volume_driver:yourdriver</span><br><span class="line">    #从另外服务或容器挂载数据卷</span><br><span class="line">    volumes_from:</span><br><span class="line">      -server_name</span><br><span class="line">        -container_name</span><br><span class="line">    #</span><br><span class="line">    #定义接入点，会覆盖dockerfile文件中的entrypoint</span><br><span class="line">    entrypoint：./</span><br><span class="line">    restart:</span><br><span class="line">    #</span><br><span class="line">    links:</span><br><span class="line">      -database:database</span><br><span class="line">    #容器启动后执行的命令,例：composer install or [&apos;composer&apos;,&apos;install&apos;]</span><br><span class="line">    command:</span><br><span class="line">    #控制服务容器启动顺序，在web服务器启动前先启动databse服务及redis</span><br><span class="line">    depends_on：</span><br><span class="line">   	  -database</span><br><span class="line">   	  -redis</span><br><span class="line">   	#基于其他模板进行扩展</span><br><span class="line">   	extends:</span><br><span class="line">   	  -file:common.yaml</span><br><span class="line">   	  -service:common</span><br><span class="line">   	#连接到docker-compose.yaml外部容器</span><br><span class="line">   	external_links:</span><br><span class="line">   	  -project_db_1:mysql</span><br><span class="line">   	#为容器添加Docker元数据（metadata）信息</span><br><span class="line">   	lables:</span><br><span class="line">   	  decription:&quot;web app service&quot;</span><br><span class="line">   	#日志驱动类型，有json-file|syslog|none三种类型</span><br><span class="line">   	log_driver:</span><br><span class="line">   		&quot;josn-file&quot;</span><br><span class="line">   	#日志驱动参数</span><br><span class="line">   	log_opt:</span><br><span class="line">   	  address:&quot;&quot;</span><br><span class="line">   	#增加指定容器内核能力</span><br><span class="line">   	cap_add:</span><br><span class="line">   	  -ALL</span><br><span class="line">   	#去掉指定容器内核能力</span><br><span class="line">   	cap_drop:</span><br><span class="line">   	  -NET_ADMIN</span><br><span class="line">   	#配置DNS服务器</span><br><span class="line">   	dns:</span><br><span class="line">   	  -8.8.8.8</span><br><span class="line">   	  -4.4.4.4</span><br><span class="line">   	#从文件中获取环境变量，优先级低于environment设置的环境变量</span><br><span class="line">   	env_file:</span><br><span class="line">   	  -./env</span><br><span class="line">  #redis服务容器  </span><br><span class="line">  redis:</span><br><span class="line">    image: redis</span><br><span class="line">    links:</span><br><span class="line">      -web</span><br><span class="line">    networks:</span><br><span class="line">      -back-tier</span><br><span class="line">  #数据库服务容器</span><br><span class="line">  database:</span><br><span class="line">    image: beginor/postgis:9.3</span><br><span class="line">    container_name: postgis</span><br><span class="line">    hostname: postgis</span><br><span class="line">    ports:</span><br><span class="line">      -5432:5432</span><br><span class="line">    volumes:</span><br><span class="line">      -./database/data:/var/lib/postgresql/data</span><br><span class="line">    environment:</span><br><span class="line">      POSTGRES_PASSWORD: 1q2w3e4R</span><br><span class="line">    restart:</span><br><span class="line">networks:</span><br><span class="line">  front-tier:</span><br><span class="line">    driver: bridge</span><br><span class="line">  back-tier:</span><br><span class="line">driver: bridge</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.wbug.cn/2020/06/05/docker-compose/" data-id="ckb21ggmc000yvp11ljt8gd5j" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker-compose/">docker-compose</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+ 
+  
+    <article id="post-docker" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/06/05/docker/" class="article-date">
+  <time datetime="2020-06-05T02:43:16.000Z" itemprop="datePublished">2020-06-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/docker/">docker</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/05/docker/">docker常用命令</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##安装docker 使用apt</p>
+<p>#移除老版本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get remove docker docker-engine docker.io containerd runc</span><br></pre></td></tr></table></figure></p>
+<p>#安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install docker-ce docker-ce-cli containerd.io</span><br></pre></td></tr></table></figure></p>
+<p>#安装指定版本</p>
+<p>#查看可用的版本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-cache madison docker-ce</span><br></pre></td></tr></table></figure></p>
+<p>#安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install docker-ce=&lt;VERSION_STRING&gt; docker-ce-cli=&lt;VERSION_STRING&gt; containerd.io</span><br></pre></td></tr></table></figure></p>
+<p>#验证安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run hello-world</span><br></pre></td></tr></table></figure></p>
+<p>#查看docker信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker info</span><br></pre></td></tr></table></figure></p>
+<p>#避免使用sudo 加入docker用户组<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo usermod -aG docker $USER</span><br></pre></td></tr></table></figure></p>
+<p>#启动服务<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service docker start</span><br></pre></td></tr></table></figure></p>
+<p>#停止服务<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service docker stop</span><br></pre></td></tr></table></figure></p>
+<h2 id="img模板命令"><a href="#img模板命令" class="headerlink" title="img模板命令"></a>img模板命令</h2><p>#列出image文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker image ls</span><br></pre></td></tr></table></figure></p>
+<p>#删除image文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker image rm [imagename]</span><br></pre></td></tr></table></figure></p>
+<p>#拉取远程image到本地<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker image pull library/hello-world 或者  docker image pull hello-world</span><br></pre></td></tr></table></figure></p>
+<p>注：library是官方默认组</p>
+<p>#运行image<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker container run hello-world</span><br></pre></td></tr></table></figure></p>
+<p>注：此命令实际等同于 docker image pull hello-world + docker container run </p>
+<p>#启动容器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker container start [containerID]</span><br></pre></td></tr></table></figure></p>
+<p>注：与run的区别是：start每次执行的是同一个containerID 而run每次都是新contarinerID </p>
+<p>#停止<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker container stop [containerID]</span><br></pre></td></tr></table></figure></p>
+<p>#查看容器里shell输出<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker container logs</span><br></pre></td></tr></table></figure></p>
+<p>#进入到正在运行的容器中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker container exec -it [containerID] /bin/bash</span><br></pre></td></tr></table></figure></p>
+<p>#copy 文件到本地<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker container cp [containerID]:/var/www/html</span><br></pre></td></tr></table></figure></p>
+<p>#强制停止容器进程<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker container kill [containerID]</span><br></pre></td></tr></table></figure></p>
+<h2 id="container容器命令"><a href="#container容器命令" class="headerlink" title="container容器命令"></a>container容器命令</h2><p>#列出正在运行的容器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker container ls</span><br></pre></td></tr></table></figure></p>
+<p>#删除本地容器文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker container rm [containerID]</span><br></pre></td></tr></table></figure></p>
+<p>##编写dockerfile 文件,例子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#该文件继承官方(docker官方)mysql image，版本号是5.7</span><br><span class="line">FROM mysql:5.7</span><br><span class="line">#运行授权用户组命令</span><br><span class="line">RUN chown -R mysql:root /var/lib/mysql/</span><br><span class="line">#copy本机文件到image /etc/mysql...目录</span><br><span class="line">COPY my.cnf /etc/mysql/conf.d/my.cnf</span><br><span class="line">#分配权限为配置文件</span><br><span class="line">RUN chmod 0444 /etc/mysql/conf.d/my.cnf</span><br><span class="line">#</span><br><span class="line">CMD [&quot;mysqld&quot;]</span><br><span class="line">#外部访问端口</span><br><span class="line">EXPOSE 3306</span><br></pre></td></tr></table></figure></p>
+<p>#使用dockerfile 创建image文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker image build -t image-demo . or docker image build -t image-demo:0.0.1 ./demo</span><br></pre></td></tr></table></figure></p>
+<p>注：./demo/ 为创建的目录地址，：0.0.1为版本号，默认为latest</p>
+<p>#查看刚才创建的image<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker image ls</span><br></pre></td></tr></table></figure></p>
+<p>#使用刚才建立的image 生成对应容器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker container [--rm] run -p 9000:3306 -it image-demo /bin/bash</span><br></pre></td></tr></table></figure></p>
+<p>注：-p 9000 本机访问端口 -it:将本地shell映射到image shell，/bin/bash 运行的命令使用bash shell<br>–rm 运行停止后自动清除本地容器文件</p>
+<p>##发布image </p>
+<p>#注册账号在[hub.docker.com]hub.docker.com </p>
+<p>#登陆<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker login</span><br></pre></td></tr></table></figure></p>
+<p>#为本地image标注用户名和标签<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker image tag image-demo:0.0.1 demo-username/image-demo:0.0.1</span><br></pre></td></tr></table></figure></p>
+<p>#发布<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker image push demo-username/image-demo:0.0.1</span><br></pre></td></tr></table></figure></p>
+<p>##使用docker-compose</p>
+<p>#安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.26.0/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure></p>
+<p>#赋权限<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod +x /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure></p>
+<p>#增加软连接<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose</span><br></pre></td></tr></table></figure></p>
+<p>#测试安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose --version</span><br></pre></td></tr></table></figure></p>
+<p>#启动<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose up</span><br></pre></td></tr></table></figure></p>
+<p>#停止<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose stop</span><br></pre></td></tr></table></figure></p>
+<p>#容器停止后移除容器文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose rm</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.wbug.cn/2020/06/05/docker/" data-id="ckb21ggmf0014vp11dz6zh2tk" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+ 
+  
     <article id="post-php-ext" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/06/03/php-ext/" class="article-date">
@@ -108,7 +238,7 @@ var _hmt = _hmt || [];
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2020/06/03/php-ext/" data-id="ckaz6gifa001yrk11531fo5w4" class="article-share-link">Share</a>
+      <a data-url="http://www.wbug.cn/2020/06/03/php-ext/" data-id="ckb21ggnr0032vp114res96ly" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
@@ -147,7 +277,7 @@ var _hmt = _hmt || [];
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2019/05/14/book/" data-id="ckaz6gidw0008rk115kgbeiar" class="article-share-link">Share</a>
+      <a data-url="http://www.wbug.cn/2019/05/14/book/" data-id="ckb21gglr0008vp11rwsheick" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/laravel/">laravel</a></li></ul>
@@ -190,150 +320,10 @@ var _hmt = _hmt || [];
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2019/05/13/app/" data-id="ckaz6gidt0005rk1187l5xvo8" class="article-share-link">Share</a>
+      <a data-url="http://www.wbug.cn/2019/05/13/app/" data-id="ckb21gglo0005vp113uihq1ar" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/备份文件、mysql/">备份文件、mysql</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
- 
-  
-    <article id="post-mysql-select-size" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/12/04/mysql-select-size/" class="article-date">
-  <time datetime="2018-12-04T08:32:39.000Z" itemprop="datePublished">2018-12-04</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/mysql/">mysql</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/04/mysql-select-size/">mysql容量查询</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="查看所有数据库容量大小"><a href="#查看所有数据库容量大小" class="headerlink" title="查看所有数据库容量大小"></a>查看所有数据库容量大小</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> </span><br><span class="line">table_schema <span class="keyword">as</span> <span class="string">`database`</span>,</span><br><span class="line"><span class="keyword">sum</span>(table_rows) <span class="keyword">as</span> <span class="string">`records`</span>,</span><br><span class="line"><span class="keyword">sum</span>(<span class="keyword">truncate</span>(data_length/<span class="number">1024</span>/<span class="number">1024</span>, <span class="number">2</span>)) <span class="keyword">as</span> <span class="string">'dataLength(MB)'</span>,</span><br><span class="line"><span class="keyword">sum</span>(<span class="keyword">truncate</span>(index_length/<span class="number">1024</span>/<span class="number">1024</span>, <span class="number">2</span>)) <span class="keyword">as</span> <span class="string">'indexLength(MB)'</span></span><br><span class="line"><span class="keyword">from</span> information_schema.tables</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> table_schema</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> <span class="keyword">sum</span>(data_length) <span class="keyword">desc</span>, <span class="keyword">sum</span>(index_length) <span class="keyword">desc</span>;</span><br></pre></td></tr></table></figure>
-<h2 id="查看所有数据库各表容量大小"><a href="#查看所有数据库各表容量大小" class="headerlink" title="查看所有数据库各表容量大小"></a>查看所有数据库各表容量大小</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> </span><br><span class="line">table_schema <span class="keyword">as</span> <span class="string">'database'</span>,</span><br><span class="line">table_name <span class="keyword">as</span> <span class="string">'table_name'</span>,</span><br><span class="line">table_rows <span class="keyword">as</span> <span class="string">'records'</span>,</span><br><span class="line"><span class="keyword">truncate</span>(data_length/<span class="number">1024</span>/<span class="number">1024</span>, <span class="number">2</span>) <span class="keyword">as</span> <span class="string">'dataLength(MB)'</span>,</span><br><span class="line"><span class="keyword">truncate</span>(index_length/<span class="number">1024</span>/<span class="number">1024</span>, <span class="number">2</span>) <span class="keyword">as</span> <span class="string">'indexLength(MB)'</span></span><br><span class="line"><span class="keyword">from</span> information_schema.tables</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> data_length <span class="keyword">desc</span>, index_length <span class="keyword">desc</span>;</span><br></pre></td></tr></table></figure>
-<h2 id="查看指定数据库容量大小"><a href="#查看指定数据库容量大小" class="headerlink" title="查看指定数据库容量大小"></a>查看指定数据库容量大小</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> </span><br><span class="line">table_schema <span class="keyword">as</span> <span class="string">'database'</span>,</span><br><span class="line"><span class="keyword">sum</span>(table_rows) <span class="keyword">as</span> <span class="string">'records'</span>,</span><br><span class="line"><span class="keyword">sum</span>(<span class="keyword">truncate</span>(data_length/<span class="number">1024</span>/<span class="number">1024</span>, <span class="number">2</span>)) <span class="keyword">as</span> <span class="string">'dataLength(MB)'</span>,</span><br><span class="line"><span class="keyword">sum</span>(<span class="keyword">truncate</span>(index_length/<span class="number">1024</span>/<span class="number">1024</span>, <span class="number">2</span>)) <span class="keyword">as</span> <span class="string">'indexLength(MB)'</span></span><br><span class="line"><span class="keyword">from</span> information_schema.tables</span><br><span class="line"><span class="keyword">where</span> table_schema=<span class="string">'mysql'</span>;</span><br></pre></td></tr></table></figure>
-<h2 id="查看指定数据库各表容量大小"><a href="#查看指定数据库各表容量大小" class="headerlink" title="查看指定数据库各表容量大小"></a>查看指定数据库各表容量大小</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> </span><br><span class="line">table_schema <span class="keyword">as</span> <span class="string">'database'</span>,</span><br><span class="line">table_name <span class="keyword">as</span> <span class="string">'table_name'</span>,</span><br><span class="line">table_rows <span class="keyword">as</span> <span class="string">'records'</span>,</span><br><span class="line"><span class="keyword">truncate</span>(data_length/<span class="number">1024</span>/<span class="number">1024</span>, <span class="number">2</span>) <span class="keyword">as</span> <span class="string">'dataLength(MB)'</span>,</span><br><span class="line"><span class="keyword">truncate</span>(index_length/<span class="number">1024</span>/<span class="number">1024</span>, <span class="number">2</span>) <span class="keyword">as</span> <span class="string">'indexLength(MB)'</span></span><br><span class="line"><span class="keyword">from</span> information_schema.tables</span><br><span class="line"><span class="keyword">where</span> table_schema=<span class="string">'mysql'</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> data_length <span class="keyword">desc</span>, index_length <span class="keyword">desc</span>;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2018/12/04/mysql-select-size/" data-id="ckaz6gifc0021rk11fh65bd44" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
- 
-  
-    <article id="post-mysql-master-slave" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/12/03/mysql-master-slave/" class="article-date">
-  <time datetime="2018-12-03T07:43:22.000Z" itemprop="datePublished">2018-12-03</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/mysql/">mysql</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/03/mysql-master-slave/">mysql主从复制实现</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><ul>
-<li>mysql要做到主从复制，其实依靠的是二进制日志，即：假设主服务器叫A，从服务器叫B；主从复制就是B跟着A学，A做什么，B就做什么。那么B怎么同步A的动作呢？现在A有一个日志功能，把自己所做的增删改查的动作全都记录在日志中，B只需要拿到这份日志，照着日志上面的动作施加到自己身上就可以了。这样就实现了主从复制。</li>
-</ul>
-<h2 id="实现步骤"><a href="#实现步骤" class="headerlink" title="实现步骤"></a>实现步骤</h2><p>1.步骤1 </p>
-<ul>
-<li>打开主服务器(master)mysql配置文件 例：/etc/my.ini</li>
-<li><p>在配置文件增加三行</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">### 将mysql二进制日志取名为mysql-bin</span><br><span class="line">log-bin=mysql-bin  </span><br><span class="line">### 二进制日志的格式，有三种：statement/row/mixed,具体分别不多做解释，这里使用mixed</span><br><span class="line">binlog_format=mixed </span><br><span class="line">### 为服务器设置一个独一无二的id便于区分</span><br><span class="line">server-id=100</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>重启mysql</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service mysqld restart</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>配置从服务器，与上面一样，不过 server-id要换成 200,这个值你随便设置 在1-2^23之间</p>
-</li>
-</ul>
-<p>2.步骤2</p>
-<ul>
-<li>为从服务器设置一个可以同步复制主服务器日志的权限</li>
-<li>命令<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#### 先登陆mysql</span><br><span class="line">mysql -u root -p ******</span><br><span class="line">#### 分配权限 replication slave：分配复制权限 *.*:操作哪个数据库 slave:用户名 %：哪个主机 pass:密码</span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">replication</span> <span class="keyword">slave</span> <span class="keyword">ON</span> *.* <span class="keyword">TO</span> <span class="string">'slave'</span>@<span class="string">'%'</span> <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'pass'</span>;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>3.步骤3</p>
-<ul>
-<li>查看主服务器BIN日志的信息<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#### 配置完从服务器之前不要对主服务器进行任何操作，因为每次操作数据库时这两值会发生改变</span><br><span class="line"><span class="keyword">show</span> <span class="keyword">master</span> <span class="keyword">status</span>;</span><br><span class="line">#### 记住`File` 与 Position的值，下面第四步mysql_log_file,与mysql_log_pos要使用.</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>4.步骤4</p>
-<ul>
-<li><p>配置从服务器</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#### 先看下从服务器状态</span><br><span class="line"><span class="keyword">show</span> <span class="keyword">slave</span> <span class="keyword">status</span>;</span><br><span class="line">#### 如果存在则执行：</span><br><span class="line"><span class="keyword">stop</span> <span class="keyword">slave</span>;</span><br><span class="line">#### 设置</span><br><span class="line"><span class="keyword">change</span> <span class="keyword">master</span> <span class="keyword">to</span> master_host=<span class="string">"192.168.1.100"</span>,master_user=<span class="string">"uname"</span>,matser_password=<span class="string">"pass"</span>,mysql_log_file=<span class="string">"mysql-bin-0600"</span>,mysql_log_pos=<span class="number">876</span>;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>参数解释：</p>
-</li>
-<li><code>master_host</code> :设置要连接的主服务器的ip地址 </li>
-<li><code>master_user</code> :设置要连接的主服务器的用户名 </li>
-<li><code>matser_password</code> :设置要连接的主服务器的密码</li>
-<li><code>mysql_log_file</code> :设置要连接的主服务器的bin日志的日志名称，即第3步得到的信息</li>
-<li><code>mysql_log_pos</code> :设置要连接的主服务器的bin日志的记录位置，即第3步得到的信息，（这里注意，最后一项不需要加引号。否则配置失败</li>
-</ul>
-<p>5.查看是否成功<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">master</span> <span class="keyword">status</span>;</span><br><span class="line">#### 成功会提示 Slave_IO_Running: yes | Slave_sql_Running yes</span><br></pre></td></tr></table></figure></p>
-<h2 id="mysql日志的三种模式"><a href="#mysql日志的三种模式" class="headerlink" title="mysql日志的三种模式"></a>mysql日志的三种模式</h2><p>1.基于SQL语句的复制(statement-based replication,SBR) <code>binlog_format=statement</code></p>
-<ul>
-<li>每一条会修改数据的sql都会记录在binlog中。</li>
-</ul>
-<p>2.基于行的复制(row-based replication,RBR) <code>binlog_format=row</code></p>
-<ul>
-<li>它不记录sql语句上下文相关信息，仅保存哪条记录被修改</li>
-</ul>
-<p>3.混合模式复制(mixed-based replication,MBR) <code>binlog_format=mixed</code></p>
-<ul>
-<li>一般的语句修改使用statment格式保存binlog，如一些函数，statement无法完成主从复制的操作，则采用row格式保存binlog，MySQL会根据执行的每一条具体的sql语句来区分对待记录的日志形式，也就是在Statement和Row之间选择一种</li>
-</ul>
-<p>4.binlog相关命令<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#### 查看使用的模式</span><br><span class="line"><span class="keyword">show</span> <span class="keyword">variables</span> <span class="keyword">like</span> <span class="string">'binlog_format'</span></span><br><span class="line">#### 查看是否开启<span class="keyword">binlog</span></span><br><span class="line"><span class="keyword">show</span> <span class="keyword">variables</span> <span class="keyword">like</span> <span class="string">'log_bin'</span></span><br><span class="line">#### 获取<span class="keyword">binlog</span>文件列表</span><br><span class="line"><span class="keyword">show</span> <span class="built_in">binary</span> <span class="keyword">logs</span></span><br><span class="line">#### 查看当前正在写入的<span class="keyword">binlog</span>文件</span><br><span class="line"><span class="keyword">show</span> <span class="keyword">master</span> <span class="keyword">status</span></span><br><span class="line">#### 查看<span class="keyword">master</span>上的<span class="keyword">binlog</span></span><br><span class="line"><span class="keyword">show</span> <span class="keyword">master</span> <span class="keyword">logs</span></span><br><span class="line">#### 只查看第一个<span class="keyword">binlog</span>文件的内容</span><br><span class="line"><span class="keyword">show</span> <span class="keyword">binlog</span> <span class="keyword">events</span></span><br><span class="line">#### 查看指定<span class="keyword">binlog</span>文件的内容</span><br><span class="line"><span class="keyword">show</span> <span class="keyword">binlog</span> <span class="keyword">events</span> <span class="keyword">in</span> <span class="string">'mysql-bin.000002'</span></span><br><span class="line">####日志被刷新时，新生成一个日志文件</span><br><span class="line"><span class="keyword">flush</span> <span class="keyword">logs</span></span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2018/12/03/mysql-master-slave/" data-id="ckaz6gif9001vrk11id81y40k" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li></ul>
 
     </footer>
   </div>
@@ -355,7 +345,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/code/">code</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/default/">default</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/google/">google</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/news/">news</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/svn/">svn</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/电影/">电影</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/code/">code</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/default/">default</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/docker/">docker</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/google/">google</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/news/">news</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/svn/">svn</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/电影/">电影</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -364,7 +354,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bug/">bug</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/laravel/">laravel</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/">ssh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime/">sublime</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/备份文件、mysql/">备份文件、mysql</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bug/">bug</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker-compose/">docker-compose</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/laravel/">laravel</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/">ssh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime/">sublime</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/备份文件、mysql/">备份文件、mysql</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -373,7 +363,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 16.67px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/mysql/" style="font-size: 13.33px;">mysql</a> <a href="/tags/php/" style="font-size: 20px;">php</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/sublime/" style="font-size: 10px;">sublime</a> <a href="/tags/备份文件、mysql/" style="font-size: 10px;">备份文件、mysql</a>
+      <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/docker-compose/" style="font-size: 10px;">docker-compose</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 16.67px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/mysql/" style="font-size: 13.33px;">mysql</a> <a href="/tags/php/" style="font-size: 20px;">php</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/sublime/" style="font-size: 10px;">sublime</a> <a href="/tags/备份文件、mysql/" style="font-size: 10px;">备份文件、mysql</a>
     </div>
   </div>
 
@@ -382,7 +372,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -394,6 +384,14 @@ var _hmt = _hmt || [];
       <ul>
         
           <li>
+            <a href="/2020/06/05/docker-compose/">docker-compose</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/05/docker/">docker常用命令</a>
+          </li>
+        
+          <li>
             <a href="/2020/06/03/php-ext/">php7.4.4扩展开发</a>
           </li>
         
@@ -403,14 +401,6 @@ var _hmt = _hmt || [];
         
           <li>
             <a href="/2019/05/13/app/">mysql 生成备份文件</a>
-          </li>
-        
-          <li>
-            <a href="/2018/12/04/mysql-select-size/">mysql容量查询</a>
-          </li>
-        
-          <li>
-            <a href="/2018/12/03/mysql-master-slave/">mysql主从复制实现</a>
           </li>
         
       </ul>

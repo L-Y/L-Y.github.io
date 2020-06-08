@@ -76,6 +76,146 @@ var _hmt = _hmt || [];
       <div class="outer">
         <section id="main">
   
+    <article id="post-mysql-select-size" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/04/mysql-select-size/" class="article-date">
+  <time datetime="2018-12-04T08:32:39.000Z" itemprop="datePublished">2018-12-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/mysql/">mysql</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/04/mysql-select-size/">mysql容量查询</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="查看所有数据库容量大小"><a href="#查看所有数据库容量大小" class="headerlink" title="查看所有数据库容量大小"></a>查看所有数据库容量大小</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> </span><br><span class="line">table_schema <span class="keyword">as</span> <span class="string">`database`</span>,</span><br><span class="line"><span class="keyword">sum</span>(table_rows) <span class="keyword">as</span> <span class="string">`records`</span>,</span><br><span class="line"><span class="keyword">sum</span>(<span class="keyword">truncate</span>(data_length/<span class="number">1024</span>/<span class="number">1024</span>, <span class="number">2</span>)) <span class="keyword">as</span> <span class="string">'dataLength(MB)'</span>,</span><br><span class="line"><span class="keyword">sum</span>(<span class="keyword">truncate</span>(index_length/<span class="number">1024</span>/<span class="number">1024</span>, <span class="number">2</span>)) <span class="keyword">as</span> <span class="string">'indexLength(MB)'</span></span><br><span class="line"><span class="keyword">from</span> information_schema.tables</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> table_schema</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> <span class="keyword">sum</span>(data_length) <span class="keyword">desc</span>, <span class="keyword">sum</span>(index_length) <span class="keyword">desc</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="查看所有数据库各表容量大小"><a href="#查看所有数据库各表容量大小" class="headerlink" title="查看所有数据库各表容量大小"></a>查看所有数据库各表容量大小</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> </span><br><span class="line">table_schema <span class="keyword">as</span> <span class="string">'database'</span>,</span><br><span class="line">table_name <span class="keyword">as</span> <span class="string">'table_name'</span>,</span><br><span class="line">table_rows <span class="keyword">as</span> <span class="string">'records'</span>,</span><br><span class="line"><span class="keyword">truncate</span>(data_length/<span class="number">1024</span>/<span class="number">1024</span>, <span class="number">2</span>) <span class="keyword">as</span> <span class="string">'dataLength(MB)'</span>,</span><br><span class="line"><span class="keyword">truncate</span>(index_length/<span class="number">1024</span>/<span class="number">1024</span>, <span class="number">2</span>) <span class="keyword">as</span> <span class="string">'indexLength(MB)'</span></span><br><span class="line"><span class="keyword">from</span> information_schema.tables</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> data_length <span class="keyword">desc</span>, index_length <span class="keyword">desc</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="查看指定数据库容量大小"><a href="#查看指定数据库容量大小" class="headerlink" title="查看指定数据库容量大小"></a>查看指定数据库容量大小</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> </span><br><span class="line">table_schema <span class="keyword">as</span> <span class="string">'database'</span>,</span><br><span class="line"><span class="keyword">sum</span>(table_rows) <span class="keyword">as</span> <span class="string">'records'</span>,</span><br><span class="line"><span class="keyword">sum</span>(<span class="keyword">truncate</span>(data_length/<span class="number">1024</span>/<span class="number">1024</span>, <span class="number">2</span>)) <span class="keyword">as</span> <span class="string">'dataLength(MB)'</span>,</span><br><span class="line"><span class="keyword">sum</span>(<span class="keyword">truncate</span>(index_length/<span class="number">1024</span>/<span class="number">1024</span>, <span class="number">2</span>)) <span class="keyword">as</span> <span class="string">'indexLength(MB)'</span></span><br><span class="line"><span class="keyword">from</span> information_schema.tables</span><br><span class="line"><span class="keyword">where</span> table_schema=<span class="string">'mysql'</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="查看指定数据库各表容量大小"><a href="#查看指定数据库各表容量大小" class="headerlink" title="查看指定数据库各表容量大小"></a>查看指定数据库各表容量大小</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> </span><br><span class="line">table_schema <span class="keyword">as</span> <span class="string">'database'</span>,</span><br><span class="line">table_name <span class="keyword">as</span> <span class="string">'table_name'</span>,</span><br><span class="line">table_rows <span class="keyword">as</span> <span class="string">'records'</span>,</span><br><span class="line"><span class="keyword">truncate</span>(data_length/<span class="number">1024</span>/<span class="number">1024</span>, <span class="number">2</span>) <span class="keyword">as</span> <span class="string">'dataLength(MB)'</span>,</span><br><span class="line"><span class="keyword">truncate</span>(index_length/<span class="number">1024</span>/<span class="number">1024</span>, <span class="number">2</span>) <span class="keyword">as</span> <span class="string">'indexLength(MB)'</span></span><br><span class="line"><span class="keyword">from</span> information_schema.tables</span><br><span class="line"><span class="keyword">where</span> table_schema=<span class="string">'mysql'</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> data_length <span class="keyword">desc</span>, index_length <span class="keyword">desc</span>;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.wbug.cn/2018/12/04/mysql-select-size/" data-id="ckb21ggn80028vp11wzuvp00b" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+ 
+  
+    <article id="post-mysql-master-slave" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/03/mysql-master-slave/" class="article-date">
+  <time datetime="2018-12-03T07:43:22.000Z" itemprop="datePublished">2018-12-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/mysql/">mysql</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/03/mysql-master-slave/">mysql主从复制实现</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><ul>
+<li>mysql要做到主从复制，其实依靠的是二进制日志，即：假设主服务器叫A，从服务器叫B；主从复制就是B跟着A学，A做什么，B就做什么。那么B怎么同步A的动作呢？现在A有一个日志功能，把自己所做的增删改查的动作全都记录在日志中，B只需要拿到这份日志，照着日志上面的动作施加到自己身上就可以了。这样就实现了主从复制。</li>
+</ul>
+<h2 id="实现步骤"><a href="#实现步骤" class="headerlink" title="实现步骤"></a>实现步骤</h2><p>1.步骤1 </p>
+<ul>
+<li>打开主服务器(master)mysql配置文件 例：/etc/my.ini</li>
+<li><p>在配置文件增加三行</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">### 将mysql二进制日志取名为mysql-bin</span><br><span class="line">log-bin=mysql-bin  </span><br><span class="line">### 二进制日志的格式，有三种：statement/row/mixed,具体分别不多做解释，这里使用mixed</span><br><span class="line">binlog_format=mixed </span><br><span class="line">### 为服务器设置一个独一无二的id便于区分</span><br><span class="line">server-id=100</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重启mysql</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service mysqld restart</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置从服务器，与上面一样，不过 server-id要换成 200,这个值你随便设置 在1-2^23之间</p>
+</li>
+</ul>
+<p>2.步骤2</p>
+<ul>
+<li>为从服务器设置一个可以同步复制主服务器日志的权限</li>
+<li>命令<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#### 先登陆mysql</span><br><span class="line">mysql -u root -p ******</span><br><span class="line">#### 分配权限 replication slave：分配复制权限 *.*:操作哪个数据库 slave:用户名 %：哪个主机 pass:密码</span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">replication</span> <span class="keyword">slave</span> <span class="keyword">ON</span> *.* <span class="keyword">TO</span> <span class="string">'slave'</span>@<span class="string">'%'</span> <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'pass'</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>3.步骤3</p>
+<ul>
+<li>查看主服务器BIN日志的信息<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#### 配置完从服务器之前不要对主服务器进行任何操作，因为每次操作数据库时这两值会发生改变</span><br><span class="line"><span class="keyword">show</span> <span class="keyword">master</span> <span class="keyword">status</span>;</span><br><span class="line">#### 记住`File` 与 Position的值，下面第四步mysql_log_file,与mysql_log_pos要使用.</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>4.步骤4</p>
+<ul>
+<li><p>配置从服务器</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#### 先看下从服务器状态</span><br><span class="line"><span class="keyword">show</span> <span class="keyword">slave</span> <span class="keyword">status</span>;</span><br><span class="line">#### 如果存在则执行：</span><br><span class="line"><span class="keyword">stop</span> <span class="keyword">slave</span>;</span><br><span class="line">#### 设置</span><br><span class="line"><span class="keyword">change</span> <span class="keyword">master</span> <span class="keyword">to</span> master_host=<span class="string">"192.168.1.100"</span>,master_user=<span class="string">"uname"</span>,matser_password=<span class="string">"pass"</span>,mysql_log_file=<span class="string">"mysql-bin-0600"</span>,mysql_log_pos=<span class="number">876</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>参数解释：</p>
+</li>
+<li><code>master_host</code> :设置要连接的主服务器的ip地址 </li>
+<li><code>master_user</code> :设置要连接的主服务器的用户名 </li>
+<li><code>matser_password</code> :设置要连接的主服务器的密码</li>
+<li><code>mysql_log_file</code> :设置要连接的主服务器的bin日志的日志名称，即第3步得到的信息</li>
+<li><code>mysql_log_pos</code> :设置要连接的主服务器的bin日志的记录位置，即第3步得到的信息，（这里注意，最后一项不需要加引号。否则配置失败</li>
+</ul>
+<p>5.查看是否成功<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">master</span> <span class="keyword">status</span>;</span><br><span class="line">#### 成功会提示 Slave_IO_Running: yes | Slave_sql_Running yes</span><br></pre></td></tr></table></figure></p>
+<h2 id="mysql日志的三种模式"><a href="#mysql日志的三种模式" class="headerlink" title="mysql日志的三种模式"></a>mysql日志的三种模式</h2><p>1.基于SQL语句的复制(statement-based replication,SBR) <code>binlog_format=statement</code></p>
+<ul>
+<li>每一条会修改数据的sql都会记录在binlog中。</li>
+</ul>
+<p>2.基于行的复制(row-based replication,RBR) <code>binlog_format=row</code></p>
+<ul>
+<li>它不记录sql语句上下文相关信息，仅保存哪条记录被修改</li>
+</ul>
+<p>3.混合模式复制(mixed-based replication,MBR) <code>binlog_format=mixed</code></p>
+<ul>
+<li>一般的语句修改使用statment格式保存binlog，如一些函数，statement无法完成主从复制的操作，则采用row格式保存binlog，MySQL会根据执行的每一条具体的sql语句来区分对待记录的日志形式，也就是在Statement和Row之间选择一种</li>
+</ul>
+<p>4.binlog相关命令<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#### 查看使用的模式</span><br><span class="line"><span class="keyword">show</span> <span class="keyword">variables</span> <span class="keyword">like</span> <span class="string">'binlog_format'</span></span><br><span class="line">#### 查看是否开启<span class="keyword">binlog</span></span><br><span class="line"><span class="keyword">show</span> <span class="keyword">variables</span> <span class="keyword">like</span> <span class="string">'log_bin'</span></span><br><span class="line">#### 获取<span class="keyword">binlog</span>文件列表</span><br><span class="line"><span class="keyword">show</span> <span class="built_in">binary</span> <span class="keyword">logs</span></span><br><span class="line">#### 查看当前正在写入的<span class="keyword">binlog</span>文件</span><br><span class="line"><span class="keyword">show</span> <span class="keyword">master</span> <span class="keyword">status</span></span><br><span class="line">#### 查看<span class="keyword">master</span>上的<span class="keyword">binlog</span></span><br><span class="line"><span class="keyword">show</span> <span class="keyword">master</span> <span class="keyword">logs</span></span><br><span class="line">#### 只查看第一个<span class="keyword">binlog</span>文件的内容</span><br><span class="line"><span class="keyword">show</span> <span class="keyword">binlog</span> <span class="keyword">events</span></span><br><span class="line">#### 查看指定<span class="keyword">binlog</span>文件的内容</span><br><span class="line"><span class="keyword">show</span> <span class="keyword">binlog</span> <span class="keyword">events</span> <span class="keyword">in</span> <span class="string">'mysql-bin.000002'</span></span><br><span class="line">####日志被刷新时，新生成一个日志文件</span><br><span class="line"><span class="keyword">flush</span> <span class="keyword">logs</span></span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.wbug.cn/2018/12/03/mysql-master-slave/" data-id="ckb21ggn50025vp11as6xru9a" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+ 
+  
     <article id="post-httpCode" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/11/21/httpCode/" class="article-date">
@@ -556,7 +696,7 @@ var _hmt = _hmt || [];
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2018/11/21/httpCode/" data-id="ckaz6gies001frk112eyiw49d" class="article-share-link">Share</a>
+      <a data-url="http://www.wbug.cn/2018/11/21/httpCode/" data-id="ckb21ggmr001ovp11pi5b4vyr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1046,7 +1186,7 @@ var _hmt = _hmt || [];
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2018/11/21/httpCode_cn/" data-id="ckaz6gieu001irk11wij4k0ij" class="article-share-link">Share</a>
+      <a data-url="http://www.wbug.cn/2018/11/21/httpCode_cn/" data-id="ckb21ggmu001tvp11q75dmex5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1090,121 +1230,7 @@ var _hmt = _hmt || [];
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2018/11/21/phpCurlError/" data-id="ckaz6giff0028rk11vjxnpe2k" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
- 
-  
-    <article id="post-hexo-deploy-failed" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/19/hexo-deploy-failed/" class="article-date">
-  <time datetime="2018-05-18T16:09:45.000Z" itemprop="datePublished">2018-05-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/19/hexo-deploy-failed/">hexo deploy failed</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="question"><a href="#question" class="headerlink" title="question"></a>question</h2><hr>
-<h3 id="INFO-Deploying-git"><a href="#INFO-Deploying-git" class="headerlink" title="INFO  Deploying: git"></a>INFO  Deploying: git</h3><h4 id="INFO-Clearing-deploy-folder…"><a href="#INFO-Clearing-deploy-folder…" class="headerlink" title="INFO  Clearing .deploy folder…"></a>INFO  Clearing .deploy folder…</h4><h4 id="FATAL-Something’s-wrong-Maybe-you-can-find-the-solution-here-http-hexo-io-docs-troubleshooting-html"><a href="#FATAL-Something’s-wrong-Maybe-you-can-find-the-solution-here-http-hexo-io-docs-troubleshooting-html" class="headerlink" title="FATAL Something’s wrong. Maybe you can find the solution here: http://hexo.io/docs/troubleshooting.html"></a>FATAL Something’s wrong. Maybe you can find the solution here: <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">http://hexo.io/docs/troubleshooting.html</a></h4><h4 id="Error-EACCES-permission-denied-unlink-‘-home-yang-hexo-deploy-git-archives-index-html’"><a href="#Error-EACCES-permission-denied-unlink-‘-home-yang-hexo-deploy-git-archives-index-html’" class="headerlink" title="Error: EACCES: permission denied, unlink ‘/home/yang/hexo/.deploy_git/archives/index.html’"></a>Error: EACCES: permission denied, unlink ‘/home/yang/hexo/.deploy_git/archives/index.html’</h4><h4 id="FATAL-EACCES-permission-denied-open-‘-home-yang-hexo-db-json’"><a href="#FATAL-EACCES-permission-denied-open-‘-home-yang-hexo-db-json’" class="headerlink" title="FATAL EACCES: permission denied, open ‘/home/yang/hexo/db.json’"></a>FATAL EACCES: permission denied, open ‘/home/yang/hexo/db.json’</h4><h4 id="Error-EACCES-permission-denied-open-‘-home-yang-hexo-db-json’"><a href="#Error-EACCES-permission-denied-open-‘-home-yang-hexo-db-json’" class="headerlink" title="Error: EACCES: permission denied, open ‘/home/yang/hexo/db.json’"></a>Error: EACCES: permission denied, open ‘/home/yang/hexo/db.json’</h4><h3 id="answer"><a href="#answer" class="headerlink" title="* answer:"></a>* answer:</h3><h4 id="1-sudo-ssh-keygen-t-rsa-b-4096-C-“xxx-xxx-com“"><a href="#1-sudo-ssh-keygen-t-rsa-b-4096-C-“xxx-xxx-com“" class="headerlink" title="1. sudo ssh-keygen -t rsa -b 4096 -C “xxx@xxx.com“"></a>1. sudo ssh-keygen -t rsa -b 4096 -C “<a href="mailto:xxx@xxx.com" target="_blank" rel="noopener">xxx@xxx.com</a>“</h4><h4 id="2-copy-var-root-ssh-id-rsa-id-rsa-pub-gt-github-settings-SSH-and-GPG-keys-new-ssh-key"><a href="#2-copy-var-root-ssh-id-rsa-id-rsa-pub-gt-github-settings-SSH-and-GPG-keys-new-ssh-key" class="headerlink" title="2. copy /var/root/.ssh/id_rsa/id_rsa_pub -&gt; github/settings/SSH and GPG keys/new ssh key"></a>2. copy /var/root/.ssh/id_rsa/id_rsa_pub -&gt; github/settings/SSH and GPG keys/new ssh key</h4><h4 id="3-hexo-deploy"><a href="#3-hexo-deploy" class="headerlink" title="3. hexo deploy"></a>3. hexo deploy</h4><h4 id="answer2"><a href="#answer2" class="headerlink" title="* answer2:"></a>* answer2:</h4><h4 id="1-su-root"><a href="#1-su-root" class="headerlink" title="1. su root"></a>1. su root</h4><h4 id="3-hexo-deploy-1"><a href="#3-hexo-deploy-1" class="headerlink" title="3. hexo deploy"></a>3. hexo deploy</h4>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2018/05/19/hexo-deploy-failed/" data-id="ckaz6gieo0019rk11wh1i15hd" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
- 
-  
-    <article id="post-debian-9-4-stretch-install" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/17/debian-9-4-stretch-install/" class="article-date">
-  <time datetime="2018-05-17T15:39:39.000Z" itemprop="datePublished">2018-05-17</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/linux/">linux</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/17/debian-9-4-stretch-install/">debian 9.4(stretch) install</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="debian-9-install-questions"><a href="#debian-9-install-questions" class="headerlink" title="debian 9 install questions"></a>debian 9 install questions</h2><table>
-<thead>
-<tr>
-<th>Distributor ID</th>
-<th>Desc</th>
-<th>Third Realease</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Debian</td>
-<td>CDebian GNU/Linux 9.4 (stretch)</td>
-<td>9.4</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>showinfo</th>
-<th>other</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>uname -r</td>
-<td>4.9.0-6-amd64</td>
-<td>none</td>
-</tr>
-<tr>
-<td>cat /proc/version</td>
-<td>Linux version 4.9.0-6-amd64</td>
-<td>(gcc 6.3.0 20170516(Debian 6.3.0-18+deb9u1)</td>
-</tr>
-</tbody>
-</table>
-<h2 id="question"><a href="#question" class="headerlink" title="question"></a>question</h2><h3 id="sys-kernel-debug-vgaswitcheroo-switch-No-such-file-or-directory"><a href="#sys-kernel-debug-vgaswitcheroo-switch-No-such-file-or-directory" class="headerlink" title="/sys/kernel/debug/vgaswitcheroo/switch: No such file or directory"></a>/sys/kernel/debug/vgaswitcheroo/switch: No such file or directory</h3><h4 id="answer"><a href="#answer" class="headerlink" title="answer"></a><em>answer</em></h4><h4 id="1-cat-sys-kernel-debug-vgaswitcheroo-switch-address-https-bbs-archlinuxcn-org-viewtopic-php-id-2993"><a href="#1-cat-sys-kernel-debug-vgaswitcheroo-switch-address-https-bbs-archlinuxcn-org-viewtopic-php-id-2993" class="headerlink" title="1. cat /sys/kernel/debug/vgaswitcheroo/switch address:https://bbs.archlinuxcn.org/viewtopic.php?id=2993,"></a>1. cat /sys/kernel/debug/vgaswitcheroo/switch address:<a href="https://bbs.archlinuxcn.org/viewtopic.php?id=2993" target="_blank" rel="noopener">https://bbs.archlinuxcn.org/viewtopic.php?id=2993</a>,</h4><h4 id="2-https-help-ubuntu-com-community-HybridGraphics"><a href="#2-https-help-ubuntu-com-community-HybridGraphics" class="headerlink" title="2. https://help.ubuntu.com/community/HybridGraphics,"></a>2. <a href="https://help.ubuntu.com/community/HybridGraphics" target="_blank" rel="noopener">https://help.ubuntu.com/community/HybridGraphics</a>,</h4><h4 id="3-https-askubuntu-comquestions-648426-discrete-graphics-always-dynoff"><a href="#3-https-askubuntu-comquestions-648426-discrete-graphics-always-dynoff" class="headerlink" title="3. https://askubuntu.comquestions/648426/discrete-graphics-always-dynoff"></a>3. <a href="https://askubuntu.comquestions/648426/discrete-graphics-always-dynoff" target="_blank" rel="noopener">https://askubuntu.comquestions/648426/discrete-graphics-always-dynoff</a></h4><h2 id="question-1"><a href="#question-1" class="headerlink" title="question"></a>question</h2><h3 id="ERROR-radeon-kernel-modesetting-for-R600-or-later-requires-firmware-amd-graphics"><a href="#ERROR-radeon-kernel-modesetting-for-R600-or-later-requires-firmware-amd-graphics" class="headerlink" title="ERROR radeon kernel modesetting for R600 or later requires firmware-amd-graphics."></a>ERROR radeon kernel modesetting for R600 or later requires firmware-amd-graphics.</h3><h4 id="answer-1"><a href="#answer-1" class="headerlink" title="answer"></a><em>answer</em></h4><h4 id="1-add-etc-apt-sources-list-deb-http-ftp-us-debian-org-debian-testing-main-non-free-contrib"><a href="#1-add-etc-apt-sources-list-deb-http-ftp-us-debian-org-debian-testing-main-non-free-contrib" class="headerlink" title="1. add /etc/apt/sources.list deb http://ftp.us.debian.org/debian/ testing main non-free contrib"></a>1. add /etc/apt/sources.list deb <a href="http://ftp.us.debian.org/debian/" target="_blank" rel="noopener">http://ftp.us.debian.org/debian/</a> testing main non-free contrib</h4><h4 id="2-deb-src-http-ftp-us-debian-org-debian-testing-main-non-free-contrib"><a href="#2-deb-src-http-ftp-us-debian-org-debian-testing-main-non-free-contrib" class="headerlink" title="2. deb-src http://ftp.us.debian.org/debian/ testing main non-free contrib"></a>2. deb-src <a href="http://ftp.us.debian.org/debian/" target="_blank" rel="noopener">http://ftp.us.debian.org/debian/</a> testing main non-free contrib</h4><h4 id="3-sudo-apt-get-update"><a href="#3-sudo-apt-get-update" class="headerlink" title="3. sudo apt-get update"></a>3. sudo apt-get update</h4><h4 id="4-sudo-apt-get-install-firmware-amd-graphics"><a href="#4-sudo-apt-get-install-firmware-amd-graphics" class="headerlink" title="4. sudo apt-get install firmware-amd-graphics"></a>4. sudo apt-get install firmware-amd-graphics</h4><h2 id="question-2"><a href="#question-2" class="headerlink" title="question"></a>question</h2><h3 id="grub-rescue"><a href="#grub-rescue" class="headerlink" title="grub rescue"></a>grub rescue</h3><h3 id="answer-2"><a href="#answer-2" class="headerlink" title="answer"></a><em>answer</em></h3><h4 id="1-ls"><a href="#1-ls" class="headerlink" title="1. ls"></a>1. ls</h4><h4 id="2-ls-hd0-x-boot-grub-or-hd1-x-boot-grub"><a href="#2-ls-hd0-x-boot-grub-or-hd1-x-boot-grub" class="headerlink" title="2. ls (hd0,x)/boot/grub or (hd1,x)/boot/grub"></a>2. ls (hd0,x)/boot/grub or (hd1,x)/boot/grub</h4><h4 id="3-set-root-hd0-5"><a href="#3-set-root-hd0-5" class="headerlink" title="3. set root=(hd0,5)"></a>3. set root=(hd0,5)</h4><h4 id="4-set-prefix-hd0-5-boot-grub"><a href="#4-set-prefix-hd0-5-boot-grub" class="headerlink" title="4. set prefix=(hd0,5)/boot/grub"></a>4. set prefix=(hd0,5)/boot/grub</h4><h4 id="5-set-insmod-boot-grub"><a href="#5-set-insmod-boot-grub" class="headerlink" title="5. set insmod /boot/grub"></a>5. set insmod /boot/grub</h4><h4 id="6-set-insmod-boot-grub"><a href="#6-set-insmod-boot-grub" class="headerlink" title="6. set insmod /boot/grub"></a>6. set insmod /boot/grub</h4><h4 id="7-sudo-update-grub"><a href="#7-sudo-update-grub" class="headerlink" title="7. sudo update-grub"></a>7. sudo update-grub</h4><h4 id="8-sudo-grub-install-dev-sda"><a href="#8-sudo-grub-install-dev-sda" class="headerlink" title="8. sudo grub-install /dev/sda"></a>8. sudo grub-install /dev/sda</h4>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2018/05/17/debian-9-4-stretch-install/" data-id="ckaz6giej0010rk11cpqzzp3a" class="article-share-link">Share</a>
+      <a data-url="http://www.wbug.cn/2018/11/21/phpCurlError/" data-id="ckb21ggno002zvp11ife0khd0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1227,7 +1253,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/code/">code</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/default/">default</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/google/">google</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/news/">news</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/svn/">svn</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/电影/">电影</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/code/">code</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/default/">default</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/docker/">docker</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/google/">google</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/news/">news</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/svn/">svn</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/电影/">电影</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -1236,7 +1262,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bug/">bug</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/laravel/">laravel</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/">ssh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime/">sublime</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/备份文件、mysql/">备份文件、mysql</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bug/">bug</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker-compose/">docker-compose</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/laravel/">laravel</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/">ssh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime/">sublime</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/备份文件、mysql/">备份文件、mysql</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -1245,7 +1271,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 16.67px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/mysql/" style="font-size: 13.33px;">mysql</a> <a href="/tags/php/" style="font-size: 20px;">php</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/sublime/" style="font-size: 10px;">sublime</a> <a href="/tags/备份文件、mysql/" style="font-size: 10px;">备份文件、mysql</a>
+      <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/docker-compose/" style="font-size: 10px;">docker-compose</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 16.67px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/mysql/" style="font-size: 13.33px;">mysql</a> <a href="/tags/php/" style="font-size: 20px;">php</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/sublime/" style="font-size: 10px;">sublime</a> <a href="/tags/备份文件、mysql/" style="font-size: 10px;">备份文件、mysql</a>
     </div>
   </div>
 
@@ -1254,7 +1280,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -1266,6 +1292,14 @@ var _hmt = _hmt || [];
       <ul>
         
           <li>
+            <a href="/2020/06/05/docker-compose/">docker-compose</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/05/docker/">docker常用命令</a>
+          </li>
+        
+          <li>
             <a href="/2020/06/03/php-ext/">php7.4.4扩展开发</a>
           </li>
         
@@ -1275,14 +1309,6 @@ var _hmt = _hmt || [];
         
           <li>
             <a href="/2019/05/13/app/">mysql 生成备份文件</a>
-          </li>
-        
-          <li>
-            <a href="/2018/12/04/mysql-select-size/">mysql容量查询</a>
-          </li>
-        
-          <li>
-            <a href="/2018/12/03/mysql-master-slave/">mysql主从复制实现</a>
           </li>
         
       </ul>

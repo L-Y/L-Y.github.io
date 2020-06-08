@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>docker-compose | ly.blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="#docker-compose文件示例1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495">
+<meta name="keywords" content="docker-compose">
+<meta property="og:type" content="article">
+<meta property="og:title" content="docker-compose">
+<meta property="og:url" content="http://www.wbug.cn/2020/06/05/docker-compose/index.html">
+<meta property="og:site_name" content="ly.blog">
+<meta property="og:description" content="#docker-compose文件示例1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495">
+<meta property="og:locale" content="zh_cn">
+<meta property="og:updated_time" content="2020-06-08T03:35:42.279Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="docker-compose">
+<meta name="twitter:description" content="#docker-compose文件示例1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495">
+  
+    <link rel="alternative" href="/atom.xml" title="ly.blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" >
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?0033f42513f7e78a38b592d6b899c2a0";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">ly.blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">问渠哪得清如许 为有源头活水来</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/composer">Composer</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://www.wbug.cn"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-docker-compose" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/06/05/docker-compose/" class="article-date">
+  <time datetime="2020-06-05T04:02:06.000Z" itemprop="datePublished">2020-06-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/docker/">docker</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      docker-compose
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#docker-compose文件示例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br></pre></td><td class="code"><pre><span class="line">#compose 版本 有 1，2，3 三个版本</span><br><span class="line">version: &quot;3&quot;</span><br><span class="line">#服务器信息</span><br><span class="line">services:</span><br><span class="line">  #web服务器</span><br><span class="line">  web:</span><br><span class="line">  	#镜像信息 本地有用本地，没有的话从远程获取</span><br><span class="line">    image: dockercloud/hello-world</span><br><span class="line">    #容器名称</span><br><span class="line">    container_name: hello-world</span><br><span class="line">    #主机名称</span><br><span class="line">    hostname: hello-world.com</span><br><span class="line">    #本机端口映射到容器端口,YAML将会解析xx:yy这种数字格式为60进制，建议采用字符串格式</span><br><span class="line">    ports:</span><br><span class="line">      -&quot;8080:8080&quot;</span><br><span class="line">      -&quot;127.0.0.1:9000:8080&quot;</span><br><span class="line">    #向hosts文件中添加域名解析记录</span><br><span class="line">    extra_hosts:</span><br><span class="line">      -&quot;www.test.com:162.185.32.65&quot;</span><br><span class="line">    #挂载一个目录或已存在的数据卷容器，格式： [HOST:CONTAINER] or  [HOST:CONTAINER:ro](只读) </span><br><span class="line">    volumes:</span><br><span class="line">      -./web/data_dir:/demo/data_dir</span><br><span class="line">      -./web/logs:/demo/logs</span><br><span class="line">    #不使用宿主目录而使用自定义驱动</span><br><span class="line">    volume_driver:yourdriver</span><br><span class="line">    #从另外服务或容器挂载数据卷</span><br><span class="line">    volumes_from:</span><br><span class="line">      -server_name</span><br><span class="line">        -container_name</span><br><span class="line">    #</span><br><span class="line">    #定义接入点，会覆盖dockerfile文件中的entrypoint</span><br><span class="line">    entrypoint：./</span><br><span class="line">    restart:</span><br><span class="line">    #</span><br><span class="line">    links:</span><br><span class="line">      -database:database</span><br><span class="line">    #容器启动后执行的命令,例：composer install or [&apos;composer&apos;,&apos;install&apos;]</span><br><span class="line">    command:</span><br><span class="line">    #控制服务容器启动顺序，在web服务器启动前先启动databse服务及redis</span><br><span class="line">    depends_on：</span><br><span class="line">   	  -database</span><br><span class="line">   	  -redis</span><br><span class="line">   	#基于其他模板进行扩展</span><br><span class="line">   	extends:</span><br><span class="line">   	  -file:common.yaml</span><br><span class="line">   	  -service:common</span><br><span class="line">   	#连接到docker-compose.yaml外部容器</span><br><span class="line">   	external_links:</span><br><span class="line">   	  -project_db_1:mysql</span><br><span class="line">   	#为容器添加Docker元数据（metadata）信息</span><br><span class="line">   	lables:</span><br><span class="line">   	  decription:&quot;web app service&quot;</span><br><span class="line">   	#日志驱动类型，有json-file|syslog|none三种类型</span><br><span class="line">   	log_driver:</span><br><span class="line">   		&quot;josn-file&quot;</span><br><span class="line">   	#日志驱动参数</span><br><span class="line">   	log_opt:</span><br><span class="line">   	  address:&quot;&quot;</span><br><span class="line">   	#增加指定容器内核能力</span><br><span class="line">   	cap_add:</span><br><span class="line">   	  -ALL</span><br><span class="line">   	#去掉指定容器内核能力</span><br><span class="line">   	cap_drop:</span><br><span class="line">   	  -NET_ADMIN</span><br><span class="line">   	#配置DNS服务器</span><br><span class="line">   	dns:</span><br><span class="line">   	  -8.8.8.8</span><br><span class="line">   	  -4.4.4.4</span><br><span class="line">   	#从文件中获取环境变量，优先级低于environment设置的环境变量</span><br><span class="line">   	env_file:</span><br><span class="line">   	  -./env</span><br><span class="line">  #redis服务容器  </span><br><span class="line">  redis:</span><br><span class="line">    image: redis</span><br><span class="line">    links:</span><br><span class="line">      -web</span><br><span class="line">    networks:</span><br><span class="line">      -back-tier</span><br><span class="line">  #数据库服务容器</span><br><span class="line">  database:</span><br><span class="line">    image: beginor/postgis:9.3</span><br><span class="line">    container_name: postgis</span><br><span class="line">    hostname: postgis</span><br><span class="line">    ports:</span><br><span class="line">      -5432:5432</span><br><span class="line">    volumes:</span><br><span class="line">      -./database/data:/var/lib/postgresql/data</span><br><span class="line">    environment:</span><br><span class="line">      POSTGRES_PASSWORD: 1q2w3e4R</span><br><span class="line">    restart:</span><br><span class="line">networks:</span><br><span class="line">  front-tier:</span><br><span class="line">    driver: bridge</span><br><span class="line">  back-tier:</span><br><span class="line">driver: bridge</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.wbug.cn/2020/06/05/docker-compose/" data-id="ckb21ggmc000yvp11ljt8gd5j" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker-compose/">docker-compose</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/06/05/docker/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">docker常用命令</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+ 
+  <section id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-docker-compose" data-title="docker-compose" data-url="http://www.wbug.cn/2020/06/05/docker-compose/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'11c'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+  </section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/code/">code</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/default/">default</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/docker/">docker</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/google/">google</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/news/">news</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/svn/">svn</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/电影/">电影</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bug/">bug</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker-compose/">docker-compose</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/laravel/">laravel</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/">ssh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime/">sublime</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/备份文件、mysql/">备份文件、mysql</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/docker-compose/" style="font-size: 10px;">docker-compose</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 16.67px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/mysql/" style="font-size: 13.33px;">mysql</a> <a href="/tags/php/" style="font-size: 20px;">php</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/sublime/" style="font-size: 10px;">sublime</a> <a href="/tags/备份文件、mysql/" style="font-size: 10px;">备份文件、mysql</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/06/05/docker-compose/">docker-compose</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/05/docker/">docker常用命令</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/03/php-ext/">php7.4.4扩展开发</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/14/book/">mysql 大数据查询分页</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/13/app/">mysql 生成备份文件</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    <iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=2&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=2440411005&verifier=70a007d1&dpc=1"></iframe>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 ly<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+    <span id="busuanzi_container_site_pv">
+    你是本站第<span id="busuanzi_value_site_nv"></span>位访客
+	本站访客数<span id="busuanzi_value_site_uv"></span>人次
+</span>
+  </div>
+</footer>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/composer" class="mobile-nav-link">Composer</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script>
+host3 = window.location.href;
+chinadomai3 = "http://www.wbug.cn/";  #修改为你的百度推送对应的域名
+if (host3.indexOf(chinadomain3)!=-1)  {
+  (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+      }
+      else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+  })();
+}
+
+</script>
+  </div>
+<a href="https://github.com/L-Y/L-Y.github.io"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
+</body>
+</html>

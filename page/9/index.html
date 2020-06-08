@@ -76,6 +76,96 @@ var _hmt = _hmt || [];
       <div class="outer">
         <section id="main">
   
+    <article id="post-git" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/03/23/git/" class="article-date">
+  <time datetime="2015-03-23T06:03:48.000Z" itemprop="datePublished">2015-03-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/git/">git</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/03/23/git/">git 命令</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="git-配置相关命令"><a href="#git-配置相关命令" class="headerlink" title="git 配置相关命令"></a>git 配置相关命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git init                                                  <span class="comment"># 初始化本地git仓库（创建新仓库）</span></span><br><span class="line">git config --global user.name <span class="string">"xxx"</span>                       <span class="comment"># 配置用户名</span></span><br><span class="line">git config --global user.email <span class="string">"xxx@xxx.com"</span>              <span class="comment"># 配置邮件</span></span><br><span class="line">git config --global color.ui <span class="literal">true</span>                         <span class="comment"># git status等命令自动着色</span></span><br><span class="line">git config --global color.status auto</span><br><span class="line">git config --global color.diff auto</span><br><span class="line">git config --global color.branch auto</span><br><span class="line">git config --global color.interactive auto</span><br></pre></td></tr></table></figure>
+<h2 id="git-克隆、增加、提交到、推送等相关命令"><a href="#git-克隆、增加、提交到、推送等相关命令" class="headerlink" title="git 克隆、增加、提交到、推送等相关命令"></a>git 克隆、增加、提交到、推送等相关命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git+ssh://git@192.168.53.168/VT.git             <span class="comment"># clone远程仓库</span></span><br><span class="line">git pull origin master                                    <span class="comment"># 获取远程分支master并merge到当前分支</span></span><br><span class="line">git status                                                <span class="comment"># 查看当前版本状态（是否修改）</span></span><br><span class="line">git add xyz                                               <span class="comment"># 添加xyz文件至index</span></span><br><span class="line">git add .                                                 <span class="comment"># 增加当前子目录下所有更改过的文件至index</span></span><br><span class="line">git commit -m <span class="string">'xxx'</span>                                       <span class="comment"># 提交</span></span><br><span class="line">git commit --amend -m <span class="string">'xxx'</span>                               <span class="comment"># 合并上一次提交（用于反复修改）</span></span><br><span class="line">git commit -am <span class="string">'xxx'</span>                                      <span class="comment"># 将add和commit合为一步</span></span><br><span class="line">git push origin master                                    <span class="comment"># 将当前分支push到远程master分支</span></span><br><span class="line">git push origin :hotfixes/BJVEP933                        <span class="comment"># 删除远程仓库的hotfixes/BJVEP933分支</span></span><br><span class="line">git push --tags                                           <span class="comment"># 把所有tag推送到远程仓库</span></span><br></pre></td></tr></table></figure>
+<h2 id="git-删除、标签、查看日志相关命令"><a href="#git-删除、标签、查看日志相关命令" class="headerlink" title="git 删除、标签、查看日志相关命令"></a>git 删除、标签、查看日志相关命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">git rm xxx                                                <span class="comment"># 删除index中的文件</span></span><br><span class="line">git rm -r *                                               <span class="comment"># 递归删除</span></span><br><span class="line">git mv README README2                                     <span class="comment"># 重命名文件README为README2</span></span><br><span class="line">git <span class="built_in">log</span>                                                   <span class="comment"># 显示提交日志</span></span><br><span class="line">git <span class="built_in">log</span> -1                                                <span class="comment"># 显示1行日志 -n为n行</span></span><br><span class="line">git <span class="built_in">log</span> -5</span><br><span class="line">git <span class="built_in">log</span> --<span class="built_in">stat</span>                                            <span class="comment"># 显示提交日志及相关变动文件</span></span><br><span class="line">git <span class="built_in">log</span> -p -m</span><br><span class="line">git <span class="built_in">log</span> --pretty=format:<span class="string">'%h %s'</span> --graph                   <span class="comment"># 图示提交日志</span></span><br><span class="line">git show dfb02e6e4f2f7b573337763e5c0013802e392818         <span class="comment"># 显示某个提交的详细内容</span></span><br><span class="line">git show dfb02                                            <span class="comment"># 可只用commitid的前几位</span></span><br><span class="line">git show HEAD                                             <span class="comment"># 显示HEAD提交日志</span></span><br><span class="line">git show HEAD^                                            <span class="comment"># 显示HEAD的父（上一个版本）的提交日志 ^^为上两个版本 ^5为上5个版本</span></span><br><span class="line">git tag                                                   <span class="comment"># 显示已存在的tag</span></span><br><span class="line">git tag -a v2.0 -m <span class="string">'xxx'</span>                                  <span class="comment"># 增加v2.0的tag</span></span><br><span class="line">git show v2.0                                             <span class="comment"># 显示v2.0的日志及详细内容</span></span><br><span class="line">git <span class="built_in">log</span> v2.0                                              <span class="comment"># 显示v2.0的日志</span></span><br><span class="line">git ls-files                                              <span class="comment"># 列出git index包含的文件</span></span><br><span class="line">git show-branch                                           <span class="comment"># 图示当前分支历史</span></span><br><span class="line">git show-branch --all                                     <span class="comment"># 图示所有分支历史</span></span><br><span class="line">git whatchanged                                           <span class="comment"># 显示提交历史对应的文件修改</span></span><br><span class="line">git reflog                                                <span class="comment"># 显示所有提交，包括孤立节点</span></span><br><span class="line">git show HEAD@&#123;5&#125;</span><br><span class="line">git show master@&#123;yesterday&#125;                               <span class="comment"># 显示master分支昨天的状态</span></span><br><span class="line">git show HEAD~3</span><br><span class="line">git show -s --pretty=raw 2be7fcb476</span><br></pre></td></tr></table></figure>
+<h2 id="git-比较文件、创建分支、检出、合并相关命令"><a href="#git-比较文件、创建分支、检出、合并相关命令" class="headerlink" title="git 比较文件、创建分支、检出、合并相关命令"></a>git 比较文件、创建分支、检出、合并相关命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">git diff                                                  <span class="comment"># 显示所有未添加至index的变更</span></span><br><span class="line">git diff --cached                                         <span class="comment"># 显示所有已添加index但还未commit的变更</span></span><br><span class="line">git diff HEAD^                                            <span class="comment"># 比较与上一个版本的差异</span></span><br><span class="line">git diff HEAD -- ./lib                                    <span class="comment"># 比较与HEAD版本lib目录的差异</span></span><br><span class="line">git diff origin/master..master                            <span class="comment"># 比较远程分支master上有本地分支master上没有的</span></span><br><span class="line">git diff origin/master..master --<span class="built_in">stat</span>                     <span class="comment"># 只显示差异的文件，不显示具体内容</span></span><br><span class="line">git remote add origin git+ssh://git@192.168.53.168/VT.git <span class="comment"># 增加远程定义（用于push/pull/fetch）</span></span><br><span class="line">git branch                                                <span class="comment"># 显示本地分支</span></span><br><span class="line">git branch --contains 50089                               <span class="comment"># 显示包含提交50089的分支</span></span><br><span class="line">git branch -a                                             <span class="comment"># 显示所有分支</span></span><br><span class="line">git branch -r                                             <span class="comment"># 显示所有原创分支</span></span><br><span class="line">git branch --merged                                       <span class="comment"># 显示所有已合并到当前分支的分支</span></span><br><span class="line">git branch --no-merged                                    <span class="comment"># 显示所有未合并到当前分支的分支</span></span><br><span class="line">git branch -m master master_copy                          <span class="comment"># 本地分支改名</span></span><br><span class="line">git checkout -b master_copy                               <span class="comment"># 从当前分支创建新分支master_copy并检出</span></span><br><span class="line">git checkout -b master master_copy                        <span class="comment"># 上面的完整版</span></span><br><span class="line">git checkout features/performance                         <span class="comment"># 检出已存在的features/performance分支</span></span><br><span class="line">git checkout --track hotfixes/BJVEP933                    <span class="comment"># 检出远程分支hotfixes/BJVEP933并创建本地跟踪分支</span></span><br><span class="line">git checkout v2.0                                         <span class="comment"># 检出版本v2.0</span></span><br><span class="line">git checkout -b devel origin/develop                      <span class="comment"># 从远程分支develop创建新本地分支devel并检出</span></span><br><span class="line">git checkout -- README                                    <span class="comment"># 检出head版本的README文件（可用于修改错误回退）</span></span><br><span class="line">git merge origin/master                                   <span class="comment"># 合并远程master分支至当前分支</span></span><br><span class="line">git cherry-pick ff44785404a8e                             <span class="comment"># 合并提交ff44785404a8e的修改</span></span><br><span class="line">git fetch                                                 <span class="comment"># 获取所有远程分支（不更新本地分支，另需merge）</span></span><br><span class="line">git fetch --prune                                         <span class="comment"># 获取所有原创分支并清除服务器上已删掉的分支</span></span><br><span class="line">git reset --hard HEAD                                     <span class="comment"># 将当前版本重置为HEAD（通常用于merge失败回退）</span></span><br><span class="line">git rebase</span><br><span class="line">git branch -d hotfixes/BJVEP933                           <span class="comment"># 删除分支hotfixes/BJVEP933（本分支修改已合并到其他分支）</span></span><br><span class="line">git branch -D hotfixes/BJVEP933                           <span class="comment"># 强制删除分支hotfixes/BJVEP933</span></span><br><span class="line">git revert dfb02e6e4f2f7b573337763e5c0013802e392818       <span class="comment"># 撤销提交dfb02e6e4f2f7b573337763e5c0013802e392818</span></span><br><span class="line">git ls-tree HEAD                                          <span class="comment"># 内部命令：显示某个git对象</span></span><br><span class="line">git rev-parse v2.0                                        <span class="comment"># 内部命令：显示某个ref对于的SHA1 HASH</span></span><br></pre></td></tr></table></figure>
+<h2 id="git暂存等相关命令"><a href="#git暂存等相关命令" class="headerlink" title="git暂存等相关命令"></a>git暂存等相关命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git stash                                                 <span class="comment"># 暂存当前修改，将所有至为HEAD状态</span></span><br><span class="line">git stash list                                            <span class="comment"># 查看所有暂存</span></span><br><span class="line">git stash show -p stash@&#123;0&#125;                               <span class="comment"># 参考第一次暂存</span></span><br><span class="line">git stash apply stash@&#123;0&#125;                                 <span class="comment"># 应用第一次暂存</span></span><br><span class="line">git grep <span class="string">"delete from"</span>                                    <span class="comment"># 文件中搜索文本“delete from”</span></span><br><span class="line">git grep -e <span class="string">'#define'</span> --and -e SORT_DIRENT</span><br><span class="line">git gc</span><br><span class="line">git fsck</span><br></pre></td></tr></table></figure>
+<p>参考地址<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">http://rogerdudler.github.io/git-guide/index.zh.html</span><br><span class="line"></span><br><span class="line">https://github.com/progit/progit/tree/master/zh</span><br><span class="line"></span><br><span class="line">https://github.com/blynn/gitmagic/tree/master/zh_cn</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.wbug.cn/2015/03/23/git/" data-id="ckb21ggmi0019vp11julzwmz3" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+ 
+  
+    <article id="post-writephp" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/03/21/writephp/" class="article-date">
+  <time datetime="2015-03-21T09:00:44.000Z" itemprop="datePublished">2015-03-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/code/">code</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/03/21/writephp/">php 输出类</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>php 输出类 代码片段</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">class output&#123;</span><br><span class="line">	public <span class="keyword">function</span> alertmsg(<span class="variable">$msg</span>)&#123;</span><br><span class="line">		<span class="built_in">echo</span> <span class="string">"&lt;script type='text/javascript'&gt;"</span>;</span><br><span class="line">		<span class="built_in">echo</span> <span class="string">"alert(\"<span class="variable">$msg</span>\");"</span>;</span><br><span class="line">		<span class="built_in">echo</span> <span class="string">"&lt;\/script&gt;"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	public <span class="keyword">function</span> locationmsg(<span class="variable">$msg</span>,<span class="variable">$goto</span>)&#123;</span><br><span class="line">		<span class="built_in">echo</span> <span class="string">"&lt;script type='text/javascript'&gt;"</span>;</span><br><span class="line">		<span class="built_in">echo</span> <span class="string">"alert(\"<span class="variable">$msg</span>\")"</span>;</span><br><span class="line">		<span class="keyword">if</span>(<span class="variable">$goto</span>)&#123;</span><br><span class="line">			<span class="built_in">echo</span> <span class="string">"location=\"<span class="variable">$goto</span>\";"</span>;</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			<span class="built_in">echo</span> <span class="string">"history.go(-1);"</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">echo</span> <span class="string">"&lt;\/script&gt;"</span>;	</span><br><span class="line">	&#125;</span><br><span class="line">	public <span class="keyword">function</span> httpequivmsg(<span class="variable">$im</span>,<span class="variable">$goto</span>)&#123;</span><br><span class="line">		<span class="built_in">echo</span> <span class="string">"&lt;meta http-equiv=\'Refresh\' content="</span>.<span class="variable">$im</span>.<span class="string">";URL="</span>.<span class="variable">$goto</span>.<span class="string">"&gt;"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.wbug.cn/2015/03/21/writephp/" data-id="ckb21ggo9003qvp11y3lwfc1p" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+ 
+  
     <article id="post-zend" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/03/21/zend/" class="article-date">
@@ -108,7 +198,7 @@ var _hmt = _hmt || [];
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2015/03/21/zend/" data-id="ckaz6gig7003mrk11ht28m020" class="article-share-link">Share</a>
+      <a data-url="http://www.wbug.cn/2015/03/21/zend/" data-id="ckb21ggog003wvp11nlvnhosz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -163,7 +253,7 @@ var _hmt = _hmt || [];
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2015/03/21/xdebug/" data-id="ckaz6gig4003krk118cflcmwy" class="article-share-link">Share</a>
+      <a data-url="http://www.wbug.cn/2015/03/21/xdebug/" data-id="ckb21ggod003uvp11elnfele6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
@@ -226,116 +316,9 @@ var _hmt = _hmt || [];
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2015/03/21/svn/" data-id="ckaz6gig1003crk113phzs1an" class="article-share-link">Share</a>
+      <a data-url="http://www.wbug.cn/2015/03/21/svn/" data-id="ckb21ggo1003lvp114w0u1bv8" class="article-share-link">Share</a>
       
       
-    </footer>
-  </div>
-  
-</article>
-
- 
-  
-    <article id="post-meta" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/03/21/meta/" class="article-date">
-  <time datetime="2015-03-21T06:28:41.000Z" itemprop="datePublished">2015-03-21</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/code/">code</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/03/21/meta/">html的meta标签</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">meta</span><br><span class="line">	|</span><br><span class="line">	|</span><br><span class="line">	name</span><br><span class="line">	|</span><br><span class="line">	|----------------</span><br><span class="line">					|----keywords</span><br><span class="line">					|----description</span><br><span class="line">					|----application/name</span><br><span class="line">					|----author</span><br><span class="line">					|----generator</span><br><span class="line">	|---------------|</span><br><span class="line">	http-equiv</span><br><span class="line">	|</span><br><span class="line">	|----------------</span><br><span class="line">					|----content-type</span><br><span class="line">					|----refresh</span><br><span class="line">					|----default-style</span><br><span class="line">					|----content-language</span><br><span class="line">					|----<span class="built_in">set</span>-cookie</span><br><span class="line">	content</span><br><span class="line">	|</span><br><span class="line">	|----------------</span><br><span class="line">					|</span><br><span class="line">					|</span><br><span class="line">					|</span><br><span class="line">	charset</span><br><span class="line">```	</span><br><span class="line">/**</span><br><span class="line"> * IE兼容模式</span><br><span class="line"> * @http-equiv 属性</span><br><span class="line"> */</span><br><span class="line">``` bash</span><br><span class="line">&lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"IE=8"</span>&gt;</span><br></pre></td></tr></table></figure>
-<p>用法 分三种</p>
-<h2 id="1-网站描述-优化-name与content组合"><a href="#1-网站描述-优化-name与content组合" class="headerlink" title="1.网站描述 优化== name与content组合"></a>1.网站描述 优化== name与content组合</h2><pre><code>example:
-</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=<span class="string">"keywords"</span> content=<span class="string">"...."</span>&gt;</span><br><span class="line">&lt;meta name=<span class="string">"description"</span> content=<span class="string">"...."</span>&gt;</span><br><span class="line">&lt;meta name=<span class="string">"author"</span> content=<span class="string">"...."</span>&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="2-http指令"><a href="#2-http指令" class="headerlink" title="2.http指令"></a>2.http指令</h2><pre><code>example:
-</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta http-equiv=<span class="string">"Content-Type"</span> content=<span class="string">"text/json"</span>&gt;</span><br><span class="line">&lt;meta http-equiv=<span class="string">"refresh"</span> content=<span class="string">"3"</span>&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="3-字符集"><a href="#3-字符集" class="headerlink" title="3.字符集"></a>3.字符集</h2><pre><code>example:
-</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta charset=<span class="string">"utf8"</span>&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="html5写法"><a href="#html5写法" class="headerlink" title="html5写法"></a>html5写法</h2><pre><code>example:
-</code></pre><pre><code class="bash">&lt;meta http-equiv=<span class="string">"Content-Type"</span> content=<span class="string">"text/html;charset=utf8"</span>&gt;
-header(<span class="string">'Content-Type:text/html;charset=utf-8'</span>)
-</code></pre>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2015/03/21/meta/" data-id="ckaz6gif5001prk11xx8rlf47" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
- 
-  
-    <article id="post-log" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/03/21/log/" class="article-date">
-  <time datetime="2015-03-21T06:09:42.000Z" itemprop="datePublished">2015-03-21</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/code/">code</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/03/21/log/">mysql 查询</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="查询当天数据"><a href="#查询当天数据" class="headerlink" title="查询当天数据"></a>查询当天数据</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from tab <span class="built_in">where</span> FROM_UNIXTIME(fabutime, <span class="string">'%Y%m%d'</span>) = 20121217;</span><br></pre></td></tr></table></figure>
-<h2 id="mysql-TO-DAYS-date-函数"><a href="#mysql-TO-DAYS-date-函数" class="headerlink" title="mysql TO_DAYS(date) 函数"></a>mysql TO_DAYS(date) 函数</h2><h3 id="TO-DAYS-date"><a href="#TO-DAYS-date" class="headerlink" title="TO_DAYS(date)"></a>TO_DAYS(date)</h3><p>给定一个日期date, 返回一个天数 (从年份0开始的天数 )。<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT TO_DAYS(950501);</span><br><span class="line"> </span><br><span class="line">-&gt; 728779</span><br></pre></td></tr></table></figure></p>
-<p>mysql查询今天、昨天、7天、近30天、本月、上一月 数据<br>今天<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">select * from 表名 <span class="built_in">where</span> to_days(时间字段名) = to_days(now());</span><br><span class="line">``` </span><br><span class="line">昨天</span><br><span class="line">``` bash</span><br><span class="line">SELECT * FROM 表名 WHERE TO_DAYS( NOW( ) ) - TO_DAYS( 时间字段名) &lt;= 1</span><br></pre></td></tr></table></figure></p>
-<p>7天<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM 表名 <span class="built_in">where</span> DATE_SUB(CURDATE(), INTERVAL 7 DAY) &lt;= date(时间字段名)</span><br></pre></td></tr></table></figure></p>
-<p>近30天<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM 表名 <span class="built_in">where</span> DATE_SUB(CURDATE(), INTERVAL 30 DAY) &lt;= date(时间字段名)</span><br></pre></td></tr></table></figure></p>
-<p>本月<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM 表名 WHERE DATE_FORMAT( 时间字段名, <span class="string">'%Y%m'</span> ) = DATE_FORMAT( CURDATE( ) , <span class="string">'%Y%m'</span> )</span><br></pre></td></tr></table></figure></p>
-<p>上一月<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM 表名 WHERE PERIOD_DIFF( date_format( now( ) , <span class="string">'%Y%m'</span> ) , date_format( 时间字段名, <span class="string">'%Y%m'</span> ) ) =1</span><br></pre></td></tr></table></figure></p>
-<p>#查询本季度数据<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from `ht_invoice_information` <span class="built_in">where</span> QUARTER(create_date)=QUARTER(now());</span><br></pre></td></tr></table></figure></p>
-<p>#查询上季度数据<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from `ht_invoice_information` <span class="built_in">where</span> QUARTER(create_date)=QUARTER(DATE_SUB(now(),interval 1 QUARTER));</span><br></pre></td></tr></table></figure></p>
-<p>#查询本年数据<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from `ht_invoice_information` <span class="built_in">where</span> YEAR(create_date)=YEAR(NOW());</span><br></pre></td></tr></table></figure></p>
-<p>#查询上年数据<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from `ht_invoice_information` <span class="built_in">where</span> year(create_date)=year(date_sub(now(),interval 1 year));</span><br></pre></td></tr></table></figure></p>
-<h1 id="更新某个字段中存在某字符串"><a href="#更新某个字段中存在某字符串" class="headerlink" title="更新某个字段中存在某字符串"></a>更新某个字段中存在某字符串</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UPDATE `web` SET `header_img`=REPLACE(`url`, &apos;httpss&apos;, &apos;https&apos;)  WHERE id IN (SELECT aid FROM (SELECT id AS aid  FROM `web` WHERE LOCATE(&apos;httpss://&apos;,`url`)&gt;0 ) AS a );</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2015/03/21/log/" data-id="ckaz6gif3001ork11lq8cnjzg" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li></ul>
-
     </footer>
   </div>
   
@@ -356,7 +339,7 @@ header(<span class="string">'Content-Type:text/html;charset=utf-8'</span>)
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/code/">code</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/default/">default</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/google/">google</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/news/">news</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/svn/">svn</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/电影/">电影</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/code/">code</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/default/">default</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/docker/">docker</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/google/">google</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/news/">news</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/svn/">svn</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/电影/">电影</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -365,7 +348,7 @@ header(<span class="string">'Content-Type:text/html;charset=utf-8'</span>)
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bug/">bug</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/laravel/">laravel</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/">ssh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime/">sublime</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/备份文件、mysql/">备份文件、mysql</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bug/">bug</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker-compose/">docker-compose</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/laravel/">laravel</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/">ssh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime/">sublime</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/备份文件、mysql/">备份文件、mysql</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -374,7 +357,7 @@ header(<span class="string">'Content-Type:text/html;charset=utf-8'</span>)
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 16.67px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/mysql/" style="font-size: 13.33px;">mysql</a> <a href="/tags/php/" style="font-size: 20px;">php</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/sublime/" style="font-size: 10px;">sublime</a> <a href="/tags/备份文件、mysql/" style="font-size: 10px;">备份文件、mysql</a>
+      <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/docker-compose/" style="font-size: 10px;">docker-compose</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 16.67px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/mysql/" style="font-size: 13.33px;">mysql</a> <a href="/tags/php/" style="font-size: 20px;">php</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/sublime/" style="font-size: 10px;">sublime</a> <a href="/tags/备份文件、mysql/" style="font-size: 10px;">备份文件、mysql</a>
     </div>
   </div>
 
@@ -383,7 +366,7 @@ header(<span class="string">'Content-Type:text/html;charset=utf-8'</span>)
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -395,6 +378,14 @@ header(<span class="string">'Content-Type:text/html;charset=utf-8'</span>)
       <ul>
         
           <li>
+            <a href="/2020/06/05/docker-compose/">docker-compose</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/05/docker/">docker常用命令</a>
+          </li>
+        
+          <li>
             <a href="/2020/06/03/php-ext/">php7.4.4扩展开发</a>
           </li>
         
@@ -404,14 +395,6 @@ header(<span class="string">'Content-Type:text/html;charset=utf-8'</span>)
         
           <li>
             <a href="/2019/05/13/app/">mysql 生成备份文件</a>
-          </li>
-        
-          <li>
-            <a href="/2018/12/04/mysql-select-size/">mysql容量查询</a>
-          </li>
-        
-          <li>
-            <a href="/2018/12/03/mysql-master-slave/">mysql主从复制实现</a>
           </li>
         
       </ul>
