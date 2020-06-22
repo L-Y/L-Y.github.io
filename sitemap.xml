@@ -2,16 +2,72 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.wbug.cn/composer/index.html</loc>
+    
+    <lastmod>2020-06-22T10:05:48.425Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.wbug.cn/2020/06/05/docker-compose/</loc>
     
-    <lastmod>2020-06-08T03:54:31.485Z</lastmod>
+    <lastmod>2020-06-22T10:02:03.809Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.wbug.cn/2020/06/05/docker/</loc>
     
-    <lastmod>2020-06-05T04:02:31.634Z</lastmod>
+    <lastmod>2020-06-22T10:02:01.073Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wbug.cn/2016/07/17/comp-architecture/</loc>
+    
+    <lastmod>2020-06-22T10:01:55.701Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wbug.cn/2016/07/17/comp-architecture_2/</loc>
+    
+    <lastmod>2020-06-22T10:01:53.317Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wbug.cn/2016/07/13/comp-com_depends_/</loc>
+    
+    <lastmod>2020-06-22T10:01:50.713Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wbug.cn/2016/07/13/comp-com_env_/</loc>
+    
+    <lastmod>2020-06-22T10:01:43.898Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wbug.cn/2016/07/12/comp_syntax/</loc>
+    
+    <lastmod>2020-06-22T10:01:36.090Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wbug.cn/2015/03/21/zend/</loc>
+    
+    <lastmod>2020-06-22T09:56:16.541Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wbug.cn/2015/03/21/xdebug/</loc>
+    
+    <lastmod>2020-06-22T09:56:13.550Z</lastmod>
     
   </url>
   
@@ -100,20 +156,6 @@
   </url>
   
   <url>
-    <loc>http://www.wbug.cn/composer/index.html</loc>
-    
-    <lastmod>2018-11-21T04:00:03.343Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wbug.cn/2015/03/21/zend/</loc>
-    
-    <lastmod>2018-11-21T04:00:03.342Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.wbug.cn/articles/index.html</loc>
     
     <lastmod>2018-11-21T04:00:03.342Z</lastmod>
@@ -122,13 +164,6 @@
   
   <url>
     <loc>http://www.wbug.cn/2015/03/21/writephp/</loc>
-    
-    <lastmod>2018-11-21T04:00:03.341Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wbug.cn/2015/03/21/xdebug/</loc>
     
     <lastmod>2018-11-21T04:00:03.341Z</lastmod>
     
@@ -226,14 +261,14 @@
   </url>
   
   <url>
-    <loc>http://www.wbug.cn/2017/11/09/phpQues/</loc>
+    <loc>http://www.wbug.cn/2017/11/09/phpQues2/</loc>
     
     <lastmod>2018-11-21T04:00:03.333Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.wbug.cn/2017/11/09/phpQues2/</loc>
+    <loc>http://www.wbug.cn/2017/11/09/phpQues/</loc>
     
     <lastmod>2018-11-21T04:00:03.333Z</lastmod>
     
@@ -310,13 +345,6 @@
   </url>
   
   <url>
-    <loc>http://www.wbug.cn/2016/07/12/comp_syntax/</loc>
-    
-    <lastmod>2018-11-21T04:00:03.327Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.wbug.cn/2016/07/13/comp-repos/</loc>
     
     <lastmod>2018-11-21T04:00:03.326Z</lastmod>
@@ -324,37 +352,9 @@
   </url>
   
   <url>
-    <loc>http://www.wbug.cn/2016/07/13/comp-com_env_/</loc>
-    
-    <lastmod>2018-11-21T04:00:03.325Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.wbug.cn/2016/07/13/comp-command/</loc>
     
     <lastmod>2018-11-21T04:00:03.325Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wbug.cn/2016/07/17/comp-architecture_2/</loc>
-    
-    <lastmod>2018-11-21T04:00:03.324Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wbug.cn/2016/07/13/comp-com_depends_/</loc>
-    
-    <lastmod>2018-11-21T04:00:03.324Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.wbug.cn/2016/07/17/comp-architecture/</loc>
-    
-    <lastmod>2018-11-21T04:00:03.323Z</lastmod>
     
   </url>
   

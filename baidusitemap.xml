@@ -3,9 +3,10 @@
 
 
     
+    
   <url>
     <loc>http://www.wbug.cn/2020/06/05/docker-compose/</loc>
-    <lastmod>2020-06-08T03:54:31.485Z</lastmod>
+    <lastmod>2020-06-22T10:02:03.809Z</lastmod>
     <data>
         <display>
         <title>docker-compose</title>
@@ -25,7 +26,7 @@
     
   <url>
     <loc>http://www.wbug.cn/2020/06/05/docker/</loc>
-    <lastmod>2020-06-05T04:02:31.634Z</lastmod>
+    <lastmod>2020-06-22T10:02:01.073Z</lastmod>
     <data>
         <display>
         <title>docker常用命令</title>
@@ -37,6 +38,132 @@
            
              
               <breadCrumb title="docker" url="http://www.wbug.cn/categories/docker/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.wbug.cn/2016/07/17/comp-architecture/</loc>
+    <lastmod>2020-06-22T10:01:55.701Z</lastmod>
+    <data>
+        <display>
+        <title>php 之 composer 的JSON包的规范一</title>
+        <pubTime>2016-07-17T11:01:42.000Z</pubTime>
+        
+        <tag>php</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.wbug.cn/2016/07/17/comp-architecture_2/</loc>
+    <lastmod>2020-06-22T10:01:53.317Z</lastmod>
+    <data>
+        <display>
+        <title>php 之 composer 的JSON包的规范二</title>
+        <pubTime>2016-07-17T11:01:42.000Z</pubTime>
+        
+        <tag>php</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.wbug.cn/2016/07/13/comp-com_depends_/</loc>
+    <lastmod>2020-06-22T10:01:50.713Z</lastmod>
+    <data>
+        <display>
+        <title>php 之 composer 的命令二</title>
+        <pubTime>2016-07-13T12:10:55.000Z</pubTime>
+        
+        <tag>php</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.wbug.cn/2016/07/13/comp-com_env_/</loc>
+    <lastmod>2020-06-22T10:01:43.898Z</lastmod>
+    <data>
+        <display>
+        <title>php 之 composer 的命令三</title>
+        <pubTime>2016-07-13T12:10:55.000Z</pubTime>
+        
+        <tag>php</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.wbug.cn/2016/07/12/comp_syntax/</loc>
+    <lastmod>2020-06-22T10:01:36.090Z</lastmod>
+    <data>
+        <display>
+        <title>php 之 composer 的用法</title>
+        <pubTime>2016-07-12T12:11:29.000Z</pubTime>
+        
+        <tag>php</tag>
+         
+         
+           
+             
+              <breadCrumb title="php" url="http://www.wbug.cn/categories/php/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.wbug.cn/2015/03/21/zend/</loc>
+    <lastmod>2020-06-22T09:56:16.541Z</lastmod>
+    <data>
+        <display>
+        <title>解决zend 只能试用30天</title>
+        <pubTime>2015-03-21T06:53:19.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="default" url="http://www.wbug.cn/categories/default/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.wbug.cn/2015/03/21/xdebug/</loc>
+    <lastmod>2020-06-22T09:56:13.550Z</lastmod>
+    <data>
+        <display>
+        <title>php 之 xdebug</title>
+        <pubTime>2015-03-21T06:45:44.000Z</pubTime>
+        
+        <tag>php</tag>
+         
+         
+           
+             
+              <breadCrumb title="code" url="http://www.wbug.cn/categories/code/"/>
           
         </display>
     </data>
@@ -236,51 +363,12 @@
     
     
   <url>
-    <loc>http://www.wbug.cn/2015/03/21/zend/</loc>
-    <lastmod>2018-11-21T04:00:03.342Z</lastmod>
-    <data>
-        <display>
-        <title>解决zend 只能试用30天</title>
-        <pubTime>2015-03-21T06:53:19.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="default" url="http://www.wbug.cn/categories/default/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-    
-  <url>
     <loc>http://www.wbug.cn/2015/03/21/writephp/</loc>
     <lastmod>2018-11-21T04:00:03.341Z</lastmod>
     <data>
         <display>
         <title>php 输出类</title>
         <pubTime>2015-03-21T09:00:44.000Z</pubTime>
-        
-        <tag>php</tag>
-         
-         
-           
-             
-              <breadCrumb title="code" url="http://www.wbug.cn/categories/code/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.wbug.cn/2015/03/21/xdebug/</loc>
-    <lastmod>2018-11-21T04:00:03.341Z</lastmod>
-    <data>
-        <display>
-        <title>php 之 xdebug</title>
-        <pubTime>2015-03-21T06:45:44.000Z</pubTime>
         
         <tag>php</tag>
          
@@ -521,12 +609,12 @@
 
     
   <url>
-    <loc>http://www.wbug.cn/2017/11/09/phpQues/</loc>
+    <loc>http://www.wbug.cn/2017/11/09/phpQues2/</loc>
     <lastmod>2018-11-21T04:00:03.333Z</lastmod>
     <data>
         <display>
-        <title>php线程安全与非线程安全问题</title>
-        <pubTime>2017-11-09T14:39:46.000Z</pubTime>
+        <title>什么是CGI、FastCGI、PHP-CGI、PHP-FPM、Spawn-FCGI？</title>
+        <pubTime>2017-11-09T14:52:24.000Z</pubTime>
         
          
            
@@ -539,12 +627,12 @@
 
     
   <url>
-    <loc>http://www.wbug.cn/2017/11/09/phpQues2/</loc>
+    <loc>http://www.wbug.cn/2017/11/09/phpQues/</loc>
     <lastmod>2018-11-21T04:00:03.333Z</lastmod>
     <data>
         <display>
-        <title>什么是CGI、FastCGI、PHP-CGI、PHP-FPM、Spawn-FCGI？</title>
-        <pubTime>2017-11-09T14:52:24.000Z</pubTime>
+        <title>php线程安全与非线程安全问题</title>
+        <pubTime>2017-11-09T14:39:46.000Z</pubTime>
         
          
            
@@ -733,26 +821,6 @@
 
     
   <url>
-    <loc>http://www.wbug.cn/2016/07/12/comp_syntax/</loc>
-    <lastmod>2018-11-21T04:00:03.327Z</lastmod>
-    <data>
-        <display>
-        <title>php 之 composer 的用法</title>
-        <pubTime>2016-07-12T12:11:29.000Z</pubTime>
-        
-        <tag>php</tag>
-         
-         
-           
-             
-              <breadCrumb title="php" url="http://www.wbug.cn/categories/php/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://www.wbug.cn/2016/07/13/comp-repos/</loc>
     <lastmod>2018-11-21T04:00:03.326Z</lastmod>
     <data>
@@ -770,80 +838,12 @@
 
     
   <url>
-    <loc>http://www.wbug.cn/2016/07/13/comp-com_env_/</loc>
-    <lastmod>2018-11-21T04:00:03.325Z</lastmod>
-    <data>
-        <display>
-        <title>php 之 composer 的命令三</title>
-        <pubTime>2016-07-13T12:10:55.000Z</pubTime>
-        
-        <tag>php</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://www.wbug.cn/2016/07/13/comp-command/</loc>
     <lastmod>2018-11-21T04:00:03.325Z</lastmod>
     <data>
         <display>
         <title>php 之 composer 的命令一</title>
         <pubTime>2016-07-13T12:10:55.000Z</pubTime>
-        
-        <tag>php</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.wbug.cn/2016/07/17/comp-architecture_2/</loc>
-    <lastmod>2018-11-21T04:00:03.324Z</lastmod>
-    <data>
-        <display>
-        <title>php 之 composer 的JSON包的规范二</title>
-        <pubTime>2016-07-17T11:01:42.000Z</pubTime>
-        
-        <tag>php</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.wbug.cn/2016/07/13/comp-com_depends_/</loc>
-    <lastmod>2018-11-21T04:00:03.324Z</lastmod>
-    <data>
-        <display>
-        <title>php 之 composer 的命令二</title>
-        <pubTime>2016-07-13T12:10:55.000Z</pubTime>
-        
-        <tag>php</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.wbug.cn/2016/07/17/comp-architecture/</loc>
-    <lastmod>2018-11-21T04:00:03.323Z</lastmod>
-    <data>
-        <display>
-        <title>php 之 composer 的JSON包的规范一</title>
-        <pubTime>2016-07-17T11:01:42.000Z</pubTime>
         
         <tag>php</tag>
          
