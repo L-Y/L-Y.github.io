@@ -3,6 +3,26 @@
 
 
     
+  <url>
+    <loc>http://www.wbug.cn/2020/07/21/swoole-nginx/</loc>
+    <lastmod>2020-07-21T02:59:04.684Z</lastmod>
+    <data>
+        <display>
+        <title>swoole-nginx</title>
+        <pubTime>2020-07-21T02:57:43.000Z</pubTime>
+        
+        <tag>nginx</tag>
+         
+         
+           
+             
+              <breadCrumb title="php" url="http://www.wbug.cn/categories/php/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>http://www.wbug.cn/2020/06/05/docker-compose/</loc>
@@ -127,6 +147,23 @@
              
               <breadCrumb title="php" url="http://www.wbug.cn/categories/php/"/>
           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.wbug.cn/2016/07/13/comp-repos/</loc>
+    <lastmod>2020-06-22T10:01:03.071Z</lastmod>
+    <data>
+        <display>
+        <title>php 之 composer 库/资源包</title>
+        <pubTime>2016-07-13T11:42:01.000Z</pubTime>
+        
+        <tag>php</tag>
+         
+         
+           
         </display>
     </data>
     </url>
@@ -433,12 +470,12 @@
 
     
   <url>
-    <loc>http://www.wbug.cn/2015/06/25/sshbash/</loc>
+    <loc>http://www.wbug.cn/2015/06/25/sshkey-0/</loc>
     <lastmod>2018-11-21T04:00:03.338Z</lastmod>
     <data>
         <display>
-        <title>多个github账号发布hexo</title>
-        <pubTime>2015-06-25T15:45:41.000Z</pubTime>
+        <title>hexo之SSH KEY</title>
+        <pubTime>2015-06-25T15:37:53.000Z</pubTime>
         
         <tag>hexo</tag>
          
@@ -450,12 +487,12 @@
 
     
   <url>
-    <loc>http://www.wbug.cn/2015/06/25/sshkey-0/</loc>
+    <loc>http://www.wbug.cn/2015/06/25/sshbash/</loc>
     <lastmod>2018-11-21T04:00:03.338Z</lastmod>
     <data>
         <display>
-        <title>hexo之SSH KEY</title>
-        <pubTime>2015-06-25T15:37:53.000Z</pubTime>
+        <title>多个github账号发布hexo</title>
+        <pubTime>2015-06-25T15:45:41.000Z</pubTime>
         
         <tag>hexo</tag>
          
@@ -555,12 +592,12 @@
 
     
   <url>
-    <loc>http://www.wbug.cn/2015/03/27/pywin32/</loc>
+    <loc>http://www.wbug.cn/2016/07/01/reg/</loc>
     <lastmod>2018-11-21T04:00:03.335Z</lastmod>
     <data>
         <display>
-        <title>Python之Pywin32</title>
-        <pubTime>2015-03-27T06:32:44.000Z</pubTime>
+        <title>windows之注册表</title>
+        <pubTime>2016-06-30T22:57:31.000Z</pubTime>
         
          
            
@@ -573,12 +610,12 @@
 
     
   <url>
-    <loc>http://www.wbug.cn/2016/07/01/reg/</loc>
+    <loc>http://www.wbug.cn/2015/03/27/pywin32/</loc>
     <lastmod>2018-11-21T04:00:03.335Z</lastmod>
     <data>
         <display>
-        <title>windows之注册表</title>
-        <pubTime>2016-06-30T22:57:31.000Z</pubTime>
+        <title>Python之Pywin32</title>
+        <pubTime>2015-03-27T06:32:44.000Z</pubTime>
         
          
            
@@ -609,12 +646,12 @@
 
     
   <url>
-    <loc>http://www.wbug.cn/2017/11/09/phpQues2/</loc>
+    <loc>http://www.wbug.cn/2017/11/09/phpQues/</loc>
     <lastmod>2018-11-21T04:00:03.333Z</lastmod>
     <data>
         <display>
-        <title>什么是CGI、FastCGI、PHP-CGI、PHP-FPM、Spawn-FCGI？</title>
-        <pubTime>2017-11-09T14:52:24.000Z</pubTime>
+        <title>php线程安全与非线程安全问题</title>
+        <pubTime>2017-11-09T14:39:46.000Z</pubTime>
         
          
            
@@ -627,12 +664,12 @@
 
     
   <url>
-    <loc>http://www.wbug.cn/2017/11/09/phpQues/</loc>
+    <loc>http://www.wbug.cn/2017/11/09/phpQues2/</loc>
     <lastmod>2018-11-21T04:00:03.333Z</lastmod>
     <data>
         <display>
-        <title>php线程安全与非线程安全问题</title>
-        <pubTime>2017-11-09T14:39:46.000Z</pubTime>
+        <title>什么是CGI、FastCGI、PHP-CGI、PHP-FPM、Spawn-FCGI？</title>
+        <pubTime>2017-11-09T14:52:24.000Z</pubTime>
         
          
            
@@ -815,23 +852,6 @@
              
               <breadCrumb title="git" url="http://www.wbug.cn/categories/git/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.wbug.cn/2016/07/13/comp-repos/</loc>
-    <lastmod>2018-11-21T04:00:03.326Z</lastmod>
-    <data>
-        <display>
-        <title>php 之 composer 库/资源包</title>
-        <pubTime>2016-07-13T11:42:01.000Z</pubTime>
-        
-        <tag>php</tag>
-         
-         
-           
         </display>
     </data>
     </url>
