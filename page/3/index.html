@@ -76,6 +76,496 @@ var _hmt = _hmt || [];
       <div class="outer">
         <section id="main">
   
+    <article id="post-httpCode" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/21/httpCode/" class="article-date">
+  <time datetime="2018-11-21T04:39:54.000Z" itemprop="datePublished">2018-11-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/HTTP/">HTTP</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/21/httpCode/">http状态码一览</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="http状态吗及解释，英文版"><a href="#http状态吗及解释，英文版" class="headerlink" title="http状态吗及解释，英文版"></a>http状态吗及解释，英文版</h2><h3 id="1xx"><a href="#1xx" class="headerlink" title="1xx"></a>1xx</h3><table>
+<thead>
+<tr>
+<th style="text-align:right">code</th>
+<th style="text-align:left">reason</th>
+<th style="text-align:left">description</th>
+<th style="text-align:left">spec</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"><code>1xx</code></td>
+<td style="text-align:left"><strong>Informational</strong></td>
+<td style="text-align:left">“indicates an interim response for communicating connection status or request progress prior to completing the requested action and sending a final response.” ~ <a href="http://www.urbandictionary.com/define.php?term=sure" target="_blank" rel="noopener">sure</a></td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc7231#section-6.2" target="_blank" rel="noopener">RFC7231#6.2</a>,<br> <a href="https://tools.ietf.org/html/rfc2616#section-10.1" target="_blank" rel="noopener">RFC2616#10.1</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>100</code></td>
+<td style="text-align:left">Continue</td>
+<td style="text-align:left">“indicates that the initial part of a request has been received and has not yet been rejected by the server.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc7231#section-6.2.1" target="_blank" rel="noopener">RFC7231#6.2.1</a>,<br> <a href="https://tools.ietf.org/html/rfc2616#section-10.1.1" target="_blank" rel="noopener">RFC2616#10.1.1</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>101</code></td>
+<td style="text-align:left">Switching Protocols</td>
+<td style="text-align:left">“indicates that the server understands and is willing to comply with the client’s request, via the Upgrade header field, for a change in the application protocol being used on this connection.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc7231#section-6.2.2" target="_blank" rel="noopener">RFC7231#6.2.2</a>,<br><a href="https://tools.ietf.org/html/rfc2616#section-10.1.2" target="_blank" rel="noopener">RFC2616#10.1.2</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="2xx"><a href="#2xx" class="headerlink" title="2xx"></a>2xx</h3><table>
+<thead>
+<tr>
+<th style="text-align:right">code</th>
+<th style="text-align:left">reason</th>
+<th style="text-align:left">description</th>
+<th style="text-align:left">spec</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"><code>2xx</code></td>
+<td style="text-align:left"><strong>Successful</strong></td>
+<td style="text-align:left">“indicates that the client’s request was successfully received, understood, and accepted.” ~ <a href="https://twitter.com/DanaDanger/status/183316183494311936" target="_blank" rel="noopener">cool</a></td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc7231#section-6.3" target="_blank" rel="noopener">RFC7231#6.3</a>,<br> <a href="https://tools.ietf.org/html/rfc2616#section-10.2" target="_blank" rel="noopener">RFC2616#10.2</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>200</code></td>
+<td style="text-align:left">OK</td>
+<td style="text-align:left">“indicates that the request has succeeded.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1" target="_blank" rel="noopener">RFC7231#6.3.1</a>,<br><a href="https://tools.ietf.org/html/rfc2616#section-10.2.1" target="_blank" rel="noopener">RFC2616#10.2.1</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>201</code></td>
+<td style="text-align:left">Created</td>
+<td style="text-align:left">“indicates that the request has been fulfilled and has resulted in one or more new resources being created.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc7231#section-6.3.2" target="_blank" rel="noopener">RFC7231#6.3.2</a>,<br><a href="https://tools.ietf.org/html/rfc2616#section-10.2.2" target="_blank" rel="noopener">RFC2616#10.2.2</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>202</code></td>
+<td style="text-align:left">Accepted</td>
+<td style="text-align:left">“indicates that the request has been accepted for processing, but the processing has not been completed.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc7231#section-6.3.3" target="_blank" rel="noopener">RFC7231#6.3.3</a>,<br><a href="https://tools.ietf.org/html/rfc2616#section-10.2.3" target="_blank" rel="noopener">RFC2616#10.2.3</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>203</code></td>
+<td style="text-align:left">Non-Authoritative Information</td>
+<td style="text-align:left">“indicates that the request was successful but the enclosed payload has been modified from that of the origin server’s 200 (OK) response by a transforming proxy.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc7231#section-6.3.4" target="_blank" rel="noopener">RFC7231#6.3.4</a>,<br><a href="https://tools.ietf.org/html/rfc2616#section-10.2.4" target="_blank" rel="noopener">RFC2616#10.2.4</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>204</code></td>
+<td style="text-align:left">No Content</td>
+<td style="text-align:left">“indicates that the server has successfully fulfilled the request and that there is no additional content to send in the response payload body.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc7231#section-6.3.5" target="_blank" rel="noopener">RFC7231#6.3.5</a>,<br><a href="https://tools.ietf.org/html/rfc2616#section-10.2.5" target="_blank" rel="noopener">RFC2616#10.2.5</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>205</code></td>
+<td style="text-align:left">Reset Content</td>
+<td style="text-align:left">“indicates that the server has fulfilled the request and desires that the user agent reset the “document view”, which caused the request to be sent, to its original state as received from the origin server.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc7231#section-6.3.6" target="_blank" rel="noopener">RFC7231#6.3.6</a>,<br><a href="https://tools.ietf.org/html/rfc2616#section-10.2.6" target="_blank" rel="noopener">RFC2616#10.2.6</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>206</code></td>
+<td style="text-align:left">Partial Content</td>
+<td style="text-align:left">“indicates that the server is successfully fulfilling a range request for the target resource by transferring one or more parts of the selected representation that correspond to the satisfiable ranges found in the requests’s Range header field.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc7233#section-4.1" target="_blank" rel="noopener">RFC7233#4.1</a>,<br><a href="https://tools.ietf.org/html/rfc2616#section-10.2.7" target="_blank" rel="noopener">RFC2616#10.2.7</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="3xx"><a href="#3xx" class="headerlink" title="3xx"></a>3xx</h3><table>
+<thead>
+<tr>
+<th style="text-align:right">code</th>
+<th style="text-align:left">reason</th>
+<th style="text-align:left">description</th>
+<th style="text-align:left">spec</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"><code>3xx</code></td>
+<td style="text-align:left"><strong>Redirection</strong></td>
+<td style="text-align:left">“indicates that further action needs to be taken by the user agent in order to fulfill the request.” ~ <a href="https://twitter.com/DanaDanger/status/183316183494311936" target="_blank" rel="noopener">ask that dude over there</a></td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc7231#section-6.4" target="_blank" rel="noopener">RFC7231#6.4</a>,<br> <a href="https://tools.ietf.org/html/rfc2616#section-10.3" target="_blank" rel="noopener">RFC2616#10.3</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>300</code></td>
+<td style="text-align:left">Multiple Choices</td>
+<td style="text-align:left">“indicates that the target resource has more than one representation, each with its own more specific identifier, and information about the alternatives is being provided so that the user (or user agent) can select a preferred representation by redirecting its request to one or more of those identifiers.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc7231#section-6.4.1" target="_blank" rel="noopener">RFC7231#6.4.1</a>,<br><a href="https://tools.ietf.org/html/rfc2616#section-10.3.1" target="_blank" rel="noopener">RFC2616#10.3.1</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>301</code></td>
+<td style="text-align:left">Moved Permanently</td>
+<td style="text-align:left">“indicates that the target resource has been assigned a new permanent URI and any future references to this resource ought to use one of the enclosed URIs.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc7231#section-6.4.2" target="_blank" rel="noopener">RFC7231#6.4.2</a>,<br><a href="https://tools.ietf.org/html/rfc2616#section-10.3.2" target="_blank" rel="noopener">RFC2616#10.3.2</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>302</code></td>
+<td style="text-align:left">Found</td>
+<td style="text-align:left">“indicates that the target resource resides temporarily under a different URI.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc7231#section-6.4.3" target="_blank" rel="noopener">RFC7231#6.4.3</a>,<br><a href="https://tools.ietf.org/html/rfc2616#section-10.3.3" target="_blank" rel="noopener">RFC2616#10.3.3</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>303</code></td>
+<td style="text-align:left">See Other</td>
+<td style="text-align:left">“indicates that the server is redirecting the user agent to a different resource, as indicated by a URI in the Location header field, that is intended to provide an indirect response to the original request.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc7231#section-6.4.4" target="_blank" rel="noopener">RFC7231#6.4.4</a>,<br><a href="https://tools.ietf.org/html/rfc2616#section-10.3.4" target="_blank" rel="noopener">RFC2616#10.3.4</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>304</code></td>
+<td style="text-align:left">Not Modified</td>
+<td style="text-align:left">“indicates that a conditional GET request has been received and would have resulted in a 200 (OK) response if it were not for the fact that the condition has evaluated to false.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc7232#section-4.1" target="_blank" rel="noopener">RFC7232#4.1</a>,<br><a href="https://tools.ietf.org/html/rfc2616#section-10.3.5" target="_blank" rel="noopener">RFC2616#10.3.5</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>305</code></td>
+<td style="text-align:left">Use Proxy</td>
+<td style="text-align:left"><em>deprecated</em></td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc7231#section-6.4.5" target="_blank" rel="noopener">RFC7231#6.4.5</a>,<br><a href="https://tools.ietf.org/html/rfc2616#section-10.3.6" target="_blank" rel="noopener">RFC2616#10.3.6</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>306</code></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"><em>unused</em></td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc7231#section-6.4.6" target="_blank" rel="noopener">RFC7231#6.4.6</a>,<br><a href="https://tools.ietf.org/html/rfc2616#section-10.3.7" target="_blank" rel="noopener">RFC2616#10.3.7</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>307</code></td>
+<td style="text-align:left">Temporary Redirect</td>
+<td style="text-align:left">“indicates that the target resource resides temporarily under a different URI and the user agent MUST NOT change the request method if it performs an automatic redirection to that URI.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc7231#section-6.4.7" target="_blank" rel="noopener">RFC7231#6.4.7</a>,<br><a href="https://tools.ietf.org/html/rfc2616#section-10.3.8" target="_blank" rel="noopener">RFC2616#10.3.8</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="4xx"><a href="#4xx" class="headerlink" title="4xx"></a>4xx</h3><table>
+<thead>
+<tr>
+<th style="text-align:right">code</th>
+<th style="text-align:left">reason</th>
+<th style="text-align:left">description</th>
+<th style="text-align:left">spec</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"><code>4xx</code></td>
+<td style="text-align:left"><strong>Client Error</strong></td>
+<td style="text-align:left">“indicates that the client seems to have erred.” ~ <a href="https://twitter.com/DanaDanger/status/183316183494311936" target="_blank" rel="noopener"><em>you</em> fucked up</a></td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc7231#section-6.5" target="_blank" rel="noopener">RFC7231#6.5</a>,<br> <a href="https://tools.ietf.org/html/rfc2616#section-10.4" target="_blank" rel="noopener">RFC2616#10.4</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>400</code></td>
+<td style="text-align:left">Bad Request</td>
+<td style="text-align:left">“indicates that the server cannot or will not process the request because the received syntax is invalid, nonsensical, or exceeds some limitation on what the server is willing to process.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1" target="_blank" rel="noopener">RFC7231#6.5.1</a>,<br><a href="https://tools.ietf.org/html/rfc2616#section-10.4.1" target="_blank" rel="noopener">RFC2616#10.4.1</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>401</code></td>
+<td style="text-align:left">Unauthorized</td>
+<td style="text-align:left">“indicates that the request has not been applied because it lacks valid authentication credentials for the target resource.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc7235#section-3.1" target="_blank" rel="noopener">RFC7235#6.3.1</a>,<br><a href="https://tools.ietf.org/html/rfc2616#section-10.4.2" target="_blank" rel="noopener">RFC2616#10.4.2</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>402</code></td>
+<td style="text-align:left">Payment Required</td>
+<td style="text-align:left"><em>reserved</em></td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc7231#section-6.5.2" target="_blank" rel="noopener">RFC7231#6.5.2</a>,<br><a href="https://tools.ietf.org/html/rfc2616#section-10.4.3" target="_blank" rel="noopener">RFC2616#10.4.3</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>403</code></td>
+<td style="text-align:left">Forbidden</td>
+<td style="text-align:left">“indicates that the server understood the request but refuses to authorize it.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc7231#section-6.5.3" target="_blank" rel="noopener">RFC7231#6.5.3</a>,<br><a href="https://tools.ietf.org/html/rfc2616#section-10.4.4" target="_blank" rel="noopener">RFC2616#10.4.4</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>404</code></td>
+<td style="text-align:left">Not Found</td>
+<td style="text-align:left">“indicates that the origin server did not find a current representation for the target resource or is not willing to disclose that one exists.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4" target="_blank" rel="noopener">RFC7231#6.5.4</a>,<br><a href="https://tools.ietf.org/html/rfc2616#section-10.4.5" target="_blank" rel="noopener">RFC2616#10.4.5</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>405</code></td>
+<td style="text-align:left">Method Not Allowed</td>
+<td style="text-align:left">“indicates that the method specified in the request-line is known by the origin server but not supported by the target resource.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc7231#section-6.5.5" target="_blank" rel="noopener">RFC7231#6.5.5</a>,<br><a href="https://tools.ietf.org/html/rfc2616#section-10.4.6" target="_blank" rel="noopener">RFC2616#10.4.6</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>406</code></td>
+<td style="text-align:left">Not Acceptable</td>
+<td style="text-align:left">“indicates that the target resource does not have a current representation that would be acceptable to the user agent, according to the proactive negotiation header fields received in the request, and the server is unwilling to supply a default representation.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc7231#section-6.5.6" target="_blank" rel="noopener">RFC7231#6.5.6</a>,<br><a href="https://tools.ietf.org/html/rfc2616#section-10.4.7" target="_blank" rel="noopener">RFC2616#10.4.7</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>407</code></td>
+<td style="text-align:left">Proxy Authentication Required</td>
+<td style="text-align:left">“is similar to 401 (Unauthorized), but indicates that the client needs to authenticate itself in order to use a proxy.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc7235#section-3.2" target="_blank" rel="noopener">RFC7235#3.2</a>,<br><a href="https://tools.ietf.org/html/rfc2616#section-10.4.8" target="_blank" rel="noopener">RFC2616#10.4.8</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>408</code></td>
+<td style="text-align:left">Request Timeout</td>
+<td style="text-align:left">“indicates that the server did not receive a complete request message within the time that it was prepared to wait.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc7231#section-6.5.7" target="_blank" rel="noopener">RFC7231#6.5.7</a>,<br><a href="https://tools.ietf.org/html/rfc2616#section-10.4.9" target="_blank" rel="noopener">RFC2616#10.4.9</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>409</code></td>
+<td style="text-align:left">Conflict</td>
+<td style="text-align:left">“indicates that the request could not be completed due to a conflict with the current state of the resource.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc7231#section-6.5.8" target="_blank" rel="noopener">RFC7231#6.5.8</a>,<br><a href="https://tools.ietf.org/html/rfc2616#section-10.4.10" target="_blank" rel="noopener">RFC2616#10.4.10</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>410</code></td>
+<td style="text-align:left">Gone</td>
+<td style="text-align:left">“indicates that access to the target resource is no longer available at the origin server and that this condition is likely to be permanent.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc7231#section-6.5.9" target="_blank" rel="noopener">RFC7231#6.5.9</a>,<br><a href="https://tools.ietf.org/html/rfc2616#section-10.4.11" target="_blank" rel="noopener">RFC2616#10.4.11</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>411</code></td>
+<td style="text-align:left">Length Required</td>
+<td style="text-align:left">“indicates that the server refuses to accept the request without a defined Content-Length.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc7231#section-6.5.10" target="_blank" rel="noopener">RFC7231#6.5.10</a>,<br><a href="https://tools.ietf.org/html/rfc2616#section-10.4.12" target="_blank" rel="noopener">RFC2616#10.4.12</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>412</code></td>
+<td style="text-align:left">Precondition Failed</td>
+<td style="text-align:left">“indicates that one or more preconditions given in the request header fields evaluated to false when tested on the server.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc7232#section-4.2" target="_blank" rel="noopener">RFC7232#4.2</a>,<br><a href="https://tools.ietf.org/html/rfc2616#section-10.4.13" target="_blank" rel="noopener">RFC2616#10.4.13</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>413</code></td>
+<td style="text-align:left">Payload Too Large</td>
+<td style="text-align:left">“indicates that the server is refusing to process a request because the request payload is larger than the server is willing or able to process.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc7231#section-6.5.11" target="_blank" rel="noopener">RFC7231#6.5.11</a>,<br><a href="https://tools.ietf.org/html/rfc2616#section-10.4.14" target="_blank" rel="noopener">RFC2616#10.4.14</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>414</code></td>
+<td style="text-align:left">URI Too Long</td>
+<td style="text-align:left">“indicates that the server is refusing to service the request because the request-target is longer than the server is willing to interpret.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc7231#section-6.5.12" target="_blank" rel="noopener">RFC7231#6.5.12</a>,<br><a href="https://tools.ietf.org/html/rfc2616#section-10.4.15" target="_blank" rel="noopener">RFC2616#10.4.15</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>415</code></td>
+<td style="text-align:left">Unsupported Media Type</td>
+<td style="text-align:left">“indicates that the origin server is refusing to service the request because the payload is in a format not supported by the target resource for this method.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc7231#section-6.5.13" target="_blank" rel="noopener">RFC7231#6.5.13</a>,<br><a href="https://tools.ietf.org/html/rfc2616#section-10.4.16" target="_blank" rel="noopener">RFC2616#10.4.16</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>416</code></td>
+<td style="text-align:left">Range Not Satisfiable</td>
+<td style="text-align:left">“indicates that none of the ranges in the request’s Range header field overlap the current extent of the selected resource or that the set of ranges requested has been rejected due to invalid ranges or an excessive request of small or overlapping ranges.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc7233#section-4.4" target="_blank" rel="noopener">RFC7233#4.4</a>,<br><a href="https://tools.ietf.org/html/rfc2616#section-10.4.17" target="_blank" rel="noopener">RFC2616#10.4.17</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>417</code></td>
+<td style="text-align:left">Expectation Failed</td>
+<td style="text-align:left">“indicates that the expectation given in the request’s Expect header field could not be met by at least one of the inbound servers.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc7231#section-6.5.14" target="_blank" rel="noopener">RFC7231#6.5.14</a>,<br><a href="https://tools.ietf.org/html/rfc2616#section-10.4.18" target="_blank" rel="noopener">RFC2616#10.4.18</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>418</code></td>
+<td style="text-align:left">I’m a teapot</td>
+<td style="text-align:left">“Any attempt to brew coffee with a teapot should result in the error code 418 I’m a teapot.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc2324#section-2.3.2" target="_blank" rel="noopener">RFC2324#2.3.2</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>426</code></td>
+<td style="text-align:left">Upgrade Required</td>
+<td style="text-align:left">“indicates that the server refuses to perform the request using the current protocol but might be willing to do so after the client upgrades to a different protocol.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc7231#section-6.5.15" target="_blank" rel="noopener">RFC7231#6.5.15</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="5xx"><a href="#5xx" class="headerlink" title="5xx"></a>5xx</h3><table>
+<thead>
+<tr>
+<th style="text-align:right">code</th>
+<th style="text-align:left">reason</th>
+<th style="text-align:left">description</th>
+<th style="text-align:left">spec</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"><code>5xx</code></td>
+<td style="text-align:left"><strong>Server Error</strong></td>
+<td style="text-align:left">“indicates that the server is aware that it has erred or is incapable of performing the requested method.” ~ <a href="https://twitter.com/DanaDanger/status/183316183494311936" target="_blank" rel="noopener"><em>we</em> fucked up</a></td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc7231#section-6.6" target="_blank" rel="noopener">RFC7231#6.6</a>,<br> <a href="https://tools.ietf.org/html/rfc2616#section-10.5" target="_blank" rel="noopener">RFC2616#10.5</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>500</code></td>
+<td style="text-align:left">Internal Server Error</td>
+<td style="text-align:left">“indicates that the server encountered an unexpected condition that prevented it from fulfilling the request.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1" target="_blank" rel="noopener">RFC7231#6.6.1</a>,<br><a href="https://tools.ietf.org/html/rfc2616#section-10.5.1" target="_blank" rel="noopener">RFC2616#10.5.2</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>501</code></td>
+<td style="text-align:left">Not Implemented</td>
+<td style="text-align:left">“indicates that the server does not support the functionality required to fulfill the request.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc7231#section-6.6.2" target="_blank" rel="noopener">RFC7231#6.6.2</a>,<br><a href="https://tools.ietf.org/html/rfc2616#section-10.5.2" target="_blank" rel="noopener">RFC2616#10.5.3</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>502</code></td>
+<td style="text-align:left">Bad Gateway</td>
+<td style="text-align:left">“indicates that the server, while acting as a gateway or proxy, received an invalid response from an inbound server it accessed while attempting to fulfill the request.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc7231#section-6.6.3" target="_blank" rel="noopener">RFC7231#6.6.3</a>,<br><a href="https://tools.ietf.org/html/rfc2616#section-10.5.3" target="_blank" rel="noopener">RFC2616#10.5.4</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>503</code></td>
+<td style="text-align:left">Service Unavailable</td>
+<td style="text-align:left">“indicates that the server is currently unable to handle the request due to a temporary overload or scheduled maintenance, which will likely be alleviated after some delay.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc7231#section-6.6.4" target="_blank" rel="noopener">RFC7231#6.6.4</a>,<br><a href="https://tools.ietf.org/html/rfc2616#section-10.5.4" target="_blank" rel="noopener">RFC2616#10.5.5</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>504</code></td>
+<td style="text-align:left">Gateway Time-out</td>
+<td style="text-align:left">“indicates that the server, while acting as a gateway or proxy, did not receive a timely response from an upstream server it needed to access in order to complete the request.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc7231#section-6.6.5" target="_blank" rel="noopener">RFC7231#6.6.5</a>,<br><a href="https://tools.ietf.org/html/rfc2616#section-10.5.5" target="_blank" rel="noopener">RFC2616#10.5.6</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>505</code></td>
+<td style="text-align:left">HTTP Version Not Supported</td>
+<td style="text-align:left">“indicates that the server does not support, or refuses to support, the protocol version that was used in the request message.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc7231#section-6.6.6" target="_blank" rel="noopener">RFC7231#6.6.6</a>,<br><a href="https://tools.ietf.org/html/rfc2616#section-10.5.6" target="_blank" rel="noopener">RFC2616#10.5.6</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="Extensions"><a href="#Extensions" class="headerlink" title="Extensions"></a>Extensions</h2><table>
+<thead>
+<tr>
+<th style="text-align:right">code</th>
+<th style="text-align:left">reason</th>
+<th style="text-align:left">description</th>
+<th style="text-align:left">spec</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"><code>102</code></td>
+<td style="text-align:left">Processing</td>
+<td style="text-align:left">“is an interim response used to inform the client that the server has accepted the complete request, but has not yet completed it.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc2518#section-10.1" target="_blank" rel="noopener">RFC5218#10.1</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>207</code></td>
+<td style="text-align:left">Multi-Status</td>
+<td style="text-align:left">“provides status for multiple independent operations.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc2518#section-10.2" target="_blank" rel="noopener">RFC5218#10.2</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>226</code></td>
+<td style="text-align:left">IM Used</td>
+<td style="text-align:left">“The server has fulfilled a GET request for the resource, and the response is a representation of the result of one or more instance-manipulations applied to the current instance.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc3229#section-10.4.1" target="_blank" rel="noopener">RFC3229#10.4.1</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>308</code></td>
+<td style="text-align:left">Permanent Redirect</td>
+<td style="text-align:left">“The target resource has been assigned a new permanent URI and any future references to this resource outght to use one of the enclosed URIs. […] This status code is similar to 301 Moved Permanently (Section 7.3.2 of rfc7231), except that it does not allow rewriting the request method from POST to GET.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc7538" target="_blank" rel="noopener">RFC7538</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>422</code></td>
+<td style="text-align:left">Unprocessable Entity</td>
+<td style="text-align:left">“means the server understands the content type of the request entity (hence a 415(Unsupported Media Type) status code is inappropriate), and the syntax of the request entity is correct (thus a 400 (Bad Request) status code is inappropriate) but was unable to process the contained instructions.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc2518#section-10.3" target="_blank" rel="noopener">RFC5218#10.3</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>423</code></td>
+<td style="text-align:left">Locked</td>
+<td style="text-align:left">“means the source or destination resource of a method is locked.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc2518#section-10.4" target="_blank" rel="noopener">RFC5218#10.4</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>424</code></td>
+<td style="text-align:left">Failed Dependency</td>
+<td style="text-align:left">“means that the method could not be performed on the resource because the requested action depended on another action and that action failed.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc2518#section-10.5" target="_blank" rel="noopener">RFC5218#10.5</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>428</code></td>
+<td style="text-align:left">Precondition Required</td>
+<td style="text-align:left">“indicates that the origin server requires the request to be conditional.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc6585#section-3" target="_blank" rel="noopener">RFC6585#3</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>429</code></td>
+<td style="text-align:left">Too Many Requests</td>
+<td style="text-align:left">“indicates that the user has sent too many requests in a given amount of time (“rate limiting”).”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc6585#section-4" target="_blank" rel="noopener">RFC6585#4</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>431</code></td>
+<td style="text-align:left">Request Header Fields Too Large</td>
+<td style="text-align:left">“indicates that the server is unwilling to process the request because its header fields are too large.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc6585#section-5" target="_blank" rel="noopener">RFC6585#5</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>451</code></td>
+<td style="text-align:left">Unavailable For Legal Reasons</td>
+<td style="text-align:left">“This status code indicates that the server is denying access to the resource in response to a legal demand.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/draft-ietf-httpbis-legally-restricted-status" target="_blank" rel="noopener">draft-ietf-httpbis-legally-restricted-status</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>506</code></td>
+<td style="text-align:left">Variant Also Negotiates</td>
+<td style="text-align:left">“indicates that the server has an internal configuration error: the chosen variant resource is configured to engage in transparent content negotiation itself, and is therefore not a proper end point in the negotiation process.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc2295#section-8.1" target="_blank" rel="noopener">RFC2295#8.1</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>507</code></td>
+<td style="text-align:left">Insufficient Storage</td>
+<td style="text-align:left">“means the method could not be performed on the resource because the server is unable to store the representation needed to successfully complete the request.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc2518#section-10.6" target="_blank" rel="noopener">RFC5218#10.6</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>511</code></td>
+<td style="text-align:left">Network Authentication Required</td>
+<td style="text-align:left">“indicates that the client needs to authenticate to gain network access.”</td>
+<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc6585#section-6" target="_blank" rel="noopener">RFC6585#6</a></td>
+</tr>
+<tr>
+<td style="text-align:right"><code>7xx</code></td>
+<td style="text-align:left"><strong>Developer Error</strong></td>
+<td style="text-align:left"><a href="http://www.urbandictionary.com/define.php?term=err" target="_blank" rel="noopener">err</a></td>
+<td style="text-align:left"><a href="http://documentup.com/joho/7XX-rfc" target="_blank" rel="noopener">7xx-rfc</a></td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.wbug.cn/2018/11/21/httpCode/" data-id="ckg69q7m2001nu011iyjd0xwy" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+ 
+  
     <article id="post-httpCode_cn" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/11/21/httpCode_cn/" class="article-date">
@@ -556,7 +1046,7 @@ var _hmt = _hmt || [];
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2018/11/21/httpCode_cn/" data-id="ckg68i4od001qds11hdlsqvno" class="article-share-link">Share</a>
+      <a data-url="http://www.wbug.cn/2018/11/21/httpCode_cn/" data-id="ckg69q7m3001pu011uh1ci7f6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -600,7 +1090,7 @@ var _hmt = _hmt || [];
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2018/11/21/phpCurlError/" data-id="ckg68i4ox002mds113hgyd0aw" class="article-share-link">Share</a>
+      <a data-url="http://www.wbug.cn/2018/11/21/phpCurlError/" data-id="ckg69q7mo002nu01170ogq500" class="article-share-link">Share</a>
       
       
     </footer>
@@ -637,7 +1127,7 @@ var _hmt = _hmt || [];
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2018/05/19/hexo-deploy-failed/" data-id="ckg68i4o6001fds11xapbk9on" class="article-share-link">Share</a>
+      <a data-url="http://www.wbug.cn/2018/05/19/hexo-deploy-failed/" data-id="ckg69q7lv001eu011oggktnvt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -714,57 +1204,7 @@ var _hmt = _hmt || [];
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2018/05/17/debian-9-4-stretch-install/" data-id="ckg68i4nw000yds11b7fmofjr" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
- 
-  
-    <article id="post-phpQues2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/11/09/phpQues2/" class="article-date">
-  <time datetime="2017-11-09T14:52:24.000Z" itemprop="datePublished">2017-11-09</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/php/">php</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/09/phpQues2/">什么是CGI、FastCGI、PHP-CGI、PHP-FPM、Spawn-FCGI？</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h2><h3 id="CGI"><a href="#CGI" class="headerlink" title="CGI"></a>CGI</h3><p>CGI全称是“公共网关接口”(Common Gateway Interface)，HTTP服务器与你的或其它机器上的程序进行“交谈”的一种工具，<br>其程序须运行在网络服务器上。CGI可以用任何一种语言编写，只要这种语言具有标准输入、输出和环境变量。如php,<br>perl,tcl等<br>PS:是一种协议</p>
-<h3 id="FastCGI"><a href="#FastCGI" class="headerlink" title="FastCGI"></a>FastCGI</h3><p>FastCGI像是一个常驻(long-live)型的CGI，它可以一直执行着，只要激活后，不会每次都要花费时间去fork一次(这是CGI<br>最为人诟病的fork-and-execute 模式)。它还支持分布式的运算, 即 FastCGI 程序可以在网站服务器以外的主机上执行并<br>且接受来自其它网站服务器来的请求。FastCGI是语言无关的、可伸缩架构的CGI开放扩展，其主要行为是将CGI解释器进程<br>保持在内存中并因此获得较高的性能。众所周知，CGI解释器的反复加载是CGI性能低下的主要原因，如果CGI解释器保持在<br>内存中并接受FastCGI进程管理器调度，则可以提供良好的性能、伸缩性、Fail- Over特性等等。<br>PS:同样是一种协议</p>
-<h3 id="PHP-CGi"><a href="#PHP-CGi" class="headerlink" title="PHP-CGi"></a>PHP-CGi</h3><p>PHP-CGI是PHP自带的FastCGI管理器。<br>PS：PHP解释器</p>
-<h3 id="PHP-FPM"><a href="#PHP-FPM" class="headerlink" title="PHP-FPM"></a>PHP-FPM</h3><p>PHP-FPM是一个PHP FastCGI管理器，是一个补丁，用于将fastCGI整合进php包中，php5.3.3后已经集成到php中，之前的版<br>本属于第三方包<br>PS：php-fpm是fastcgi进程的管理器，用来管理fastcgi进程的，它实现了Fastcgi的程序，被PHP官方收了</p>
-<h3 id="Spawn-FCGI"><a href="#Spawn-FCGI" class="headerlink" title="Spawn-FCGI"></a>Spawn-FCGI</h3><p>Spawn-FCGI是一个通用的FastCGI管理服务器，它是lighttpd中的一部份，很多人都用Lighttpd的Spawn-FCGI进行FastCGI模<br>式下的管理工作<br>PS：一个通用的FastCGI管理服务器</p>
-<h2 id="工作原理及联系"><a href="#工作原理及联系" class="headerlink" title="工作原理及联系"></a>工作原理及联系</h2><p>CGI：每当客户请求CGI的时候，WEB服务器就请求操作系统生成一个新的CGI解释器进程(如php-cgi.exe，CGI的一个进程则处<br>理完一个请求后退出，下一个请求来时再创建新进程。当然，这样在访问量很少没有并发的情况也行。可是当访问量增大并<br>发存在，这种方式就不 适合了。于是就有了fastcgi。<br>fastCGI：FastCGI像是一个常驻(long-live)型的CGI，它可以一直执行着，只要激活后，不会每次都要花费时间去fork一次<br>（这是CGI最为人诟病的fork-and-execute 模式）。</p>
-<h4 id="FastCGI的工作原理"><a href="#FastCGI的工作原理" class="headerlink" title="FastCGI的工作原理"></a>FastCGI的工作原理</h4><p>1、Web Server启动时载入FastCGI进程管理器（IIS ISAPI或Apache Module)<br>2、FastCGI进程管理器自身初始化，启动多个CGI解释器进程(可见多个php-cgi)并等待来自Web Server的连接。<br>3、当客户端请求到达Web Server时，FastCGI进程管理器选择并连接到一个CGI解释器。Web server将CGI环境变量和标<br>准输入发送到FastCGI子进程php-cgi。<br>4、FastCGI子进程完成处理后将标准输出和错误信息从同一连接返回WebServer。当FastCGI子进程关闭连接时，请求便<br>告处理完成。FastCGI子进程接着等待并处理来自FastCGI进程管理器(运行在Web Server中)的下一个连接。 在CGI模式中，<br>php-cgi在此便退出了。<br>在上述情况中，你可以想象CGI通常有多慢。每一个Web请求PHP都必须重新解析php.ini、重新载入全部扩展并重初始化<br>全部数据结构。使用FastCGI，所有这些都只在进程启动时发生一次。一个额外的好处是，持续数据库连接可以工作。</p>
-<h4 id="FastCGI的不足"><a href="#FastCGI的不足" class="headerlink" title="FastCGI的不足"></a>FastCGI的不足</h4><p>因为是多进程，所以比CGI多线程消耗更多的服务器内存，PHP-CGI解释器每进程消耗7至25兆内存，将这个数字乘以50或<br>100就是很大的内存数。Nginx 0.8.46+PHP 5.2.14(FastCGI)服务器在3万并发连接下，开启的10个Nginx进程消耗150M内存<br>（15M10=150M），开启的64个php-cgi进程消耗1280M内存（20M64=1280M），加上系统自身消耗的内存，总共消耗不到2GB<br>内存。如果服务器内存较小，完全可以只开启25个php-cgi进程，这样php-cgi消耗的总内存数才500M。</p>
-<h4 id="PHP-CGI的不足"><a href="#PHP-CGI的不足" class="headerlink" title="PHP-CGI的不足"></a>PHP-CGI的不足</h4><p>1、php-cgi变更php.ini配置后需重启php-cgi才能让新的php-ini生效，不可以平滑重启<br>2、直接杀死php-cgi进程,php就不能运行了。(PHP-FPM和Spawn-FCGI就没有这个问题,守护进程会平滑从新生成新的子进程。）</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>首先，CGI是干嘛的？CGI是为了保证web server传递过来的数据是标准格式的，方便CGI程序的编写者。<br>web server（比如说nginx）只是内容的分发者。比如，如果请求index.html，那么webserver会去文件系统中找到这个文件<br>，发送给浏览器，这里分发的是静态数据。好了，如果现在请求的是/index.php，根据配置文件，nginx知道这个不是静态<br>文件，需要去找PHP解析器来处理，那么他会把这个请求简单处理后交给PHP解析器。Nginx会传哪些数据给PHP解析器呢？<br>url要有吧，查询字符串也得有吧，POST数据也要有，HTTP header不能少吧，好的，CGI就是规定要传哪些数据、以什么<br>样的格式传递给后方处理这个请求的协议。仔细想想，你在PHP代码中使用的用户从哪里来的。<br>　　当web server收到/index.php这个请求后，会启动对应的CGI程序，这里就是PHP的解析器。接下来PHP解析器会解<br>析php.ini文件，初始化执行环境，然后处理请求，再以规定CGI规定的格式返回处理后的结果，退出进程。web server<br>再把结果返回给浏览器。好了，CGI是个协议，跟进程什么的没关系。那fastcgi又是什么呢？Fastcgi是用来提高CGI程序<br>性能的。提高性能，那么CGI程序的性能问题在哪呢？”PHP解析器会解析php.ini文件，初始化执行环境”，就是这里了。<br>标准的CGI对每个请求都会执行这些步骤（不闲累啊！启动进程很累的说！），所以处理每个时间的时间会比较长。这明<br>显不合理嘛！那么Fastcgi是怎么做的呢？首先，Fastcgi会先启一个master，解析配置文件，初始化执行环境，然后再启<br>动多个worker。当请求过来时，master会传递给一个worker，然后立即可以接受下一个请求。这样就避免了重复的劳动，<br>效率自然是高。而且当worker不够用时，master可以根据配置预先启动几个worker等着；当然空闲worker太多时，也会<br>停掉一些，这样就提高了性能，也节约了资源。这就是fastcgi的对进程的管理。<br>那PHP-FPM又是什么呢？是一个实现了Fastcgi的程序，被PHP官方收了。<br>大家都知道，PHP的解释器是php-cgi。php-cgi只是个CGI程序，他自己本身只能解析请求，返回结果，不会进程管理<br>所以就出现了一些能够调度php-cgi进程的程序，比如说由lighthttpd分离出来的spawn-fcgi。好了PHP-FPM也是这么<br>个东东，在长时间的发展后，逐渐得到了大家的认可（要知道，前几年大家可是抱怨PHP-FPM稳定性太差的），也越来越流行。<br>参考地址：<br><a href="https://www.cnblogs.com/wanghetao/p/3934350.html" target="_blank" rel="noopener">https://www.cnblogs.com/wanghetao/p/3934350.html</a><br><a href="https://www.lvtao.net/tool/885.html" target="_blank" rel="noopener">https://www.lvtao.net/tool/885.html</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2017/11/09/phpQues2/" data-id="ckg68i4p1002sds11nl66w8br" class="article-share-link">Share</a>
+      <a data-url="http://www.wbug.cn/2018/05/17/debian-9-4-stretch-install/" data-id="ckg69q7ln000yu011dty68j2g" class="article-share-link">Share</a>
       
       
     </footer>
@@ -787,7 +1227,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/code/">code</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/default/">default</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/docker/">docker</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/google/">google</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/news/">news</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/svn/">svn</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/电影/">电影</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/code/">code</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/default/">default</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/docker/">docker</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/google/">google</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/news/">news</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/svn/">svn</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/电影/">电影</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -796,7 +1236,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bug/">bug</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker-compose/">docker-compose</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/laravel/">laravel</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nginx/">nginx</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/">ssh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime/">sublime</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/备份文件、mysql/">备份文件、mysql</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bug/">bug</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker-compose/">docker-compose</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/laravel/">laravel</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nginx/">nginx</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/">ssh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime/">sublime</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/备份文件、mysql/">备份文件、mysql</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -805,7 +1245,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/docker-compose/" style="font-size: 10px;">docker-compose</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 17.5px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/mysql/" style="font-size: 15px;">mysql</a> <a href="/tags/nginx/" style="font-size: 12.5px;">nginx</a> <a href="/tags/php/" style="font-size: 20px;">php</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/sublime/" style="font-size: 10px;">sublime</a> <a href="/tags/备份文件、mysql/" style="font-size: 10px;">备份文件、mysql</a>
+      <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/docker-compose/" style="font-size: 10px;">docker-compose</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 16.67px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/mysql/" style="font-size: 13.33px;">mysql</a> <a href="/tags/nginx/" style="font-size: 13.33px;">nginx</a> <a href="/tags/php/" style="font-size: 20px;">php</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/sublime/" style="font-size: 10px;">sublime</a> <a href="/tags/备份文件、mysql/" style="font-size: 10px;">备份文件、mysql</a>
     </div>
   </div>
 
@@ -814,7 +1254,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -826,7 +1266,11 @@ var _hmt = _hmt || [];
       <ul>
         
           <li>
-            <a href="/2020/10/12/nginx-default/">nginx-default</a>
+            <a href="/2020/10/12/nginx-slash/">nginx location uri 调用示例</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/12/nginx-default/">nginx常用配置项</a>
           </li>
         
           <li>
@@ -839,10 +1283,6 @@ var _hmt = _hmt || [];
         
           <li>
             <a href="/2020/06/05/docker/">docker常用命令</a>
-          </li>
-        
-          <li>
-            <a href="/2020/06/03/php-ext/">php7.4.4扩展开发</a>
           </li>
         
       </ul>

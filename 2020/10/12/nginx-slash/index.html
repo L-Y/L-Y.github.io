@@ -3,19 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>美国人教你这样用Google，你真的会变特工！！！ | ly.blog</title>
+  <title>nginx location uri 调用示例 | ly.blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="大前提：英文Google→www.google.com 第一篇 在搜索框上输入：“indexof/”inurl:lib 再按搜索你将进入许多图书馆，并且一定能下载自己喜欢的书籍。 在搜索框上输入：“indexof/”cnki 再按搜索你就可以找到许多图书馆的CNKI、VIP、超星等入口！ 在搜索框上输入：“indexof/”ppt 再按搜索你就可以突破网站入口下载powerpint作品！ 在搜索框">
+  <meta name="description" content="nginx 反斜杠使用示例12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152server &amp;#123;   listen       80;   server_name  localhost;   location /api/ &amp;#123;">
+<meta name="keywords" content="nginx">
 <meta property="og:type" content="article">
-<meta property="og:title" content="美国人教你这样用Google，你真的会变特工！！！">
-<meta property="og:url" content="http://www.wbug.cn/2015/04/30/kepu/index.html">
+<meta property="og:title" content="nginx location uri 调用示例">
+<meta property="og:url" content="http://www.wbug.cn/2020/10/12/nginx-slash/index.html">
 <meta property="og:site_name" content="ly.blog">
-<meta property="og:description" content="大前提：英文Google→www.google.com 第一篇 在搜索框上输入：“indexof/”inurl:lib 再按搜索你将进入许多图书馆，并且一定能下载自己喜欢的书籍。 在搜索框上输入：“indexof/”cnki 再按搜索你就可以找到许多图书馆的CNKI、VIP、超星等入口！ 在搜索框上输入：“indexof/”ppt 再按搜索你就可以突破网站入口下载powerpint作品！ 在搜索框">
+<meta property="og:description" content="nginx 反斜杠使用示例12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152server &amp;#123;   listen       80;   server_name  localhost;   location /api/ &amp;#123;">
 <meta property="og:locale" content="zh_cn">
-<meta property="og:updated_time" content="2018-11-21T04:00:03.331Z">
+<meta property="og:updated_time" content="2020-10-12T08:23:44.285Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="美国人教你这样用Google，你真的会变特工！！！">
-<meta name="twitter:description" content="大前提：英文Google→www.google.com 第一篇 在搜索框上输入：“indexof/”inurl:lib 再按搜索你将进入许多图书馆，并且一定能下载自己喜欢的书籍。 在搜索框上输入：“indexof/”cnki 再按搜索你就可以找到许多图书馆的CNKI、VIP、超星等入口！ 在搜索框上输入：“indexof/”ppt 再按搜索你就可以突破网站入口下载powerpint作品！ 在搜索框">
+<meta name="twitter:title" content="nginx location uri 调用示例">
+<meta name="twitter:description" content="nginx 反斜杠使用示例12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152server &amp;#123;   listen       80;   server_name  localhost;   location /api/ &amp;#123;">
   
     <link rel="alternative" href="/atom.xml" title="ly.blog" type="application/atom+xml">
   
@@ -78,14 +79,14 @@ var _hmt = _hmt || [];
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-kepu" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-nginx-slash" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/04/30/kepu/" class="article-date">
-  <time datetime="2015-04-30T02:04:44.000Z" itemprop="datePublished">2015-04-30</time>
+    <a href="/2020/10/12/nginx-slash/" class="article-date">
+  <time datetime="2020-10-12T08:20:51.000Z" itemprop="datePublished">2020-10-12</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/google/">google</a>
+    <a class="article-category-link" href="/categories/php/">php</a>
   </div>
 
   </div>
@@ -96,7 +97,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      美国人教你这样用Google，你真的会变特工！！！
+      nginx location uri 调用示例
     </h1>
   
 
@@ -104,113 +105,25 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>大前提：英文Google→<a href="http://www.google.com" target="_blank" rel="noopener">www.google.com</a></p>
-<p>第一篇</p>
-<p>在搜索框上输入：“indexof/”inurl:lib</p>
-<p>再按搜索你将进入许多图书馆，并且一定能下载自己喜欢的书籍。</p>
-<p>在搜索框上输入：“indexof/”cnki</p>
-<p>再按搜索你就可以找到许多图书馆的CNKI、VIP、超星等入口！</p>
-<p>在搜索框上输入：“indexof/”ppt</p>
-<p>再按搜索你就可以突破网站入口下载powerpint作品！</p>
-<p>在搜索框上输入：“indexof/”mp3</p>
-<p>再按搜索你就可以突破网站入口下载mp3、rm等影视作品！</p>
-<p>在搜索框上输入：“indexof/”swf</p>
-<p>再按搜索你就可以突破网站入口下载flash作品！</p>
-<p>在搜索框上输入：“indexof/”要下载的软件名</p>
-<p>再按搜索你就可以突破网站入口下载软件！</p>
-<p>注意引号应是英文的！</p>
-<p>再透露一下，如果你输入：</p>
-<p>“indexof/”AVI</p>
-<p>另补上第二篇</p>
-<p>用GOOgle看世界!!!只要你在GOOGLE里输入特殊的关键字,就可以搜到数千个摄象头的IP地址!通过他你就可以看到其所摄的实时影象!!</p>
-<p>在google里输入</p>
-<p>inurl:”viewerframe?mode=”</p>
-<p>随便打开一个,然后按提示装一个插件,就可以看到了!!!</p>
-<p>再补上第三篇</p>
-<p>三则黑客的Google搜索技巧简介</p>
-<p>大家都知道，Google毫无疑问是当今世界上最强大的搜索引擎。然而，在黑客手中，它也是一个秘密武器，它能搜索到一些你意想不到的信息。赛迪编者把 他们进行了简单的总结不是希望您利用他去攻击别人的网站，而是利用这些技巧去在浩如烟海的网络信息中，来个大海捞针，寻找到对您有用的信息。</p>
-<p>如果您是一名普通网民，您可以使用黑客的技巧扩大自己的视野，提高自己的检索效率；如果您是一名网管，请您赶快看看您的网站是否做好了对下面黑客探测手 段的防范措施，如果没有就赶快来个亡羊补牢，毕竟隐患胜于明火，防范胜于救灾；如果您是一名黑客，相信您早以在别的黑客站点上见过类似的方法，这篇文章对 您没什么用处，这里的技巧对您是小儿科，菜鸟级！您可以节省宝贵的时间做更有意义的事情，这篇文章您不用看了，到别处去吧！</p>
-<p>基于上面的考虑我编发了这篇文章。</p>
-<p>搜索URL</p>
-<p>比如我们提交这种形式：passwd.txtsite:virtualave.net </p>
-<p>看到了什么？是不是觉得太不可思议了！有很多基于CGI/PHP/ASP类型的留言板存在这种问题。有时我们得到密码甚至还是明码的！管理员或许太不负 责了，或许安全防范的意识太差了，如果你是网络管理员，赶快检查一下不要让恶意攻击者捡了便宜。不要太相信DES加密，即使我们的密码经过DES加密的密 码，黑客们还是可以通过许多破解软件来搞定。</p>
-<p>这次我们能得到包含密码的文件。“site:virtualave.net”意思是只搜索virutalave.net的URL。virutalave.net是一个网络服务器提供商。</p>
-<p>同样，我们可以搜索一些顶级域名，比如：.net.org.jp.in.gr </p>
-<p>config.txtsite:.jp</p>
-<p>admin.txtsite:.tw</p>
-<p>搜索首页的目录</p>
-<p>首页是非常有用的，它会提供给你许多有用的信息。</p>
-<p>我们提交如下的形式：</p>
-<p>“Indexof/admin”</p>
-<p>“Indexof/secret”</p>
-<p>“Indexof/cgi-bin”site:.edu</p>
-<p>你可以自己定义搜索的首页字符。这样就可以获得许多信息。</p>
-<p>搜索特定的文件类型</p>
-<p>比如你想指定一种文件的类型，可以提交如下形式：</p>
-<p>filetype:.docsite:.milclassified</p>
-<p>这个就是搜索军方的资料，你可以自定义搜索。</p>
-<p>再提供一个第四篇</p>
-<p>Google的特殊功能</p>
-<p>1、查询电话号码</p>
-<p>Google的搜索栏中最新加入了电话号码和美国街区地址的查询信息。</p>
-<p>个人如想查找这些列表，只要填写姓名，城市和省份。</p>
-<p>如果该信息为众人所知，你就会在搜索结果页面的最上方看到搜索的电话和街区地址</p>
-<p>你还可以通过以下任何一种方法找到该列表：</p>
-<p>名字（或首位大写字母），姓，电话地区号</p>
-<p>名字（或首位大写字母），姓，邮递区号</p>
-<p>名字（或首位大写字母），姓，城市（可写州）</p>
-<p>名字（或首位大写字母），姓，州</p>
-<p>电话号码，包括区号</p>
-<p>名字，城市，州</p>
-<p>名字，邮递区号</p>
-<p>2、查找PDF文件</p>
-<p>现在GOOGLE的搜索结果中包括了PDF文件。尽管PDF文件不如HTML文件那么多，但他们经常具备一些其他文件不具备的高质量信息</p>
-<p>为了显示一个搜索结果是PDF文件而不是网页，PDF文件的标题开头显示蓝色文本。</p>
-<p>这就是让你知道ACRTOBATREADER程序会启动来阅读文件</p>
-<p>如果你的计算机没装有该程序，计算机会指导你去能免费下载该程序的网页。</p>
-<p>使用PDF文件时，相关的网页快照会由“TEXTVERSION”代替，它是PDF文档的复制文件，该文件除去了所有格式化命令。</p>
-<p>如果你在没有PDF链接的情况下想看一系列搜索结果，只要在搜索栏中打上-inurldf加上你的搜索条件。</p>
-<p>3、股票报价</p>
-<p>用Google查找股票和共有基金信息，只要输入一个或多个NYSE，NASDAQ，AMEX或</p>
-<p>共有基金的股票行情自动收录机的代码，也可以输入在股市开户的公司名字。</p>
-<p>如果Google识别出你查询的是股票或者共有基金，它回复的链接会直接连到高质量的金融信息提供者提供的股票和共有基金信息。</p>
-<p>在你搜索结果的开头显示的是你查询的股市行情自动收录器的代码。如果你要查找一家公司的名字（比如，INTEL），请查看“股票报价”在Google搜索结果的金融栏里会有那个公司的主页的链接（比如， www. INTEL. COM）。</p>
-<p>Google是以质量为基础来选择和决定金融信息提供者的，包括的因素有下载速度，用户界面及其功能。</p>
-<p>4、找找谁和你链接</p>
-<p>有些单词如果带有冒号就会有特殊的意思。比如link：操作员。查询link:siteURL，就会显示所有指向那个URL的网页。举例来说，链接 www. Google. com会向你显示所有指向GOOGLE主页的网页。但这种方法不能与关键字查询联合使用。</p>
-<p>5、查找站点</p>
-<p>单词site后面如果接上冒号就能够将你的搜索限定到某个网站。具体做法是：在c搜索栏中使用site:sampledomain.com这个语法结构。比如，在斯坦福找申请信息，输入：</p>
-<p>admissionsite: www. stanford. edu </p>
-<p>6、查找字典释意</p>
-<p>查找字典释意的方法是在搜索栏中输入你要查询的内容。在我们根据要求找到所有的字典释意都会标有下划线，位于搜索结果的上面，点击链接你会找到字典提供者根据要求给出的相关定义。7、用GOOLGE查找地图</p>
-<p>想用Google查找街区地图，在Google搜索栏中输入美国街区地址，包括邮递区号或城市/州（比如165大学大街PALOALTOCA）。通常情况下，街区地址和城市的名字就足够了。</p>
-<p>当Google识别你的要求是查找地图，它会反馈给你有高质量地图提供者提供的链接，使你直接找到相关地图。我们是以质量为基础选择这些地图提供者。值得注意的是Google和使用的地图信息提供者没有任何关联。</p>
-
+        <h2 id="nginx-反斜杠使用示例"><a href="#nginx-反斜杠使用示例" class="headerlink" title="nginx 反斜杠使用示例"></a>nginx 反斜杠使用示例</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">   listen       80;</span><br><span class="line">   server_name  localhost;</span><br><span class="line">   location /api/ &#123;</span><br><span class="line">           proxy_pass http://localhost:8080;</span><br><span class="line">        &#125;</span><br><span class="line">   <span class="comment">#请求地址：http://localhost/api/demo</span></span><br><span class="line">   <span class="comment">#代理后的地址：http://localhost:8080/api/demo</span></span><br><span class="line"></span><br><span class="line">   location /api/ &#123;</span><br><span class="line">           proxy_pass http://localhost:8080/;</span><br><span class="line">        &#125;</span><br><span class="line">   <span class="comment">#请求地址：http://localhost/api/demo</span></span><br><span class="line">   <span class="comment">#代理后的地址：http://localhost:8080/demo</span></span><br><span class="line"></span><br><span class="line">   location /api &#123;</span><br><span class="line">           proxy_pass http://localhost:8080;</span><br><span class="line">        &#125;</span><br><span class="line">   <span class="comment">#请求地址：http://localhost/api/demo</span></span><br><span class="line">   <span class="comment">#代理后的地址：http://localhost:8080/api/demo</span></span><br><span class="line"></span><br><span class="line">   location /api &#123;</span><br><span class="line">           proxy_pass http://localhost:8080/;</span><br><span class="line">        &#125;</span><br><span class="line">   <span class="comment">#请求地址：http://localhost/api/demo</span></span><br><span class="line">   <span class="comment">#代理后的地址：http://localhost:8080//demo 双斜线</span></span><br><span class="line"></span><br><span class="line">   location /api/ &#123;</span><br><span class="line">           proxy_pass http://localhost:8080/<span class="built_in">test</span>;</span><br><span class="line">        &#125;</span><br><span class="line">   <span class="comment">#这样配置没有斜线</span></span><br><span class="line">   <span class="comment">#请求地址：http://localhost/api/demo</span></span><br><span class="line">   <span class="comment">#代理后的地址：http://localhost:8080/testdemo</span></span><br><span class="line"></span><br><span class="line">   location /api/ &#123;</span><br><span class="line">           proxy_pass http://localhost:8080/<span class="built_in">test</span>/;</span><br><span class="line">        &#125;</span><br><span class="line">   <span class="comment">#请求地址：http://localhost/api/demo</span></span><br><span class="line">   <span class="comment">#代理后的地址：http://localhost:8080/test/demo</span></span><br><span class="line"></span><br><span class="line">   location /api &#123;</span><br><span class="line">           proxy_pass http://localhost:8080/<span class="built_in">test</span>;</span><br><span class="line">        &#125;</span><br><span class="line">   <span class="comment">#请求地址：http://localhost/api/demo</span></span><br><span class="line">   <span class="comment">#代理后的地址：http://localhost:8080/test/demo</span></span><br><span class="line"></span><br><span class="line">   location /api &#123;</span><br><span class="line">           proxy_pass http://localhost:8080/<span class="built_in">test</span>/;</span><br><span class="line">        &#125;</span><br><span class="line">   <span class="comment">#请求地址：http://localhost/api/demo</span></span><br><span class="line">   <span class="comment">#代理后的地址：http://localhost:8080/test//demo</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2015/04/30/kepu/" data-id="ckg69q7m9001tu011q2ruzkl4" class="article-share-link">Share</a>
+      <a data-url="http://www.wbug.cn/2020/10/12/nginx-slash/" data-id="ckg69q7ml002gu011f4upflxj" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nginx/">nginx</a></li></ul>
+
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/2015/05/05/age/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          age
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/04/30/movie/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/10/12/nginx-default/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">电影网站分享</div>
+      <div class="article-nav-title">nginx常用配置项</div>
     </a>
   
 </nav>
@@ -221,7 +134,7 @@ var _hmt = _hmt || [];
  
   <section id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="post-kepu" data-title="美国人教你这样用Google，你真的会变特工！！！" data-url="http://www.wbug.cn/2015/04/30/kepu/"></div>
+    <div class="ds-thread" data-thread-key="post-nginx-slash" data-title="nginx location uri 调用示例" data-url="http://www.wbug.cn/2020/10/12/nginx-slash/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
