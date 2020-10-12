@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://www.wbug.cn/2020/10/12/nginx-default/</loc>
+    <lastmod>2020-10-12T07:49:12.749Z</lastmod>
+    <data>
+        <display>
+        <title>nginx-default</title>
+        <pubTime>2020-10-12T07:45:16.000Z</pubTime>
+        
+        <tag>nginx</tag>
+         
+         
+           
+             
+              <breadCrumb title="php" url="http://www.wbug.cn/categories/php/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.wbug.cn/2020/07/21/swoole-nginx/</loc>
     <lastmod>2020-07-21T02:59:04.684Z</lastmod>
     <data>
@@ -470,12 +490,12 @@
 
     
   <url>
-    <loc>http://www.wbug.cn/2015/06/25/sshkey-0/</loc>
+    <loc>http://www.wbug.cn/2015/06/25/sshbash/</loc>
     <lastmod>2018-11-21T04:00:03.338Z</lastmod>
     <data>
         <display>
-        <title>hexo之SSH KEY</title>
-        <pubTime>2015-06-25T15:37:53.000Z</pubTime>
+        <title>多个github账号发布hexo</title>
+        <pubTime>2015-06-25T15:45:41.000Z</pubTime>
         
         <tag>hexo</tag>
          
@@ -487,12 +507,12 @@
 
     
   <url>
-    <loc>http://www.wbug.cn/2015/06/25/sshbash/</loc>
+    <loc>http://www.wbug.cn/2015/06/25/sshkey-0/</loc>
     <lastmod>2018-11-21T04:00:03.338Z</lastmod>
     <data>
         <display>
-        <title>多个github账号发布hexo</title>
-        <pubTime>2015-06-25T15:45:41.000Z</pubTime>
+        <title>hexo之SSH KEY</title>
+        <pubTime>2015-06-25T15:37:53.000Z</pubTime>
         
         <tag>hexo</tag>
          
@@ -592,12 +612,12 @@
 
     
   <url>
-    <loc>http://www.wbug.cn/2016/07/01/reg/</loc>
+    <loc>http://www.wbug.cn/2015/03/27/pywin32/</loc>
     <lastmod>2018-11-21T04:00:03.335Z</lastmod>
     <data>
         <display>
-        <title>windows之注册表</title>
-        <pubTime>2016-06-30T22:57:31.000Z</pubTime>
+        <title>Python之Pywin32</title>
+        <pubTime>2015-03-27T06:32:44.000Z</pubTime>
         
          
            
@@ -610,12 +630,12 @@
 
     
   <url>
-    <loc>http://www.wbug.cn/2015/03/27/pywin32/</loc>
+    <loc>http://www.wbug.cn/2016/07/01/reg/</loc>
     <lastmod>2018-11-21T04:00:03.335Z</lastmod>
     <data>
         <display>
-        <title>Python之Pywin32</title>
-        <pubTime>2015-03-27T06:32:44.000Z</pubTime>
+        <title>windows之注册表</title>
+        <pubTime>2016-06-30T22:57:31.000Z</pubTime>
         
          
            

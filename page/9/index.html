@@ -76,6 +76,69 @@ var _hmt = _hmt || [];
       <div class="outer">
         <section id="main">
   
+    <article id="post-phpban" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/04/17/phpban/" class="article-date">
+  <time datetime="2015-04-17T02:06:59.000Z" itemprop="datePublished">2015-04-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/php/">php</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/17/phpban/">PHP线程安全与非线程安全、Apache版本选择</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Windows下的PHP开发环境搭建——PHP线程安全与非线程安全、Apache版本选择，及详解五种运行模式。"><a href="#Windows下的PHP开发环境搭建——PHP线程安全与非线程安全、Apache版本选择，及详解五种运行模式。" class="headerlink" title="Windows下的PHP开发环境搭建——PHP线程安全与非线程安全、Apache版本选择，及详解五种运行模式。"></a>Windows下的PHP开发环境搭建——PHP线程安全与非线程安全、Apache版本选择，及详解五种运行模式。</h2><p>今天为在Windows下建立PHP开发环境，在考虑下载何种PHP版本时，遭遇一些让我困惑的情况，为了解决这些困惑，不出意料地牵扯出更多让我困惑的问题。</p>
+<p>为了将这些困惑一网打尽，我花了一下午加一晚上的时间查阅了大量资料，并做了一番实验后，终于把这些困惑全都搞得清清楚楚了。</p>
+<p>说实话，之所以花了这么多时间，很大程度上是由于网上的资料几乎全都是支离破碎、以讹传讹的。既然我已经搞懂了，就花时间整理出来，即方便自己看，也便于大家阅读。相信通过这篇文章，可以解答很多在Windows下搭建PHP开发环境的朋友的困惑。 </p>
+<p>关于从何处下载Apache：</p>
+<p>要安装Apache，你可能想当然地会去Apache官方网站下载适用于Windows的二进制版本。而这恰恰错了！</p>
+<p>PHP官方不建议在Windows下安装从apache.org网站下载的Apache二进制安装包。原因是如果你使用来自apache.org的安装包，则由于这些安装包是基于陈旧的Visual Studio 6编译的，导致你不得不必须使用同样陈旧的PHP版本（即VC6的PHP版本。也即使用Visual Studio 6编译的PHP版本）才能与其配合使用。</p>
+<p>要想使用最新版的PHP，应听从PHP的官方建议。PHP官方的建议是你在Windows下可以使用IIS，或者使用来自Apache Lounge（<a href="http://www.apachelounge.com）的Apache版本。" target="_blank" rel="noopener">www.apachelounge.com）的Apache版本。</a></p>
+<p>Apache Lounge所提供的Apache二进制安装包是使用VC11建立的。因此可搭配最新版本的PHP使用。</p>
+<p>网上很多资料说如果你是在Windows下使用 Apache，则必须使用PHP的VC6版本，只有使用IIS时才能使用VC9及以上版本，完全是没有搞清情况的以讹传讹。 </p>
+<p>如何选择PHP版本（选择线程安全还是非线程安全）：</p>
+<p>在Windows下安装PHP，在选择PHP版本上很有讲究。</p>
+<p>Windows下的PHP版本分两种：线程安全版本与非线程安全版本。</p>
+<p>如果你打算使用IIS，则你可以以ISAPI或FastCGI这两种方式来安装PHP。CGI的方式因为效率低下，故不予考虑。</p>
+<p>如果你要在IIS中以FastCGI方式使用PHP，则你应该使用PHP的非线程安全的版本（Non-Thread Safe，NTS）。原因是以FastCGI方式安装PHP时，PHP拥有独立的进程，并且FastCGI是单一线程的，不存在多个线程之间可能引发的相互干扰（这种干扰通常都是由于全局变量和静态变量导致的）。由于省去了线程安全的检查，因此使用FastCGI方式比ISAPI方式的效率更高一些。</p>
+<p>如果你要在IIS中以ISAPI的方式使用PHP，则你应该使用PHP的线程安全版本（Thread Safe，TS）。原因是PHP以ISAPI方式安装时，PHP没有独立的进程，而是作为DLL被IIS加载运行的，即是依附于Web服务器进程的。当Web服务器运行在多线程模式下（IIS正是这种情况），PHP自然也就运行在多线程模式下。只要是在多线程模式下运行，就可能存在线程安全问题，因此应选择PHP的线程安全版本。</p>
+<p>但在这里还有必要说明一下，尽管Apache本身是线程安全的，同时你也选择了PHP的线程安全版本，但由于一些Apache和PHP下的第三方扩展最初是基于Unix的多进程思想开发出来的，在设计开发时没有考虑线程安全的问题，因此，不排除在这种情况下仍然存在IIS被某些第三方扩展搞崩溃的可能。</p>
+<p>如果你打算使用Apache，则你可以以模块、ISAPI、FastCGI这三种方式来安装PHP。CGI的方式因为效率低下，故不予考虑。</p>
+<p>如果你要在Apache中以模块方式安装PHP，则你应该使用PHP的线程安全的版本。原因是当PHP作为Apache的模块安装时，PHP没有独立的进程，而是作为模块以DLL的形式被加载到Apache中的，是随Apache的启动而启动的，而Windows下的Apache为多线程工作模式，因此PHP自然也就运行在多线程模式下。因此，这种情况下应使用PHP的线程安全版本。</p>
+<p>再来看ISAPI的情况。通常认为ISAPI是配合IIS使用的，因为ISAPI最初就是微软为IIS开发的。但Apache现在也可以通过加载mod_isapi.so模块来实现ISAPI的功能，以允许PHP以ISAPI的方式安装。.so文件是Apache自1.3版本后制定的用于Windows下的模块命名规则，对于Windows下的Apache而言，.so与.dll文件一样，都是动态链接库文件。</p>
+<p>当要以ISAPI方式来安装PHP时，通常是加载一个名如phpXisapi.dll的DLL文件，其中的X为阿拉伯数字4、5等等这样子。</p>
+<p>但一般不建议在Apache中以ISAPI方式来安装PHP，原因是到目前为止，Apache通过mod_isapi.so模块来实现的ISAPI功能并不完整，并未完整实现微软对ISAPI所制定的全部规范。</p>
+<p>同样的，由于以ISAPI方式来安装PHP时，PHP也没有独立的进程，也是作为模块被加载到Apache中的，因此，同样也需要使用PHP的线程安全版本。</p>
+<p>如果你要在Apache中以FastCGI方式使用PHP，则同在IIS中使用FastCGI的PHP的情况一样，你应该使用PHP的非线程安全的版本。原因是在Apache中以FastCGI方式安装PHP时，PHP拥有独立的进程，并且FastCGI是单一线程的，故应使用PHP的非线程安全版本以提高性能。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.wbug.cn/2015/04/17/phpban/" data-id="ckg68i4p2002vds11wgu37qo7" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+ 
+  
     <article id="post-pywin32" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/03/27/pywin32/" class="article-date">
@@ -107,7 +170,7 @@ var _hmt = _hmt || [];
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2015/03/27/pywin32/" data-id="ckcvcn6fq002tkt11it5vyr80" class="article-share-link">Share</a>
+      <a data-url="http://www.wbug.cn/2015/03/27/pywin32/" data-id="ckg68i4p3002yds11hxkgy78s" class="article-share-link">Share</a>
       
       
     </footer>
@@ -153,7 +216,7 @@ var _hmt = _hmt || [];
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2015/03/23/git/" data-id="ckcvcn6eg001dkt11maegxe22" class="article-share-link">Share</a>
+      <a data-url="http://www.wbug.cn/2015/03/23/git/" data-id="ckg68i4o30019ds11mrzyym2i" class="article-share-link">Share</a>
       
       
     </footer>
@@ -195,7 +258,7 @@ var _hmt = _hmt || [];
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2015/03/21/writephp/" data-id="ckcvcn6g5003mkt11dfef9ydf" class="article-share-link">Share</a>
+      <a data-url="http://www.wbug.cn/2015/03/21/writephp/" data-id="ckg68i4pw003zds11ifv0q2et" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
@@ -239,66 +302,9 @@ var _hmt = _hmt || [];
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2015/03/21/zend/" data-id="ckcvcn6gd003vkt117pb0u47w" class="article-share-link">Share</a>
+      <a data-url="http://www.wbug.cn/2015/03/21/zend/" data-id="ckg68i4pz0044ds118lz69ztn" class="article-share-link">Share</a>
       
       
-    </footer>
-  </div>
-  
-</article>
-
- 
-  
-    <article id="post-xdebug" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/03/21/xdebug/" class="article-date">
-  <time datetime="2015-03-21T06:45:44.000Z" itemprop="datePublished">2015-03-21</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/code/">code</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/03/21/xdebug/">php 之 xdebug</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="PHP配置调试工具XDebug"><a href="#PHP配置调试工具XDebug" class="headerlink" title="PHP配置调试工具XDebug"></a>PHP配置调试工具XDebug</h2><h3 id="1-去xdebug的官方网站那http-www-xdebug-org-上下载与php版本对应的xdebug，我的是window系统，下载的-dll文件。"><a href="#1-去xdebug的官方网站那http-www-xdebug-org-上下载与php版本对应的xdebug，我的是window系统，下载的-dll文件。" class="headerlink" title="1. 去xdebug的官方网站那http://www.xdebug.org 上下载与php版本对应的xdebug，我的是window系统，下载的.dll文件。"></a>1. 去xdebug的官方网站那<a href="http://www.xdebug.org" target="_blank" rel="noopener">http://www.xdebug.org</a> 上下载与php版本对应的xdebug，我的是window系统，下载的.dll文件。</h3><h3 id="2-把php-xdebug-dll放入php文件夹的ext里面（php的扩展文件都放在此处，统一一下而已）"><a href="#2-把php-xdebug-dll放入php文件夹的ext里面（php的扩展文件都放在此处，统一一下而已）" class="headerlink" title="2. 把php_xdebug.dll放入php文件夹的ext里面（php的扩展文件都放在此处，统一一下而已）"></a>2. 把php_xdebug.dll放入php文件夹的ext里面（php的扩展文件都放在此处，统一一下而已）</h3><h3 id="3-打开php配置文件php-ini-在最后添加以下代码把xdebug-dll加载到php环境中"><a href="#3-打开php配置文件php-ini-在最后添加以下代码把xdebug-dll加载到php环境中" class="headerlink" title="3. 打开php配置文件php.ini,在最后添加以下代码把xdebug.dll加载到php环境中"></a>3. 打开php配置文件php.ini,在最后添加以下代码把xdebug.dll加载到php环境中</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[Xdebug]</span><br><span class="line">zend_extension_ts=<span class="string">"D:/php/ext/php_xdebug.dll"</span>   //这里是绝对路径</span><br><span class="line">xdebug.auto_trace=On</span><br><span class="line">xdebug.collect_params=On</span><br><span class="line">xdebug.collect_return=On</span><br><span class="line">xdebug.trace_output_dir=<span class="string">"c:/php5/debuginfo"</span></span><br><span class="line">xdebug.profiler_enable=On</span><br><span class="line">xdebug.profiler_output_dir=<span class="string">"c:/php5/debuginfo"</span></span><br></pre></td></tr></table></figure>
-<p>备注：如果PHPINFO中还是没有XDebug的信息，把上面配置文件中的<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zend_extension_ts=<span class="string">"D:/php/ext/php_xdebug.dll"</span></span><br></pre></td></tr></table></figure></p>
-<p>改为<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zend_extension=<span class="string">"D:/php/ext/php_xdebug.dll"</span></span><br></pre></td></tr></table></figure></p>
-<p>这里点很重要，这个问题让我郁闷了很久，结果就是这样解决的，具体也不知道是为什么，网上说PHP5.3以后才是通过zend_extension这种方式加载，不管他了，搞定才是王道</p>
-<p>以下是参数解释：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zend_extension_ts=<span class="string">"c:/webserver/php5/ext/php_xdebug.dll"</span></span><br></pre></td></tr></table></figure></p>
-<p>加载xdebug模块。这里不能用extension=php_xdebug.dll的方式加载，必须要以zend的方式加载，否则安装上后，phpinfo是显示不出xdebug这个项的。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xdebug.auto_trace=on;</span><br></pre></td></tr></table></figure></p>
-<p>自动打开“监测函数调用过程”的功模。该功能可以在你指定的目录中将函数调用的监测信息以文件的形式输出。此配置项的默认值为off。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xdebug.collect_params=on;</span><br></pre></td></tr></table></figure></p>
-<p>打开收集“函数参数”的功能。将函数调用的参数值列入函数过程调用的监测信息中。此配置项的默认值为off。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xdebug.collect_return=on</span><br></pre></td></tr></table></figure></p>
-<p>打开收集“函数返回值”的功能。将函数的返回值列入函数过程调用的监测信息中。此配置项的默认值为off。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xdebug.trace_output_dir=”c:Tempxdebug”</span><br></pre></td></tr></table></figure></p>
-<p>设定函数调用监测信息的输出文件的路径。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xdebug.profiler_enable=on</span><br></pre></td></tr></table></figure></p>
-<p>打开效能监测器。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xdebug.profiler_output_dir=”c:Tempxdebug”;</span><br></pre></td></tr></table></figure></p>
-<p>设定效能监测信息输出文件的路径</p>
-<p>注意：php5.3安装xdebug的时候，有些地方和php5.2安装有所区别，php5.3使用zend_extension</p>
-<p>以下是PHP5.3的配置信息：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">[Xdebug]</span><br><span class="line">zend_extension=D:/Program Files/wamp/bin/php/php5.3.3/ext/php_xdebug-2.1.2-5.3-vc6.dll</span><br><span class="line">;是否开启自动跟踪</span><br><span class="line">xdebug.auto_trace = On</span><br><span class="line">;是否开启异常跟踪</span><br><span class="line">xdebug.show_exception_trace = On</span><br><span class="line">;是否开启远程调试自动启动</span><br><span class="line">xdebug.remote_autostart = On</span><br><span class="line">;是否开启远程调试</span><br><span class="line">xdebug.remote_enable = On</span><br><span class="line">;允许调试的客户端IP</span><br><span class="line">xdebug.remote_host=192.168.1.227</span><br><span class="line">;远程调试的端口（默认9000）</span><br><span class="line">xdebug.remote_port=9000</span><br><span class="line">;调试插件dbgp</span><br><span class="line">xdebug.remote_handler=dbgp</span><br><span class="line">;是否收集变量</span><br><span class="line">xdebug.collect_vars = On</span><br><span class="line">;是否收集返回值</span><br><span class="line">xdebug.collect_return = On</span><br><span class="line">;是否收集参数</span><br><span class="line">xdebug.collect_params = On</span><br><span class="line">;跟踪输出路径</span><br><span class="line">xdebug.trace_output_dir=<span class="string">"D:/Program Files/wamp/bin/php/debuginfo"</span></span><br><span class="line">;是否开启调试内容</span><br><span class="line">xdebug.profiler_enable=On</span><br><span class="line">;调试输出路径</span><br><span class="line">xdebug.profiler_output_dir=<span class="string">"D:/Program Files/wamp/bin/php/debuginfo"</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="4-重启apache，安装完成"><a href="#4-重启apache，安装完成" class="headerlink" title="4. 重启apache，安装完成"></a>4. 重启apache，安装完成</h3><p>可以通过查看phpinfo信息确定xdebug是否集成到了php环境中，出现如下内容，代表xdebug可以在php中使用了</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2015/03/21/xdebug/" data-id="ckcvcn6g7003okt11cjxuxxuh" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
-
     </footer>
   </div>
   
@@ -319,7 +325,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/code/">code</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/default/">default</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/docker/">docker</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/google/">google</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/news/">news</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/svn/">svn</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/电影/">电影</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/code/">code</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/default/">default</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/docker/">docker</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/google/">google</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/news/">news</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/svn/">svn</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/电影/">电影</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -328,7 +334,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bug/">bug</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker-compose/">docker-compose</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/laravel/">laravel</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nginx/">nginx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/">ssh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime/">sublime</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/备份文件、mysql/">备份文件、mysql</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bug/">bug</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker-compose/">docker-compose</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/laravel/">laravel</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nginx/">nginx</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/">ssh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime/">sublime</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/备份文件、mysql/">备份文件、mysql</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -337,7 +343,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/docker-compose/" style="font-size: 10px;">docker-compose</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 16.67px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/mysql/" style="font-size: 13.33px;">mysql</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/php/" style="font-size: 20px;">php</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/sublime/" style="font-size: 10px;">sublime</a> <a href="/tags/备份文件、mysql/" style="font-size: 10px;">备份文件、mysql</a>
+      <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/docker-compose/" style="font-size: 10px;">docker-compose</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 17.5px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/mysql/" style="font-size: 15px;">mysql</a> <a href="/tags/nginx/" style="font-size: 12.5px;">nginx</a> <a href="/tags/php/" style="font-size: 20px;">php</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/sublime/" style="font-size: 10px;">sublime</a> <a href="/tags/备份文件、mysql/" style="font-size: 10px;">备份文件、mysql</a>
     </div>
   </div>
 
@@ -346,7 +352,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -356,6 +362,10 @@ var _hmt = _hmt || [];
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2020/10/12/nginx-default/">nginx-default</a>
+          </li>
         
           <li>
             <a href="/2020/07/21/swoole-nginx/">swoole-nginx</a>
@@ -371,10 +381,6 @@ var _hmt = _hmt || [];
         
           <li>
             <a href="/2020/06/03/php-ext/">php7.4.4扩展开发</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/14/book/">mysql 大数据查询分页</a>
           </li>
         
       </ul>

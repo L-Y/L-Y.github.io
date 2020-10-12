@@ -3,15 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Category: php | ly.blog</title>
+  <title>nginx-default | ly.blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="ly.blog">
-<meta property="og:url" content="http://www.wbug.cn/categories/php/page/2/index.html">
+  <meta name="description" content="nginx 一些常规配置项1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465http&amp;#123;	upstream upServer&amp;#123;		server 127.0.0.1:8001 weight=3">
+<meta name="keywords" content="nginx">
+<meta property="og:type" content="article">
+<meta property="og:title" content="nginx-default">
+<meta property="og:url" content="http://www.wbug.cn/2020/10/12/nginx-default/index.html">
 <meta property="og:site_name" content="ly.blog">
+<meta property="og:description" content="nginx 一些常规配置项1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465http&amp;#123;	upstream upServer&amp;#123;		server 127.0.0.1:8001 weight=3">
 <meta property="og:locale" content="zh_cn">
+<meta property="og:updated_time" content="2020-10-12T07:49:12.749Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ly.blog">
+<meta name="twitter:title" content="nginx-default">
+<meta name="twitter:description" content="nginx 一些常规配置项1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465http&amp;#123;	upstream upServer&amp;#123;		server 127.0.0.1:8001 weight=3">
   
     <link rel="alternative" href="/atom.xml" title="ly.blog" type="application/atom+xml">
   
@@ -74,117 +79,79 @@ var _hmt = _hmt || [];
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/11/09/phpQues/" class="archive-article-date">
-  <time datetime="2017-11-09T14:39:46.000Z" itemprop="datePublished">11月 9</time>
+        <section id="main"><article id="post-nginx-default" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/10/12/nginx-default/" class="article-date">
+  <time datetime="2020-10-12T07:45:16.000Z" itemprop="datePublished">2020-10-12</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/php/">php</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/09/phpQues/">php线程安全与非线程安全问题</a>
+    <h1 class="article-title" itemprop="name">
+      nginx-default
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
+    <div class="article-entry" itemprop="articleBody">
       
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/07/12/comp_syntax/" class="archive-article-date">
-  <time datetime="2016-07-12T12:11:29.000Z" itemprop="datePublished">7月 12</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/07/12/comp_syntax/">php 之 composer 的用法</a>
-    </h1>
-  
+        <h2 id="nginx-一些常规配置项"><a href="#nginx-一些常规配置项" class="headerlink" title="nginx 一些常规配置项"></a>nginx 一些常规配置项</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">http&#123;</span><br><span class="line">	upstream upServer&#123;</span><br><span class="line">		server 127.0.0.1:8001 weight=3;</span><br><span class="line">		server 127.0.0.1:8002;</span><br><span class="line">		server 127.0.0.1:8003;</span><br><span class="line">		server 127.0.0.1:8004;</span><br><span class="line">		server 127.0.0.1:8005;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	server&#123;</span><br><span class="line">		listen 80;</span><br><span class="line">		server_name www.test.com;</span><br><span class="line">		access_log /var/<span class="built_in">log</span>/web/test_access.log</span><br><span class="line">		error_log /var/<span class="built_in">log</span>/web/<span class="built_in">test</span>-error.log</span><br><span class="line">		location / &#123;</span><br><span class="line">			root /data/wwwroot/testProject;</span><br><span class="line">			index index.html;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">#反向代理设置</span></span><br><span class="line">		location /&#123;</span><br><span class="line">			proxy_pass http://localhost:9000;</span><br><span class="line">			proxy_direct off;</span><br><span class="line">			proxy_set_header Host <span class="variable">$host</span>;</span><br><span class="line">			proxy_set_header X-Real-Ip <span class="variable">$remote_addr</span>;</span><br><span class="line">			proxy_set_header X-Forwarded-For <span class="variable">$proxy_add_x_forwarded_for</span>;</span><br><span class="line">			proxy_connect_timeout 90;</span><br><span class="line">			proxy_send_timeout 90;</span><br><span class="line">			proxy_read_timeout 90;</span><br><span class="line">			proxy_send_lowat 12000;</span><br><span class="line">			client_max_body_size 10m;</span><br><span class="line">			client_body_buffer_size 128k;</span><br><span class="line">			gzip on;</span><br><span class="line">			gzip_types text/plain;</span><br><span class="line">			gzip_min_length 1100;</span><br><span class="line">			gzip_buffers 4 8k;</span><br><span class="line">			charset utf-8;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">#错误页面自定义</span></span><br><span class="line">		error 404 /404.html;</span><br><span class="line"></span><br><span class="line">		location /404.html&#123;</span><br><span class="line">			root /spool/www</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">#负载均衡</span></span><br><span class="line">		location / &#123;</span><br><span class="line">			proxy_pass http://upServer</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">#支持php</span></span><br><span class="line">		location ~ \.php$ &#123;  </span><br><span class="line">			root html;  </span><br><span class="line">			fastcgi_pass 127.0.0.1:9000;  </span><br><span class="line">			fastcgi_index index.php;  </span><br><span class="line">			fastcgi_param SCRIPT_FILENAME <span class="variable">$document_root</span><span class="variable">$fastcgi_script_name</span>;  </span><br><span class="line">			include fastcgi_params;  </span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">#防盗链</span></span><br><span class="line">		location ~* \.(gif|jpg|png|swf|flv)$ &#123;    </span><br><span class="line">				valid_referers none blocked *.nginxcn.com;  </span><br><span class="line">			<span class="keyword">if</span> (<span class="variable">$invalid_referer</span>) &#123;  </span><br><span class="line">				rewrite ^/ [www.nginx.cn](http://www.nginx.cn/)  </span><br><span class="line">				<span class="comment">#return 404;  </span></span><br><span class="line">			&#125;  </span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
       
-        </div></section>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.wbug.cn/2020/10/12/nginx-default/" data-id="ckg68i4ot002eds11nrqha6cy" class="article-share-link">Share</a>
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/05/22/agent/" class="archive-article-date">
-  <time datetime="2015-05-22T07:53:54.000Z" itemprop="datePublished">5月 22</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/05/22/agent/">php 判断浏览器类型</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nginx/">nginx</a></li></ul>
 
-    </header>
+    </footer>
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/04/17/phpban/" class="archive-article-date">
-  <time datetime="2015-04-17T02:06:59.000Z" itemprop="datePublished">4月 17</time>
-</a>
-      
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/04/17/phpban/">PHP线程安全与非线程安全、Apache版本选择</a>
-    </h1>
   
+    <a href="/2020/07/21/swoole-nginx/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">swoole-nginx</div>
+    </a>
+  
+</nav>
 
-    </header>
-  </div>
+  
 </article>
-  
-  
-    </div></section>
-  
-</section>
+
+ 
+  <section id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-nginx-default" data-title="nginx-default" data-url="http://www.wbug.cn/2020/10/12/nginx-default/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'11c'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+  </section>
         
           <aside id="sidebar">
   
