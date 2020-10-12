@@ -3,15 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>ly.blog</title>
+  <title>redis常用操作类型 | ly.blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="ly.blog">
-<meta property="og:url" content="http://www.wbug.cn/index.html">
+  <meta name="description" content="字符串用法12345678910111213141516171819202122232425262728#设置键值 ex表示妙 nx:键不存在时创建set a 1 ex 100 nx#px 代表毫秒 xx:存在时创建set a 1 px 1000 xx#获取建get a#删除del a#获取所有键keys *#获取10条与a有关的从0位置开始scan 0 match &apos;*a*&apos; 10#自增incr">
+<meta name="keywords" content="redis db">
+<meta property="og:type" content="article">
+<meta property="og:title" content="redis常用操作类型">
+<meta property="og:url" content="http://www.wbug.cn/2020/10/12/redis-command/index.html">
 <meta property="og:site_name" content="ly.blog">
+<meta property="og:description" content="字符串用法12345678910111213141516171819202122232425262728#设置键值 ex表示妙 nx:键不存在时创建set a 1 ex 100 nx#px 代表毫秒 xx:存在时创建set a 1 px 1000 xx#获取建get a#删除del a#获取所有键keys *#获取10条与a有关的从0位置开始scan 0 match &apos;*a*&apos; 10#自增incr">
 <meta property="og:locale" content="zh_cn">
+<meta property="og:updated_time" content="2020-10-12T11:30:02.211Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ly.blog">
+<meta name="twitter:title" content="redis常用操作类型">
+<meta name="twitter:description" content="字符串用法12345678910111213141516171819202122232425262728#设置键值 ex表示妙 nx:键不存在时创建set a 1 ex 100 nx#px 代表毫秒 xx:存在时创建set a 1 px 1000 xx#获取建get a#删除del a#获取所有键keys *#获取10条与a有关的从0位置开始scan 0 match &apos;*a*&apos; 10#自增incr">
   
     <link rel="alternative" href="/atom.xml" title="ly.blog" type="application/atom+xml">
   
@@ -74,9 +79,7 @@ var _hmt = _hmt || [];
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-redis-command" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-redis-command" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/10/12/redis-command/" class="article-date">
   <time datetime="2020-10-12T11:07:00.000Z" itemprop="datePublished">2020-10-12</time>
@@ -93,8 +96,8 @@ var _hmt = _hmt || [];
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/12/redis-command/">redis常用操作类型</a>
+    <h1 class="article-title" itemprop="name">
+      redis常用操作类型
     </h1>
   
 
@@ -118,188 +121,40 @@ var _hmt = _hmt || [];
     </footer>
   </div>
   
-</article>
-
- 
+    
+<nav id="article-nav">
   
-    <article id="post-nginx-slash" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/10/12/nginx-slash/" class="article-date">
-  <time datetime="2020-10-12T08:20:51.000Z" itemprop="datePublished">2020-10-12</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/php/">php</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/12/nginx-slash/">nginx location uri 调用示例</a>
-    </h1>
+    <a href="/2020/10/12/nginx-slash/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">nginx location uri 调用示例</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="nginx-反斜杠使用示例"><a href="#nginx-反斜杠使用示例" class="headerlink" title="nginx 反斜杠使用示例"></a>nginx 反斜杠使用示例</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">   listen       80;</span><br><span class="line">   server_name  localhost;</span><br><span class="line">   location /api/ &#123;</span><br><span class="line">           proxy_pass http://localhost:8080;</span><br><span class="line">        &#125;</span><br><span class="line">   <span class="comment">#请求地址：http://localhost/api/demo</span></span><br><span class="line">   <span class="comment">#代理后的地址：http://localhost:8080/api/demo</span></span><br><span class="line"></span><br><span class="line">   location /api/ &#123;</span><br><span class="line">           proxy_pass http://localhost:8080/;</span><br><span class="line">        &#125;</span><br><span class="line">   <span class="comment">#请求地址：http://localhost/api/demo</span></span><br><span class="line">   <span class="comment">#代理后的地址：http://localhost:8080/demo</span></span><br><span class="line"></span><br><span class="line">   location /api &#123;</span><br><span class="line">           proxy_pass http://localhost:8080;</span><br><span class="line">        &#125;</span><br><span class="line">   <span class="comment">#请求地址：http://localhost/api/demo</span></span><br><span class="line">   <span class="comment">#代理后的地址：http://localhost:8080/api/demo</span></span><br><span class="line"></span><br><span class="line">   location /api &#123;</span><br><span class="line">           proxy_pass http://localhost:8080/;</span><br><span class="line">        &#125;</span><br><span class="line">   <span class="comment">#请求地址：http://localhost/api/demo</span></span><br><span class="line">   <span class="comment">#代理后的地址：http://localhost:8080//demo 双斜线</span></span><br><span class="line"></span><br><span class="line">   location /api/ &#123;</span><br><span class="line">           proxy_pass http://localhost:8080/<span class="built_in">test</span>;</span><br><span class="line">        &#125;</span><br><span class="line">   <span class="comment">#这样配置没有斜线</span></span><br><span class="line">   <span class="comment">#请求地址：http://localhost/api/demo</span></span><br><span class="line">   <span class="comment">#代理后的地址：http://localhost:8080/testdemo</span></span><br><span class="line"></span><br><span class="line">   location /api/ &#123;</span><br><span class="line">           proxy_pass http://localhost:8080/<span class="built_in">test</span>/;</span><br><span class="line">        &#125;</span><br><span class="line">   <span class="comment">#请求地址：http://localhost/api/demo</span></span><br><span class="line">   <span class="comment">#代理后的地址：http://localhost:8080/test/demo</span></span><br><span class="line"></span><br><span class="line">   location /api &#123;</span><br><span class="line">           proxy_pass http://localhost:8080/<span class="built_in">test</span>;</span><br><span class="line">        &#125;</span><br><span class="line">   <span class="comment">#请求地址：http://localhost/api/demo</span></span><br><span class="line">   <span class="comment">#代理后的地址：http://localhost:8080/test/demo</span></span><br><span class="line"></span><br><span class="line">   location /api &#123;</span><br><span class="line">           proxy_pass http://localhost:8080/<span class="built_in">test</span>/;</span><br><span class="line">        &#125;</span><br><span class="line">   <span class="comment">#请求地址：http://localhost/api/demo</span></span><br><span class="line">   <span class="comment">#代理后的地址：http://localhost:8080/test//demo</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2020/10/12/nginx-slash/" data-id="ckg6ggrk2002gef11j9ybmj1x" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nginx/">nginx</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
 
  
-  
-    <article id="post-nginx-default" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/10/12/nginx-default/" class="article-date">
-  <time datetime="2020-10-12T07:45:16.000Z" itemprop="datePublished">2020-10-12</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/php/">php</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/12/nginx-default/">nginx常用配置项</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="nginx-一些常规配置项"><a href="#nginx-一些常规配置项" class="headerlink" title="nginx 一些常规配置项"></a>nginx 一些常规配置项</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">http&#123;</span><br><span class="line">	upstream upServer&#123;</span><br><span class="line">		server 127.0.0.1:8001 weight=3;</span><br><span class="line">		server 127.0.0.1:8002;</span><br><span class="line">		server 127.0.0.1:8003;</span><br><span class="line">		server 127.0.0.1:8004;</span><br><span class="line">		server 127.0.0.1:8005;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	server&#123;</span><br><span class="line">		listen 80;</span><br><span class="line">		server_name www.test.com;</span><br><span class="line">		access_log /var/<span class="built_in">log</span>/web/test_access.log</span><br><span class="line">		error_log /var/<span class="built_in">log</span>/web/<span class="built_in">test</span>-error.log</span><br><span class="line">		location / &#123;</span><br><span class="line">			root /data/wwwroot/testProject;</span><br><span class="line">			index index.html;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">#反向代理设置</span></span><br><span class="line">		location /&#123;</span><br><span class="line">			proxy_pass http://localhost:9000;</span><br><span class="line">			proxy_direct off;</span><br><span class="line">			proxy_set_header Host <span class="variable">$host</span>;</span><br><span class="line">			proxy_set_header X-Real-Ip <span class="variable">$remote_addr</span>;</span><br><span class="line">			proxy_set_header X-Forwarded-For <span class="variable">$proxy_add_x_forwarded_for</span>;</span><br><span class="line">			proxy_connect_timeout 90;</span><br><span class="line">			proxy_send_timeout 90;</span><br><span class="line">			proxy_read_timeout 90;</span><br><span class="line">			proxy_send_lowat 12000;</span><br><span class="line">			client_max_body_size 10m;</span><br><span class="line">			client_body_buffer_size 128k;</span><br><span class="line">			gzip on;</span><br><span class="line">			gzip_types text/plain;</span><br><span class="line">			gzip_min_length 1100;</span><br><span class="line">			gzip_buffers 4 8k;</span><br><span class="line">			charset utf-8;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">#错误页面自定义</span></span><br><span class="line">		error 404 /404.html;</span><br><span class="line"></span><br><span class="line">		location /404.html&#123;</span><br><span class="line">			root /spool/www</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">#负载均衡</span></span><br><span class="line">		location / &#123;</span><br><span class="line">			proxy_pass http://upServer</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">#支持php</span></span><br><span class="line">		location ~ \.php$ &#123;  </span><br><span class="line">			root html;  </span><br><span class="line">			fastcgi_pass 127.0.0.1:9000;  </span><br><span class="line">			fastcgi_index index.php;  </span><br><span class="line">			fastcgi_param SCRIPT_FILENAME <span class="variable">$document_root</span><span class="variable">$fastcgi_script_name</span>;  </span><br><span class="line">			include fastcgi_params;  </span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">#防盗链</span></span><br><span class="line">		location ~* \.(gif|jpg|png|swf|flv)$ &#123;    </span><br><span class="line">				valid_referers none blocked *.nginxcn.com;  </span><br><span class="line">			<span class="keyword">if</span> (<span class="variable">$invalid_referer</span>) &#123;  </span><br><span class="line">				rewrite ^/ [www.nginx.cn](http://www.nginx.cn/)  </span><br><span class="line">				<span class="comment">#return 404;  </span></span><br><span class="line">			&#125;  </span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2020/10/12/nginx-default/" data-id="ckg6ggrk1002def11bhgcv666" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nginx/">nginx</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
- 
-  
-    <article id="post-swoole-nginx" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/07/21/swoole-nginx/" class="article-date">
-  <time datetime="2020-07-21T02:57:43.000Z" itemprop="datePublished">2020-07-21</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/php/">php</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/21/swoole-nginx/">swoole-nginx</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="config-info"><a href="#config-info" class="headerlink" title="config info"></a>config info</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#gzip on;</span></span><br><span class="line"><span class="comment">#gzip_min_length 1024;</span></span><br><span class="line"><span class="comment">#gzip_comp_level 2;</span></span><br><span class="line"><span class="comment">#gzip_types text/plain text/css text/javascript application/json application/javascript application/x-javascript application/xml application/x-httpd-php image/jpeg image/gif image/png font/ttf font/otf image/svg+xml;</span></span><br><span class="line"><span class="comment">#gzip_vary on;</span></span><br><span class="line">gzip_disable <span class="string">"msie6"</span>;</span><br><span class="line">upstream swooles &#123;</span><br><span class="line">    <span class="comment"># 通过 IP:Port 连接</span></span><br><span class="line">    server 127.0.0.1:5300 weight=5 max_fails=3 fail_timeout=30s;</span><br><span class="line">    <span class="comment"># 通过 UnixSocket Stream 连接，小诀窍：将socket文件放在/dev/shm目录下，可获得更好的性能</span></span><br><span class="line">    <span class="comment">#server unix:/xxxpath/laravel-s-test/storage/laravels.sock weight=5 max_fails=3 fail_timeout=30s;</span></span><br><span class="line">    <span class="comment">#server 192.168.1.1:5200 weight=3 max_fails=3 fail_timeout=30s;</span></span><br><span class="line">    <span class="comment">#server 192.168.1.2:5200 backup;</span></span><br><span class="line">    keepalive 16;</span><br><span class="line">&#125;</span><br><span class="line">server &#123;</span><br><span class="line">    listen       80;</span><br><span class="line">    charset utf-8;</span><br><span class="line">    index index.html index.php;</span><br><span class="line">    server_name  totok-cms.uwinltd.com;</span><br><span class="line">    access_log  logs/totok-cms.uwinltd.com_swoole_access.log  main;</span><br><span class="line">    error_log   logs/totok-cms.uwinltd.com_swoole_error.log;</span><br><span class="line">    root /opt/onemena/wwwroot/uwinltd.com/totok-cms.uwinltd.com/public;</span><br><span class="line">    client_max_body_size 100m;</span><br><span class="line">    location / &#123;</span><br><span class="line">        try_files <span class="variable">$uri</span> <span class="variable">$uri</span>/ @laravels;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment"># 当请求PHP文件时直接响应404，防止暴露public/*.php</span></span><br><span class="line">    <span class="comment">#location ~* \.php$ &#123;</span></span><br><span class="line">    <span class="comment">#    return 404;</span></span><br><span class="line">    <span class="comment">#&#125;</span></span><br><span class="line">    location @laravels &#123;</span><br><span class="line">        <span class="comment"># proxy_connect_timeout 60s;</span></span><br><span class="line">        <span class="comment"># proxy_send_timeout 60s;</span></span><br><span class="line">        <span class="comment"># proxy_read_timeout 120s;</span></span><br><span class="line">       <span class="comment"># proxy_http_version 1.1;</span></span><br><span class="line">       <span class="comment"># proxy_set_header Connection "";</span></span><br><span class="line">        proxy_set_header X-Real-IP <span class="variable">$remote_addr</span>;</span><br><span class="line">        proxy_set_header X-Real-PORT <span class="variable">$remote_port</span>;</span><br><span class="line">        proxy_set_header X-Forwarded-For <span class="variable">$proxy_add_x_forwarded_for</span>;</span><br><span class="line">        proxy_set_header Host <span class="variable">$http_host</span>;</span><br><span class="line">        proxy_set_header Scheme <span class="variable">$scheme</span>;</span><br><span class="line">        proxy_set_header Server-Protocol <span class="variable">$server_protocol</span>;</span><br><span class="line">        proxy_set_header Server-Name <span class="variable">$server_name</span>;</span><br><span class="line">        proxy_set_header Server-Addr <span class="variable">$server_addr</span>;</span><br><span class="line">        proxy_set_header Server-Port <span class="variable">$server_port</span>;</span><br><span class="line">        <span class="comment">#proxy_pass http://127.0.0.1:5300$suffix;</span></span><br><span class="line">        proxy_pass http://swooles;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2020/07/21/swoole-nginx/" data-id="ckg6ggrl00040ef11s3g0vlz6" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nginx/">nginx</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
- 
-  
-    <article id="post-docker-compose" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/06/05/docker-compose/" class="article-date">
-  <time datetime="2020-06-05T04:02:06.000Z" itemprop="datePublished">2020-06-05</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/docker/">docker</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/05/docker-compose/">docker-compose</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>#docker-compose文件示例</p>
-<p>#compose 版本 有 1，2，3 三个版本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">version: &quot;3&quot;</span><br></pre></td></tr></table></figure></p>
-<p>##服务器信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br></pre></td><td class="code"><pre><span class="line">services:</span><br><span class="line"></span><br><span class="line">  #web服务器</span><br><span class="line">  </span><br><span class="line">  web:</span><br><span class="line">    image: dockercloud/hello-world #镜像信息 本地有用本地，没有的话从远程获取</span><br><span class="line">  </span><br><span class="line">    #容器名称</span><br><span class="line">    container_name: hello-world</span><br><span class="line">  </span><br><span class="line">    #主机名称</span><br><span class="line">    hostname: hello-world.com</span><br><span class="line">  </span><br><span class="line">    #本机端口映射到容器端口,YAML将会解析xx:yy这种数字格式为60进制，建议采用字符串格式</span><br><span class="line">    ports:</span><br><span class="line">      -&quot;8080:8080&quot;</span><br><span class="line">      -&quot;127.0.0.1:9000:8080&quot;</span><br><span class="line">  </span><br><span class="line">    #向hosts文件中添加域名解析记录</span><br><span class="line">    extra_hosts:</span><br><span class="line">      -&quot;www.test.com:162.185.32.65&quot;</span><br><span class="line">  </span><br><span class="line">    #挂载一个目录或已存在的数据卷容器，格式： [HOST:CONTAINER] or  [HOST:CONTAINER:ro](只读) </span><br><span class="line">    volumes:</span><br><span class="line">      -./web/data_dir:/demo/data_dir</span><br><span class="line">      -./web/logs:/demo/logs</span><br><span class="line">  </span><br><span class="line">    #不使用宿主目录而使用自定义驱动</span><br><span class="line">    volume_driver:yourdriver</span><br><span class="line">  </span><br><span class="line">    #从另外服务或容器挂载数据卷</span><br><span class="line">    volumes_from:</span><br><span class="line">      -server_name</span><br><span class="line">        -container_name</span><br><span class="line">  </span><br><span class="line">    #定义接入点，会覆盖dockerfile文件中的entrypoint</span><br><span class="line">    entrypoint：./</span><br><span class="line">    restart:</span><br><span class="line">  </span><br><span class="line">    #服务器连接</span><br><span class="line">    links:</span><br><span class="line">      -database:database</span><br><span class="line">  </span><br><span class="line">    #容器启动后执行的命令,例：composer install or [&apos;composer&apos;,&apos;install&apos;]</span><br><span class="line">    command:composer install</span><br><span class="line">  </span><br><span class="line">    #控制服务容器启动顺序，在web服务器启动前先启动databse服务及redis</span><br><span class="line">    depends_on:</span><br><span class="line">   	  -database</span><br><span class="line">   	  -redis</span><br><span class="line">  </span><br><span class="line">   	#基于其他模板进行扩展</span><br><span class="line">   	extends:</span><br><span class="line">   	  -file:common.yaml</span><br><span class="line">   	  -service:common</span><br><span class="line">  </span><br><span class="line">   	#连接到docker-compose.yaml外部容器</span><br><span class="line">   	external_links:</span><br><span class="line">   	  -project_db_1:mysql</span><br><span class="line">  </span><br><span class="line">   	#为容器添加Docker元数据（metadata）信息</span><br><span class="line">   	lables:</span><br><span class="line">   	  decription:&quot;web app service&quot;</span><br><span class="line">  </span><br><span class="line">   	#日志驱动类型，有json-file|syslog|none三种类型</span><br><span class="line">   	log_driver:</span><br><span class="line">   		&quot;josn-file&quot;</span><br><span class="line">  </span><br><span class="line">   	#日志驱动参数</span><br><span class="line">   	log_opt:</span><br><span class="line">   	  address:&quot;&quot;</span><br><span class="line">  </span><br><span class="line">   	#增加指定容器内核能力</span><br><span class="line">   	cap_add:</span><br><span class="line">   	  -ALL</span><br><span class="line">  </span><br><span class="line">   	#去掉指定容器内核能力</span><br><span class="line">   	cap_drop:</span><br><span class="line">   	  -NET_ADMIN</span><br><span class="line">  </span><br><span class="line">   	#配置DNS服务器</span><br><span class="line">   	dns:</span><br><span class="line">   	  -8.8.8.8</span><br><span class="line">   	  -4.4.4.4</span><br><span class="line">  </span><br><span class="line">   	#从文件中获取环境变量，优先级低于environment设置的环境变量</span><br><span class="line">   	env_file:</span><br><span class="line">   	  -./env</span><br><span class="line">  </span><br><span class="line">  #redis服务容器  </span><br><span class="line">  redis:</span><br><span class="line">    image: redis</span><br><span class="line">    links:</span><br><span class="line">      -web</span><br><span class="line">    networks:</span><br><span class="line">      -back-tier</span><br><span class="line">  </span><br><span class="line">  #数据库服务容器</span><br><span class="line">  database:</span><br><span class="line">    image: beginor/postgis:9.3</span><br><span class="line">    container_name: postgis</span><br><span class="line">    hostname: postgis</span><br><span class="line">    ports:</span><br><span class="line">      -5432:5432</span><br><span class="line">    volumes:</span><br><span class="line">      -./database/data:/var/lib/postgresql/data</span><br><span class="line">    environment:</span><br><span class="line">      POSTGRES_PASSWORD: 1q2w3e4R</span><br><span class="line">    restart:</span><br><span class="line">networks:</span><br><span class="line">  front-tier:</span><br><span class="line">    driver: bridge</span><br><span class="line">  back-tier:</span><br><span class="line">driver: bridge</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2020/06/05/docker-compose/" data-id="ckg6ggriw0010ef11zerye7wc" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker-compose/">docker-compose</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
- 
-  
-  
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
-  
-</section>
+  <section id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-redis-command" data-title="redis常用操作类型" data-url="http://www.wbug.cn/2020/10/12/redis-command/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'11c'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+  </section>
         
           <aside id="sidebar">
   

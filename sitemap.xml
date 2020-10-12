@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.wbug.cn/2020/10/12/redis-command/</loc>
+    
+    <lastmod>2020-10-12T11:30:02.211Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.wbug.cn/2020/10/12/nginx-default/</loc>
     
     <lastmod>2020-10-12T08:24:03.261Z</lastmod>

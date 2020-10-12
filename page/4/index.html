@@ -76,6 +76,83 @@ var _hmt = _hmt || [];
       <div class="outer">
         <section id="main">
   
+    <article id="post-debian-9-4-stretch-install" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/17/debian-9-4-stretch-install/" class="article-date">
+  <time datetime="2018-05-17T15:39:39.000Z" itemprop="datePublished">2018-05-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/linux/">linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/17/debian-9-4-stretch-install/">debian 9.4(stretch) install</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="debian-9-install-questions"><a href="#debian-9-install-questions" class="headerlink" title="debian 9 install questions"></a>debian 9 install questions</h2><table>
+<thead>
+<tr>
+<th>Distributor ID</th>
+<th>Desc</th>
+<th>Third Realease</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Debian</td>
+<td>CDebian GNU/Linux 9.4 (stretch)</td>
+<td>9.4</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>showinfo</th>
+<th>other</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>uname -r</td>
+<td>4.9.0-6-amd64</td>
+<td>none</td>
+</tr>
+<tr>
+<td>cat /proc/version</td>
+<td>Linux version 4.9.0-6-amd64</td>
+<td>(gcc 6.3.0 20170516(Debian 6.3.0-18+deb9u1)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="question"><a href="#question" class="headerlink" title="question"></a>question</h2><h3 id="sys-kernel-debug-vgaswitcheroo-switch-No-such-file-or-directory"><a href="#sys-kernel-debug-vgaswitcheroo-switch-No-such-file-or-directory" class="headerlink" title="/sys/kernel/debug/vgaswitcheroo/switch: No such file or directory"></a>/sys/kernel/debug/vgaswitcheroo/switch: No such file or directory</h3><h4 id="answer"><a href="#answer" class="headerlink" title="answer"></a><em>answer</em></h4><h4 id="1-cat-sys-kernel-debug-vgaswitcheroo-switch-address-https-bbs-archlinuxcn-org-viewtopic-php-id-2993"><a href="#1-cat-sys-kernel-debug-vgaswitcheroo-switch-address-https-bbs-archlinuxcn-org-viewtopic-php-id-2993" class="headerlink" title="1. cat /sys/kernel/debug/vgaswitcheroo/switch address:https://bbs.archlinuxcn.org/viewtopic.php?id=2993,"></a>1. cat /sys/kernel/debug/vgaswitcheroo/switch address:<a href="https://bbs.archlinuxcn.org/viewtopic.php?id=2993" target="_blank" rel="noopener">https://bbs.archlinuxcn.org/viewtopic.php?id=2993</a>,</h4><h4 id="2-https-help-ubuntu-com-community-HybridGraphics"><a href="#2-https-help-ubuntu-com-community-HybridGraphics" class="headerlink" title="2. https://help.ubuntu.com/community/HybridGraphics,"></a>2. <a href="https://help.ubuntu.com/community/HybridGraphics" target="_blank" rel="noopener">https://help.ubuntu.com/community/HybridGraphics</a>,</h4><h4 id="3-https-askubuntu-comquestions-648426-discrete-graphics-always-dynoff"><a href="#3-https-askubuntu-comquestions-648426-discrete-graphics-always-dynoff" class="headerlink" title="3. https://askubuntu.comquestions/648426/discrete-graphics-always-dynoff"></a>3. <a href="https://askubuntu.comquestions/648426/discrete-graphics-always-dynoff" target="_blank" rel="noopener">https://askubuntu.comquestions/648426/discrete-graphics-always-dynoff</a></h4><h2 id="question-1"><a href="#question-1" class="headerlink" title="question"></a>question</h2><h3 id="ERROR-radeon-kernel-modesetting-for-R600-or-later-requires-firmware-amd-graphics"><a href="#ERROR-radeon-kernel-modesetting-for-R600-or-later-requires-firmware-amd-graphics" class="headerlink" title="ERROR radeon kernel modesetting for R600 or later requires firmware-amd-graphics."></a>ERROR radeon kernel modesetting for R600 or later requires firmware-amd-graphics.</h3><h4 id="answer-1"><a href="#answer-1" class="headerlink" title="answer"></a><em>answer</em></h4><h4 id="1-add-etc-apt-sources-list-deb-http-ftp-us-debian-org-debian-testing-main-non-free-contrib"><a href="#1-add-etc-apt-sources-list-deb-http-ftp-us-debian-org-debian-testing-main-non-free-contrib" class="headerlink" title="1. add /etc/apt/sources.list deb http://ftp.us.debian.org/debian/ testing main non-free contrib"></a>1. add /etc/apt/sources.list deb <a href="http://ftp.us.debian.org/debian/" target="_blank" rel="noopener">http://ftp.us.debian.org/debian/</a> testing main non-free contrib</h4><h4 id="2-deb-src-http-ftp-us-debian-org-debian-testing-main-non-free-contrib"><a href="#2-deb-src-http-ftp-us-debian-org-debian-testing-main-non-free-contrib" class="headerlink" title="2. deb-src http://ftp.us.debian.org/debian/ testing main non-free contrib"></a>2. deb-src <a href="http://ftp.us.debian.org/debian/" target="_blank" rel="noopener">http://ftp.us.debian.org/debian/</a> testing main non-free contrib</h4><h4 id="3-sudo-apt-get-update"><a href="#3-sudo-apt-get-update" class="headerlink" title="3. sudo apt-get update"></a>3. sudo apt-get update</h4><h4 id="4-sudo-apt-get-install-firmware-amd-graphics"><a href="#4-sudo-apt-get-install-firmware-amd-graphics" class="headerlink" title="4. sudo apt-get install firmware-amd-graphics"></a>4. sudo apt-get install firmware-amd-graphics</h4><h2 id="question-2"><a href="#question-2" class="headerlink" title="question"></a>question</h2><h3 id="grub-rescue"><a href="#grub-rescue" class="headerlink" title="grub rescue"></a>grub rescue</h3><h3 id="answer-2"><a href="#answer-2" class="headerlink" title="answer"></a><em>answer</em></h3><h4 id="1-ls"><a href="#1-ls" class="headerlink" title="1. ls"></a>1. ls</h4><h4 id="2-ls-hd0-x-boot-grub-or-hd1-x-boot-grub"><a href="#2-ls-hd0-x-boot-grub-or-hd1-x-boot-grub" class="headerlink" title="2. ls (hd0,x)/boot/grub or (hd1,x)/boot/grub"></a>2. ls (hd0,x)/boot/grub or (hd1,x)/boot/grub</h4><h4 id="3-set-root-hd0-5"><a href="#3-set-root-hd0-5" class="headerlink" title="3. set root=(hd0,5)"></a>3. set root=(hd0,5)</h4><h4 id="4-set-prefix-hd0-5-boot-grub"><a href="#4-set-prefix-hd0-5-boot-grub" class="headerlink" title="4. set prefix=(hd0,5)/boot/grub"></a>4. set prefix=(hd0,5)/boot/grub</h4><h4 id="5-set-insmod-boot-grub"><a href="#5-set-insmod-boot-grub" class="headerlink" title="5. set insmod /boot/grub"></a>5. set insmod /boot/grub</h4><h4 id="6-set-insmod-boot-grub"><a href="#6-set-insmod-boot-grub" class="headerlink" title="6. set insmod /boot/grub"></a>6. set insmod /boot/grub</h4><h4 id="7-sudo-update-grub"><a href="#7-sudo-update-grub" class="headerlink" title="7. sudo update-grub"></a>7. sudo update-grub</h4><h4 id="8-sudo-grub-install-dev-sda"><a href="#8-sudo-grub-install-dev-sda" class="headerlink" title="8. sudo grub-install /dev/sda"></a>8. sudo grub-install /dev/sda</h4>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.wbug.cn/2018/05/17/debian-9-4-stretch-install/" data-id="ckg6ggriu000yef11xuk76qjn" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+ 
+  
     <article id="post-phpQues2" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/11/09/phpQues2/" class="article-date">
@@ -116,7 +193,7 @@ var _hmt = _hmt || [];
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2017/11/09/phpQues2/" data-id="ckg69q7ms002vu011ab55as6r" class="article-share-link">Share</a>
+      <a data-url="http://www.wbug.cn/2017/11/09/phpQues2/" data-id="ckg6ggrk9002vef11beul1hvc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -167,7 +244,7 @@ var _hmt = _hmt || [];
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2017/11/09/phpQues/" data-id="ckg69q7mq002ru011imypd6dl" class="article-share-link">Share</a>
+      <a data-url="http://www.wbug.cn/2017/11/09/phpQues/" data-id="ckg6ggrk8002ref116yrccrge" class="article-share-link">Share</a>
       
       
     </footer>
@@ -210,7 +287,7 @@ var _hmt = _hmt || [];
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2017/11/09/giterror/" data-id="ckg69q7lu001bu011hkaz7c2n" class="article-share-link">Share</a>
+      <a data-url="http://www.wbug.cn/2017/11/09/giterror/" data-id="ckg6ggrj2001bef11f9o58fbf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -254,55 +331,11 @@ var _hmt = _hmt || [];
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2017/11/09/hexoerror/" data-id="ckg69q7ly001hu0117vxtoev6" class="article-share-link">Share</a>
+      <a data-url="http://www.wbug.cn/2017/11/09/hexoerror/" data-id="ckg6ggrj8001hef11l4fqgei4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
 
-    </footer>
-  </div>
-  
-</article>
-
- 
-  
-    <article id="post-regexprion" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/08/07/regexprion/" class="article-date">
-  <time datetime="2016-08-06T17:50:26.000Z" itemprop="datePublished">2016-08-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/07/regexprion/">使用正则表达式批量替换冲突</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在使用git 时出现 文件大面积冲突 为避免麻烦 使用正则表达式进行批量替换</p>
-<h2 id="总代码如下"><a href="#总代码如下" class="headerlink" title="总代码如下"></a>总代码如下</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">(&lt;&lt;&lt;&lt;&lt;*\sHEAD([\n]*)|====*\s(.[\n]*)(.*[\n])+.*(4ec633df87926745360d68b4aad6e5dd06c17400))</span><br></pre></td></tr></table></figure>
-<p>#拆分1 只匹配头部 也就是 &lt;&lt;&lt;&lt; HEAD 部分</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;&lt;&lt;&lt;&lt;*\sHEAD([\n]*)</span><br></pre></td></tr></table></figure>
-<h2 id="拆分2-匹配尾部"><a href="#拆分2-匹配尾部" class="headerlink" title="拆分2 匹配尾部"></a>拆分2 匹配尾部</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">====*\s(.[\n]*)(.*[\n])+.*(4ec633df87926745360d68b4aad6e5dd06c17400)</span><br><span class="line"></span><br><span class="line">高亮部分为你的 版本号 根据自己的情况定</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>此为高亮部分 <code>4ec633df87926745360d68b4aad6e5dd06c17400</code> 可替换为你想要的任意类型</p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.wbug.cn/2016/08/07/regexprion/" data-id="ckg69q7n10036u011bbh2wf08" class="article-share-link">Share</a>
-      
-      
     </footer>
   </div>
   
@@ -323,7 +356,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/code/">code</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/default/">default</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/docker/">docker</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/google/">google</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/news/">news</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/svn/">svn</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/电影/">电影</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/code/">code</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/default/">default</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/docker/">docker</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/google/">google</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/news/">news</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/svn/">svn</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/电影/">电影</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -332,7 +365,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bug/">bug</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker-compose/">docker-compose</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/laravel/">laravel</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nginx/">nginx</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/">ssh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime/">sublime</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/备份文件、mysql/">备份文件、mysql</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bug/">bug</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker-compose/">docker-compose</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/laravel/">laravel</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nginx/">nginx</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis-db/">redis db</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/">ssh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime/">sublime</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/备份文件、mysql/">备份文件、mysql</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -341,7 +374,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/docker-compose/" style="font-size: 10px;">docker-compose</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 16.67px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/mysql/" style="font-size: 13.33px;">mysql</a> <a href="/tags/nginx/" style="font-size: 13.33px;">nginx</a> <a href="/tags/php/" style="font-size: 20px;">php</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/sublime/" style="font-size: 10px;">sublime</a> <a href="/tags/备份文件、mysql/" style="font-size: 10px;">备份文件、mysql</a>
+      <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/docker-compose/" style="font-size: 10px;">docker-compose</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 16.67px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/mysql/" style="font-size: 13.33px;">mysql</a> <a href="/tags/nginx/" style="font-size: 13.33px;">nginx</a> <a href="/tags/php/" style="font-size: 20px;">php</a> <a href="/tags/redis-db/" style="font-size: 10px;">redis db</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/sublime/" style="font-size: 10px;">sublime</a> <a href="/tags/备份文件、mysql/" style="font-size: 10px;">备份文件、mysql</a>
     </div>
   </div>
 
@@ -350,7 +383,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -360,6 +393,10 @@ var _hmt = _hmt || [];
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2020/10/12/redis-command/">redis常用操作类型</a>
+          </li>
         
           <li>
             <a href="/2020/10/12/nginx-slash/">nginx location uri 调用示例</a>
@@ -375,10 +412,6 @@ var _hmt = _hmt || [];
         
           <li>
             <a href="/2020/06/05/docker-compose/">docker-compose</a>
-          </li>
-        
-          <li>
-            <a href="/2020/06/05/docker/">docker常用命令</a>
           </li>
         
       </ul>

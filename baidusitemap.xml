@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://www.wbug.cn/2020/10/12/redis-command/</loc>
+    <lastmod>2020-10-12T11:30:02.211Z</lastmod>
+    <data>
+        <display>
+        <title>redis常用操作类型</title>
+        <pubTime>2020-10-12T11:07:00.000Z</pubTime>
+        
+        <tag>redis db</tag>
+         
+         
+           
+             
+              <breadCrumb title="redis" url="http://www.wbug.cn/categories/redis/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.wbug.cn/2020/10/12/nginx-default/</loc>
     <lastmod>2020-10-12T08:24:03.261Z</lastmod>
     <data>
